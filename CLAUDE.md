@@ -72,6 +72,8 @@ ALWAYS check for applicable skills BEFORE responding. Even 1% match → invoke f
 | | Create new skill | `skill-creator` |
 | | i18n / localization | `i18n-expert` |
 | | Prompt / AI workflow design | `prompt-engineering` |
+| | Optimize / rewrite a prompt | `prompt-architect` |
+| | Build prompt from template | `prompt-templates` |
 | | Extract session learnings | `/claudeception` |
 
 ### Skill Chaining Patterns
@@ -82,6 +84,7 @@ ALWAYS check for applicable skills BEFORE responding. Even 1% match → invoke f
 - **Data report**: `csv-data-summarizer` → `exploratory-data-analysis` → `plotly`/`matplotlib` → `pdf` or `docx`
 - **Debug**: `/systematic-debugging` → `debugging-wizard` → fix → `/verification-before-completion`
 - **Release**: `conventional-commits` → `/verification-before-completion` → `changelog-generator`
+- **Prompt crafting**: `prompt-architect` (analyze + framework) → `prompt-templates` (structure) → `prompt-engineering` (system prompt integration)
 
 ## New Project Onboarding
 
