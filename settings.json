@@ -1,4 +1,17 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "true"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe -Command \"Get-Command Compress-Archive\")",
+      "Skill(code-reviewer)",
+      "Skill(code-reviewer:*)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  },
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -26,17 +39,6 @@
         ]
       }
     ]
-  },
-  "permissions": {
-    "allow": [
-      "Bash(powershell.exe -Command \"Get-Command Compress-Archive\")"
-    ],
-    "additionalDirectories": [
-      "\\tmp"
-    ]
-  },
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "true"
   },
   "enabledPlugins": {
     "superpowers@superpowers-marketplace": true

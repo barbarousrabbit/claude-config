@@ -1,6 +1,7 @@
 # === 敏感信息 - 绝对不要同步 ===
 .credentials.json
 settings.local.json
+.mcp.json
 
 # === 机器相关缓存 - 每台机器自动生成 ===
 projects/
