@@ -1,0 +1,24 @@
+# === 敏感信息 - 绝对不要同步 ===
+.credentials.json
+settings.local.json
+
+# === 机器相关缓存 - 每台机器自动生成 ===
+projects/
+session-env/
+telemetry/
+debug/
+file-history/
+ide/
+shell-snapshots/
+todos/
+backups/
+plans/
+
+# === 插件缓存 - 会自动下载 ===
+plugins/cache/
+plugins/marketplaces/
+plugins/install-counts-cache.json
+
+# === 临时文件 ===
+*.jsonl
+mcp-needs-auth-cache.json
