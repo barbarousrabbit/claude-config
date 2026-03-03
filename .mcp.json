@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "python",
+      "args": ["-m", "mcp_server_fetch"]
+    },
+    "memory": {
+      "command": "C:\\Program Files\\nodejs\\npx.cmd",
+      "args": ["-y", "--registry", "https://registry.npmjs.org", "@modelcontextprotocol/server-memory"]
+    },
+    "sequential-thinking": {
+      "command": "C:\\Program Files\\nodejs\\npx.cmd",
+      "args": ["-y", "--registry", "https://registry.npmjs.org", "@modelcontextprotocol/server-sequential-thinking"]
+    }
+  }
+}
