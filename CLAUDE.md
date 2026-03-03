@@ -13,6 +13,34 @@
 - Project `.claude/CLAUDE.md` overrides global rules when they conflict
 - Global rules apply everywhere unless a project explicitly overrides them
 
+## Available Tools — Use Proactively
+
+### MCP Servers (auto-started)
+| Server | Capability | When to use |
+|--------|-----------|-------------|
+| `fetch` | Fetch any URL → Markdown | Read web pages, docs, API references |
+| `memory` | Persistent knowledge graph | Store/recall facts across sessions |
+| `sequential-thinking` | Step-by-step reasoning | Complex multi-step analysis |
+| `github` | GitHub API (PRs, issues, code) | Create/review PRs, search repos, manage issues |
+
+### Custom Commands (suggest to user when relevant)
+| Command | Purpose |
+|---------|---------|
+| `/user:explain <topic>` | Explain code/concept in Chinese, beginner-friendly |
+| `/user:check-assignment <path>` | Check assignment against rubric, score each criterion |
+| `/user:summarize <file>` | Summarize file in Chinese with key points |
+| `/user:debug <error>` | Step-by-step debugging with root cause analysis |
+
+### Agent Teams
+- Enabled via `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS`
+- Use for large tasks with 3+ independent workstreams
+- Each agent gets its own context window — use for parallel heavy work
+- For simpler parallel tasks (2 quick searches), use subagents instead
+
+### Hooks (auto-running, no action needed)
+- **SessionStart**: git pull config sync + claude-reflect reminder
+- **UserPromptSubmit**: claude-reflect learning capture
+
 ## Skill Usage — MANDATORY
 
 ALWAYS check for applicable skills BEFORE responding. Even 1% match → invoke first.
@@ -71,9 +99,9 @@ ALWAYS check for applicable skills BEFORE responding. Even 1% match → invoke f
 | **Research** | Recent trends (last 30 days) | `last30days` |
 | | Create new skill | `skill-creator` |
 | | i18n / localization | `i18n-expert` |
-| | Prompt / AI workflow design | `prompt-engineering` |
-| | Optimize / rewrite a prompt | `prompt-architect` |
-| | Build prompt from template | `prompt-templates` |
+| | Design system/agent prompts | `prompt-engineering` |
+| | "帮我优化这段提示词" | `prompt-architect` |
+| | "用模板帮我写提示词" | `prompt-templates` |
 | | Extract session learnings | `/claudeception` |
 
 ### Skill Chaining Patterns
@@ -84,7 +112,7 @@ ALWAYS check for applicable skills BEFORE responding. Even 1% match → invoke f
 - **Data report**: `csv-data-summarizer` → `exploratory-data-analysis` → `plotly`/`matplotlib` → `pdf` or `docx`
 - **Debug**: `/systematic-debugging` → `debugging-wizard` → fix → `/verification-before-completion`
 - **Release**: `conventional-commits` → `/verification-before-completion` → `changelog-generator`
-- **Prompt crafting**: `prompt-architect` (analyze + framework) → `prompt-templates` (structure) → `prompt-engineering` (system prompt integration)
+- **Prompt crafting**: `prompt-architect` → `prompt-templates` → `prompt-engineering`
 
 ## New Project Onboarding
 
