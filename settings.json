@@ -35,6 +35,9 @@
       "\\tmp"
     ]
   },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "true"
+  },
   "enabledPlugins": {
     "superpowers@superpowers-marketplace": true
   },
