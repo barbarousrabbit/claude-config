@@ -1,5 +1,14 @@
 # Global Rules
 
+## Config Sync — MANDATORY
+- Global config is synced via Git repo: `https://github.com/barbarousrabbit/claude-config.git`
+- **Session start**: Auto `git pull` via SessionStart hook (no manual action needed)
+- **Session end**: If ANY file under `~/.claude/` was modified during this session (CLAUDE.md, skills, settings, etc.), ALWAYS run before finishing:
+  ```bash
+  cd ~/.claude && git add -A && git commit -m "update: <brief description>" && git push
+  ```
+- NEVER skip the push step — other machines depend on staying in sync
+
 ## Skill Usage — MANDATORY
 
 ALWAYS check for applicable skills BEFORE responding. If a skill matches the task even 1%, invoke it first.
