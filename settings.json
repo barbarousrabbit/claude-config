@@ -72,7 +72,9 @@
       "Bash(docker-compose *)",
       "Bash(docker compose *)",
       "Bash(powershell.exe *)",
-      "Bash(powershell *)"
+      "Bash(powershell *)",
+      "Read(//c/Users/zhang/**)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d, indent=2\\)\\)\")"
     ],
     "additionalDirectories": [
       "\tmp"

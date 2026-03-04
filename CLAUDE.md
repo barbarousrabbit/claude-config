@@ -141,3 +141,19 @@ Claude MUST:
 - Bullets over paragraphs; one point per code block
 - No verbose explanations for obvious rules
 - Every correction becomes a permanent rule — projects get smarter over time
+
+## New Device Setup — MANDATORY on First Run
+
+After cloning `~/.claude` to a new device, run **once**:
+```bash
+bash ~/.claude/scripts/bootstrap.sh
+```
+This auto-installs Python skill dependencies, checks CLI tools, and creates `.mcp.json` from template.
+
+### MCP Servers (fetch / memory / sequential-thinking / github)
+1. Edit `~/.claude/.mcp.json` (created by bootstrap)
+2. Replace `ghp_YOUR_TOKEN_HERE` with a real GitHub PAT
+3. Restart Claude Code
+
+### If bootstrap detects missing items
+SessionStart hook prints warnings to stderr — follow the listed fixes. When user asks Claude to fix setup issues, run `bash ~/.claude/scripts/bootstrap.sh` directly.
