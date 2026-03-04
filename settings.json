@@ -34,7 +34,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$HOME/.claude/scripts/hook-user-prompt.sh\""
+            "command": "python3 \"C:/Users/Zhang/.claude/skills/claude-reflect/scripts/capture_learning.py\""
           }
         ]
       }
@@ -45,7 +45,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$HOME/.claude/scripts/hook-session-start.sh\""
+            "command": "bash \"C:/Users/Zhang/.claude/scripts/sync-pull.sh\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"C:/Users/Zhang/.claude/skills/claude-reflect/scripts/session_start_reminder.py\""
           }
         ]
       }
