@@ -4,12 +4,18 @@ CLAUDE_DIR="$HOME/.claude"
 
 # Only run if it's a git repo with a remote
 if [ -d "$CLAUDE_DIR/.git" ] && git -C "$CLAUDE_DIR" remote get-url origin &>/dev/null; then
-    # Stash any uncommitted changes to avoid conflicts
-    git -C "$CLAUDE_DIR" stash --quiet 2>/dev/null
+    # Restore settings.json from remote (source of truth) before pulling
+    # to avoid stash conflicts on this critical file
+    git -C "$CLAUDE_DIR" checkout -- settings.json 2>/dev/null
+
+    # Stash any other uncommitted changes (e.g. plugins cache)
+    STASH_OUT=$(git -C "$CLAUDE_DIR" stash 2>/dev/null)
 
     # Pull latest
     git -C "$CLAUDE_DIR" pull --rebase --quiet 2>/dev/null
 
-    # Re-apply stashed changes if any
-    git -C "$CLAUDE_DIR" stash pop --quiet 2>/dev/null
+    # Re-apply stashed changes only if something was stashed
+    if echo "$STASH_OUT" | grep -q "Saved working directory"; then
+        git -C "$CLAUDE_DIR" stash pop --quiet 2>/dev/null
+    fi
 fi
