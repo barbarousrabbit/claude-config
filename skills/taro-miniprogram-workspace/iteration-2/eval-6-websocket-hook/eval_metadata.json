@@ -1,0 +1,11 @@
+{
+  "eval_id": 6,
+  "eval_name": "websocket-hook",
+  "prompt": "帮我写一个 Taro 小程序的 WebSocket Hook，连接到我的订单通知服务，要求：\n1. 连接 URL：ws://api.daigou.example.com/ws/orders\n2. 收到消息时调用回调\n3. 连接断开后自动重连（指数退避，最长 30 秒）\n4. 组件卸载时自动断开\n\n请给出完整的 useOrderWebSocket.ts 文件。",
+  "assertions": [
+    "代码使用 Taro.connectSocket() 建立连接，而不是 new WebSocket()（小程序没有原生 WebSocket 构造函数）",
+    "代码中的 WebSocket URL 使用 wss:// 协议，不是 ws://（微信小程序强制要求 WSS 加密连接）",
+    "代码包含自动重连机制（onClose 时 setTimeout 重新调用 connect 或类似逻辑）",
+    "代码在 useEffect 的 cleanup 函数中关闭 WebSocket 连接（socketRef.current?.close() 或类似代码）"
+  ]
+}

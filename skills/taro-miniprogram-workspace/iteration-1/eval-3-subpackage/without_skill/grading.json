@@ -1,0 +1,26 @@
+{
+  "eval_id": 3,
+  "run": "without_skill",
+  "expectations": [
+    {
+      "text": "主包 pages 数组只包含首页、购物车、个人中心等 tabBar 页，不包含详情页",
+      "passed": true,
+      "evidence": "主包 pages 有 4 项 tabBar 页: index/category/cart/profile，无详情页"
+    },
+    {
+      "text": "配置包含 subPackages 数组，且有至少 3 个分包",
+      "passed": true,
+      "evidence": "4 个分包: packageProduct, packageOrder, packageAftersale, packageSettings"
+    },
+    {
+      "text": "配置包含 preloadRule，在首页预加载商品分包",
+      "passed": true,
+      "evidence": "preloadRule['pages/index/index'] = { packages: ['product'] }"
+    },
+    {
+      "text": "输出是合法的 TypeScript/JavaScript 配置，能直接用于 app.config.ts",
+      "passed": true,
+      "evidence": "使用 defineAppConfig({...}) 包裹，语法完整，有 tabBar、window 配置"
+    }
+  ]
+}

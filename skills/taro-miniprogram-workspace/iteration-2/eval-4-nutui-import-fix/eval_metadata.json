@@ -1,0 +1,11 @@
+{
+  "eval_id": 4,
+  "eval_name": "nutui-import-fix",
+  "prompt": "我在 Taro 小程序里用 NutUI 做了一个 Toast，但点击按钮后什么都没有显示。下面是我的代码，帮我找出问题并修复：\n\nimport { View, Text } from '@tarojs/components'\nimport { Button, Toast } from '@nutui/nutui-react'\nimport styles from './index.module.scss'\n\nexport default function ProductPage() {\n  const handleAddCart = () => {\n    Toast.show({ content: '已加入购物车', icon: 'success' })\n  }\n\n  return (\n    <View className={styles.page}>\n      <Text className={styles.title}>商品详情</Text>\n      <Button type='primary' onClick={handleAddCart}>加入购物车</Button>\n    </View>\n  )\n}",
+  "assertions": [
+    "修复后的代码从 @nutui/nutui-react-taro 导入，而不是从 @nutui/nutui-react 导入",
+    "修复后的代码中不存在 from '@nutui/nutui-react' 这行（不含 -taro 后缀的 Web 版 import 已被去除）",
+    "修复后的 Button 组件保留了 onClick 或 onTap 事件绑定，功能完整",
+    "回答中解释了为什么 @nutui/nutui-react（Web 版）在小程序环境不能用（依赖 DOM 或运行时不兼容）"
+  ]
+}

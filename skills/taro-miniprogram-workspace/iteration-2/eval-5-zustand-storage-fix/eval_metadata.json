@@ -1,0 +1,11 @@
+{
+  "eval_id": 5,
+  "eval_name": "zustand-storage-fix",
+  "prompt": "我的 Taro 小程序 Zustand store 用了 persist 做持久化，但每次关闭小程序重新打开，token 都变成 null 了，感觉没有被正确存储。下面是我的 store 代码，帮我找出问题并修复：\n\nimport { create } from 'zustand'\nimport { persist, createJSONStorage } from 'zustand/middleware'\n\ninterface AuthState {\n  token: string | null\n  userId: string | null\n  setToken: (token: string) => void\n  logout: () => void\n}\n\nexport const useAuthStore = create<AuthState>()(\n  persist(\n    (set) => ({\n      token: null,\n      userId: null,\n      setToken: (token) => set({ token }),\n      logout: () => set({ token: null, userId: null }),\n    }),\n    {\n      name: 'auth-storage',\n      storage: createJSONStorage(() => localStorage),\n    }\n  )\n)",
+  "assertions": [
+    "修复后的代码中没有 localStorage（也没有 sessionStorage 或其他 Web Storage API）",
+    "修复后的代码使用了 Taro.getStorageSync 和 Taro.setStorageSync（或 Taro.removeStorageSync）",
+    "代码定义了包含 getItem、setItem、removeItem 方法的自定义存储对象，传给 createJSONStorage()",
+    "回答中说明了 localStorage 在微信小程序不可用的原因（小程序没有 DOM/BOM，需要用 Taro 存储 API）"
+  ]
+}

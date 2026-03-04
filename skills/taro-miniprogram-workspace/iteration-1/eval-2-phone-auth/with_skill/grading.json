@@ -1,0 +1,26 @@
+{
+  "eval_id": 2,
+  "run": "with_skill",
+  "expectations": [
+    {
+      "text": "代码使用 openType=\"getPhoneNumber\" 或 open-type=\"getPhoneNumber\"，没有直接传明文手机号",
+      "passed": true,
+      "evidence": "第163行: openType=\"getPhoneNumber\"，代码中无任何明文手机号字段"
+    },
+    {
+      "text": "代码将 encryptedData 和 iv（或 encryptedData/iv）发给后端接口",
+      "passed": true,
+      "evidence": "第54-68行: bindPhoneRequest 传递 { code, encryptedData, iv } 给后端"
+    },
+    {
+      "text": "代码中使用了 useAuthStore 或类似的 Zustand store",
+      "passed": true,
+      "evidence": "第89行: const { token, setToken } = useAuthStore()"
+    },
+    {
+      "text": "代码在授权成功后调用了 Taro.navigateTo 或 Taro.switchTab 或 Taro.redirectTo",
+      "passed": true,
+      "evidence": "第128行: Taro.switchTab({ url: '/pages/index/index' })"
+    }
+  ]
+}

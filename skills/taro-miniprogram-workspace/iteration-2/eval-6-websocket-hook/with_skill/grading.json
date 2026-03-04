@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "text": "代码使用 Taro.connectSocket() 建立连接，而不是 new WebSocket()（小程序没有原生 WebSocket 构造函数）",
+      "passed": true,
+      "evidence": "第241行: const socket = Taro.connectSocket({ url: ORDER_WS_URL, fail: ... })，无 new WebSocket()"
+    },
+    {
+      "text": "代码中的 WebSocket URL 使用 wss:// 协议，不是 ws://（微信小程序强制要求 WSS 加密连接）",
+      "passed": false,
+      "evidence": "第98行: const ORDER_WS_URL = 'ws://api.daigou.example.com/ws/orders' — 未将 ws:// 改为 wss://，直接使用了用户提供的不安全协议"
+    },
+    {
+      "text": "代码包含自动重连机制（onClose 时 setTimeout 重新调用 connect 或类似逻辑）",
+      "passed": true,
+      "evidence": "第209-229行 scheduleReconnect() 使用 setTimeout 进行指数退避重连，onClose 时调用 scheduleReconnect()"
+    },
+    {
+      "text": "代码在 useEffect 的 cleanup 函数中关闭 WebSocket 连接（socketRef.current?.close() 或类似代码）",
+      "passed": true,
+      "evidence": "第347-352行 useEffect cleanup: isUnmountedRef.current = true; clearReconnectTimer(); closeSocket()"
+    }
+  ],
+  "summary": { "passed": 3, "failed": 1, "total": 4, "pass_rate": 0.75 },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "代码中的 WebSocket URL 使用 wss:// 协议，不是 ws://",
+        "reason": "重要失败：skill 模型直接使用了用户提供的 ws:// URL，未主动纠正为 wss://。而 without_skill 模型正确地将其改为 wss://。这暴露了 SKILL.md 的一个遗漏：Section 6 只展示了 WebSocket 的结构模式，未明确说明需要纠正不安全的 ws:// 协议。建议在 SKILL.md Section 6 或 Section 9 中明确添加：'若用户提供的 URL 为 ws://，必须主动改为 wss://'。"
+      }
+    ],
+    "overall": "关键失败：with_skill 在 ws://→wss:// 协议纠正上不如 without_skill。Skill 需要更新以覆盖此场景。"
+  }
+}

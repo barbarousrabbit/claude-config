@@ -1,0 +1,175 @@
+{
+  "metadata": {
+    "skill_name": "taro-miniprogram",
+    "skill_path": "C:\\Users\\Xuyu Zhang\\.claude\\skills\\taro-miniprogram",
+    "executor_model": "claude-sonnet-4-6",
+    "analyzer_model": "claude-sonnet-4-6",
+    "timestamp": "2026-03-04T09:00:00Z",
+    "evals_run": [1, 2, 3],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "eval_name": "nav-height-hook",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 66.8,
+        "tokens": 28271,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "输出代码中调用了 Taro.getMenuButtonBoundingClientRect()", "passed": true, "evidence": "第97行: const menuButtonRect = Taro.getMenuButtonBoundingClientRect()"},
+        {"text": "输出代码中使用了 statusBarHeight", "passed": true, "evidence": "第92行: const statusBarHeight = systemInfo.statusBarHeight ?? ..."},
+        {"text": "输出代码有 TypeScript 类型（interface 或 type 或 : number 等）", "passed": true, "evidence": "第21-47行: export interface NavHeightInfo { ... }"},
+        {"text": "导航栏高度是动态计算的，不是硬编码的固定数字", "passed": true, "evidence": "第114-119行: 基于 capsule 和 statusBarHeight 动态计算"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "nav-height-hook",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 64.5,
+        "tokens": 23630,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "输出代码中调用了 Taro.getMenuButtonBoundingClientRect()", "passed": true, "evidence": "第97行: const menuButtonRect = Taro.getMenuButtonBoundingClientRect()"},
+        {"text": "输出代码中使用了 statusBarHeight", "passed": true, "evidence": "第92行: const statusBarHeight = systemInfo.statusBarHeight ?? ..."},
+        {"text": "输出代码有 TypeScript 类型（interface 或 type 或 : number 等）", "passed": true, "evidence": "第21-47行: export interface NavHeightInfo { ... }"},
+        {"text": "导航栏高度是动态计算的，不是硬编码的固定数字", "passed": true, "evidence": "第114-119行: 基于 capsule 和 statusBarHeight 动态计算"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "phone-auth-component",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 69.2,
+        "tokens": 28146,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "代码使用 openType=\"getPhoneNumber\" 或 open-type=\"getPhoneNumber\"，没有直接传明文手机号", "passed": true, "evidence": "第163行: openType=\"getPhoneNumber\"，代码中无任何明文手机号字段"},
+        {"text": "代码将 encryptedData 和 iv（或 encryptedData/iv）发给后端接口", "passed": true, "evidence": "第54-68行: bindPhoneRequest 传递 { code, encryptedData, iv } 给后端"},
+        {"text": "代码中使用了 useAuthStore 或类似的 Zustand store", "passed": true, "evidence": "第89行: const { token, setToken } = useAuthStore()"},
+        {"text": "代码在授权成功后调用了 Taro.navigateTo 或 Taro.switchTab 或 Taro.redirectTo", "passed": true, "evidence": "第128行: Taro.switchTab({ url: '/pages/index/index' })"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "phone-auth-component",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 104.3,
+        "tokens": 35511,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "代码使用 openType=\"getPhoneNumber\" 或 open-type=\"getPhoneNumber\"，没有直接传明文手机号", "passed": true, "evidence": "第165行: openType=\"getPhoneNumber\"，无明文手机号"},
+        {"text": "代码将 encryptedData 和 iv（或 encryptedData/iv）发给后端接口", "passed": true, "evidence": "第89-91行: payload 包含 { code } 或 { encryptedData, iv }，第143行传递给 callBindPhoneApi"},
+        {"text": "代码中使用了 useAuthStore 或类似的 Zustand store", "passed": true, "evidence": "第77行: const { token, setUser } = useAuthStore()"},
+        {"text": "代码在授权成功后调用了 Taro.navigateTo 或 Taro.switchTab 或 Taro.redirectTo", "passed": true, "evidence": "第113行: Taro.switchTab({ url: '/pages/index/index' })"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "subpackage-config",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 78.3,
+        "tokens": 28890,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "主包 pages 数组只包含首页、购物车、个人中心等 tabBar 页，不包含详情页", "passed": true, "evidence": "主包 pages 只有 3 项: pages/home/index, pages/cart/index, pages/profile/index"},
+        {"text": "配置包含 subPackages 数组，且有至少 3 个分包", "passed": true, "evidence": "4 个分包: packageProduct, packageOrder, packageRefund, packageService"},
+        {"text": "配置包含 preloadRule，在首页预加载商品分包", "passed": true, "evidence": "preloadRule['pages/home/index'] = { packages: ['packageProduct'], network: 'all' }"},
+        {"text": "输出是合法的 TypeScript/JavaScript 配置，能直接用于 app.config.ts", "passed": true, "evidence": "使用 defineAppConfig({...}) 包裹，语法完整，有 tabBar 配置，可直接复制使用"}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "subpackage-config",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 99.4,
+        "tokens": 26426,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "主包 pages 数组只包含首页、购物车、个人中心等 tabBar 页，不包含详情页", "passed": true, "evidence": "主包 pages 有 4 项 tabBar 页: index/category/cart/profile，无详情页"},
+        {"text": "配置包含 subPackages 数组，且有至少 3 个分包", "passed": true, "evidence": "4 个分包: packageProduct, packageOrder, packageAftersale, packageSettings"},
+        {"text": "配置包含 preloadRule，在首页预加载商品分包", "passed": true, "evidence": "preloadRule['pages/index/index'] = { packages: ['product'] }"},
+        {"text": "输出是合法的 TypeScript/JavaScript 配置，能直接用于 app.config.ts", "passed": true, "evidence": "使用 defineAppConfig({...}) 包裹，语法完整，有 tabBar、window 配置"}
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0},
+      "time_seconds": {"mean": 71.4, "stddev": 4.9, "min": 66.8, "max": 78.3},
+      "tokens": {"mean": 28436, "stddev": 325, "min": 28146, "max": 28890}
+    },
+    "without_skill": {
+      "pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0},
+      "time_seconds": {"mean": 89.4, "stddev": 17.7, "min": 64.5, "max": 104.3},
+      "tokens": {"mean": 28522, "stddev": 5072, "min": 23630, "max": 35511}
+    },
+    "delta": {
+      "pass_rate": "+0.00",
+      "time_seconds": "-18.0",
+      "tokens": "-86"
+    }
+  },
+  "notes": [
+    "所有 4 项 assertion 在 with_skill 和 without_skill 下均 100% 通过 — 说明当前 eval 的断言区分度不足，无法衡量 skill 的实际价值",
+    "Skill 的真实价值在于：NutUI import 路径正确性、项目特定约定（useAuthStore/Zustand 持久化用 Taro.setStorageSync）、安全模式（不暴露 openid）等陷阱规避",
+    "建议下一轮迭代新增更难的 eval：测试错误的 NutUI import 路径能否被纠正、WSS 而非 WS 协议、WebSocket Hook 心跳机制",
+    "with_skill 平均用时 71.4s，without_skill 平均用时 89.4s — skill 反而带来 18s 的时间节省（因为模型不需要自己推理约定）",
+    "tokens 差异极小（-86），说明 skill 内容被高效利用而非造成上下文膨胀"
+  ]
+}
