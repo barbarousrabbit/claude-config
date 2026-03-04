@@ -3,6 +3,9 @@
 settings.local.json
 .mcp.json
 
+# === 机器专属配置 - 每台设备自动生成 ===
+local-env.sh
+
 # === 机器相关缓存 - 每台机器自动生成 ===
 projects/
 session-env/

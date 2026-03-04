@@ -21,6 +21,12 @@ echo "   Claude Config — New Device Bootstrap"
 echo "============================================"
 echo ""
 
+# ── 0. 探测设备环境 ──────────────────────────────────────────
+echo "→ 探测设备环境..."
+bash "$CLAUDE_DIR/scripts/detect-env.sh"
+source "$CLAUDE_DIR/local-env.sh" 2>/dev/null || true
+ok "环境探测完成 (Python=${CLAUDE_PYTHON}, OS=${CLAUDE_OS})"
+
 # ── 1. Git 分支跟踪 ──────────────────────────────────────────
 echo "→ 配置 git 跟踪..."
 cd "$CLAUDE_DIR"
@@ -32,10 +38,10 @@ ok "Git 跟踪已配置"
 
 # ── 2. Python 依赖 ────────────────────────────────────────────
 echo "→ 安装 Python skill 依赖..."
-if command -v pip &>/dev/null; then
-    pip install -q -r "$CLAUDE_DIR/skills/requirements.txt" 2>/dev/null && ok "Python 依赖安装完成" || warn "部分 Python 依赖安装失败，可手动运行: pip install -r ~/.claude/skills/requirements.txt"
+if [ -n "$CLAUDE_PIP" ] && command -v "$CLAUDE_PIP" &>/dev/null; then
+    "$CLAUDE_PIP" install -q -r "$CLAUDE_DIR/skills/requirements.txt" 2>/dev/null && ok "Python 依赖安装完成" || warn "部分 Python 依赖安装失败，可手动运行: ${CLAUDE_PIP} install -r ~/.claude/skills/requirements.txt"
 else
-    warn "未找到 pip3，跳过 Python 依赖安装"
+    warn "未找到 pip，跳过 Python 依赖安装"
 fi
 
 # ── 3. Node / npx 检测 ───────────────────────────────────────
