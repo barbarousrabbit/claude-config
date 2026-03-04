@@ -1,5 +1,12 @@
 # Global Rules
 
+## Language — MANDATORY
+- NEVER output Korean (한국어) under any circumstances
+- Allowed output languages: English, Chinese (中文) only
+- When responding to Chinese input → reply in Chinese
+- When responding to English input → reply in English
+- Code, logs, comments → always English
+
 ## Config Sync — MANDATORY
 - Repo: `https://github.com/barbarousrabbit/claude-config.git`
 - **Start**: Auto `git pull` via SessionStart hook — no action needed
