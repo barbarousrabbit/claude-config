@@ -32,8 +32,8 @@ ok "Git 跟踪已配置"
 
 # ── 2. Python 依赖 ────────────────────────────────────────────
 echo "→ 安装 Python skill 依赖..."
-if command -v pip3 &>/dev/null; then
-    pip3 install -q -r "$CLAUDE_DIR/skills/requirements.txt" 2>/dev/null && ok "Python 依赖安装完成" || warn "部分 Python 依赖安装失败，可手动运行: pip3 install -r ~/.claude/skills/requirements.txt"
+if command -v pip &>/dev/null; then
+    pip install -q -r "$CLAUDE_DIR/skills/requirements.txt" 2>/dev/null && ok "Python 依赖安装完成" || warn "部分 Python 依赖安装失败，可手动运行: pip install -r ~/.claude/skills/requirements.txt"
 else
     warn "未找到 pip3，跳过 Python 依赖安装"
 fi
