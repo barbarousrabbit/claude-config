@@ -4,6 +4,7 @@
   },
   "permissions": {
     "allow": [
+      "Bash(*)",
       "Read(*)",
       "Edit(*)",
       "Write(*)",
@@ -12,17 +13,14 @@
       "WebFetch(*)",
       "WebSearch(*)",
       "NotebookEdit(*)",
-      "Skill(*)",
-      "Read(//c/Users/zhang/**)",
-      "Bash(*)"
+      "Skill(*)"
     ],
     "additionalDirectories": [
-      "\tmp"
+      "\\tmp"
     ],
     "deny": [
-      "Bash(rm -rf *)",
-      "Bash(rm -rf/*)",
-      "Bash(sudo rm*)",
+      "Bash(rm -rf /)",
+      "Bash(sudo rm -rf *)",
       "Bash(format *)",
       "Bash(mkfs*)",
       "Bash(:(){:|:&};:)",
