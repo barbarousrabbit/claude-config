@@ -66,6 +66,7 @@ ALWAYS check for applicable skills BEFORE responding. Even 1% match → invoke f
 | | Tailwind + theming | `tailwind-theme-builder` → `shadcn-ui` |
 | | Color / brand palette | `color-palette` |
 | | Next.js (App Router, SSR/SSG) | `nextjs-pro` |
+| | WeChat mini-program / Taro / 小程序 / rpx / wx.* API | `taro-miniprogram` |
 | | Complex React artifacts | `web-artifacts-builder` |
 | | Accessibility audit | `claude-a11y` |
 | | Responsive layout test | `responsiveness-check` |
@@ -109,6 +110,7 @@ ALWAYS check for applicable skills BEFORE responding. Even 1% match → invoke f
 - **New feature**: `/brainstorming` → `/writing-plans` → `/test-driven-development` → `/executing-plans` → `/requesting-code-review`
 - **Web UI**: `ui-ux-pro-max` → `tailwind-theme-builder` → `shadcn-ui` → `frontend-design` → `responsiveness-check` → `ux-audit`
 - **Next.js**: `nextjs-pro` → `tailwind-theme-builder` → `shadcn-ui` → `claude-a11y` → `responsiveness-check`
+- **WeChat mini-program**: `taro-miniprogram` + `typescript-pro` → `test-master` → `/verification-before-completion`
 - **Data report**: `csv-data-summarizer` → `exploratory-data-analysis` → `plotly`/`matplotlib` → `pdf` or `docx`
 - **Debug**: `/systematic-debugging` → `debugging-wizard` → fix → `/verification-before-completion`
 - **Release**: `conventional-commits` → `/verification-before-completion` → `changelog-generator`
@@ -141,3 +143,68 @@ Claude MUST:
 - Bullets over paragraphs; one point per code block
 - No verbose explanations for obvious rules
 - Every correction becomes a permanent rule — projects get smarter over time
+
+## Skill Creation Lessons (Meta-Rules)
+
+从 `taro-miniprogram` 三轮迭代中提炼的通用规则，适用于所有 skill 的创建与评估：
+
+### Skill 的真实价值定位
+
+ALWAYS 明确 skill 的价值来源，而非假设"模型不知道才需要 skill"：
+
+- **安全覆盖**：当用户提供不安全输入时（如 `ws://`），skill 通过显式规则强制纠正，模型先验知识不可靠
+- **项目一致性**：确保团队所有输出遵循同一模式（如 `taroStorage` 适配器的写法），而不是每人各自发明
+- **解释驱动**：skill 推动模型不仅"改了"，还要"解释为什么"，提升代码可维护性
+
+### Eval 断言设计规则
+
+NEVER 写出 "两组配置（with_skill / without_skill）都能 100% 通过" 的断言——这样的断言毫无区分度。
+
+好的断言需满足：
+- **模型先验不能轻易答对**：涉及特定平台陷阱（协议限制、API 差异、包名问题）
+- **skill 包含明确指引**：SKILL.md 中有对应规则，without_skill 模型需要自己推理
+- **可从输出文件客观验证**：不依赖 "感觉上正确" 的主观判断
+
+判断 eval 是否有效的经验法则：
+```
+如果 without_skill 能靠常识答对 → eval 太简单，需要换更难的场景
+如果 with_skill 因跟随 SKILL.md 模式反而答错 → SKILL.md 有遗漏，需要修复 skill
+```
+
+### Skill 编写规则
+
+ALWAYS 在 skill 中包含"主动覆盖用户输入"的规则，当用户提供的输入违反平台约束时：
+
+```markdown
+> ⚠️ [规则名]（必须执行）：若用户提供了 [不安全/不兼容的输入]，
+> 必须主动将其改为 [正确值] 并在回答中说明原因。
+```
+
+NEVER 只展示"正确用法示例"而不明确说明"用户提供错误输入时如何处理"——
+模型在 skill 存在时倾向于跟随示例模式，缺少覆盖指引会导致静默接受错误输入。
+
+### Eval 迭代流程
+
+```
+Iter-N: 发现 with_skill 在某个断言失败
+  → 检查 SKILL.md 对应章节是否有明确规则
+  → 若无 → 在 SKILL.md 添加显式覆盖规则
+  → Iter-(N+1): 重跑失败的 eval 验证修复
+  → 若修复后 with_skill ≥ without_skill → 迭代成功
+```
+
+## New Device Setup — MANDATORY on First Run
+
+After cloning `~/.claude` to a new device, run **once**:
+```bash
+bash ~/.claude/scripts/bootstrap.sh
+```
+This auto-installs Python skill dependencies, checks CLI tools, and creates `.mcp.json` from template.
+
+### MCP Servers (fetch / memory / sequential-thinking / github)
+1. Edit `~/.claude/.mcp.json` (created by bootstrap)
+2. Replace `ghp_YOUR_TOKEN_HERE` with a real GitHub PAT
+3. Restart Claude Code
+
+### If bootstrap detects missing items
+SessionStart hook prints warnings to stderr — follow the listed fixes. When user asks Claude to fix setup issues, run `bash ~/.claude/scripts/bootstrap.sh` directly.

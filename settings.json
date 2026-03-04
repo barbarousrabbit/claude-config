@@ -4,12 +4,29 @@
   },
   "permissions": {
     "allow": [
-      "Bash(powershell.exe -Command \"Get-Command Compress-Archive\")",
-      "Skill(code-reviewer)",
-      "Skill(code-reviewer:*)"
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "NotebookEdit(*)",
+      "Skill(*)",
+      "Read(//c/Users/zhang/**)",
+      "Bash(*)"
     ],
     "additionalDirectories": [
-      "\\tmp"
+      "\tmp"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(rm -rf/*)",
+      "Bash(sudo rm*)",
+      "Bash(format *)",
+      "Bash(mkfs*)",
+      "Bash(:(){:|:&};:)",
+      "Bash(> /dev/sda*)"
     ]
   },
   "hooks": {
@@ -19,7 +36,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"C:/Users/Zhang/.claude/skills/claude-reflect/scripts/capture_learning.py\""
+            "command": "bash \"$HOME/.claude/scripts/hook-user-prompt.sh\""
           }
         ]
       }
@@ -30,11 +47,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"C:/Users/Zhang/.claude/scripts/sync-pull.sh\""
-          },
-          {
-            "type": "command",
-            "command": "python3 \"C:/Users/Zhang/.claude/skills/claude-reflect/scripts/session_start_reminder.py\""
+            "command": "bash \"$HOME/.claude/scripts/hook-session-start.sh\""
           }
         ]
       }
