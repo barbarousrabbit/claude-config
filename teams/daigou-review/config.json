@@ -1,0 +1,75 @@
+{
+  "name": "daigou-review",
+  "description": "代购平台全面审查 — 后端/前端/安全/架构四路并行",
+  "createdAt": 1772641407891,
+  "leadAgentId": "team-lead@daigou-review",
+  "leadSessionId": "d86bc175-8cb1-4f60-8fee-0c004edbe68d",
+  "members": [
+    {
+      "agentId": "team-lead@daigou-review",
+      "name": "team-lead",
+      "agentType": "general-purpose",
+      "model": "claude-sonnet-4-6",
+      "joinedAt": 1772641407891,
+      "tmuxPaneId": "",
+      "cwd": "E:\\Programs\\DaiNiGou",
+      "subscriptions": []
+    },
+    {
+      "agentId": "backend-reviewer@daigou-review",
+      "name": "backend-reviewer",
+      "agentType": "general-purpose",
+      "model": "claude-opus-4-6",
+      "prompt": "你是代购平台后端代码审查专员。请对 e:/Programs/DaiNiGou/backend/ 进行全面代码审查。\n\n## 审查范围\n\n### 1. 业务逻辑完整性（对照需求）\n读取 e:/Programs/DaiNiGou/documents/01_functional_requirements.md，对照检查：\n- 每个 API 端点的业务逻辑是否实现完整\n- 状态机转换（订单/退款）是否覆盖所有边界情况\n- 支付回调、退款流程是否有遗漏\n\n### 2. 代码质量问题\n重点检查以下目录：\n- backend/src/modules/orders/\n- backend/src/modules/payments/\n- backend/src/modules/refunds/\n- backend/src/modules/auth/\n- backend/src/modules/merchants/\n- backend/src/common/\n\n检查项：\n- 错误处理是否完整（try-catch、错误类型）\n- 数据库事务是否在多步操作中使用\n- 依赖注入是否正确\n- DTO 校验是否完整（class-validator 装饰器）\n- 分页查询是否有合理的默认值和最大值限制\n- N+1 查询问题\n\n### 3. 关键文件深度审查（逐行读取）\n- backend/src/modules/orders/orders.service.ts\n- backend/src/modules/payments/payments.service.ts\n- backend/src/modules/refunds/refunds.service.ts\n- backend/src/modules/auth/auth.service.ts\n- backend/src/modules/merchants/merchants.service.ts\n\n### 4. 定时任务\n- backend/src/modules/tasks/tasks.service.ts\n检查每个定时任务的逻辑是否完整\n\n### 5. 输出格式\n整理成以下结构，每个问题包含：\n- 文件路径:行号\n- 问题描述（中文）\n- 严重程度（P0紧急/P1高/P2中/P3低）\n- 修复建议\n\n按严重程度排序，最后给出总结（多少个问题，各级别数量）。发送给 team-lead 代理。",
+      "color": "blue",
+      "planModeRequired": false,
+      "joinedAt": 1772641421062,
+      "tmuxPaneId": "in-process",
+      "cwd": "E:\\Programs\\DaiNiGou",
+      "subscriptions": [],
+      "backendType": "in-process"
+    },
+    {
+      "agentId": "frontend-reviewer@daigou-review",
+      "name": "frontend-reviewer",
+      "agentType": "general-purpose",
+      "model": "claude-opus-4-6",
+      "prompt": "你是代购平台前端小程序审查专员。请对以下两个小程序包进行全面代码审查。\n\n## 审查范围\n\n### 消费者小程序 (packages/customer-app/)\n重点文件：\n- packages/customer-app/src/store/ (所有 store 文件)\n- packages/customer-app/src/hooks/\n- packages/customer-app/src/services/\n- packages/customer-app/src/pages/ (主包所有页面)\n- packages/customer-app/src/packageOrder/pages/\n- packages/customer-app/src/packageAftersale/pages/\n- packages/customer-app/src/packageSettings/pages/\n\n### 买手小程序 (packages/merchant-app/)\n重点文件：\n- packages/merchant-app/src/store/\n- packages/merchant-app/src/hooks/\n- packages/merchant-app/src/services/\n- packages/merchant-app/src/pages/\n- packages/merchant-app/src/packageOrder/\n- packages/merchant-app/src/packageRefund/\n- packages/merchant-app/src/packageProfile/\n\n## 检查项\n\n### 功能完整性\n- 每个页面是否有完整的加载状态、空状态、错误状态\n- API 调用后是否正确更新 UI（乐观更新 vs 重新请求）\n- 分页加载是否有上拉加载更多\n- 表单提交是否有防重复提交（loading 状态）\n- 重要操作（删除/取消）是否有确认弹窗\n\n### 小程序规范\n- 是否有元素放在右上角胶囊按钮区域（严禁）\n- 样式单位是否使用 rpx\n- 导航栏是否正确避让胶囊按钮高度\n- wx.* API 调用是否正确使用\n\n### 状态管理\n- Zustand store 是否正确处理登录态\n- 页面卸载时是否清理定时器/WebSocket\n- useCallback/useMemo 依赖数组是否正确\n\n### API 层\n- 请求错误是否被正确捕获并展示给用户\n- Token 刷新逻辑是否正确\n- HMAC 签名是否每次都计算\n\n## 输出格式\n每个问题包含：\n- 文件路径:行号\n- 问题描述（中文）\n- 严重程度（P0紧急/P1高/P2中/P3低）\n- 修复建议\n\n分消费者端/买手端两部分，按严重程度排序。发送给 team-lead 代理。",
+      "color": "green",
+      "planModeRequired": false,
+      "joinedAt": 1772641432564,
+      "tmuxPaneId": "in-process",
+      "cwd": "E:\\Programs\\DaiNiGou",
+      "subscriptions": [],
+      "backendType": "in-process"
+    },
+    {
+      "agentId": "pc-reviewer@daigou-review",
+      "name": "pc-reviewer",
+      "agentType": "general-purpose",
+      "model": "claude-opus-4-6",
+      "prompt": "你是代购平台 PC 端前端审查专员。请对以下两个 PC 端包进行全面代码审查。\n\n## 审查范围\n\n### 总管理后台 (packages/admin/)\n重点文件（逐一读取）：\n- packages/admin/src/services/ (所有 service 文件)\n- packages/admin/src/pages/ (所有页面文件)\n- packages/admin/src/store/\n- packages/admin/src/app.tsx 或 app.ts\n\n### 买手 PC 工作台 (packages/merchant-pc/)\n重点文件（逐一读取）：\n- packages/merchant-pc/src/services/\n- packages/merchant-pc/src/pages/\n- packages/merchant-pc/src/store/\n\n## 检查项\n\n### 功能完整性\n1. 每个管理页面的 CRUD 操作是否完整\n2. 数据表格是否有搜索、排序、分页\n3. 表单是否有校验（必填项、格式）\n4. 操作成功/失败是否有明确提示\n5. 权限控制 — 页面/按钮是否根据角色权限显示/隐藏\n6. 导出功能是否完整（admin 有提现/订单导出需求）\n\n### API Service 完整性\n对照 TODO.md 中的 admin API 端点列表（Phase 10），检查：\n- 每个后端 API 是否有对应的前端 service 方法\n- 请求参数和响应类型是否与 shared 类型定义一致\n- 错误处理是否完整\n\n### 代码质量\n- 重复代码（可抽取为公共组件）\n- TypeScript 类型使用（是否有 any 泛滥）\n- 业务逻辑与 UI 逻辑是否分离\n\n### 具体核查（重要）\n读取 packages/admin/src/pages/roles/index.tsx，确认：\n- 权限多选框是否使用 AdminPermission 枚举（而非硬编码字符串）\n读取 packages/admin/src/pages/merchants/index.tsx，确认：\n- 买手审核流程是否完整（通过/驳回/封禁/详情）\n\n## 输出格式\n每个问题包含：\n- 文件路径:行号\n- 问题描述（中文）\n- 严重程度（P0紧急/P1高/P2中/P3低）\n- 修复建议\n\n分 admin/merchant-pc 两部分，按严重程度排序。发送给 team-lead 代理。",
+      "color": "yellow",
+      "planModeRequired": false,
+      "joinedAt": 1772641445118,
+      "tmuxPaneId": "in-process",
+      "cwd": "E:\\Programs\\DaiNiGou",
+      "subscriptions": [],
+      "backendType": "in-process"
+    },
+    {
+      "agentId": "security-auditor@daigou-review",
+      "name": "security-auditor",
+      "agentType": "general-purpose",
+      "model": "claude-opus-4-6",
+      "prompt": "你是代购平台安全审计专员。请进行全面安全审计和架构一致性检查。\n\n## 安全审查范围\n\n### 1. 后端安全 (OWASP Top 10)\n读取并审查：\n- backend/src/modules/auth/auth.service.ts — 认证安全\n- backend/src/modules/payments/payments.service.ts — 支付安全\n- backend/src/modules/orders/orders.controller.ts — API 参数注入\n- backend/src/common/guards/ — 守卫完整性\n- backend/src/common/filters/ — 异常信息泄露\n\n检查项：\n- SQL 注入（Prisma 参数化查询是否使用正确）\n- JWT 密钥强度和过期时间设置\n- 越权访问（用户 A 能否访问用户 B 的数据）\n- 敏感数据是否在日志/响应中明文暴露\n- 支付回调签名验证是否严格\n- Rate Limiting 是否覆盖所有高风险接口\n- Redis nonce 防重放攻击是否完整\n\n### 2. 前端安全\n检查：\n- packages/customer-app/src/utils/ 或 services/request.ts — HMAC 签名是否每次重新计算\n- packages/admin/src/services/request.ts — admin 签名是否正确\n- 敏感数据（身份证/手机号）是否在小程序本地存储中明文存储\n\n读取：\n- packages/customer-app/src/store/auth.ts 或类似文件 — token 存储方式\n- packages/admin/src/store/ — admin token 存储\n\n### 3. 数据安全\n读取 backend/prisma/schema.prisma，检查：\n- 身份证字段是否标注加密存储\n- 手机号字段是否有脱敏处理\n- 是否有不必要存储的敏感字段\n\n### 4. 架构一致性检查\n读取 e:/Programs/DaiNiGou/documents/02_technical_architecture.md，对照代码检查：\n- 实际实现是否符合架构设计文档\n- API 接口版本（文档要求 /api/v1/ 前缀是否一致）\n- 模块划分是否符合设计\n- 微服务/单体架构一致性\n\n### 5. 环境配置安全\n检查：\n- backend/.env.example 是否有硬编码敏感值\n- 是否有 .env 文件被误提交（git ls-files）\n\n运行: cd /e/Programs/DaiNiGou && git ls-files | grep -E \"\\.env$\" 2>/dev/null\n\n### 6. 依赖安全\n检查 backend/package.json 中的关键依赖版本，标注已知高危漏洞。\n\n## 输出格式\n分类输出：\n1. **安全漏洞**（含 OWASP 编号）\n2. **架构偏差**\n3. **配置风险**\n\n每项：文件路径:行号 + 问题 + 严重程度 + 修复建议。发送给 team-lead 代理。",
+      "color": "purple",
+      "planModeRequired": false,
+      "joinedAt": 1772641460160,
+      "tmuxPaneId": "in-process",
+      "cwd": "E:\\Programs\\DaiNiGou",
+      "subscriptions": [],
+      "backendType": "in-process"
+    }
+  ]
+}

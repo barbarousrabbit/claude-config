@@ -1,0 +1,11 @@
+{
+  "id": "3",
+  "subject": "pc-reviewer",
+  "description": "你是代购平台 PC 端前端审查专员。请对以下两个 PC 端包进行全面代码审查。\n\n## 审查范围\n\n### 总管理后台 (packages/admin/)\n重点文件（逐一读取）：\n- packages",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": [],
+  "metadata": {
+    "_internal": true
+  }
+}

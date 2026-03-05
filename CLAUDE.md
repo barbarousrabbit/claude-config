@@ -84,6 +84,7 @@ Rationalizing "this is simple" or "I know this already" = red flag, check the sk
 | | Color / brand palette | `color-palette` |
 | | Next.js (App Router, SSR/SSG) | `nextjs-pro` |
 | | WeChat mini-program / Taro / 小程序 / rpx / wx.* API | `taro-miniprogram` |
+| | 小程序 UI / SCSS 样式 / NutUI 主题 / 电商页面布局 | `taro-miniprogram-ui` |
 | | Complex React artifacts | `web-artifacts-builder` |
 | | Accessibility audit | `claude-a11y` |
 | | Responsive layout test | `responsiveness-check` |
@@ -127,7 +128,7 @@ Rationalizing "this is simple" or "I know this already" = red flag, check the sk
 - **New feature**: `/brainstorming` → `/writing-plans` → `/test-driven-development` → `/executing-plans` → `/requesting-code-review`
 - **Web UI**: `ui-ux-pro-max` → `tailwind-theme-builder` → `shadcn-ui` → `frontend-design` → `responsiveness-check` → `ux-audit`
 - **Next.js**: `nextjs-pro` → `tailwind-theme-builder` → `shadcn-ui` → `claude-a11y` → `responsiveness-check`
-- **WeChat mini-program**: `taro-miniprogram` + `typescript-pro` → `test-master` → `/verification-before-completion`
+- **WeChat mini-program**: `taro-miniprogram` + `taro-miniprogram-ui` + `typescript-pro` → `test-master` → `/verification-before-completion`
 - **Data report**: `csv-data-summarizer` → `exploratory-data-analysis` → `plotly`/`matplotlib` → `pdf` or `docx`
 - **Debug**: `/systematic-debugging` → `debugging-wizard` → fix → `/verification-before-completion`
 - **Release**: `conventional-commits` → `/verification-before-completion` → `changelog-generator`
