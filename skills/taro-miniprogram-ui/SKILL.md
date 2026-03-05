@@ -496,3 +496,128 @@ import { Button, Cell, Popup } from '@nutui/nutui-react'
 - [ ] 加载态使用骨架屏（`@include skeleton-shimmer`）
 - [ ] BEM 命名一致
 - [ ] NutUI 从 `@nutui/nutui-react-taro` 导入（非 Web 版）
+- [ ] 划线原价颜色 ≥ `#888b94`（确保对比度 ≥ 3.5:1，不要用 `#999`）
+
+---
+
+## 11. 组件标准尺寸（rpx 参考）
+
+基于微信设计规范和主流电商小程序的实测值：
+
+| 组件 | 高度 | 说明 |
+|------|------|------|
+| 自定义导航栏（内容区） | 88rpx | 不含状态栏 |
+| 底部 TabBar | 98rpx | 标准微信 TabBar |
+| 搜索栏 | 64-72rpx | 胶囊圆角 `$radius-round` |
+| 列表项（单行） | 88-96rpx | 含 24rpx 上下内边距 |
+| 列表项（双行） | 128-136rpx | 标题 + 副标题 |
+| 底部操作栏 | 100rpx | 不含安全区 |
+| 主按钮（全宽） | 88rpx | `$radius-round` 圆角 |
+| 商品卡片图片区 | 340rpx | `overflow: hidden` |
+| 商品图片宽高比 | 1:1 | 标准商品网格 |
+| 页面水平内边距 | 24-32rpx | 标准页面 padding |
+| 双列商品卡间距 | 16rpx | `$spacing-base` / 2 |
+
+---
+
+## 12. 对比度与可读性（WCAG AA）
+
+> ⚠️ **对比度规则**（必须执行）：文字对比度必须满足 WCAG AA 标准。
+> 发现不满足时必须主动调整色值并说明原因。
+
+| 文字类型 | 最低对比度 | 项目中的安全色值 |
+|----------|-----------|-----------------|
+| 正文（< 32rpx） | 4.5:1 | `$color-text`（#3d2e28）→ 白底 12:1 |
+| 次级文字 | 4.5:1 | `$color-text-secondary`（#7a6b64）→ 白底 4.8:1 |
+| 辅助文字（≥ 32rpx） | 3:1 | `$color-text-light`（#a0948e）→ 白底 3.2:1 |
+| 占位符（禁用态） | 不强制 | `$color-text-placeholder`（#c4b8b2）→ 1.9:1 |
+| 价格红字 | 4.5:1 | `$color-price`（#f5222d）→ 白底 4.6:1 |
+| 白字在暗角遮罩上 | 4.5:1 | 白色 → rgba(30,15,8,0.65) ≈ 7:1 |
+
+**注意：** `$color-text-light` 仅用于 ≥ 32rpx 的大号辅助文字，小号文字必须用 `$color-text-secondary` 或更深。
+
+---
+
+## 13. 电商 UI 高频模式速查
+
+### 价格区块
+
+```scss
+.price-block {
+  background: $gradient-price-bg;  // 极轻暖底
+  border-radius: $radius-base;
+  padding: $spacing-sm $spacing-base;
+
+  &__current {
+    @include price-text($font-size-hero);  // ¥ 用 $font-size-sm
+  }
+  &__original {
+    font-size: $font-size-sm;
+    color: $color-text-light;  // ≥ 32rpx 场景
+    text-decoration: line-through;
+  }
+  &__discount {
+    display: inline-flex;
+    background: rgba(245, 34, 45, 0.10);
+    color: $color-price;
+    font-size: $font-size-xs;
+    padding: 2rpx $spacing-xs;
+    border-radius: $radius-xs;
+  }
+}
+```
+
+### 订单状态步骤条
+
+```scss
+.order-steps {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-base;
+
+  &__step {
+    text-align: center;
+    color: $color-text-placeholder;  // 未来步骤
+    font-size: $font-size-xs;
+
+    &--active {
+      color: $color-primary;
+      font-weight: 600;
+    }
+    &--done {
+      color: $color-success;
+    }
+  }
+}
+```
+
+### 空状态
+
+```scss
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-2xl $spacing-lg;
+
+  &__icon {
+    width: 200rpx;
+    height: 200rpx;
+    margin-bottom: $spacing-md;
+  }
+  &__title {
+    font-size: $font-size-lg;
+    color: $color-text;
+    margin-bottom: $spacing-xs;
+  }
+  &__desc {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    margin-bottom: $spacing-md;
+  }
+  &__action {
+    @include gradient-btn;
+    padding: $spacing-xs $spacing-lg;
+    font-size: $font-size-base;
+  }
+}
