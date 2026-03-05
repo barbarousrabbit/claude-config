@@ -5,7 +5,7 @@
       "repo": "anthropics/claude-plugins-official"
     },
     "installLocation": "C:\\Users\\Xuyu Zhang\\.claude\\plugins\\marketplaces\\claude-plugins-official",
-    "lastUpdated": "2026-03-05T11:46:53.961Z"
+    "lastUpdated": "2026-03-05T15:48:32.876Z"
   },
   "superpowers-marketplace": {
     "source": {
@@ -13,7 +13,7 @@
       "repo": "obra/superpowers-marketplace"
     },
     "installLocation": "C:\\Users\\Xuyu Zhang\\.claude\\plugins\\marketplaces\\superpowers-marketplace",
-    "lastUpdated": "2026-03-05T11:46:56.713Z"
+    "lastUpdated": "2026-03-05T15:48:35.712Z"
   },
   "anthropic-agent-skills": {
     "source": {
@@ -21,6 +21,6 @@
       "repo": "anthropics/skills"
     },
     "installLocation": "C:\\Users\\Xuyu Zhang\\.claude\\plugins\\marketplaces\\anthropic-agent-skills",
-    "lastUpdated": "2026-03-05T11:47:00.877Z"
+    "lastUpdated": "2026-03-05T15:48:43.706Z"
   }
 }
