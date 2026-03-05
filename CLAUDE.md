@@ -40,19 +40,27 @@
 | `/user:summarize <file>` | Summarize file in Chinese with key points |
 | `/user:debug <error>` | Step-by-step debugging with root cause analysis |
 
-### Agent Teams
-- Enabled via `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS`
-- Use for large tasks with 3+ independent workstreams
-- Each agent gets its own context window — use for parallel heavy work
-- For simpler parallel tasks (2 quick searches), use subagents instead
+### Agent Teams — MANDATORY for Parallel Work
+
+| 场景 | 方式 |
+|------|------|
+| 3+ 个独立任务流（研究/实现/测试可并行） | **TeamCreate + 多 Agent**（MUST） |
+| 2 个独立任务（快速搜索/读文件） | Agent tool 并行 subagent |
+| 单一顺序任务 | 直接执行，无需 team |
+
+- 已通过 `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=true` 全局开启，无需手动设置
+- Agent team 有独立 context window，适合耗时的并行重任务
+- 宁可多开 team 也不要让用户等待串行执行
 
 ### Hooks (auto-running, no action needed)
 - **SessionStart**: git pull config sync + claude-reflect reminder
 - **UserPromptSubmit**: claude-reflect learning capture
 
-## Skill Usage — MANDATORY
+## Skill Usage — MANDATORY（违反即为错误）
 
-ALWAYS check for applicable skills BEFORE responding. Even 1% match → invoke first.
+ALWAYS invoke relevant skills BEFORE any response or action — even for clarifying questions.
+Even 1% chance a skill applies → invoke first, no exceptions.
+Rationalizing "this is simple" or "I know this already" = red flag, check the skill anyway.
 
 ### Skill Routing Table
 
