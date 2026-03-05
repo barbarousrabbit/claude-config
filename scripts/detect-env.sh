@@ -9,7 +9,7 @@ ENV_FILE="$CLAUDE_DIR/local-env.sh"
 # ── 探测 Python ──────────────────────────────────────────────
 # 优先选有 pip 安装包的 Python（跳过 Windows Store 空壳）
 PYTHON_CMD=""
-for candidate in python "/c/Python313/python" python3 "/usr/bin/python3" "/usr/local/bin/python3"; do
+for candidate in python py python3; do
     if command -v "$candidate" &>/dev/null 2>&1; then
         # 验证 Python 3.8+ 且能正常导入包（非 Windows Store 空壳）
         if "$candidate" -c "import sys, pathlib; assert sys.version_info >= (3,8)" &>/dev/null 2>&1; then

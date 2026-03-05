@@ -17,7 +17,7 @@ fi
 
 # 2. 如果没有，重新探测
 if [ -z "$CLAUDE_PYTHON" ] || ! command -v "$CLAUDE_PYTHON" &>/dev/null 2>&1; then
-    for candidate in python python3 "/c/Python313/python" "/usr/bin/python3"; do
+    for candidate in python py python3; do
         if command -v "$candidate" &>/dev/null 2>&1; then
             if "$candidate" -c "import sys; assert sys.version_info >= (3,8)" &>/dev/null 2>&1; then
                 CLAUDE_PYTHON="$candidate"

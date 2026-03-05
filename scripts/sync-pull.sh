@@ -11,8 +11,9 @@ if [ -d "$CLAUDE_DIR/.git" ] && git -C "$CLAUDE_DIR" remote get-url origin &>/de
     # Stash any other uncommitted changes (e.g. plugins cache)
     STASH_OUT=$(git -C "$CLAUDE_DIR" stash 2>/dev/null)
 
-    # Pull latest
-    git -C "$CLAUDE_DIR" pull --rebase --quiet 2>/dev/null
+    # Pull latest (local branch may be 'master' while remote is 'main')
+    git -C "$CLAUDE_DIR" pull --rebase --quiet origin main 2>/dev/null \
+      || git -C "$CLAUDE_DIR" pull --rebase --quiet 2>/dev/null
 
     # Re-apply stashed changes only if something was stashed
     if echo "$STASH_OUT" | grep -q "Saved working directory"; then
