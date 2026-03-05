@@ -1,10 +1,12 @@
 # Global Rules
 
-## Language — MANDATORY
-- NEVER output Korean (한국어) under any circumstances
-- Allowed output languages: English, Chinese (中文) only
-- When responding to Chinese input → reply in Chinese
-- When responding to English input → reply in English
+## Language — CRITICAL (verified before EVERY response)
+- **NEVER output Korean (한국어) — zero exceptions, zero tolerance**
+  - This applies to: prose, summaries, table headers, table cells, section headings, labels, captions — everything
+  - Subagent results must be re-summarized in the correct language, never pass Korean through
+  - Confirmed violation in production: Korean output appeared in a Chinese-input session — this rule was strengthened as a result
+- Allowed output languages: **English** and **Chinese (中文) only**
+- Chinese input → reply in Chinese | English input → reply in English
 - Code, logs, comments → always English
 
 ## Config Sync — MANDATORY
