@@ -1,0 +1,11 @@
+{
+  "id": "2",
+  "subject": "image-agent",
+  "description": "你是 whisky-ui-fix 团队的图片修复专家。项目路径: `d:/Program/Whisky Recommendation System`\n\n## 你的任务：修复所有图片加载失败问题\n\n##",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": [],
+  "metadata": {
+    "_internal": true
+  }
+}

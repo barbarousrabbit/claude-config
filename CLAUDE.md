@@ -79,10 +79,10 @@ Rationalizing "this is simple" or "I know this already" = red flag, check the sk
 | | Go (.go) | `golang-pro` |
 | | Rust (.rs) | `rust-engineer` |
 | | SQL / schema design | `sql-pro` + `database-optimizer` |
-| **Frontend** | Web UI / components / pages | `frontend-design` + `ui-ux-pro-max` |
-| | Tailwind + theming | `tailwind-theme-builder` → `shadcn-ui` |
+| **Frontend** | Web UI / components / pages | `web-design-guidelines` → `frontend-design` + `ui-ux-pro-max` |
+| | Tailwind + theming | `tailwind-design-system` → `tailwind-theme-builder` → `shadcn-ui` |
 | | Color / brand palette | `color-palette` |
-| | Next.js (App Router, SSR/SSG) | `nextjs-pro` |
+| | Next.js (App Router, SSR/SSG) | `nextjs-pro` + `next-best-practices` |
 | | WeChat mini-program / Taro / 小程序 / rpx / wx.* API | `taro-miniprogram` |
 | | 小程序 UI / SCSS 样式 / NutUI 主题 / 电商页面布局 | `taro-miniprogram-ui` |
 | | Complex React artifacts | `web-artifacts-builder` |
@@ -108,13 +108,26 @@ Rationalizing "this is simple" or "I know this already" = red flag, check the sk
 | | Markdown → EPUB | `markdown-to-epub` |
 | **Quality** | Code review / PR | `code-reviewer` |
 | | Security audit | `security-reviewer` |
-| | Write tests | `test-master` + `/test-driven-development` |
+| | Write tests | `test-master` + `test-driven-development` |
 | | Browser automation test | `webapp-testing` |
 | | Docstrings / API docs | `code-documenter` |
 | **DevOps** | CI/CD / Docker / K8s | `devops-engineer` |
 | | System architecture | `architecture-designer` |
 | | API design (REST/GraphQL) | `api-designer` |
 | | MCP server | `mcp-builder` |
+| **Writing** | 小红书/Blog/技术文档/工作汇报文案 | `copywriting` |
+| | 内容选题与持续排期规划 | `content-strategy` |
+| | 初稿完成后精修，七遍打磨 | `copy-editing` |
+| **Vibe Coding** | React 最佳实践 (Vercel 官方封装) | `vercel-react-best-practices` |
+| | React 组件组合模式，避免写着变臃肿 | `vercel-composition-patterns` |
+| | Next.js 路由/缓存/RSC 坑绕过 | `next-best-practices` |
+| | 用户认证：OAuth/验证码/密钥登录 | `better-auth-best-practices` |
+| | Supabase + PostgreSQL 查询优化/安全 | `supabase-postgres-best-practices` |
+| | React Native + Expo 性能优化/列表流畅 | `vercel-react-native-skills` |
+| | Expo 原生 UI：标签栏/手势/动画 | `building-native-ui` |
+| | 用代码制作视频和动画 (Remotion) | `remotion-best-practices` |
+| | Web 设计规范，去除 AI 廉价感 | `web-design-guidelines` |
+| | Tailwind CSS 设计系统规范 | `tailwind-design-system` |
 | **Research** | Recent trends (last 30 days) | `last30days` |
 | | Create new skill | `skill-creator` |
 | | i18n / localization | `i18n-expert` |
@@ -125,14 +138,42 @@ Rationalizing "this is simple" or "I know this already" = red flag, check the sk
 
 ### Skill Chaining Patterns
 
-- **New feature**: `/brainstorming` → `/writing-plans` → `/test-driven-development` → `/executing-plans` → `/requesting-code-review`
-- **Web UI**: `ui-ux-pro-max` → `tailwind-theme-builder` → `shadcn-ui` → `frontend-design` → `responsiveness-check` → `ux-audit`
-- **Next.js**: `nextjs-pro` → `tailwind-theme-builder` → `shadcn-ui` → `claude-a11y` → `responsiveness-check`
-- **WeChat mini-program**: `taro-miniprogram` + `taro-miniprogram-ui` + `typescript-pro` → `test-master` → `/verification-before-completion`
+- **New feature**: `brainstorming` → `writing-plans` → `test-driven-development` → `executing-plans` → `code-reviewer`
+- **Content writing**: `brainstorming` → `writing-plans` → `copywriting` → `copy-editing`
+- **Content planning**: `content-strategy` → `writing-plans` → `copywriting` → `copy-editing`
+- **Web UI**: `web-design-guidelines` → `ui-ux-pro-max` → `tailwind-design-system` → `frontend-design` → `responsiveness-check` → `ux-audit`
+- **React app**: `vercel-react-best-practices` + `vercel-composition-patterns` → `web-design-guidelines` → `frontend-design` → `webapp-testing`
+- **Next.js full-stack**: `next-best-practices` → `better-auth-best-practices` → `supabase-postgres-best-practices` → `webapp-testing`
+- **React Native**: `vercel-react-native-skills` → `building-native-ui` → `webapp-testing`
+- **WeChat mini-program**: `taro-miniprogram` + `taro-miniprogram-ui` + `typescript-pro` → `test-master`
 - **Data report**: `csv-data-summarizer` → `exploratory-data-analysis` → `plotly`/`matplotlib` → `pdf` or `docx`
-- **Debug**: `/systematic-debugging` → `debugging-wizard` → fix → `/verification-before-completion`
-- **Release**: `conventional-commits` → `/verification-before-completion` → `changelog-generator`
+- **Debug**: `systematic-debugging` → `debugging-wizard` → fix → `code-reviewer`
+- **Release**: `conventional-commits` → `changelog-generator`
 - **Prompt crafting**: `prompt-architect` → `prompt-templates` → `prompt-engineering`
+- **Video/animation**: `remotion-best-practices` → `vercel-react-best-practices`
+
+### Skill Usage Notes — 如何更好运用新 Skills
+
+**写作类（Writing）**
+- `copywriting`：给方向（受众/平台/目的）→ skill 帮你搭结构、优化节奏；适合从0到1
+- `content-strategy`：先跑一遍规划排期，再写；防止选题枯竭
+- `copy-editing`：初稿完成后单独调用，不要边写边改；六遍以上迭代才有效
+
+**Vibe Coding — React 生态**
+- `vercel-react-best-practices`：新项目必装，确保代码从第一行就符合 Vercel 规范
+- `vercel-composition-patterns`：与 best-practices 配合，专治组件写着写着变臃肿
+- `next-best-practices`：Next.js 专用，路由/缓存/RSC 三大坑；`nextjs-pro` 侧重语法，此 skill 侧重架构决策
+- `better-auth-best-practices`：凡涉及登录/注册/权限，第一个装；比自己查文档快 10 倍
+- `supabase-postgres-best-practices`：Supabase 项目必装，查询优化 + RLS 安全策略一次到位
+
+**Vibe Coding — Mobile / Media**
+- `vercel-react-native-skills`：列表卡顿、动画掉帧必调用；Expo 项目从项目初始化就装
+- `building-native-ui`：做原生感 UI（标签栏/手势/过渡动画），不装就只有 Web 感
+- `remotion-best-practices`：代码驱动视频，适合数据可视化视频、产品演示
+
+**设计类**
+- `web-design-guidelines`：所有 Web 项目开始前先读一遍；去除 AI 廉价感的核心是间距/层次/克制
+- `tailwind-design-system`：与 `tailwind-theme-builder` 的分工：前者管设计 token 规范，后者管 shadcn 安装配置
 
 ## New Project Onboarding
 

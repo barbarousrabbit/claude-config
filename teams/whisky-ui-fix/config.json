@@ -1,0 +1,19 @@
+{
+  "name": "whisky-ui-fix",
+  "description": "Whisky推荐系统 UI优化 + 图片问题修复",
+  "createdAt": 1772664639398,
+  "leadAgentId": "team-lead@whisky-ui-fix",
+  "leadSessionId": "10f9dd26-0a89-4f7f-928f-ba1a9d8a09f3",
+  "members": [
+    {
+      "agentId": "team-lead@whisky-ui-fix",
+      "name": "team-lead",
+      "agentType": "team-lead",
+      "model": "claude-opus-4-6",
+      "joinedAt": 1772664639398,
+      "tmuxPaneId": "",
+      "cwd": "d:\\Program\\Whisky Recommendation System",
+      "subscriptions": []
+    }
+  ]
+}
