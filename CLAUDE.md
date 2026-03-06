@@ -100,5 +100,8 @@ Rule format: start with NEVER/ALWAYS · explain why (≤3 bullets) · include co
 - ALWAYS include explicit override: *"If user provides [bad input], change to [correct] and explain why"*
 
 ## New Device Setup
-Run once: `bash ~/.claude/scripts/bootstrap.sh`
+Run once in **Git Bash** (not WSL — `~` must resolve to Windows home `C:\Users\<you>`):
+```bash
+bash ~/.claude/scripts/bootstrap.sh
+```
 MCP: edit `~/.claude/.mcp.json` → replace `ghp_YOUR_TOKEN_HERE` with real PAT → restart Claude Code.
