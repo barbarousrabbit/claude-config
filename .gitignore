@@ -1,12 +1,12 @@
-# === 敏感信息 - 绝对不要同步 ===
+# === Sensitive — never sync ===
 .credentials.json
 settings.local.json
 .mcp.json
 
-# === 机器专属配置 - 每台设备自动生成 ===
+# === Machine-specific — auto-generated per device ===
 local-env.sh
 
-# === 机器相关缓存 - 每台机器自动生成 ===
+# === Machine-local caches — auto-generated ===
 projects/
 session-env/
 telemetry/
@@ -18,11 +18,11 @@ todos/
 backups/
 plans/
 
-# === 插件缓存 - 会自动下载 ===
+# === Plugin caches — auto-downloaded ===
 plugins/cache/
 plugins/marketplaces/
 plugins/install-counts-cache.json
 
-# === 临时文件 ===
+# === Temporary files ===
 *.jsonl
 mcp-needs-auth-cache.json

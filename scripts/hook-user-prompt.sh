@@ -1,5 +1,5 @@
 #!/bin/bash
-# UserPromptSubmit hook wrapper — 跨设备兼容
+# UserPromptSubmit hook wrapper
 CLAUDE_DIR="$HOME/.claude"
 
 bash "$CLAUDE_DIR/scripts/run-python.sh" \

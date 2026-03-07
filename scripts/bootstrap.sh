@@ -1,7 +1,7 @@
 #!/bin/bash
 # =============================================================
-# Claude Config Bootstrap — 新设备一次性初始化脚本
-# 用法: bash ~/.claude/scripts/bootstrap.sh
+# Claude Config Bootstrap — One-time setup for new Windows device
+# Usage: bash ~/.claude/scripts/bootstrap.sh
 # =============================================================
 set -e
 
@@ -11,7 +11,7 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-ok()   { echo -e "${GREEN}[✓]${NC} $1"; }
+ok()   { echo -e "${GREEN}[OK]${NC} $1"; }
 warn() { echo -e "${YELLOW}[!]${NC} $1"; }
 info() { echo -e "    $1"; }
 
@@ -21,80 +21,80 @@ echo "   Claude Config — New Device Bootstrap"
 echo "============================================"
 echo ""
 
-# ── 0. 探测设备环境 ──────────────────────────────────────────
-echo "→ 探测设备环境..."
+# -- 0. Detect device environment --
+echo "-> Detecting environment..."
 bash "$CLAUDE_DIR/scripts/detect-env.sh"
 source "$CLAUDE_DIR/local-env.sh" 2>/dev/null || true
-ok "环境探测完成 (Python=${CLAUDE_PYTHON}, OS=${CLAUDE_OS})"
+ok "Environment detected (Python=${CLAUDE_PYTHON}, OS=${CLAUDE_OS})"
 
-# ── 1. Git 分支跟踪 ──────────────────────────────────────────
-echo "→ 配置 git 跟踪..."
+# -- 1. Git branch tracking --
+echo "-> Configuring git tracking..."
 cd "$CLAUDE_DIR"
 if ! git rev-parse --abbrev-ref --symbolic-full-name @{u} &>/dev/null 2>&1; then
     git branch --set-upstream-to=origin/main master 2>/dev/null || \
     git branch --set-upstream-to=origin/main main 2>/dev/null || true
 fi
-ok "Git 跟踪已配置"
+ok "Git tracking configured"
 
-# ── 2. Python 依赖 ────────────────────────────────────────────
-echo "→ 安装 Python skill 依赖..."
+# -- 2. Python dependencies --
+echo "-> Installing Python skill dependencies..."
 if [ -n "$CLAUDE_PIP" ] && command -v "$CLAUDE_PIP" &>/dev/null; then
-    "$CLAUDE_PIP" install -q -r "$CLAUDE_DIR/skills/requirements.txt" 2>/dev/null && ok "Python 依赖安装完成" || warn "部分 Python 依赖安装失败，可手动运行: ${CLAUDE_PIP} install -r ~/.claude/skills/requirements.txt"
+    "$CLAUDE_PIP" install -q -r "$CLAUDE_DIR/skills/requirements.txt" 2>/dev/null && ok "Python dependencies installed" || warn "Some Python deps failed. Run manually: ${CLAUDE_PIP} install -r ~/.claude/skills/requirements.txt"
 else
-    warn "未找到 pip，跳过 Python 依赖安装"
+    warn "pip not found, skipping Python dependency install"
 fi
 
-# ── 3. Node / npx 检测 ───────────────────────────────────────
-echo "→ 检测 Node.js..."
+# -- 3. Node.js / npx check --
+echo "-> Checking Node.js..."
 if command -v node &>/dev/null; then
-    ok "Node.js $(node --version) 已安装"
+    ok "Node.js $(node --version) installed"
 else
-    warn "未找到 Node.js — 部分 skill 需要 npx，建议安装 https://nodejs.org"
+    warn "Node.js not found — some MCP servers need npx. Install from https://nodejs.org"
 fi
 
-# ── 4. GitHub CLI 检测 ────────────────────────────────────────
-echo "→ 检测 GitHub CLI..."
+# -- 4. GitHub CLI check --
+echo "-> Checking GitHub CLI..."
 if command -v gh &>/dev/null; then
     if gh auth status &>/dev/null 2>&1; then
-        ok "gh CLI 已认证"
+        ok "gh CLI authenticated"
     else
-        warn "gh CLI 已安装但未登录，请运行: gh auth login"
+        warn "gh CLI installed but not logged in. Run: gh auth login"
     fi
 else
-    warn "未找到 gh CLI — 建议安装 https://cli.github.com"
+    warn "gh CLI not found — install from https://cli.github.com"
 fi
 
-# ── 5. MCP 配置 ───────────────────────────────────────────────
-echo "→ 检测 MCP 配置..."
+# -- 5. MCP config --
+echo "-> Checking MCP config..."
 MCP_TARGET="$HOME/.claude/.mcp.json"
 MCP_EXAMPLE="$CLAUDE_DIR/.mcp.json.example"
 
 if [ -f "$MCP_TARGET" ]; then
-    ok "MCP 配置已存在: $MCP_TARGET"
+    ok "MCP config exists: $MCP_TARGET"
 else
     if [ -f "$MCP_EXAMPLE" ]; then
         cp "$MCP_EXAMPLE" "$MCP_TARGET"
-        warn "已从模板创建 MCP 配置: $MCP_TARGET"
-        info "请编辑该文件，填入你的 API Token："
+        warn "MCP config created from template: $MCP_TARGET"
+        info "Edit the file and fill in your API tokens:"
         info "  GitHub Token: https://github.com/settings/tokens"
     else
-        warn "未找到 MCP 模板文件"
+        warn "MCP template file not found"
     fi
 fi
 
-# ── 6. 检测 uv (推荐 Python 包管理) ──────────────────────────
+# -- 6. uv (optional faster pip) --
 if ! command -v uv &>/dev/null; then
-    warn "未找到 uv (更快的 pip 替代)，可选安装: pip install uv"
+    warn "uv not found (faster pip alternative). Optional: pip install uv"
 fi
 
-# ── 完成 ──────────────────────────────────────────────────────
+# -- Done --
 echo ""
 echo "============================================"
-ok "Bootstrap 完成！"
+ok "Bootstrap complete!"
 echo ""
-echo "下一步（如有未完成项）："
-echo "  1. 编辑 ~/.claude/.mcp.json 填入 API Token"
-echo "  2. 运行 gh auth login 登录 GitHub CLI"
-echo "  3. 重启 Claude Code 使配置生效"
+echo "Next steps (if any items above show [!]):"
+echo "  1. Edit ~/.claude/.mcp.json and fill in API tokens"
+echo "  2. Run 'gh auth login' to authenticate GitHub CLI"
+echo "  3. Restart Claude Code for changes to take effect"
 echo "============================================"
 echo ""

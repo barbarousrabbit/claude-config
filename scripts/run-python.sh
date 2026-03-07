@@ -1,21 +1,21 @@
 #!/bin/bash
 # =============================================================
-# run-python.sh — 跨设备 Python 启动器
-# 用法: bash run-python.sh <script.py> [args...]
-# 优先使用 local-env.sh 中探测到的 Python，否则自动回退
+# run-python.sh — Cross-device Python launcher
+# Usage: bash run-python.sh <script.py> [args...]
+# Prefers the Python detected in local-env.sh, falls back to auto-detect
 # =============================================================
 SCRIPT="$1"
 shift
 
 ENV_FILE="$HOME/.claude/local-env.sh"
 
-# 1. 优先从 local-env.sh 读取探测结果
+# 1. Load detected Python from local-env.sh
 if [ -f "$ENV_FILE" ]; then
     # shellcheck source=/dev/null
     source "$ENV_FILE"
 fi
 
-# 2. 如果没有，重新探测
+# 2. If not set, re-detect
 if [ -z "$CLAUDE_PYTHON" ] || ! command -v "$CLAUDE_PYTHON" &>/dev/null 2>&1; then
     for candidate in python py python3; do
         if command -v "$candidate" &>/dev/null 2>&1; then
@@ -27,11 +27,11 @@ if [ -z "$CLAUDE_PYTHON" ] || ! command -v "$CLAUDE_PYTHON" &>/dev/null 2>&1; th
     done
 fi
 
-# 3. 找不到就退出 0（不阻塞 Claude）
+# 3. If still not found, exit 0 (don't block Claude)
 if [ -z "$CLAUDE_PYTHON" ]; then
     echo "[run-python] WARNING: No Python 3.8+ found, skipping ${SCRIPT}" >&2
     exit 0
 fi
 
-# 4. 执行
+# 4. Execute
 exec "$CLAUDE_PYTHON" "$SCRIPT" "$@"
