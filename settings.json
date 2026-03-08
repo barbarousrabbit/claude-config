@@ -37,6 +37,10 @@
           {
             "type": "command",
             "command": "python3 \"C:/Users/Zhang/.claude/skills/claude-reflect/scripts/capture_learning.py\""
+          },
+          {
+            "type": "command",
+            "command": "bash \"C:/Users/Zhang/.claude/skills/claudeception/scripts/claudeception-activator.sh\""
           }
         ]
       }
