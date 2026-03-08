@@ -17,7 +17,12 @@ End of session: if any `~/.claude/` file changed → `cd ~/.claude && git add -A
 | `sequential-thinking` | Complex multi-step analysis |
 | `github` | PRs, issues, repo search |
 
-**Agent Teams** — 3+ parallel tasks → `TeamCreate`; 2 tasks → parallel subagents; single → direct.
+**Agent Teams** — Default to `TeamCreate` for non-trivial tasks. Trigger on ANY of:
+- Task touches 3+ files OR spans 2+ tech domains (frontend/backend/DB/infra/tests)
+- Task has independent subtasks that can run in parallel (research + implement, frontend + backend, etc.)
+- User says "implement", "build", "refactor", "review", "add feature" — if scope is unclear, assume team-worthy
+- Single long task but benefits from a dedicated worker (e.g., writing tests while main agent codes)
+Only go direct for: single-file edits, quick lookups, trivial one-liners.
 **Hooks** (auto): SessionStart = git pull + session reminder; UserPromptSubmit = learning capture + claudeception evaluation.
 **Custom commands**: `/user:explain` · `/user:debug` · `/user:summarize` · `/user:check-assignment`
 **Scope**: project `.claude/CLAUDE.md` overrides global rules.
