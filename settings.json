@@ -40,7 +40,7 @@
           },
           {
             "type": "command",
-            "command": "bash \"C:/Users/Zhang/.claude/skills/claudeception/scripts/claudeception-activator.sh\""
+            "command": "bash \"C:/Users/Zhang/.claude/scripts/claudeception-activator.sh\""
           }
         ]
       }
