@@ -18,7 +18,7 @@ End of session: if any `~/.claude/` file changed → `cd ~/.claude && git add -A
 | `github` | PRs, issues, repo search |
 
 **Agent Teams** — 3+ parallel tasks → `TeamCreate`; 2 tasks → parallel subagents; single → direct.
-**Hooks** (auto): SessionStart = git pull; UserPromptSubmit = learning capture.
+**Hooks** (auto): SessionStart = git pull + session reminder; UserPromptSubmit = learning capture + claudeception evaluation.
 **Custom commands**: `/user:explain` · `/user:debug` · `/user:summarize` · `/user:check-assignment`
 **Scope**: project `.claude/CLAUDE.md` overrides global rules.
 
@@ -48,7 +48,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | edits .go / goroutines / Go modules | `golang-pro` |
 | | edits .rs / Cargo / ownership / lifetimes | `rust-engineer` |
 | | writes SQL / slow query / schema design / indexing | `sql-pro` + `database-optimizer` |
-| **Frontend** | builds web pages / React components / CSS layout | `web-design-guidelines` → `frontend-design` + `ui-ux-pro-max` |
+| **Frontend** | builds web pages / React components / CSS layout | `web-design-guidelines` → `frontend-design` + `ui-ux-pro-max` + `interface-design` |
+| | implements dashboard / admin panel / tool UI | `interface-design` + `frontend-patterns` + `senior-frontend` |
 | | configures Tailwind / design tokens / theme CSS | `tailwind-design-system` → `tailwind-theme-builder` → `shadcn-ui` |
 | | needs brand palette / color generation | `color-palette` |
 | | works with Next.js / app router / SSR / server actions | `nextjs-pro` + `next-best-practices` |
@@ -78,6 +79,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | handles i18n / translations / locale setup | `i18n-expert` |
 | | crafts prompts / system messages / agent flows | `prompt-architect` → `prompt-templates` → `prompt-engineering` |
 | | creates / improves a custom skill | `skill-creator` |
+| | completes non-trivial debugging / wants to extract reusable knowledge | `claudeception` |
 
 ## Project Onboarding
 New project: scan stack → match routing table → write `.claude/CLAUDE.md` (applicable skills + conventions).
