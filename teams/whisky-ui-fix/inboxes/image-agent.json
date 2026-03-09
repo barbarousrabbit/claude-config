@@ -1,8 +1,0 @@
-[
-  {
-    "from": "team-lead",
-    "text": "{\"type\":\"shutdown_request\",\"requestId\":\"shutdown-1772665187339@image-agent\",\"from\":\"team-lead\",\"reason\":\"Work is complete. Please shut down.\",\"timestamp\":\"2026-03-04T22:59:47.339Z\"}",
-    "timestamp": "2026-03-04T22:59:47.339Z",
-    "read": true
-  }
-]

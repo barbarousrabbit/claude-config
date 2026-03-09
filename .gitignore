@@ -17,6 +17,16 @@ shell-snapshots/
 todos/
 backups/
 plans/
+tasks/
+teams/
+
+# === Runtime state — session-specific, not for sync ===
+learnings-queue.json
+plugins/installed_plugins.json
+skills/docx/scripts/office/helpers/__pycache__/
+skills/docx/scripts/office/validators/__pycache__/
+**/__pycache__/
+*.pyc
 
 # === Plugin caches — auto-downloaded ===
 plugins/cache/
