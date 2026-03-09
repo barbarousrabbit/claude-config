@@ -40,10 +40,15 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 |----------|-------------|----------|
 | **Workflow** | brainstorms feature ideas / asks "how to design" | `brainstorming` → `writing-plans` |
 | | has a clear plan, implementation touches 3+ files | `writing-plans` → `executing-plans` |
+| | 2+ independent subtasks / wants parallel execution | `dispatching-parallel-agents` |
 | | hits error / stack trace / test failure / "why is this broken" | `systematic-debugging` |
-| | says "review" / PR ready / wants code feedback | `code-reviewer` |
+| | says "review" / PR ready / wants code feedback | `requesting-code-review` → `code-reviewer` |
+| | receives code review feedback / applying suggestions | `receiving-code-review` |
 | | ready to commit / asks for commit message | `conventional-commits` |
 | | asks for release notes / changelog / version bump | `changelog-generator` |
+| | feature complete / ready to merge branch | `finishing-a-development-branch` |
+| | about to say "done" / mark task complete | `verification-before-completion` |
+| | needs isolated workspace for feature development | `using-git-worktrees` |
 | **Writing** | asks to write blog / doc / report / copy | write directly (no dedicated skill installed) |
 | | plans content calendar / post schedule | write directly (no dedicated skill installed) |
 | | says "polish" / refine existing draft | write directly (no dedicated skill installed) |
@@ -83,7 +88,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | **Research** | asks about recent trends / last 30 days | `last30days` |
 | | handles i18n / translations / locale setup | `i18n-expert` |
 | | crafts prompts / system messages / agent flows | `prompt-architect` → `prompt-templates` → `prompt-engineering` |
-| | creates / improves a custom skill | `skill-creator` |
+| | creates / improves a custom skill | `skill-creator` + `writing-skills` |
 | | completes non-trivial debugging / wants to extract reusable knowledge | `claudeception` |
 
 ## Project Onboarding
