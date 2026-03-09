@@ -38,9 +38,9 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 
 | Category | When user... | Skill(s) |
 |----------|-------------|----------|
-| **Workflow** | brainstorms feature ideas / asks "how to design" | `architecture-designer` + `api-designer` |
-| | has a clear plan, implementation touches 3+ files | use `TeamCreate` to parallelize |
-| | hits error / stack trace / test failure / "why is this broken" | `debugging-wizard` |
+| **Workflow** | brainstorms feature ideas / asks "how to design" | `brainstorming` → `writing-plans` |
+| | has a clear plan, implementation touches 3+ files | `writing-plans` → `executing-plans` |
+| | hits error / stack trace / test failure / "why is this broken" | `systematic-debugging` |
 | | says "review" / PR ready / wants code feedback | `code-reviewer` |
 | | ready to commit / asks for commit message | `conventional-commits` |
 | | asks for release notes / changelog / version bump | `changelog-generator` |
@@ -74,7 +74,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | **Documents** | reads/creates PDF / Word / Excel / PPT | `pdf` · `docx` · `xlsx` · `pptx` |
 | | creates slide deck / presentation / EPUB | `revealjs` · `markdown-to-epub` |
 | **Quality** | asks for security audit / reviews for vulnerabilities | `code-reviewer` + `security-reviewer` |
-| | writes tests / asks to write tests / coverage gaps | `test-master` |
+| | writes tests / asks to write tests / coverage gaps | `test-master` + `test-driven-development` |
 | | tests web app in browser / screenshots / clicks | `webapp-testing` |
 | | generates API docs / JSDoc / OpenAPI spec | `code-documenter` |
 | **DevOps** | sets up CI/CD / Docker / K8s / deployment | `devops-engineer` |
