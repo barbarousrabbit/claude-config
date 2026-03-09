@@ -38,15 +38,15 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 
 | Category | When user... | Skill(s) |
 |----------|-------------|----------|
-| **Workflow** | brainstorms feature ideas / asks "how to design" | `brainstorming` → `writing-plans` |
-| | has a clear plan, implementation touches 3+ files | `writing-plans` → `executing-plans` |
-| | hits error / stack trace / test failure / "why is this broken" | `systematic-debugging` |
+| **Workflow** | brainstorms feature ideas / asks "how to design" | `architecture-designer` + `api-designer` |
+| | has a clear plan, implementation touches 3+ files | use `TeamCreate` to parallelize |
+| | hits error / stack trace / test failure / "why is this broken" | `debugging-wizard` |
 | | says "review" / PR ready / wants code feedback | `code-reviewer` |
 | | ready to commit / asks for commit message | `conventional-commits` |
 | | asks for release notes / changelog / version bump | `changelog-generator` |
-| **Writing** | asks to write blog / doc / report / copy | `copywriting` |
-| | plans content calendar / post schedule | `content-strategy` |
-| | says "polish" / refine existing draft | `copy-editing` |
+| **Writing** | asks to write blog / doc / report / copy | write directly (no dedicated skill installed) |
+| | plans content calendar / post schedule | write directly (no dedicated skill installed) |
+| | says "polish" / refine existing draft | write directly (no dedicated skill installed) |
 | **Languages** | edits .py / uses pip / Django / Flask / pandas | `python-pro` |
 | | edits .ts / TS generics / type errors / monorepo types | `typescript-pro` |
 | | edits .js / vanilla JS / Node.js without TS | `javascript-pro` |
@@ -55,17 +55,17 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | writes SQL / slow query / schema design / indexing | `sql-pro` + `database-optimizer` |
 | **Frontend** | builds web pages / React components / CSS layout | `web-design-guidelines` → `frontend-design` + `ui-ux-pro-max` + `interface-design` |
 | | implements dashboard / admin panel / tool UI | `interface-design` + `frontend-patterns` + `senior-frontend` |
-| | configures Tailwind / design tokens / theme CSS | `tailwind-design-system` → `tailwind-theme-builder` → `shadcn-ui` |
+| | configures Tailwind / design tokens / theme CSS | `tailwind-theme-builder` → `shadcn-ui` |
 | | needs brand palette / color generation | `color-palette` |
-| | works with Next.js / app router / SSR / server actions | `nextjs-pro` + `next-best-practices` |
+| | works with Next.js / app router / SSR / server actions | `nextjs-pro` |
 | | builds WeChat mini-program / Taro pages / NutUI components | `taro-miniprogram` + `taro-miniprogram-ui` |
 | | asks about mobile display / responsiveness / UX issues | `responsiveness-check` + `ux-audit` |
 | | needs poster / favicon / icon set | `canvas-design` + `favicon-gen` + `icon-set-generator` |
 | | resizes / crops / converts / optimizes images | `image-processing` |
 | **Vibe Coding** | discusses React patterns / hooks / composition | `vercel-react-best-practices` + `vercel-composition-patterns` |
-| | builds Next.js with auth / Supabase / PostgreSQL | `next-best-practices` + `supabase-postgres-best-practices` |
-| | builds React Native / Expo mobile app | `vercel-react-native-skills` + `building-native-ui` |
-| | codes video / animation with Remotion | `remotion-best-practices` |
+| | builds Next.js with auth / Supabase / PostgreSQL | `nextjs-pro` |
+| | builds React Native / Expo mobile app | not installed — handle directly |
+| | codes video / animation with Remotion | not installed — handle directly |
 | **Data** | analyzes CSV / data files / asks for data analysis | `csv-data-summarizer` + `exploratory-data-analysis` |
 | | needs interactive charts (hover/zoom) | `plotly` / `claude-d3js` |
 | | needs static publication figures | `matplotlib` / `seaborn` |
@@ -74,7 +74,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | **Documents** | reads/creates PDF / Word / Excel / PPT | `pdf` · `docx` · `xlsx` · `pptx` |
 | | creates slide deck / presentation / EPUB | `revealjs` · `markdown-to-epub` |
 | **Quality** | asks for security audit / reviews for vulnerabilities | `code-reviewer` + `security-reviewer` |
-| | writes tests / asks to write tests / coverage gaps | `test-master` + `test-driven-development` |
+| | writes tests / asks to write tests / coverage gaps | `test-master` |
 | | tests web app in browser / screenshots / clicks | `webapp-testing` |
 | | generates API docs / JSDoc / OpenAPI spec | `code-documenter` |
 | **DevOps** | sets up CI/CD / Docker / K8s / deployment | `devops-engineer` |
