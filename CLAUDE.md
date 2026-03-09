@@ -39,12 +39,14 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | Category | When user... | Skill(s) |
 |----------|-------------|----------|
 | **Workflow** | brainstorms feature ideas / asks "how to design" | `brainstorming` → `writing-plans` |
+| | describes a new feature / enhancement and wants to plan before writing code | `feature-planning` |
 | | has a clear plan, implementation touches 3+ files | `writing-plans` → `executing-plans` |
 | | 2+ independent subtasks / wants parallel execution | `dispatching-parallel-agents` |
 | | hits error / stack trace / test failure / "why is this broken" | `systematic-debugging` |
 | | says "review" / PR ready / wants code feedback | `requesting-code-review` → `code-reviewer` |
 | | receives code review feedback / applying suggestions | `receiving-code-review` |
 | | ready to commit / asks for commit message | `conventional-commits` |
+| | says "commit and push" / "push this" / "save my work" | `git-pushing` |
 | | asks for release notes / changelog / version bump | `changelog-generator` |
 | | feature complete / ready to merge branch | `finishing-a-development-branch` |
 | | about to say "done" / mark task complete | `verification-before-completion` |
@@ -78,11 +80,16 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | analyzes networks / graph relationships | `networkx` |
 | **Documents** | reads/creates PDF / Word / Excel / PPT | `pdf` · `docx` · `xlsx` · `pptx` |
 | | creates slide deck / presentation / EPUB | `revealjs` · `markdown-to-epub` |
-| **Quality** | asks for security audit / reviews for vulnerabilities | `code-reviewer` + `security-reviewer` |
+| **Quality** | asks "how good is this code" / wants codebase health check / technical debt audit | `code-auditor` |
+| | asks for security audit / reviews for vulnerabilities | `code-reviewer` + `security-reviewer` |
+| | reviewing a PR/MR and wants more than style nits (blast radius, security, breaking changes) | `pr-review-expert` |
+| | code is slow / page loads sluggishly / "why is this slow" | `performance-profiler` |
+| | checking dependencies for vulnerabilities / license compliance / outdated packages | `dependency-auditor` |
 | | writes tests / asks to write tests / coverage gaps | `test-master` + `test-driven-development` |
 | | tests web app in browser / screenshots / clicks | `webapp-testing` |
 | | generates API docs / JSDoc / OpenAPI spec | `code-documenter` |
-| **DevOps** | sets up CI/CD / Docker / K8s / deployment | `devops-engineer` |
+| **DevOps** | joining unfamiliar codebase / onboarding new teammate / needs map of "what does what" | `codebase-onboarding` |
+| | sets up CI/CD / Docker / K8s / deployment | `devops-engineer` |
 | | designs system architecture / API contracts | `architecture-designer` + `api-designer` |
 | | builds MCP server / tool integration | `mcp-builder` |
 | **Research** | asks about recent trends / last 30 days | `last30days` |
