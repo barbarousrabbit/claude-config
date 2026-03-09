@@ -110,6 +110,7 @@ Rule format: start with NEVER/ALWAYS · explain why (≤3 bullets) · include co
 - Good evals: `without_skill` must NOT pass by common sense alone; verifiable from output files
 - ALWAYS include explicit override: *"If user provides [bad input], change to [correct] and explain why"*
 - **Description must describe trigger scenarios, not capabilities** — "When user asks to compare competitors" not "Competitive analysis tool"
+- **Description length ~80 chars, SKILL.md body ≤200 lines** — expand description (more trigger keywords = higher hit rate), compress SKILL.md body (shorter = more context window for actual task = better output). Move detailed templates to `references/`. One up, one down.
 
 ## New Device Setup (Windows)
 Run once in **Git Bash** (`~` must resolve to Windows home `C:\Users\<you>`):
