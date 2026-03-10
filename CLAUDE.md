@@ -101,6 +101,21 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 ## Project Onboarding
 New project: scan stack → match routing table → write `.claude/CLAUDE.md` (applicable skills + conventions).
 
+## Experience Recording — MANDATORY
+ALWAYS record reusable knowledge to memory files at these trigger points:
+1. **Task completion** — after solving any non-trivial bug, building a feature, or finishing a multi-step task
+2. **Discovery** — when finding a root cause, a useful pattern, a gotcha, or a workaround
+3. **User says "记录/记住/remember"** — immediately write to memory
+
+**How to record:**
+- Check existing memory files FIRST to avoid duplicates → update if related entry exists
+- **Project memory** (`<project>/memory/`) — project-specific findings, architecture notes, fix details
+- **Global memory** (`~/.claude/memory/`) — reusable patterns, debugging techniques, tool gotchas applicable across projects
+- Structure: **What** (problem) → **Why** (root cause) → **How** (solution) → **Code** (reproducible snippets)
+- Keep entries actionable — future-you should be able to apply the knowledge without re-investigating
+
+**NEVER skip recording because the task "seems too small".** A 5-line fix that took 2 hours to find is the MOST valuable thing to record.
+
 ## Self-Improvement
 On "Reflect on this mistake": Reflect → Abstract → Generalize → Write NEVER/ALWAYS rule to CLAUDE.md.
 Rule format: start with NEVER/ALWAYS · explain why (≤3 bullets) · include code/commands where helpful.
