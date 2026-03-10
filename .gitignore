@@ -20,6 +20,9 @@ plans/
 tasks/
 teams/
 
+# === Third-party skill repos — installed per device ===
+alireza-skills/
+
 # === Runtime state — session-specific, not for sync ===
 learnings-queue.json
 plugins/installed_plugins.json

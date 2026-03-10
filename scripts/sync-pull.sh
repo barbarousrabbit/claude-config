@@ -4,10 +4,6 @@ CLAUDE_DIR="$HOME/.claude"
 
 # Only run if it's a git repo with a remote
 if [ -d "$CLAUDE_DIR/.git" ] && git -C "$CLAUDE_DIR" remote get-url origin &>/dev/null; then
-    # Restore settings.json from remote (source of truth) before pulling
-    # to avoid stash conflicts on this critical file
-    git -C "$CLAUDE_DIR" checkout -- settings.json 2>/dev/null
-
     # Abort if there are unmerged (conflicted) files — pull would fail anyway
     if git -C "$CLAUDE_DIR" ls-files --unmerged | grep -q .; then
         echo "[sync-pull] WARNING: unmerged files found, skipping pull" >&2

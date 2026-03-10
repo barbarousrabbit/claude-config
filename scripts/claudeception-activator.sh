@@ -4,7 +4,15 @@
 # Outputs a system reminder if the prompt suggests non-trivial debugging work
 
 INPUT=$(cat 2>/dev/null || true)
-PROMPT=$(echo "$INPUT" | python3 -c "
+
+# Auto-detect Python (python3 on Unix, python on Windows)
+PY=""
+for cmd in python3 python py; do
+    command -v "$cmd" &>/dev/null && PY="$cmd" && break
+done
+[ -z "$PY" ] && exit 0
+
+PROMPT=$(echo "$INPUT" | "$PY" -c "
 import json, sys
 try:
     d = json.load(sys.stdin)

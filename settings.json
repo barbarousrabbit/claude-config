@@ -17,9 +17,7 @@
       "NotebookEdit(*)",
       "Skill(*)"
     ],
-    "additionalDirectories": [
-      "\\tmp"
-    ],
+    "additionalDirectories": [],
     "deny": [
       "Bash(rm -rf /)",
       "Bash(sudo rm -rf *)",

@@ -8,14 +8,14 @@
 ## Config Sync — MANDATORY
 End of session: if any `~/.claude/` file changed → `cd ~/.claude && git add -A && git commit -m "update: <desc>" && git push origin HEAD:main`
 
-## Available Tools
+## Available Tools (optional — may not be configured on all devices)
 
-| MCP | Use when |
-|-----|----------|
-| `fetch` | Read web pages, docs, API refs |
-| `memory` | Persist facts across sessions |
-| `sequential-thinking` | Complex multi-step analysis |
-| `github` | PRs, issues, repo search |
+| MCP | Use when | Fallback if unavailable |
+|-----|----------|------------------------|
+| `fetch` | Read web pages, docs, API refs | Use `WebFetch` tool |
+| `memory` | Persist facts across sessions | Use auto memory files |
+| `sequential-thinking` | Complex multi-step analysis | Think step-by-step inline |
+| `github` | PRs, issues, repo search | Use `gh` CLI via Bash |
 
 **Agent Teams** — Default to `TeamCreate` for non-trivial tasks. Trigger on ANY of:
 - Task touches 3+ files OR spans 2+ tech domains (frontend/backend/DB/infra/tests)
