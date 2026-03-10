@@ -31,8 +31,13 @@ for candidate in pip pip3; do
     fi
 done
 
-# -- Detect OS (Windows-only target) --
-OS_NAME="windows"
+# -- Detect OS --
+case "$(uname -s 2>/dev/null)" in
+    MINGW*|MSYS*|CYGWIN*|*NT*) OS_NAME="windows" ;;
+    Darwin*)                     OS_NAME="macos"   ;;
+    Linux*)                      OS_NAME="linux"   ;;
+    *)                           OS_NAME="unknown"  ;;
+esac
 
 # -- Write local-env.sh --
 cat > "$ENV_FILE" << ENVEOF

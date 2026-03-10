@@ -27,8 +27,8 @@ Only go direct for: single-file edits, quick lookups, trivial one-liners.
 **Custom commands**: `/user:explain` · `/user:debug` · `/user:summarize` · `/user:check-assignment`
 **Scope**: project `.claude/CLAUDE.md` overrides global rules.
 
-## Skill Usage — MANDATORY
-Always invoke skills BEFORE responding. Even 1% chance → invoke first. "I know this already" = red flag.
+## Skill Usage
+Invoke matching skills BEFORE responding when the task clearly fits the routing table. If a skill fails to load, fall back to direct handling — never retry a failed skill invocation.
 
 **Design principle**: description = door sign (trigger scenarios), SKILL.md = manual (concise), references = filing cabinet (detailed templates). See `references/skill-chains.md` for multi-step chaining patterns.
 

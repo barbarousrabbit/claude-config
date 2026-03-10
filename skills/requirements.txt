@@ -28,6 +28,9 @@ PyMuPDF>=1.23         # pdf (fitz)
 fpdf2>=2.7            # pdf 生成
 ebooklib>=0.18        # markdown-to-epub
 
+# === MCP 服务 ===
+mcp-server-fetch>=0.1 # fetch MCP server (python -m mcp_server_fetch)
+
 # === 工具 ===
 requests>=2.31        # HTTP 请求
 rich>=13.0            # 终端美化输出

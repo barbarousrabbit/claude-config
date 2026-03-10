@@ -3,7 +3,8 @@
 # Claude Config Bootstrap — One-time setup for new Windows device
 # Usage: bash ~/.claude/scripts/bootstrap.sh
 # =============================================================
-set -e
+# NOTE: do NOT use set -e here — each step should run independently
+# so a failure in one step (e.g., Python not found) doesn't abort the rest
 
 CLAUDE_DIR="$HOME/.claude"
 GREEN='\033[0;32m'
@@ -23,9 +24,9 @@ echo ""
 
 # -- 0. Detect device environment --
 echo "-> Detecting environment..."
-bash "$CLAUDE_DIR/scripts/detect-env.sh"
+bash "$CLAUDE_DIR/scripts/detect-env.sh" 2>/dev/null || warn "Environment detection had issues"
 source "$CLAUDE_DIR/local-env.sh" 2>/dev/null || true
-ok "Environment detected (Python=${CLAUDE_PYTHON}, OS=${CLAUDE_OS})"
+ok "Environment detected (Python=${CLAUDE_PYTHON:-NOT FOUND}, OS=${CLAUDE_OS:-unknown})"
 
 # -- 1. Git branch tracking --
 echo "-> Configuring git tracking..."
