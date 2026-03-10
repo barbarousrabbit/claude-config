@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+description: "Use when user says 'I want to build...', 'how should I design...', 'what's the best approach for...', 'I have an idea', 'help me think through...', 'let's brainstorm', or describes a vague feature idea without clear requirements. Also trigger when user asks 'should I use X or Y' for architectural decisions. Explores intent and design before any implementation."
 ---
 
 # Brainstorming Ideas Into Designs

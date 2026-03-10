@@ -38,8 +38,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 
 | Category | When user... | Skill(s) |
 |----------|-------------|----------|
-| **Workflow** | brainstorms feature ideas / asks "how to design" | `brainstorming` → `writing-plans` |
-| | describes a new feature / enhancement and wants to plan before writing code | `feature-planning` |
+| **Workflow** | says "I want to build...", "how should I design...", "what's the best approach", has a vague idea, asks "X or Y?", needs to think through requirements before coding | `brainstorming` → `writing-plans` |
+| | has clear requirements, describes a specific feature / enhancement and wants task breakdown | `feature-planning` |
 | | has a clear plan, implementation touches 3+ files | `writing-plans` → `executing-plans` |
 | | 2+ independent subtasks / wants parallel execution | `dispatching-parallel-agents` |
 | | hits error / stack trace / test failure / "why is this broken" | `systematic-debugging` |
