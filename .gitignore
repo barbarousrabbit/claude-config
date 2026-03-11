@@ -35,6 +35,8 @@ skills/docx/scripts/office/validators/__pycache__/
 plugins/cache/
 plugins/marketplaces/
 plugins/install-counts-cache.json
+plugins/blocklist.json
+plugins/known_marketplaces.json
 
 # === Temporary files ===
 *.jsonl
