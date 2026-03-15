@@ -69,6 +69,23 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | asks about mobile display / responsiveness / UX issues | `responsiveness-check` + `ux-audit` |
 | | needs poster / favicon / icon set | `canvas-design` + `favicon-gen` + `icon-set-generator` |
 | | resizes / crops / converts / optimizes images | `image-processing` |
+| **UI Refinement** (impeccable) | checks UI quality / WCAG / "what's wrong" / responsiveness | `audit` |
+| | reviewing design / visual hierarchy / UX feedback | `critique` |
+| | final pass before shipping / spacing / alignment / consistency | `polish` |
+| | design too safe / generic / boring / needs more impact | `bolder` |
+| | design too loud / aggressive / cluttered | `quieter` |
+| | UI too gray / colorless / monotone | `colorize` |
+| | adding hover effects / transitions / micro-interactions | `animate` |
+| | UI cluttered / over-designed / needs simplification | `distill` |
+| | needs error states / i18n / loading states / edge cases | `harden` |
+| | component inconsistent / doesn't match design system | `normalize` |
+| | extracting reusable components / deduplicating UI patterns | `extract` |
+| | UI copy unclear / button labels / error messages confusing | `clarify` |
+| | UI functional but cold / needs personality / delight | `delight` |
+| | empty states / first-run experience / onboarding flows | `onboard` |
+| | UI loads slowly / animations stutter / bundle too large | `optimize` |
+| | adapting UI for mobile / tablet / cross-platform | `adapt` |
+| | first time using impeccable / establishing design context | `teach-impeccable` |
 | **Vibe Coding** | discusses React patterns / hooks / composition | `vercel-react-best-practices` + `vercel-composition-patterns` |
 | | builds Next.js with auth / Supabase / PostgreSQL | `nextjs-pro` |
 | | builds React Native / Expo mobile app | not installed — handle directly |
