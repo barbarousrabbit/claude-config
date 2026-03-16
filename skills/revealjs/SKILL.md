@@ -1,6 +1,6 @@
 ---
 name: revealjs
-description: Use when creating a slide deck, presentation, or slideshow — generates reveal.js HTML+CSS with themes, code highlighting, speaker notes, no build step required
+description: Use when creating a slide deck or presentation — reveal.js HTML+CSS with themes, speaker notes.
 ---
 
 # Reveal.js Presentations

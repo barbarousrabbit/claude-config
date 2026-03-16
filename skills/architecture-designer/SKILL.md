@@ -1,6 +1,6 @@
 ---
 name: architecture-designer
-description: Use when designing system architecture, reviewing existing designs, making architectural decisions, writing ADRs, planning scalability, or establishing design patterns.
+description: Use when designing system architecture, writing ADRs, planning scalability, or reviewing existing designs.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

@@ -1,6 +1,6 @@
 ---
 name: codebase-onboarding
-description: "Use when joining an unfamiliar codebase, onboarding a new teammate, or needing a map of 'what does what' — generates architecture overview, key file map, local setup guide, and contribution runbook."
+description: Use when joining an unfamiliar codebase or onboarding a teammate — architecture overview, key file map, setup guide.
 ---
 
 # Codebase Onboarding

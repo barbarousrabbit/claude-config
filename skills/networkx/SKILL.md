@@ -1,6 +1,6 @@
 ---
 name: networkx
-description: Use when working with network/graph data — social networks, entity relationships, shortest paths, centrality, community detection, or graph visualization in Python
+description: Use when working with network/graph data in Python — shortest paths, centrality, community detection.
 license: 3-clause BSD license
 metadata:
     skill-author: K-Dense Inc.

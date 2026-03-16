@@ -1,6 +1,6 @@
 ---
 name: web-design-guidelines
-description: Use when checking UI against Vercel's Web Interface Guidelines — contrast, typography, spacing. Say "check against guidelines" or "check Vercel best practices"
+description: Use when checking UI against Vercel's Web Interface Guidelines — contrast, typography, spacing.
 metadata:
   author: vercel
   version: "1.0.0"

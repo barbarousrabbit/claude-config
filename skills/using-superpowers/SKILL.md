@@ -1,6 +1,6 @@
 ---
 name: using-superpowers
-description: Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions
+description: Meta-skill — establishes skill discovery and invocation at conversation start.
 ---
 
 <EXTREMELY-IMPORTANT>

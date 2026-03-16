@@ -1,6 +1,6 @@
 ---
 name: pr-review-expert
-description: "Use when reviewing a PR/MR and need more than style nits — performs blast radius analysis, security scan, breaking change detection, and test coverage delta to produce a prioritized reviewer report."
+description: Use when reviewing a PR/MR beyond style nits — blast radius, security, breaking changes, coverage delta.
 ---
 
 # PR Review Expert

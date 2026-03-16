@@ -1,6 +1,6 @@
 ---
 name: code-documenter
-description: Use when adding docstrings, creating API documentation, building documentation sites, generating OpenAPI/Swagger specs, writing JSDoc, or creating tutorials and user guides.
+description: Use when adding docstrings, creating API docs, OpenAPI/Swagger specs, JSDoc, or documentation sites.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

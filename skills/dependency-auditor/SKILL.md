@@ -1,6 +1,6 @@
 ---
 name: dependency-auditor
-description: "Use when checking project dependencies for security vulnerabilities, license compliance issues, outdated packages, or bloat — scans across npm/pip/cargo/go.mod in one pass."
+description: Use when checking dependencies for vulnerabilities, license issues, outdated packages, or bloat.
 ---
 
 # Dependency Auditor

@@ -1,6 +1,6 @@
 ---
 name: conventional-commits
-description: Use when creating git commits, writing commit messages, or when the user asks to commit code. Enforces Conventional Commits specification for readable, machine-friendly commit messages.
+description: Use when creating git commits or writing commit messages — enforces Conventional Commits spec.
 ---
 
 # Conventional Commits

@@ -1,6 +1,6 @@
 ---
 name: claude-d3js
-description: Use when creating custom d3.js charts, network diagrams, geographic maps, or SVG-based data visualizations requiring fine-grained control over elements, transitions, or interactions.
+description: Use when creating custom d3.js charts, network diagrams, or SVG-based data visualizations with fine-grained control.
 ---
 
 # D3.js Visualisation

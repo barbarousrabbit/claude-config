@@ -1,6 +1,6 @@
 ---
 name: web-artifacts-builder
-description: Use when creating complex standalone HTML artifacts for claude.ai chat (NOT for actual project code) — React + Tailwind + shadcn/ui with state management or routing
+description: Use when creating standalone HTML artifacts for claude.ai chat — React + Tailwind + shadcn/ui. NOT for project code.
 license: Complete terms in LICENSE.txt
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: feature-planning
-description: "Use when user describes a new feature / enhancement / complex change and wants to plan before writing code — produces task breakdown, acceptance criteria, and implementation order."
+description: Use when user describes a new feature and wants to plan before coding — task breakdown and acceptance criteria.
 ---
 
 # Feature Planning

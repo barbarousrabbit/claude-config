@@ -1,6 +1,6 @@
 ---
 name: canvas-design
-description: Use when creating a poster, piece of art, infographic, or any static visual — outputs .png/.pdf, not web code. Use frontend-design for interactive web components.
+description: Use when creating a poster, infographic, or static visual — outputs .png/.pdf, not web code.
 license: Complete terms in LICENSE.txt
 ---
 

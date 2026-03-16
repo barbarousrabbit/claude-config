@@ -1,6 +1,6 @@
 ---
 name: docx
-description: Use when creating, reading, editing, or manipulating Word documents (.docx files) — reports, memos, letters, templates, tracked changes, or formatting with TOC, headings, page numbers.
+description: Use when creating, reading, editing, or manipulating .docx files — reports, memos, templates, tracked changes.
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

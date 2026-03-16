@@ -1,6 +1,6 @@
 ---
 name: pptx
-description: Use when creating, reading, editing, or extracting content from PowerPoint files (.pptx) — slide decks, pitch decks, presentations, speaker notes, templates, or layouts.
+description: Use when creating, reading, editing, or extracting from .pptx files — slide decks, presentations, speaker notes.
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

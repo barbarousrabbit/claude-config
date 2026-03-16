@@ -1,6 +1,6 @@
 ---
 name: code-auditor
-description: "Use when user asks 'how good is this code', wants a codebase health check, technical debt audit, or security scan — covers architecture, code quality, security vulnerabilities, performance, and test coverage in one pass."
+description: Use when user asks 'how good is this code', wants a codebase health check, or a technical debt audit.
 ---
 
 # Code Auditor

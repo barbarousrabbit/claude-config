@@ -1,6 +1,6 @@
 ---
 name: performance-profiler
-description: "Use when code is slow, a page loads sluggishly, or user asks 'why is this slow' / 'how do I speed this up' — profiles execution time, identifies bottlenecks, and prioritizes optimization opportunities."
+description: Use when code is slow or user asks 'why is this slow' — profiles execution, identifies bottlenecks.
 ---
 
 # Performance Profiler

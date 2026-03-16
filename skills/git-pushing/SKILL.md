@@ -1,6 +1,6 @@
 ---
 name: git-pushing
-description: "Use when user says 'commit and push', 'push this', 'push to GitHub', or 'save my work' — stages all changes, writes a conventional commit message, and pushes to remote in one step."
+description: Use when user says 'commit and push', 'push this', or 'save my work' — stages, commits, and pushes.
 ---
 
 # Git Push Workflow

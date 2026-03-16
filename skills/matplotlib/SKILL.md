@@ -1,6 +1,6 @@
 ---
 name: matplotlib
-description: Use when creating static plots with full customization — novel chart types, publication figures (PNG/PDF/SVG). For quick stats use seaborn; for interactive use plotly.
+description: Use when creating static plots with full customization — publication figures (PNG/PDF/SVG). For stats use seaborn.
 license: https://github.com/matplotlib/matplotlib/tree/main/LICENSE
 metadata:
     skill-author: K-Dense Inc.

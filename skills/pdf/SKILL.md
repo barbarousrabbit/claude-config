@@ -1,6 +1,6 @@
 ---
 name: pdf
-description: Use when reading, extracting, merging, splitting, creating, encrypting, or OCR-scanning PDF files — form filling, watermarks, image extraction, or any .pdf manipulation.
+description: Use when reading, merging, splitting, creating, or OCR-scanning PDF files — any .pdf manipulation.
 license: Proprietary. LICENSE.txt has complete terms
 ---
 
