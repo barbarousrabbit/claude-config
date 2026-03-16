@@ -1,6 +1,6 @@
 ---
 name: rust-engineer
-description: Use when building Rust applications requiring memory safety, systems programming, or zero-cost abstractions. Invoke for ownership patterns, lifetimes, traits, async/await with tokio.
+description: Use when building Rust apps — ownership, lifetimes, traits, async/await with tokio, or zero-cost abstractions.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

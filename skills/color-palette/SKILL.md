@@ -1,6 +1,7 @@
 ---
 name: color-palette
-description: Use when generating a design system palette from a brand hex, setting up Tailwind color tokens, or checking color accessibility (WCAG)---
+description: Use when generating a design system palette from a brand hex, setting up Tailwind color tokens, or checking color accessibility (WCAG)
+---
 
 # Colour Palette Generator
 

@@ -1,6 +1,6 @@
 ---
 name: prompt-templates
-description: Anthropic official 10-component prompt framework with comprehensive and minimal templates. Use when crafting system prompts, creating reusable prompt templates, or structuring complex prompts with role/tone/background/task/rules/examples/thinking/format components.
+description: Use when crafting system prompts with Anthropic's 10-component framework — role, tone, task, rules, examples, thinking, format templates.
 ---
 
 # Prompt Templates (Anthropic 10-Component Framework)

@@ -1,6 +1,6 @@
 ---
 name: prompt-engineering
-description: Use when designing system prompts, creating AI agent workflows, building multi-agent orchestrations, optimizing LLM interactions, or crafting effective prompts for Claude/GPT/Gemini. Invoke for prompt design, chain-of-thought, few-shot examples, tool use patterns.
+description: Use when designing system prompts, building AI agent workflows, multi-agent orchestrations, or crafting prompts with chain-of-thought and few-shot patterns.
 ---
 
 # Prompt Engineering Expert

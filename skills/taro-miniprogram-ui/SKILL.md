@@ -1,12 +1,6 @@
 ---
 name: taro-miniprogram-ui
-description: |
-  WeChat mini-program UI design skill for Taro 4 + NutUI React Taro projects.
-  Enforces visual quality, layout constraints, and mobile e-commerce design patterns.
-  Use this skill whenever creating or modifying mini-program page styles, component
-  layouts, NutUI theme customization, product cards, checkout flows, or any SCSS
-  styling in Taro projects. Trigger when: .scss files in Taro project, "小程序样式",
-  "页面布局", "UI优化", "NutUI主题", product card design, or e-commerce page layout.
+description: Use when styling Taro mini-program pages — SCSS, NutUI themes, product cards, layout constraints, 小程序样式, 页面布局.
 ---
 
 # Taro 小程序 UI 设计规范

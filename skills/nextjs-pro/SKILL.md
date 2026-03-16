@@ -1,6 +1,6 @@
 ---
 name: nextjs-pro
-description: Use when building Next.js applications (App Router, Server/Client Components, dynamic routes, SSR/SSG, middleware, Vercel AI SDK). Invoke for Next.js project setup, routing, data fetching, server actions, or deployment.
+description: Use when building Next.js apps — App Router, Server/Client Components, SSR/SSG, middleware, server actions, or Vercel AI SDK.
 ---
 
 # Next.js Pro

@@ -1,14 +1,6 @@
 ---
 name: taro-miniprogram
-description: |
-  Expert guide for building WeChat mini-programs with Taro 4 + React 18 + TypeScript.
-  Use this skill whenever the user is working on Taro components, pages, or mini-program features —
-  including component patterns, WeChat APIs (wx.login, requestPayment, chooseAddress),
-  capsule button avoidance, rpx layout, subpackage optimization, WebSocket hooks,
-  NutUI React Taro components, Zustand state management in Taro, i18n setup,
-  content security checks, phone authorization, or miniprogram-ci publishing.
-  Trigger proactively even if the user just says "mini-program page", "Taro component",
-  "小程序", or pastes code using View/Text/Image/Taro.* APIs.
+description: Use when building WeChat mini-programs with Taro 4 — components, WeChat APIs, rpx layout, subpackages, NutUI, Zustand, 小程序.
 ---
 
 # Taro 4 + WeChat 小程序 开发指南

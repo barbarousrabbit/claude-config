@@ -1,6 +1,6 @@
 ---
 name: teach-impeccable
-description: Run once per project to gather design context and save persistent design guidelines to config
+description: Use when first setting up design guidelines for a project — gathers design context and persists it for future sessions.
 user-invokable: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: python-pro
-description: Use when building Python 3.11+ applications requiring type safety, async programming, or production-grade patterns. Invoke for type hints, pytest, async/await, dataclasses, mypy configuration.
+description: Use when building Python 3.11+ apps with type hints, async/await, pytest, dataclasses, or mypy configuration.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

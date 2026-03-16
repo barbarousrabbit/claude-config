@@ -1,6 +1,6 @@
 ---
 name: i18n-expert
-description: Use when internationalizing apps, extracting hardcoded strings, managing translations, setting up locale systems (i18next, react-intl, vue-i18n), or handling Chinese/English bilingual content. Invoke for i18n, l10n, translation, multilingual support.
+description: Use when internationalizing apps, extracting hardcoded strings, managing translations, or setting up i18n frameworks (i18next, react-intl, vue-i18n).
 ---
 
 # i18n Expert

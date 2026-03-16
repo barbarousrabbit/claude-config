@@ -1,6 +1,6 @@
 ---
 name: test-master
-description: Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing.
+description: Use when writing tests, creating test strategies, or building automation — unit, integration, E2E, coverage, performance, or security testing.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

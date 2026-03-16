@@ -1,6 +1,6 @@
 ---
 name: responsiveness-check
-description: "Test website responsiveness across viewport widths using browser automation. Resizes a single session through breakpoints, screenshots each width, and detects layout transitions (column changes, nav switches, overflow). Produces comparison reports showing exactly where layouts break. Trigger with 'responsiveness check', 'check responsive', 'breakpoint test', 'viewport test', 'responsive sweep', 'check breakpoints', or 'test at mobile'."
+description: Use when testing responsiveness across viewports — screenshots breakpoints, detects overflow and layout breaks via browser automation.
 compatibility: claude-code-only
 ---
 

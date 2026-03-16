@@ -1,6 +1,6 @@
 ---
 name: golang-pro
-description: Use when building Go applications requiring concurrent programming, microservices architecture, or high-performance systems. Invoke for goroutines, channels, Go generics, gRPC integration.
+description: Use when building Go apps with goroutines, channels, gRPC, Go generics, or concurrent/microservice systems.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

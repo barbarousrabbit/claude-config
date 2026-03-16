@@ -1,6 +1,6 @@
 ---
 name: javascript-pro
-description: Use when building JavaScript applications with modern ES2023+ features, async patterns, or Node.js development. Invoke for vanilla JavaScript, browser APIs, performance optimization, module systems.
+description: Use when building vanilla JavaScript or Node.js apps with ES2023+ features, async patterns, browser APIs, or module systems.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

@@ -1,6 +1,6 @@
 ---
 name: ux-audit
-description: "Run UX walkthroughs and QA sweeps on live web apps using browser automation. Walks through apps as a real user, flags friction points and usability issues, tests CRUD operations, and produces ranked audit reports. Trigger with 'ux audit', 'ux walkthrough', 'qa test', 'test the app', or 'check all pages'."
+description: Use when running UX walkthroughs or QA sweeps on live web apps — flags friction, tests CRUD, produces ranked audit reports.
 compatibility: claude-code-only
 ---
 

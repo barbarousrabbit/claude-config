@@ -1,6 +1,6 @@
 ---
-name: d3-viz
-description: Creating interactive data visualisations using d3.js. This skill should be used when creating custom charts, graphs, network diagrams, geographic visualisations, or any complex SVG-based data visualisation that requires fine-grained control over visual elements, transitions, or interactions. Use this for bespoke visualisations beyond standard charting libraries, whether in React, Vue, Svelte, vanilla JavaScript, or any other environment.
+name: claude-d3js
+description: Use when creating custom d3.js charts, network diagrams, geographic maps, or SVG-based data visualizations requiring fine-grained control over elements, transitions, or interactions.
 ---
 
 # D3.js Visualisation

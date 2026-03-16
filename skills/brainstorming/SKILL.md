@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: "Use when user says 'I want to build...', 'how should I design...', 'what's the best approach for...', 'I have an idea', 'help me think through...', 'let's brainstorm', or describes a vague feature idea without clear requirements. Also trigger when user asks 'should I use X or Y' for architectural decisions. Explores intent and design before any implementation."
+description: Use when user has a vague idea, says 'how should I design...', 'let's brainstorm', or asks 'X or Y' — explores intent and design before coding.
 ---
 
 # Brainstorming Ideas Into Designs

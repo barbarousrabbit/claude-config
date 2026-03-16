@@ -1,6 +1,6 @@
 ---
 name: debugging-wizard
-description: Use as alternative to systematic-debugging — step-by-step guided root cause analysis for errors, stack traces, log investigation, and unexpected behavior
+description: Use when debugging errors with guided step-by-step analysis — stack traces, log investigation, intermittent issues, or memory leaks.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

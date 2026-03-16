@@ -1,6 +1,6 @@
 ---
 name: shadcn-ui
-description: "Install and configure shadcn/ui components for React projects. Guides component selection, installation order, dependency management, customisation with semantic tokens, and common UI recipes (forms, data tables, navigation, modals). Use after tailwind-theme-builder has set up the theme infrastructure, when adding components, building forms, creating data tables, or setting up navigation."
+description: Use when adding shadcn/ui components, building forms, data tables, or navigation — after tailwind-theme-builder sets up theming.
 ---
 
 # shadcn/ui Components

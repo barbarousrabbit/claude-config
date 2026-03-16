@@ -1,11 +1,6 @@
 ---
 name: tailwind-theme-builder
-description: >
-  Set up Tailwind v4 with shadcn/ui themed UI. Workflow: install dependencies,
-  configure CSS variables with @theme inline, set up dark mode, verify.
-  Use when initialising React projects with Tailwind v4, setting up shadcn/ui theming,
-  or fixing colors not working, tw-animate-css errors, @theme inline dark mode conflicts,
-  @apply breaking, v3 migration issues.
+description: Use when setting up Tailwind v4 + shadcn/ui theming, configuring CSS variables, dark mode, or fixing v3 migration issues.
 ---
 
 # Tailwind Theme Builder

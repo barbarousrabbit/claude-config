@@ -1,6 +1,6 @@
 ---
 name: typescript-pro
-description: Use when building TypeScript applications requiring advanced type systems, generics, or full-stack type safety. Invoke for type guards, utility types, tRPC integration, monorepo setup.
+description: Use when building TypeScript apps with advanced generics, type guards, utility types, tRPC, or full-stack type safety.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

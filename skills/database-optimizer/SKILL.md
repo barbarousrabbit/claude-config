@@ -1,6 +1,6 @@
 ---
 name: database-optimizer
-description: Use when investigating slow queries, analyzing execution plans, or optimizing database performance. Invoke for index design, query rewrites, configuration tuning, partitioning strategies, lock contention resolution.
+description: Use when investigating slow queries, analyzing execution plans, tuning database configuration, or designing indexes and partitions. For SQL writing use sql-pro.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

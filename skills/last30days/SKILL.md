@@ -1,7 +1,7 @@
 ---
 name: last30days
 version: "2.6"
-description: "Research a topic from the last 30 days. Also triggered by 'last30'. Sources: Reddit, X, YouTube, Hacker News, Polymarket, web. Become an expert and write copy-paste-ready prompts."
+description: Use when researching recent trends from the last 30 days — searches Reddit, X, YouTube, HN, Polymarket, web. Also triggered by 'last30'.
 argument-hint: 'last30 AI video tools, last30 best project management tools'
 allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
 homepage: https://github.com/mvanhorn/last30days-skill

@@ -1,6 +1,6 @@
 ---
 name: security-reviewer
-description: Use when conducting security audits, reviewing code for vulnerabilities, or analyzing infrastructure security. Invoke for SAST scans, penetration testing, DevSecOps practices, cloud security reviews.
+description: Use when conducting security audits, SAST scans, penetration testing, or reviewing code and infrastructure for vulnerabilities.
 license: MIT
 allowed-tools: Read, Grep, Glob, Bash
 metadata:
