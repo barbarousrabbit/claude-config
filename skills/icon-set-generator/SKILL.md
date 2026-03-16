@@ -1,6 +1,6 @@
 ---
 name: icon-set-generator
-description: Use when a website or app needs custom SVG icons — generates cohesive project-specific icon sets matching the brand, not generic library icons
+description: Use when a website or app needs custom SVG icons — cohesive project-specific sets, not generic icons.
 ---
 
 # Icon Set Generator

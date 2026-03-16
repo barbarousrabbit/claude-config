@@ -1,6 +1,6 @@
 ---
 name: prompt-engineering
-description: Use when designing system prompts, building AI agent workflows, multi-agent orchestrations, or crafting prompts with chain-of-thought and few-shot patterns.
+description: Use when designing system prompts, AI agent workflows, or multi-agent orchestrations with CoT/few-shot.
 ---
 
 # Prompt Engineering Expert

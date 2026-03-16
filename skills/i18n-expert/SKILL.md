@@ -1,6 +1,6 @@
 ---
 name: i18n-expert
-description: Use when internationalizing apps, extracting hardcoded strings, managing translations, or setting up i18n frameworks (i18next, react-intl, vue-i18n).
+description: Use when internationalizing apps, extracting hardcoded strings, or setting up i18n (i18next, react-intl).
 ---
 
 # i18n Expert

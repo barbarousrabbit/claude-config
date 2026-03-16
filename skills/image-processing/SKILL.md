@@ -1,6 +1,6 @@
 ---
 name: image-processing
-description: Use when resizing, cropping, converting, or optimizing images for web — thumbnails, OG cards, format conversion (PNG/WebP/JPG), whitespace trimming.
+description: Use when resizing, cropping, converting, or optimizing images — thumbnails, OG cards, PNG/WebP/JPG.
 compatibility: claude-code-only
 ---
 

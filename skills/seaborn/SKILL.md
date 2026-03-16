@@ -1,6 +1,6 @@
 ---
 name: seaborn
-description: Use when creating statistical plots with pandas — distributions, box plots, violin plots, pair plots, heatmaps. For interactive use plotly.
+description: Use when creating statistical plots with pandas — box plots, violin plots, heatmaps. For interactive use plotly.
 license: BSD-3-Clause license
 metadata:
     skill-author: K-Dense Inc.

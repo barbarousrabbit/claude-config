@@ -1,6 +1,6 @@
 ---
 name: xlsx
-description: Use when reading, editing, creating, or converting spreadsheet files (.xlsx, .xlsm, .csv, .tsv). NOT for HTML reports, scripts, or DB pipelines.
+description: Use when reading, editing, creating, or converting spreadsheet files (.xlsx, .csv, .tsv).
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

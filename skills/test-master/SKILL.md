@@ -1,6 +1,6 @@
 ---
 name: test-master
-description: Use when writing tests, creating test strategies, or building automation — unit, integration, E2E, coverage, performance, or security testing.
+description: Use when writing tests or creating test strategies — unit, integration, E2E, coverage, performance.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: Use when user has a vague idea, says 'how should I design...', 'let's brainstorm', or asks 'X or Y' — explores intent and design before coding.
+description: Use when user has a vague idea, says 'let's brainstorm', or asks 'X or Y' — explores intent before coding.
 ---
 
 # Brainstorming Ideas Into Designs

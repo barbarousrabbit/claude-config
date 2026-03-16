@@ -1,6 +1,6 @@
 ---
 name: senior-frontend
-description: Use when building React/Next.js apps with TypeScript requiring component architecture, state management, bundle analysis, or performance tuning.
+description: Use when building React/Next.js + TypeScript apps — component architecture, state, bundle analysis.
 ---
 
 # Senior Frontend

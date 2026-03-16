@@ -1,6 +1,6 @@
 ---
 name: prompt-architect
-description: Use when designing or improving a prompt — applies CO-STAR/RISEN/TIDD-EC frameworks to transform vague prompts into structured, effective ones
+description: Use when designing or improving a prompt — applies CO-STAR/RISEN/TIDD-EC frameworks.
 ---
 
 # Prompt Architect

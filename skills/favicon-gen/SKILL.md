@@ -1,6 +1,6 @@
 ---
 name: favicon-gen
-description: Use when creating a favicon, apple-touch-icon, or PWA icons for a website — from logo, text, or brand color, outputs all required formats
+description: Use when creating a favicon, apple-touch-icon, or PWA icons — from logo, text, or brand color.
 ---
 
 # Favicon Generator

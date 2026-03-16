@@ -1,6 +1,6 @@
 ---
 name: skill-creator
-description: Use when creating a skill from scratch with evals and benchmarking, or optimizing a skill description for better trigger accuracy
+description: Use when creating a skill from scratch with evals, or optimizing a skill description.
 ---
 
 # Skill Creator

@@ -1,6 +1,6 @@
 ---
 name: interface-design
-description: Use when building dashboards, admin panels, data tools, or product UIs — NOT for landing pages or marketing sites (use frontend-design for those)
+description: Use when building dashboards, admin panels, or product UIs — NOT for landing pages.
 ---
 
 # Interface Design

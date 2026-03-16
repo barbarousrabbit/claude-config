@@ -1,6 +1,6 @@
 ---
 name: ui-ux-pro-max
-description: Use when choosing a design style, color palette, or font pairing — reference database with 50 styles, 97 palettes, 57 font pairings across React/Vue/Next.js/Svelte stacks
+description: Use when choosing a design style, color palette, or font pairing — 50+ styles, 97 palettes, 57 pairings.
 ---
 
 # UI/UX Pro Max - Design Intelligence

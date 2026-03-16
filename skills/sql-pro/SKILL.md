@@ -1,6 +1,6 @@
 ---
 name: sql-pro
-description: Use when writing complex SQL (CTEs, window functions, recursive queries), designing schemas, or indexing. For DB performance tuning use database-optimizer.
+description: Use when writing complex SQL (CTEs, window functions), designing schemas. For DB tuning use database-optimizer.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan
