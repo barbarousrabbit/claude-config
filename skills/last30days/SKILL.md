@@ -1,7 +1,7 @@
 ---
 name: last30days
 version: "2.6"
-description: Use when researching recent trends from the last 30 days — searches Reddit, X, YouTube, HN, Polymarket, web. Also triggered by 'last30'.
+description: Use when researching recent trends from the last 30 days — Reddit, X, YouTube, HN, web.
 argument-hint: 'last30 AI video tools, last30 best project management tools'
 allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
 homepage: https://github.com/mvanhorn/last30days-skill

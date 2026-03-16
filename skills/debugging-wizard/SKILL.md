@@ -1,6 +1,6 @@
 ---
 name: debugging-wizard
-description: Use when debugging errors with guided step-by-step analysis — stack traces, log investigation, intermittent issues, or memory leaks.
+description: Use when debugging errors step-by-step — stack traces, log investigation, intermittent issues.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

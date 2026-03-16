@@ -1,6 +1,6 @@
 ---
 name: statsmodels
-description: Use when fitting OLS, GLM, ARIMA, or mixed models with diagnostics and inference — econometrics, time series, coefficient tables.
+description: Use when fitting OLS, GLM, ARIMA, or mixed models with diagnostics — econometrics, time series.
 license: BSD-3-Clause license
 metadata:
     skill-author: K-Dense Inc.

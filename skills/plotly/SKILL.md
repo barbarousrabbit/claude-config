@@ -1,6 +1,6 @@
 ---
 name: plotly
-description: Use when creating interactive charts with hover, zoom, or pan — dashboards, exploratory analysis. For static figures use matplotlib.
+description: Use when creating interactive charts with hover, zoom, or pan — dashboards, exploratory analysis.
 license: MIT license
 metadata:
     skill-author: K-Dense Inc.

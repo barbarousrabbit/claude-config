@@ -1,6 +1,6 @@
 ---
 name: taro-miniprogram
-description: Use when building WeChat mini-programs with Taro 4 — components, WeChat APIs, rpx layout, subpackages, NutUI, Zustand, 小程序.
+description: Use when building WeChat mini-programs with Taro 4 — components, WeChat APIs, rpx layout, NutUI, 小程序.
 ---
 
 # Taro 4 + WeChat 小程序 开发指南

@@ -1,6 +1,6 @@
 ---
 name: responsiveness-check
-description: Use when testing responsiveness across viewports — screenshots breakpoints, detects overflow and layout breaks via browser automation.
+description: Use when testing responsiveness across viewports — screenshots breakpoints, detects layout breaks.
 compatibility: claude-code-only
 ---
 

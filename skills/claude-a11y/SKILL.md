@@ -1,6 +1,6 @@
 ---
 name: claude-a11y
-description: Use when running browser-based a11y scans with axe-core + eslint-jsx-a11y. Distinct from /audit which reviews code without browser.
+description: Use when running browser-based a11y scans with axe-core + eslint-jsx-a11y — distinct from /audit.
 compatibility: claude-code-only
 ---
 
