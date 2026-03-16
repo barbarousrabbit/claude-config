@@ -1,6 +1,6 @@
 ---
 name: teach-impeccable
-description: Use when first setting up design guidelines for a project — gathers design context and persists it for future sessions.
+description: "Use when first setting up project design guidelines, initializing design tokens/context, design system onboarding, '设置设计规范', '初始化设计', '建立设计体系'"
 user-invokable: true
 ---
 

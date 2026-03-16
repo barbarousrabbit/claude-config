@@ -1,6 +1,6 @@
 ---
 name: normalize
-description: Use when component doesn't match design system, looks inconsistent, or needs alignment
+description: "Use when component doesn't match design system, inconsistent styles, misaligned with theme tokens, needs visual alignment, '风格不统一', '不一致', '对齐设计规范'"
 user-invokable: true
 args:
   - name: feature

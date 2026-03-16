@@ -1,6 +1,6 @@
 ---
 name: bolder
-description: Use when design looks too safe, generic, boring, or needs more visual impact and energy
+description: "Use when design too safe, generic, boring, bland, AI-looking, needs more visual impact/energy/personality, '太平了', '没特色', '太普通', make it pop"
 user-invokable: true
 args:
   - name: target

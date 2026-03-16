@@ -1,6 +1,6 @@
 ---
 name: audit
-description: Use when checking UI quality, asking 'what's wrong with this UI', WCAG, or responsiveness issues
+description: "Use when checking UI quality, asking 'what's wrong with this UI', WCAG, responsiveness issues, accessibility audit, layout broken, '这个UI有什么问题', '检查一下UI', '审查界面'"
 user-invokable: true
 args:
   - name: area

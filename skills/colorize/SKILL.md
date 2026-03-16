@@ -1,6 +1,6 @@
 ---
 name: colorize
-description: Use when UI is too gray, colorless, monotone, or needs strategic color introduced
+description: "Use when UI too gray, colorless, monotone, washed-out, dull, needs strategic color accent, '太灰了', '没颜色', '加点颜色', '太素了', add color"
 user-invokable: true
 args:
   - name: target

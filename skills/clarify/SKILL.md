@@ -1,6 +1,6 @@
 ---
 name: clarify
-description: Use when button labels, error messages, empty states, or UI microcopy is unclear or confusing
+description: "Use when button labels, error messages, empty states, tooltips, placeholder text, UI microcopy unclear/confusing/ambiguous, '文案不清楚', '提示语优化', '看不懂'"
 user-invokable: true
 args:
   - name: target

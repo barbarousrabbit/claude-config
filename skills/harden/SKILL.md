@@ -1,6 +1,6 @@
 ---
 name: harden
-description: Use when UI needs error states, i18n, loading/empty states, or edge case handling
+description: "Use when UI needs error states, i18n, loading/empty/skeleton states, edge case handling, offline fallback, boundary errors, '加兜底', '加载状态', '异常处理'"
 user-invokable: true
 args:
   - name: target

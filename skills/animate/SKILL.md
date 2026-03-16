@@ -1,6 +1,6 @@
 ---
 name: animate
-description: Use when adding motion, hover effects, transitions, or micro-interactions to a UI
+description: "Use when adding motion, hover effects, transitions, micro-interactions, loading animations, page transitions, scroll effects, '加动效', '加动画', '交互效果'"
 user-invokable: true
 args:
   - name: target

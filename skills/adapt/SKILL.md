@@ -1,6 +1,6 @@
 ---
 name: adapt
-description: Use when adapting UI for mobile, tablet, different screen sizes, or cross-platform contexts
+description: "Use when adapting UI for mobile/tablet/desktop, responsive breakpoints, cross-platform, media queries, viewport fitting, '手机适配', '响应式', '多端适配'"
 user-invokable: true
 args:
   - name: target
