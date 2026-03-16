@@ -1,11 +1,6 @@
 ---
 name: favicon-gen
-description: >
-  Generate custom favicons from logos, text, or brand colours. Produces all required
-  formats: favicon.svg, favicon.ico, apple-touch-icon.png, icon-192/512.png, and web
-  manifest. Use when initialising websites, replacing CMS default favicons, converting
-  logos to favicons, creating branded icons from initials, or troubleshooting favicon
-  not displaying, iOS black square, or missing manifest.
+description: Use when creating a favicon, apple-touch-icon, or PWA icons for a website — from logo, text, or brand color, outputs all required formats
 ---
 
 # Favicon Generator

@@ -1,6 +1,6 @@
 ---
-name: markdown-to-epub-converter
-description: Convert markdown documents and chat summaries into formatted EPUB ebook files that can be read on any device or uploaded to Kindle.
+name: markdown-to-epub
+description: Use when converting markdown files or chat summaries to EPUB ebook format for Kindle or e-reader — outputs .epub file ready for any device
 ---
 
 # Markdown to EPUB Converter Skill

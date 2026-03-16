@@ -1,12 +1,6 @@
 ---
 name: color-palette
-description: >
-  Generate complete, accessible colour palettes from a single brand hex.
-  Produces 11-shade scale (50-950), semantic tokens, dark mode variants,
-  and Tailwind v4 CSS output. Includes WCAG contrast checking.
-  Use when setting up design systems, creating Tailwind themes, building brand
-  colours from a hex value, or checking colour accessibility.
----
+description: Use when generating a design system palette from a brand hex, setting up Tailwind color tokens, or checking color accessibility (WCAG)---
 
 # Colour Palette Generator
 

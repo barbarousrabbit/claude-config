@@ -1,6 +1,6 @@
 ---
 name: debugging-wizard
-description: Use when investigating errors, analyzing stack traces, or finding root causes of unexpected behavior. Invoke for error investigation, troubleshooting, log analysis, root cause analysis.
+description: Use as alternative to systematic-debugging — step-by-step guided root cause analysis for errors, stack traces, log investigation, and unexpected behavior
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

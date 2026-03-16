@@ -1,3 +1,9 @@
+---
+name: claude-a11y
+description: Use when running a browser-based accessibility scan — says 'a11y audit', 'accessibility scan', 'WCAG compliance check'. Runs axe-core (runtime) + eslint-jsx-a11y (static). Distinct from /audit which reviews code without browser.
+compatibility: claude-code-only
+---
+
 # Accessibility Audit Skill
 
 Run comprehensive accessibility audits on web projects using axe-core (runtime browser scanning) and eslint-plugin-jsx-a11y (static analysis). Configurable scan modes let you choose the right level of depth for your needs.

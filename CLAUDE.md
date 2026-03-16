@@ -60,15 +60,23 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | edits .go / goroutines / Go modules | `golang-pro` |
 | | edits .rs / Cargo / ownership / lifetimes | `rust-engineer` |
 | | writes SQL / slow query / schema design / indexing | `sql-pro` + `database-optimizer` |
-| **Frontend** | builds web pages / React components / CSS layout | `web-design-guidelines` → `frontend-design` + `ui-ux-pro-max` + `interface-design` |
-| | implements dashboard / admin panel / tool UI | `interface-design` + `frontend-patterns` + `senior-frontend` |
+| **Frontend** | builds any web page, Vue/React component, or UI (generic) | `frontend-design` |
+| | builds dashboard / admin panel / data tool / product UI | `interface-design` |
+| | builds React/Next.js app with TypeScript, state, bundle concerns | `senior-frontend` + `frontend-patterns` |
+| | needs React/Next.js patterns — hooks, composition, data fetching | `vercel-react-best-practices` + `vercel-composition-patterns` |
+| | needs style direction — design style, palette, font pairing | `ui-ux-pro-max` |
 | | configures Tailwind / design tokens / theme CSS | `tailwind-theme-builder` → `shadcn-ui` |
-| | needs brand palette / color generation | `color-palette` |
+| | needs brand palette from a hex / Tailwind color tokens / WCAG | `color-palette` |
 | | works with Next.js / app router / SSR / server actions | `nextjs-pro` |
 | | builds WeChat mini-program / Taro pages / NutUI components | `taro-miniprogram` + `taro-miniprogram-ui` |
-| | asks about mobile display / responsiveness / UX issues | `responsiveness-check` + `ux-audit` |
-| | needs poster / favicon / icon set | `canvas-design` + `favicon-gen` + `icon-set-generator` |
+| | checking mobile display / responsiveness issues | `responsiveness-check` + `adapt` |
+| | running a live UX walkthrough / QA sweep in browser | `ux-audit` |
+| | checking UI against Vercel guidelines / best practices compliance | `web-design-guidelines` |
+| | needs poster / static visual design / art | `canvas-design` |
+| | needs favicon / apple-touch-icon / PWA icons | `favicon-gen` |
+| | needs custom SVG icon set for a project | `icon-set-generator` |
 | | resizes / crops / converts / optimizes images | `image-processing` |
+| | creating a claude.ai HTML artifact (not project files) | `web-artifacts-builder` |
 | **UI Refinement** (impeccable) | checks UI quality / WCAG / "what's wrong" / responsiveness | `audit` |
 | | reviewing design / visual hierarchy / UX feedback | `critique` |
 | | final pass before shipping / spacing / alignment / consistency | `polish` |
@@ -86,8 +94,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | UI loads slowly / animations stutter / bundle too large | `optimize` |
 | | adapting UI for mobile / tablet / cross-platform | `adapt` |
 | | first time using impeccable / establishing design context | `teach-impeccable` |
-| **Vibe Coding** | discusses React patterns / hooks / composition | `vercel-react-best-practices` + `vercel-composition-patterns` |
-| | builds Next.js with auth / Supabase / PostgreSQL | `nextjs-pro` |
+| **Vibe Coding** | builds Next.js with auth / Supabase / PostgreSQL | `nextjs-pro` |
 | | builds React Native / Expo mobile app | not installed — handle directly |
 | | codes video / animation with Remotion | not installed — handle directly |
 | **Data** | analyzes CSV / data files / asks for data analysis | `csv-data-summarizer` + `exploratory-data-analysis` |
@@ -111,8 +118,9 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | builds MCP server / tool integration | `mcp-builder` |
 | **Research** | asks about recent trends / last 30 days | `last30days` |
 | | handles i18n / translations / locale setup | `i18n-expert` |
-| | crafts prompts / system messages / agent flows | `prompt-architect` → `prompt-templates` → `prompt-engineering` |
-| | creates / improves a custom skill | `skill-creator` + `writing-skills` |
+| | designing or improving a prompt / system message | `prompt-architect` → `prompt-templates` → `prompt-engineering` |
+| | creating a skill from scratch with evals / benchmarks | `skill-creator` |
+| | writing or editing a skill SKILL.md file | `writing-skills` |
 | | completes non-trivial debugging / wants to extract reusable knowledge | `claudeception` |
 
 ## Project Onboarding
