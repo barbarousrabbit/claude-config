@@ -17,15 +17,14 @@
       "NotebookEdit(*)",
       "Skill(*)"
     ],
-    "additionalDirectories": [],
     "deny": [
       "Bash(rm -rf /)",
       "Bash(sudo rm -rf *)",
       "Bash(format *)",
       "Bash(mkfs*)",
-      "Bash(:(){:|:&};:)",
       "Bash(> /dev/sda*)"
-    ]
+    ],
+    "additionalDirectories": []
   },
   "hooks": {
     "UserPromptSubmit": [
