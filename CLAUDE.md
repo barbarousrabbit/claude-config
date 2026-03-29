@@ -169,6 +169,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | implementing new feature/bugfix via TDD (test-first) / "先写测试" | `test-driven-development` |
 | | tests web app in browser / screenshots / clicks | `webapp-testing` |
 | | generates API docs / JSDoc / OpenAPI spec | `code-documenter` |
+| | runs automated accessibility scan / axe-core / WCAG compliance / "无障碍检测" | `claude-a11y` |
 | **DevOps** | joining unfamiliar codebase / onboarding new teammate / needs map of "what does what" | `codebase-onboarding` |
 | | sets up CI/CD / Docker / K8s / deployment | `devops-engineer` |
 | | designs system architecture / API contracts | `architecture-designer` + `api-designer` |
