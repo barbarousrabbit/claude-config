@@ -2,7 +2,6 @@
 name: extract
 description: "Use when extracting reusable components, building design system, deduplicating UI patterns, DRY refactor, shared component library, '提取组件', '复用', '抽组件'"
 user-invocable: true
-user-invokable: true
 args:
   - name: target
     description: The feature, component, or area to extract from (optional)

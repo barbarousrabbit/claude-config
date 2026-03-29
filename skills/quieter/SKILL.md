@@ -2,7 +2,6 @@
 name: quieter
 description: "Use when design too loud, aggressive, cluttered, overwhelming, too many colors/effects, needs calming down, '太花了', '太吵了', '太花哨', tone it down"
 user-invocable: true
-user-invokable: true
 args:
   - name: target
     description: The feature or component to make quieter (optional)

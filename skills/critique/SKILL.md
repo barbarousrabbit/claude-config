@@ -2,7 +2,6 @@
 name: critique
 description: "Use when reviewing design quality, visual hierarchy, UX flow, design feedback, '帮我看看设计', '设计评审', '这个页面怎么样', design review, aesthetic evaluation"
 user-invocable: true
-user-invokable: true
 args:
   - name: area
     description: The feature or area to critique (optional)

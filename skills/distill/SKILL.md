@@ -2,7 +2,6 @@
 name: distill
 description: "Use when UI cluttered, over-designed, too many elements, needs simplification/minimalism, strip to essentials, '太复杂了', '简化一下', '精简', less is more"
 user-invocable: true
-user-invokable: true
 args:
   - name: target
     description: The feature or component to distill (optional)

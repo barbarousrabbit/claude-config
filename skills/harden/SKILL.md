@@ -2,7 +2,6 @@
 name: harden
 description: "Use when UI needs error states, i18n, loading/empty/skeleton states, edge case handling, offline fallback, boundary errors, '加兜底', '加载状态', '异常处理'"
 user-invocable: true
-user-invokable: true
 args:
   - name: target
     description: The feature or area to harden (optional)

@@ -2,7 +2,6 @@
 name: onboard
 description: "Use when designing empty states, first-run experience, user onboarding, welcome flow, guided tour, zero-data state, '引导页', '新手引导', '空状态设计'"
 user-invocable: true
-user-invokable: true
 args:
   - name: target
     description: The feature or area needing onboarding (optional)
