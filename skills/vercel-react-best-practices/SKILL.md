@@ -1,6 +1,7 @@
 ---
 name: vercel-react-best-practices
 description: Use when optimizing React/Next.js performance — eliminating waterfalls, reducing bundle size, fixing re-renders.
+user-invocable: true
 license: MIT
 metadata:
   author: vercel

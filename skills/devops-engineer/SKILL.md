@@ -1,6 +1,7 @@
 ---
 name: devops-engineer
 description: Use when setting up CI/CD, Docker, Kubernetes, infrastructure as code, cloud platforms, or deployment automation.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

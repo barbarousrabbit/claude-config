@@ -1,6 +1,7 @@
 ---
 name: git-pushing
 description: Use when user says 'commit and push', 'push this', or 'save my work' — stages, commits, and pushes.
+user-invocable: true
 ---
 
 # Git Push Workflow

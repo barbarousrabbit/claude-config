@@ -1,6 +1,7 @@
 ---
 name: revealjs
 description: Use when creating a slide deck or presentation — reveal.js HTML+CSS with themes, speaker notes.
+user-invocable: true
 ---
 
 # Reveal.js Presentations

@@ -1,6 +1,7 @@
 ---
 name: responsiveness-check
 description: Use when testing responsiveness across viewports — screenshots breakpoints, detects layout breaks.
+user-invocable: true
 compatibility: claude-code-only
 ---
 

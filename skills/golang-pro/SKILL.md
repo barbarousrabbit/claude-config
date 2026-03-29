@@ -1,6 +1,7 @@
 ---
 name: golang-pro
 description: Use when building Go apps with goroutines, channels, gRPC, Go generics, or concurrent/microservice systems.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

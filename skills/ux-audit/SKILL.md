@@ -1,6 +1,7 @@
 ---
 name: ux-audit
 description: Use when running UX walkthroughs or QA sweeps on live web apps — flags friction, tests CRUD, produces ranked audit reports.
+user-invocable: true
 compatibility: claude-code-only
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: codebase-onboarding
 description: Use when joining an unfamiliar codebase or onboarding a teammate — architecture overview, key file map, setup guide.
+user-invocable: true
 ---
 
 # Codebase Onboarding

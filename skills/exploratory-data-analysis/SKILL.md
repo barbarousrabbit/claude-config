@@ -1,6 +1,7 @@
 ---
 name: exploratory-data-analysis
 description: Use when exploring scientific data files (chemistry, bioinformatics, genomics, 200+ formats) for structure and quality analysis.
+user-invocable: true
 license: MIT license
 metadata:
     skill-author: K-Dense Inc.

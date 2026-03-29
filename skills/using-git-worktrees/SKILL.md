@@ -1,6 +1,7 @@
 ---
 name: using-git-worktrees
 description: Use when starting feature work that needs workspace isolation — creates isolated git worktrees.
+user-invocable: true
 ---
 
 # Using Git Worktrees

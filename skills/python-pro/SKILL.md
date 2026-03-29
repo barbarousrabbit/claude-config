@@ -1,6 +1,7 @@
 ---
 name: python-pro
 description: Use when building Python 3.11+ apps with type hints, async/await, pytest, dataclasses, or mypy configuration.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

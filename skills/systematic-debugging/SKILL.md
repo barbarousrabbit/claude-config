@@ -1,6 +1,7 @@
 ---
 name: systematic-debugging
 description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
+user-invocable: true
 ---
 
 # Systematic Debugging
@@ -286,6 +287,17 @@ These techniques are part of systematic debugging and available in this director
 **Related skills:**
 - **superpowers:test-driven-development** - For creating failing test case (Phase 4, Step 1)
 - **superpowers:verification-before-completion** - Verify fix worked before claiming success
+
+## When to Use This vs debugging-wizard
+
+| Scenario | Use |
+|----------|-----|
+| Any bug, test failure, unexpected behavior | **systematic-debugging** (this skill) — primary entry point |
+| Need specific debugger setup (Chrome DevTools, pdb, delve) | **debugging-wizard** — has tooling references |
+| Need quick-fix patterns for common errors | **debugging-wizard** — has quick-fix reference |
+| Complex root cause analysis, multi-component tracing | **systematic-debugging** (this skill) |
+
+**Default to this skill.** Use debugging-wizard only when you need its specific tooling/quick-fix references.
 
 ## Real-World Impact
 

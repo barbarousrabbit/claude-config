@@ -1,6 +1,7 @@
 ---
 name: conventional-commits
 description: Use when creating git commits or writing commit messages — enforces Conventional Commits spec.
+user-invocable: true
 ---
 
 # Conventional Commits

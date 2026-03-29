@@ -1,6 +1,7 @@
 ---
 name: database-optimizer
 description: Use when investigating slow queries, analyzing execution plans, or tuning DB config. For SQL writing use sql-pro.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

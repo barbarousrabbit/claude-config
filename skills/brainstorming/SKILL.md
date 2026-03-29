@@ -1,6 +1,7 @@
 ---
 name: brainstorming
 description: Use when user has a vague idea, says 'let's brainstorm', or asks 'X or Y' — explores intent before coding.
+user-invocable: true
 ---
 
 # Brainstorming Ideas Into Designs

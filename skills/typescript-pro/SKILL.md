@@ -1,6 +1,7 @@
 ---
 name: typescript-pro
 description: Use when building TypeScript apps with advanced generics, type guards, utility types, tRPC, or full-stack type safety.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

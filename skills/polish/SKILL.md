@@ -1,6 +1,7 @@
 ---
 name: polish
 description: "Use when UI nearly done, before shipping, spacing/alignment/consistency fixes, pixel-perfect tweaks, final pass, '最后润色', '上线前检查', '微调一下'"
+user-invocable: true
 user-invokable: true
 args:
   - name: target

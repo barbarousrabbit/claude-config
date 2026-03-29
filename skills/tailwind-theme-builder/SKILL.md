@@ -1,6 +1,7 @@
 ---
 name: tailwind-theme-builder
 description: Use when setting up Tailwind v4 + shadcn/ui theming, configuring CSS variables, dark mode, or fixing v3 migration issues.
+user-invocable: true
 ---
 
 # Tailwind Theme Builder

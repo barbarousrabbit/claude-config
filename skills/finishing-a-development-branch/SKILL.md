@@ -1,6 +1,7 @@
 ---
 name: finishing-a-development-branch
 description: Use when implementation is complete and tests pass — guides merge, PR, or cleanup decisions.
+user-invocable: true
 ---
 
 # Finishing a Development Branch

@@ -1,6 +1,7 @@
 ---
 name: pptx
 description: Use when creating, reading, editing, or extracting from .pptx files — slide decks, presentations, speaker notes.
+user-invocable: true
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

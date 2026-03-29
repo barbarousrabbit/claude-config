@@ -1,6 +1,7 @@
 ---
 name: sql-pro
 description: Use when writing complex SQL (CTEs, window functions), designing schemas. For DB tuning use database-optimizer.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

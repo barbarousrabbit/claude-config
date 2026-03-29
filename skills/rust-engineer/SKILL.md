@@ -1,6 +1,7 @@
 ---
 name: rust-engineer
 description: Use when building Rust apps — ownership, lifetimes, traits, async/await with tokio, or zero-cost abstractions.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

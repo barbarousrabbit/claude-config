@@ -1,6 +1,7 @@
 ---
 name: code-auditor
 description: Use when user asks 'how good is this code', wants a codebase health check, or a technical debt audit.
+user-invocable: true
 ---
 
 # Code Auditor

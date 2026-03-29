@@ -1,6 +1,7 @@
 ---
 name: plotly
 description: Use when creating interactive charts with hover, zoom, or pan — dashboards, exploratory analysis.
+user-invocable: true
 license: MIT license
 metadata:
     skill-author: K-Dense Inc.

@@ -1,6 +1,7 @@
 ---
 name: csv-data-summarizer
 description: Use when given a CSV file and asked to analyze, summarize, describe distributions, or plot quick visualizations of tabular data
+user-invocable: true
 metadata:
   version: 2.1.0
   dependencies: python>=3.8, pandas>=2.0.0, matplotlib>=3.7.0, seaborn>=0.12.0

@@ -1,6 +1,7 @@
 ---
 name: prompt-architect
 description: Use when designing or improving a prompt — applies CO-STAR/RISEN/TIDD-EC frameworks.
+user-invocable: true
 ---
 
 # Prompt Architect

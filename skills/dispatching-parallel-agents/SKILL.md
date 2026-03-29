@@ -1,6 +1,7 @@
 ---
 name: dispatching-parallel-agents
 description: Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies
+user-invocable: true
 ---
 
 # Dispatching Parallel Agents
@@ -169,6 +170,17 @@ After agents return:
 2. **Check for conflicts** - Did agents edit same code?
 3. **Run full suite** - Verify all fixes work together
 4. **Spot check** - Agents can make systematic errors
+
+## Chain Handoff
+
+After all agents return and fixes are integrated:
+1. Run full test suite to verify no conflicts
+2. Invoke `verification-before-completion` to confirm all work is done correctly
+3. If committing: invoke `git-pushing` to stage and push changes
+
+```
+dispatching-parallel-agents → (agents complete) → verification-before-completion → git-pushing
+```
 
 ## Real-World Impact
 

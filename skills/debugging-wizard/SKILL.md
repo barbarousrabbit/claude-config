@@ -1,6 +1,7 @@
 ---
 name: debugging-wizard
 description: Use when debugging errors step-by-step — stack traces, log investigation, intermittent issues.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan
@@ -77,6 +78,17 @@ When debugging, provide:
 2. **Evidence**: Stack trace, logs, or test that proves it
 3. **Fix**: Code change that resolves it
 4. **Prevention**: Test or safeguard to prevent recurrence
+
+## When to Use This vs systematic-debugging
+
+| Scenario | Use |
+|----------|-----|
+| Any bug, test failure, unexpected behavior | **systematic-debugging** — primary entry point, use first |
+| Need debugger setup (Chrome DevTools, pdb, delve) | **debugging-wizard** (this skill) — has tooling references |
+| Need quick-fix patterns for common errors | **debugging-wizard** (this skill) — has quick-fix reference |
+| Complex root cause analysis, multi-component tracing | **systematic-debugging** |
+
+**systematic-debugging is the default.** This skill supplements it with tooling references and quick-fix patterns.
 
 ## Knowledge Reference
 

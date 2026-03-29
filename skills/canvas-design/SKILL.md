@@ -1,6 +1,7 @@
 ---
 name: canvas-design
 description: Use when creating a poster, infographic, or static visual — outputs .png/.pdf, not web code.
+user-invocable: true
 license: Complete terms in LICENSE.txt
 ---
 

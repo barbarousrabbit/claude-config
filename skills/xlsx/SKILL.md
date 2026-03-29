@@ -1,6 +1,7 @@
 ---
 name: xlsx
 description: Use when reading, editing, creating, or converting spreadsheet files (.xlsx, .csv, .tsv).
+user-invocable: true
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

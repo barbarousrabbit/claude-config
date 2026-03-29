@@ -1,6 +1,7 @@
 ---
 name: color-palette
 description: Use when generating a palette from a brand hex, setting up Tailwind color tokens, or checking WCAG.
+user-invocable: true
 ---
 
 # Colour Palette Generator

@@ -1,6 +1,7 @@
 ---
 name: skill-creator
 description: Use when creating a skill from scratch with evals, or optimizing a skill description.
+user-invocable: true
 ---
 
 # Skill Creator

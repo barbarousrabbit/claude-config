@@ -1,6 +1,7 @@
 ---
 name: taro-miniprogram-ui
 description: Use when styling Taro mini-program pages — SCSS, NutUI themes, product cards, layout constraints, 小程序样式, 页面布局.
+user-invocable: true
 ---
 
 # Taro 小程序 UI 设计规范

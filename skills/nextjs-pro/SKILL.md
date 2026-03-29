@@ -1,6 +1,7 @@
 ---
 name: nextjs-pro
 description: Use when building Next.js apps — App Router, Server/Client Components, SSR/SSG, middleware, server actions, or Vercel AI SDK.
+user-invocable: true
 ---
 
 # Next.js Pro

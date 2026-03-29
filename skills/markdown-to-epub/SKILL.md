@@ -1,6 +1,7 @@
 ---
 name: markdown-to-epub
 description: Use when converting markdown or chat summaries to EPUB ebook format for Kindle or e-reader.
+user-invocable: true
 ---
 
 # Markdown to EPUB Converter Skill

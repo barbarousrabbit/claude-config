@@ -1,6 +1,7 @@
 ---
 name: test-master
 description: Use when writing tests or creating test strategies — unit, integration, E2E, coverage, performance.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

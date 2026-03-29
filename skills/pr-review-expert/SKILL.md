@@ -1,6 +1,7 @@
 ---
 name: pr-review-expert
 description: Use when reviewing a PR/MR beyond style nits — blast radius, security, breaking changes, coverage delta.
+user-invocable: true
 ---
 
 # PR Review Expert

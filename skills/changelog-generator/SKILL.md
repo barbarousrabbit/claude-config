@@ -1,6 +1,7 @@
 ---
 name: changelog-generator
 description: Use when asking for release notes, changelog, "what changed in vX", or a user-facing summary of recent git commits
+user-invocable: true
 ---
 
 # Changelog Generator

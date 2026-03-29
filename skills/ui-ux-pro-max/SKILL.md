@@ -1,6 +1,7 @@
 ---
 name: ui-ux-pro-max
 description: Use when choosing a design style, color palette, or font pairing — 50+ styles, 97 palettes, 57 pairings.
+user-invocable: true
 ---
 
 # UI/UX Pro Max - Design Intelligence

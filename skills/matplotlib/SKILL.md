@@ -1,6 +1,7 @@
 ---
 name: matplotlib
 description: Use when creating static plots with full customization — publication figures (PNG/PDF/SVG). For stats use seaborn.
+user-invocable: true
 license: https://github.com/matplotlib/matplotlib/tree/main/LICENSE
 metadata:
     skill-author: K-Dense Inc.

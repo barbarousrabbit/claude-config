@@ -1,6 +1,7 @@
 ---
 name: using-superpowers
 description: Meta-skill — establishes skill discovery and invocation at conversation start.
+user-invocable: true
 ---
 
 <EXTREMELY-IMPORTANT>

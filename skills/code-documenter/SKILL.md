@@ -1,6 +1,7 @@
 ---
 name: code-documenter
 description: Use when adding docstrings, creating API docs, OpenAPI/Swagger specs, JSDoc, or documentation sites.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

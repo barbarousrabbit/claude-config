@@ -1,6 +1,7 @@
 ---
 name: javascript-pro
 description: Use when building vanilla JavaScript or Node.js apps with ES2023+ features, async patterns, browser APIs, or module systems.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

@@ -1,6 +1,7 @@
 ---
 name: networkx
 description: Use when working with network/graph data in Python — shortest paths, centrality, community detection.
+user-invocable: true
 license: 3-clause BSD license
 metadata:
     skill-author: K-Dense Inc.

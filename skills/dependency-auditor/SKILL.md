@@ -1,6 +1,7 @@
 ---
 name: dependency-auditor
 description: Use when checking dependencies for vulnerabilities, license issues, outdated packages, or bloat.
+user-invocable: true
 ---
 
 # Dependency Auditor

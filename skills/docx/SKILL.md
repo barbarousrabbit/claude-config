@@ -1,6 +1,7 @@
 ---
 name: docx
 description: Use when creating, reading, editing, or manipulating .docx files — reports, memos, templates, tracked changes.
+user-invocable: true
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

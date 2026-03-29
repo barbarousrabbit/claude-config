@@ -1,6 +1,7 @@
 ---
 name: pdf
 description: Use when reading, merging, splitting, creating, or OCR-scanning PDF files — any .pdf manipulation.
+user-invocable: true
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

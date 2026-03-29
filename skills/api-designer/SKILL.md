@@ -1,6 +1,7 @@
 ---
 name: api-designer
 description: Use when designing REST/GraphQL APIs, creating OpenAPI specs, or planning resource models and pagination.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

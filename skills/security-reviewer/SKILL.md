@@ -1,6 +1,7 @@
 ---
 name: security-reviewer
 description: Use when conducting security audits, SAST scans, penetration testing, or reviewing code and infrastructure for vulnerabilities.
+user-invocable: true
 license: MIT
 allowed-tools: Read, Grep, Glob, Bash
 metadata:

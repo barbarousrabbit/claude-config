@@ -1,6 +1,7 @@
 ---
 name: architecture-designer
 description: Use when designing system architecture, writing ADRs, planning scalability, or reviewing existing designs.
+user-invocable: true
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

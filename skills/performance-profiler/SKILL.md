@@ -1,6 +1,7 @@
 ---
 name: performance-profiler
 description: Use when code is slow or user asks 'why is this slow' — profiles execution, identifies bottlenecks.
+user-invocable: true
 ---
 
 # Performance Profiler

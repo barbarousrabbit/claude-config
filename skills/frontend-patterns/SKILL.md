@@ -1,6 +1,7 @@
 ---
 name: frontend-patterns
 description: Use when implementing React/Next.js patterns — hooks, Zustand, React Query, data fetching, composition.
+user-invocable: true
 origin: ECC
 ---
 

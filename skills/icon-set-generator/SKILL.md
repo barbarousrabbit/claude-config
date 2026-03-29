@@ -1,6 +1,7 @@
 ---
 name: icon-set-generator
 description: Use when a website or app needs custom SVG icons — cohesive project-specific sets, not generic icons.
+user-invocable: true
 ---
 
 # Icon Set Generator

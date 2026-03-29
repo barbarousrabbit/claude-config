@@ -1,6 +1,7 @@
 ---
 name: scikit-learn
 description: Use when building ML pipelines with scikit-learn — classification, clustering, model evaluation, tuning.
+user-invocable: true
 license: BSD-3-Clause license
 metadata:
     skill-author: K-Dense Inc.

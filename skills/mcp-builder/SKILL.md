@@ -1,6 +1,7 @@
 ---
 name: mcp-builder
 description: Use when building an MCP server to connect an external API or service — Python (FastMCP) or TypeScript (MCP SDK)
+user-invocable: true
 license: Complete terms in LICENSE.txt
 ---
 

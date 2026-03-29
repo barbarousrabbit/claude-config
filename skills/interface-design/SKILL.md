@@ -1,6 +1,7 @@
 ---
 name: interface-design
 description: Use when building dashboards, admin panels, or product UIs — NOT for landing pages.
+user-invocable: true
 ---
 
 # Interface Design

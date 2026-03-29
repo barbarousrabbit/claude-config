@@ -1,6 +1,7 @@
 ---
 name: senior-frontend
 description: Use when building React/Next.js + TypeScript apps — component architecture, state, bundle analysis.
+user-invocable: true
 ---
 
 # Senior Frontend

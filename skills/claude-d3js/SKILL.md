@@ -1,6 +1,7 @@
 ---
 name: claude-d3js
 description: Use when creating custom d3.js charts, network diagrams, or SVG-based data visualizations with fine-grained control.
+user-invocable: true
 ---
 
 # D3.js Visualisation

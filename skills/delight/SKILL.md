@@ -1,6 +1,7 @@
 ---
 name: delight
 description: "Use when UI functional but cold/lifeless/sterile, needs personality, micro-joy, memorable moments, Easter eggs, '太冷了', '没灵魂', '加点趣味', spark joy"
+user-invocable: true
 user-invokable: true
 args:
   - name: target

@@ -1,6 +1,7 @@
 ---
 name: i18n-expert
 description: Use when internationalizing apps, extracting hardcoded strings, or setting up i18n (i18next, react-intl).
+user-invocable: true
 ---
 
 # i18n Expert

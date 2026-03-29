@@ -1,6 +1,7 @@
 ---
 name: feature-planning
 description: Use when user describes a new feature and wants to plan before coding — task breakdown and acceptance criteria.
+user-invocable: true
 ---
 
 # Feature Planning
@@ -102,23 +103,20 @@ Confirm:
 - Adjust priorities or approach?
 - Ready to proceed?
 
-### 5. Execute with plan-implementer
+### 5. Execute Implementation
 
-Launch plan-implementer agent for each task:
+**Chain handoff — invoke the next skill in the planning chain:**
 
-```
-Task tool with:
-- subagent_type: 'plan-implementer'
-- description: 'Implement [task name]'
-- prompt: Detailed task description from plan
-```
+- **For multi-file implementations:** invoke `writing-plans` to produce a detailed plan file, then `executing-plans` to implement it
+- **For parallel independent tasks:** invoke `dispatching-parallel-agents` to run agents concurrently
+- **For same-session execution:** invoke `subagent-driven-development` if tasks are independent
 
 **Execution strategy:**
 - Implement sequentially (respect dependencies)
 - Verify each task before next
 - Adjust plan if issues discovered
-- Let test-fixing skill handle failures
-- Let git-pushing skill handle commits
+- Use `systematic-debugging` for failures
+- Use `git-pushing` for commits
 
 ## Best Practices
 
@@ -141,8 +139,17 @@ Task tool with:
 - Keep user informed
 - Adapt based on discoveries
 
-## Integration
+## Chain Position
 
-- **plan-implementer agent**: Receives task specs, implements
-- **test-fixing skill**: Auto-triggered on test failures
-- **git-pushing skill**: Triggered for commits
+```
+brainstorming (vague idea) → feature-planning (requirements) → writing-plans (detailed plan) → executing-plans (implementation)
+```
+
+**This skill sits between brainstorming and writing-plans.** After creating the implementation plan, invoke `writing-plans` to produce a formal plan file ready for execution.
+
+## Related Skills
+
+- **writing-plans**: Produces formal plan files from the breakdown created here
+- **executing-plans**: Implements plan files in a separate session
+- **systematic-debugging**: For debugging issues found during implementation
+- **git-pushing**: For committing completed work

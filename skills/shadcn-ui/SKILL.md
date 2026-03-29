@@ -1,6 +1,7 @@
 ---
 name: shadcn-ui
 description: Use when adding shadcn/ui components, building forms, data tables, or navigation — after tailwind-theme-builder sets up theming.
+user-invocable: true
 ---
 
 # shadcn/ui Components

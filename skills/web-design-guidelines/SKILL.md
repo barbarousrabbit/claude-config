@@ -1,6 +1,7 @@
 ---
 name: web-design-guidelines
 description: Use when checking UI against Vercel's Web Interface Guidelines — contrast, typography, spacing.
+user-invocable: true
 metadata:
   author: vercel
   version: "1.0.0"

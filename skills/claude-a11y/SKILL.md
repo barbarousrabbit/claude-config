@@ -1,6 +1,7 @@
 ---
 name: claude-a11y
 description: Use when running browser-based a11y scans with axe-core + eslint-jsx-a11y — distinct from /audit.
+user-invocable: true
 compatibility: claude-code-only
 ---
 

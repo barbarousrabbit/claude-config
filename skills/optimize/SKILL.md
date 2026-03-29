@@ -1,6 +1,7 @@
 ---
 name: optimize
 description: "Use when UI loads slowly, animations stutter, images heavy, bundle size large, render blocking, lazy load needed, '加载慢', '卡顿', '性能优化', '包太大'"
+user-invocable: true
 user-invokable: true
 args:
   - name: target

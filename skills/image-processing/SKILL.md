@@ -1,6 +1,7 @@
 ---
 name: image-processing
 description: Use when resizing, cropping, converting, or optimizing images — thumbnails, OG cards, PNG/WebP/JPG.
+user-invocable: true
 compatibility: claude-code-only
 ---
 

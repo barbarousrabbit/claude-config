@@ -1,6 +1,7 @@
 ---
 name: code-reviewer
 description: Use when reviewing pull requests, code quality audits, or identifying security vulnerabilities.
+user-invocable: true
 license: MIT
 allowed-tools: Read, Grep, Glob
 metadata:

@@ -1,6 +1,7 @@
 ---
 name: vercel-composition-patterns
 description: Use when refactoring components with prop proliferation, building compound components, render props, or context providers.
+user-invocable: true
 license: MIT
 metadata:
   author: vercel

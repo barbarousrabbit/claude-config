@@ -1,6 +1,7 @@
 ---
 name: prompt-engineering
 description: Use when designing system prompts, AI agent workflows, or multi-agent orchestrations with CoT/few-shot.
+user-invocable: true
 ---
 
 # Prompt Engineering Expert

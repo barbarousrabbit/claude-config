@@ -1,6 +1,7 @@
 ---
 name: verification-before-completion
 description: Use when about to claim work is done — run verification commands and confirm output before any success claims.
+user-invocable: true
 ---
 
 # Verification Before Completion

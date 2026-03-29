@@ -1,6 +1,7 @@
 ---
 name: prompt-templates
 description: Use when crafting system prompts with Anthropic's 10-component framework — role, tone, task, rules, examples.
+user-invocable: true
 ---
 
 # Prompt Templates (Anthropic 10-Component Framework)

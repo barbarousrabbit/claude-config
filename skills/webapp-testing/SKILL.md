@@ -1,6 +1,7 @@
 ---
 name: webapp-testing
 description: Use when testing web apps with Playwright — verifying UI functionality, capturing screenshots, debugging browser behavior.
+user-invocable: true
 license: Complete terms in LICENSE.txt
 ---
 

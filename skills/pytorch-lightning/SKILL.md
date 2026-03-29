@@ -1,6 +1,7 @@
 ---
 name: pytorch-lightning
 description: Use when training neural networks with PyTorch Lightning — LightningModules, multi-GPU, DDP/FSDP, callbacks.
+user-invocable: true
 license: Apache-2.0 license
 metadata:
     skill-author: K-Dense Inc.
