@@ -82,11 +82,13 @@ When delegating via CEO Step 3, check if a specialized agent matches better than
 | 销售/BD/提案/客户管理 | sales/ | `outbound-strategist`, `deal-strategist`, `sales-engineer` |
 | 产品管理/Sprint/用户反馈/趋势 | product/ | `product-manager`, `sprint-prioritizer` |
 | 项目管理/排期/Jira | project-management/ | `project-shepherd`, `jira-workflow-steward` |
-| 游戏开发/关卡/叙事/音效 | game-development/ | `game-designer`, `level-designer`, `narrative-designer` |
+| 游戏开发/关卡/叙事/音效/Unity/Unreal/Godot/Roblox | game-development/ | `game-designer`, `unity-architect`, `unreal-systems-engineer`, `godot-gameplay-scripter` |
 | VR/AR/XR/visionOS/空间计算 | spatial-computing/ | `visionos-spatial-engineer`, `xr-immersive-developer` |
 | 合规/法务/SOC2/HIPAA | specialized/ | `compliance-auditor`, `legal-compliance-checker` |
 | 财务/预算/报表 | support/ | `finance-tracker`, `analytics-reporter` |
 | 招聘/培训/留学 | specialized/ | `recruitment-specialist`, `study-abroad-advisor` |
+| 客服/工单/用户支持 | support/ | `support-responder`, `executive-summary-generator` |
+| 供应链/采购/物流 | specialized/ | `supply-chain-strategist` |
 
 **Priority**: Skills > Agents for coding tasks (skills have structured chains). Agents for business/marketing/sales/PM/game/XR domains where no skill exists.
 

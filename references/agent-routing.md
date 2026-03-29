@@ -26,6 +26,13 @@
 | Solidity / smart contracts | engineering | `engineering-solidity-smart-contract-engineer` |
 | WeChat mini-program | engineering | `engineering-wechat-mini-program-developer` |
 | CMS (WordPress/Drupal) | engineering | `engineering-cms-developer` |
+| Data remediation / self-healing pipelines | engineering | `engineering-ai-data-remediation-engineer` |
+| API performance optimization | engineering | `engineering-autonomous-optimization-architect` |
+| Email data extraction for AI | engineering | `engineering-email-intelligence-engineer` |
+| 飞书/Lark integration | engineering | `engineering-feishu-integration-developer` |
+| Filament PHP admin | engineering | `engineering-filament-optimization-specialist` |
+| Laravel/Livewire/FluxUI | engineering | `engineering-senior-developer` |
+| SIEM / threat detection / MITRE | engineering | `engineering-threat-detection-engineer` |
 | **Design** |
 | UI design / component library | design | `design-ui-designer` |
 | UX research / usability testing | design | `design-ux-researcher` |
@@ -118,12 +125,28 @@
 | Narrative / dialogue / lore | game-development | `narrative-designer` |
 | Game audio / FMOD/Wwise | game-development | `game-audio-engineer` |
 | Shaders / VFX / art pipeline | game-development | `technical-artist` |
+| Unity architecture / C# | game-development/unity | `unity-architect` |
+| Unity multiplayer / netcode | game-development/unity | `unity-multiplayer-engineer` |
+| Unity shader graph / VFX | game-development/unity | `unity-shader-graph-artist` |
+| Unity editor tools | game-development/unity | `unity-editor-tool-developer` |
+| Unreal Engine systems / C++ | game-development/unreal-engine | `unreal-systems-engineer` |
+| Unreal world building | game-development/unreal-engine | `unreal-world-builder` |
+| Unreal multiplayer | game-development/unreal-engine | `unreal-multiplayer-architect` |
+| Unreal technical art / materials | game-development/unreal-engine | `unreal-technical-artist` |
+| Godot scripting / GDScript | game-development/godot | `godot-gameplay-scripter` |
+| Godot multiplayer | game-development/godot | `godot-multiplayer-engineer` |
+| Godot shaders | game-development/godot | `godot-shader-developer` |
+| Roblox experience design | game-development/roblox-studio | `roblox-experience-designer` |
+| Roblox Luau scripting | game-development/roblox-studio | `roblox-systems-scripter` |
+| Roblox avatar / UGC | game-development/roblox-studio | `roblox-avatar-creator` |
+| Blender addon development | game-development/blender | `blender-addon-engineer` |
 | **Spatial Computing** |
 | visionOS / SwiftUI spatial | spatial-computing | `visionos-spatial-engineer` |
 | WebXR / browser AR/VR | spatial-computing | `xr-immersive-developer` |
 | XR interface / interaction | spatial-computing | `xr-interface-architect` |
 | XR cockpit systems | spatial-computing | `xr-cockpit-interaction-specialist` |
 | macOS Metal / 3D rendering | spatial-computing | `macos-spatial-metal-engineer` |
+| Terminal / SwiftTerm integration | spatial-computing | `terminal-integration-specialist` |
 | **Academic** |
 | Historical analysis | academic | `academic-historian` |
 | Cultural anthropology | academic | `academic-anthropologist` |
@@ -133,7 +156,7 @@
 | **Specialized** |
 | Multi-agent orchestration | specialized | `agents-orchestrator` |
 | MCP server development | specialized | `specialized-mcp-builder` |
-| Blockchain audit | specialized | `specialized-blockchain-security-auditor` |
+| Blockchain audit | specialized | `blockchain-security-auditor` |
 | Compliance (SOC2/ISO/HIPAA) | specialized | `compliance-auditor` |
 | Document generation (PDF/PPTX/DOCX) | specialized | `specialized-document-generator` |
 | Workflow architecture | specialized | `specialized-workflow-architect` |
@@ -143,3 +166,19 @@
 | Zettelkasten / knowledge base | specialized | `zk-steward` |
 | Recruitment / hiring (China) | specialized | `recruitment-specialist` |
 | Corporate training design | specialized | `corporate-training-designer` |
+| Accounts payable / vendor payments | specialized | `accounts-payable-agent` |
+| AI agent identity / trust systems | specialized | `agentic-identity-trust` |
+| Automation governance (n8n) | specialized | `automation-governance-architect` |
+| Data consolidation / dashboards | specialized | `data-consolidation-agent` |
+| Government digital presales (China ToG) | specialized | `government-digital-presales-consultant` |
+| Healthcare marketing compliance (China) | specialized | `healthcare-marketing-compliance` |
+| Identity graph for multi-agent | specialized | `identity-graph-operator` |
+| LSP / code intelligence | specialized | `lsp-index-engineer` |
+| Report distribution automation | specialized | `report-distribution-agent` |
+| Sales data extraction (Excel) | specialized | `sales-data-extraction-agent` |
+| Cross-cultural intelligence / inclusion | specialized | `specialized-cultural-intelligence-strategist` |
+| French consulting / ESN market | specialized | `specialized-french-consulting-market` |
+| Korean business culture / etiquette | specialized | `specialized-korean-business-navigator` |
+| ML model QA / audit | specialized | `specialized-model-qa` |
+| Salesforce architecture | specialized | `specialized-salesforce-architect` |
+| Supply chain / procurement | specialized | `supply-chain-strategist` |
