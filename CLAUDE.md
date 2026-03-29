@@ -114,7 +114,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | edits .go / goroutines / Go modules | `golang-pro` |
 | | edits .rs / Cargo / ownership / lifetimes | `rust-engineer` |
 | | writes SQL / slow query / schema design / indexing | `sql-pro` + `database-optimizer` |
-| **Frontend** | builds any web page, Vue/React component, or UI (generic) | `ui-ux-pro-max` → `frontend-design` → `critique` |
+| **Frontend** *(all build tasks MUST follow UI Design Protocol §3-step chain)* | builds any web page, Vue/React component, or UI (generic) | `ui-ux-pro-max` → `frontend-design` → `critique` |
 | | builds dashboard / admin panel / data tool / product UI | `ui-ux-pro-max` → `interface-design` → `critique` |
 | | builds React/Next.js app with TypeScript, state, bundle concerns | `ui-ux-pro-max` → `frontend-design` + `senior-frontend` + `frontend-patterns` → `critique` |
 | | needs React/Next.js patterns — hooks, composition, data fetching | `vercel-react-best-practices` + `vercel-composition-patterns` |
@@ -132,7 +132,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | needs custom SVG icon set for a project | `icon-set-generator` |
 | | resizes / crops / converts / optimizes images | `image-processing` |
 | | creating a claude.ai HTML artifact (not project files) | `web-artifacts-builder` |
-| **UI Refinement** (impeccable) | checks UI quality / WCAG / "what's wrong" / responsiveness | `audit` |
+| **UI Refinement** (impeccable) | "太丑了" / full visual overhaul / "重做设计" — scope is major redesign | `critique` → assess scope → `ui-ux-pro-max` → `frontend-design` → `critique` |
+| | checks UI quality / WCAG / "what's wrong" / responsiveness | `audit` |
 | | reviewing design / visual hierarchy / UX feedback | `critique` |
 | | final pass before shipping / spacing / alignment / consistency | `polish` |
 | | design too safe / generic / boring / needs more impact | `bolder` |

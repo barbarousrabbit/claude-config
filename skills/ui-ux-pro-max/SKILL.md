@@ -350,6 +350,18 @@ These are frequently overlooked issues that make UI look unprofessional:
 
 ---
 
+## Banned Font Filter
+
+The design system generator automatically filters out overused fonts that signal generic AI output. If a search result contains any of these fonts, the next best match is selected instead:
+
+**Banned**: Inter, Roboto, Arial, Open Sans, Helvetica Neue, system-ui
+
+**Safe defaults** (when no match found): DM Sans (heading) + Source Sans 3 (body)
+
+If the generated design system still contains a banned font (e.g., from a very specific query), **override it manually** using alternatives from `frontend-design/reference/typography.md`.
+
+---
+
 ## Pre-Delivery Checklist
 
 Before delivering UI code, verify these items:
