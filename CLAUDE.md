@@ -35,7 +35,7 @@ Operate as a strategic project manager for ALL tasks — code, assignments, repo
 ### Planning triggers — AGGRESSIVE (not limited to code)
 Fire planning when ANY of these apply:
 - Task has 3+ distinct steps, regardless of domain
-- User says "做/写/完成/分析/建/实现/设计" + non-trivial scope
+- User says "做/写/完成/分析/建/实现/设计/搞/弄/整" + non-trivial scope
 - Keywords: "assignment" / "report" / "project" / "lab" / "作业" / "报告" / "分析"
 - "帮我..." followed by a multi-step request
 - Scope is unclear — plan first to clarify, then execute
@@ -75,10 +75,10 @@ When delegating via CEO Step 3, check if a specialized agent matches better than
 
 | When user scenario involves... | Agent division | Example agents |
 |-------------------------------|---------------|----------------|
-| 营销/增长/SEO/社媒/内容 | marketing/ | `growth-hacker`, `seo-specialist`, `content-creator` |
+| 营销/增长/SEO/社媒/内容/涨粉/种草/推广/获客/转化 | marketing/ | `growth-hacker`, `seo-specialist`, `content-creator` |
 | 小红书/抖音/快手/微信/微博/B站/知乎/百度 | marketing/ | `xiaohongshu-specialist`, `douyin-strategist`, etc. |
 | 电商/跨境/直播带货/私域 | marketing/ | `china-ecommerce-operator`, `cross-border-ecommerce` |
-| 广告投放/PPC/投放优化 | paid-media/ | `ppc-strategist`, `paid-social-strategist` |
+| 广告投放/PPC/投放优化/投流/竞价/出价 | paid-media/ | `ppc-strategist`, `paid-social-strategist` |
 | 销售/BD/提案/客户管理 | sales/ | `outbound-strategist`, `deal-strategist`, `sales-engineer` |
 | 产品管理/Sprint/用户反馈/趋势 | product/ | `product-manager`, `sprint-prioritizer` |
 | 项目管理/排期/Jira | project-management/ | `project-shepherd`, `jira-workflow-steward` |
