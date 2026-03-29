@@ -43,8 +43,8 @@ Fire planning when ANY of these apply:
 - **User override**: if user says "直接做" / "别规划了" / "just do it" → skip planning, go straight to execution
 
 **Which planning tool?**
-- **`brainstorming`** → requirements are vague, need to explore approaches, user has an idea but no clear spec
-- **`EnterPlanMode`** → requirements are clear (rubric provided, brief read), just need to structure the execution approach
+- **`brainstorming`** → requirements are vague, need to explore approaches, user has an idea but no clear spec. Examples: "我想做个APP"、"X好还是Y好"、"how should I..."
+- **`EnterPlanMode`** → requirements are clear (rubric provided, brief read, or user gave detailed spec), just need to structure the execution approach. Examples: "帮我做这个作业(已有rubric)"、"实现这个feature(需求明确)"
 
 ### Routing priority
 When multiple categories match, use this precedence: **Academic > Planning (CEO) > category-specific skill**. Example: "帮我做网页作业" → Academic (plan against rubric) first, then Frontend skills for implementation.
@@ -108,8 +108,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | wants to refactor / "重构" / "帮我优化代码" / simplify complex code | `code-auditor` → refactor → `verification-before-completion` |
 | | "review the code" / code health check (no PR context) | `code-auditor`; if PR exists → `requesting-code-review` → `code-reviewer` |
 | | needs isolated workspace for feature development | `using-git-worktrees` |
-| **Writing** | writes blog / doc / copy (no rubric, non-academic) | Plan outline → write → self-review |
-| | says "polish" / refine existing draft | Review → revise → proofread |
+| **Writing** | writes blog / doc / copy (no rubric, non-academic) / "写博客" / "写文档" / "写文案" | Plan outline → write → self-review |
+| | says "polish" / refine existing draft / "润色" / "改一下文章" | Review → revise → proofread |
 | **Languages** | edits .py / uses pip / Django / Flask / pandas | `python-pro` |
 | | edits .ts / TS generics / type errors / monorepo types | `typescript-pro` |
 | | edits .js / vanilla JS / Node.js without TS | `javascript-pro` |
@@ -152,13 +152,13 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | UI loads slowly / animations stutter / bundle too large / "加载慢" / "卡顿" / "性能优化" | `optimize` |
 | | adapting UI for mobile / tablet / cross-platform / "手机适配" / "响应式" / "多端适配" | `adapt` |
 | | first time using impeccable / establishing design context / "设置设计规范" / "初始化设计" | `teach-impeccable` |
-| **Data** | analyzes CSV / data files / asks for data analysis | `csv-data-summarizer` + `exploratory-data-analysis` |
-| | needs interactive charts (hover/zoom) | `plotly` / `claude-d3js` |
-| | needs static publication figures | `matplotlib` / `seaborn` |
-| | trains models / ML pipeline / statistics | `scikit-learn` + `statsmodels` + `pytorch-lightning` |
+| **Data** | analyzes CSV / data files / asks for data analysis / "分析数据" / "看看这个数据" | `csv-data-summarizer` + `exploratory-data-analysis` |
+| | needs interactive charts (hover/zoom) / "做个可交互的图" | `plotly` / `claude-d3js` |
+| | needs static publication figures / "画个图" / "做图表" | `matplotlib` / `seaborn` |
+| | trains models / ML pipeline / statistics / "训练模型" | `scikit-learn` + `statsmodels` + `pytorch-lightning` |
 | | analyzes networks / graph relationships | `networkx` |
-| **Documents** | reads/creates PDF / Word / Excel / PPT | `pdf` · `docx` · `xlsx` · `pptx` |
-| | creates slide deck / presentation / EPUB | `revealjs` · `markdown-to-epub` |
+| **Documents** | reads/creates PDF / Word / Excel / PPT / "读PDF" / "做Word" / "做Excel" | `pdf` · `docx` · `xlsx` · `pptx` |
+| | creates slide deck / presentation / EPUB / "做PPT" / "做幻灯片" | `revealjs` · `markdown-to-epub` |
 | **Quality** | asks "how good is this code" / wants codebase health check / technical debt audit | `code-auditor` |
 | | asks for security audit / reviews for vulnerabilities | `code-reviewer` + `security-reviewer` |
 | | reviewing a PR/MR and wants more than style nits (blast radius, security, breaking changes) | `pr-review-expert` |
@@ -170,13 +170,13 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | tests web app in browser / screenshots / clicks | `webapp-testing` |
 | | generates API docs / JSDoc / OpenAPI spec | `code-documenter` |
 | | runs automated accessibility scan / axe-core / WCAG compliance / "无障碍检测" | `claude-a11y` |
-| **DevOps** | joining unfamiliar codebase / onboarding new teammate / needs map of "what does what" | `codebase-onboarding` |
-| | sets up CI/CD / Docker / K8s / deployment | `devops-engineer` |
+| **DevOps** | joining unfamiliar codebase / onboarding new teammate / needs map of "what does what" / "看看这个项目" | `codebase-onboarding` |
+| | sets up CI/CD / Docker / K8s / deployment / "部署" / "写Dockerfile" | `devops-engineer` |
 | | designs system architecture / API contracts | `architecture-designer` + `api-designer` |
 | | builds MCP server / tool integration | `mcp-builder` |
-| **Research** | asks about recent trends / last 30 days | `last30days` |
-| | handles i18n / translations / locale setup | `i18n-expert` |
-| | designing or improving a prompt / system message | `prompt-architect` (+ `prompt-templates` for Anthropic format, `prompt-engineering` for advanced patterns) |
+| **Research** | asks about recent trends / last 30 days / "最近有什么趋势" | `last30days` |
+| | handles i18n / translations / locale setup / "翻译" / "多语言" | `i18n-expert` |
+| | designing or improving a prompt / system message / "写prompt" / "优化提示词" | `prompt-architect` (+ `prompt-templates` for Anthropic format, `prompt-engineering` for advanced patterns) |
 | | creating a skill from scratch with evals / benchmarks | `skill-creator` |
 | | writing or editing a skill SKILL.md file | `writing-skills` |
 | | completes non-trivial debugging / wants to extract reusable knowledge | `claudeception` |
@@ -228,6 +228,9 @@ python3 ~/.claude/skills/ui-ux-pro-max/scripts/search.py "<product> <industry> <
 - [ ] `cursor-pointer` on all clickable elements
 - [ ] Spacing uses a consistent scale (not random px values) — check `reference/spatial-design.md`
 - [ ] Animations use ease-out-quart/quint/expo (no bounce/elastic) — check `reference/motion-design.md`
+- [ ] Interactive states (focus, active, disabled) properly styled — check `reference/interaction-design.md`
+- [ ] Responsive at 375/768/1024/1440px, mobile-first — check `reference/responsive-design.md`
+- [ ] Microcopy is clear and actionable (labels, errors, empty states) — check `reference/ux-writing.md`
 
 ## Project Onboarding
 New project: scan stack → match routing table → write `.claude/CLAUDE.md` (applicable skills + conventions).
