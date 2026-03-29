@@ -8,32 +8,27 @@ When a task spans multiple phases, chain skills in order. Only load what the cur
 `brainstorming` → `writing-plans` → `test-driven-development` → `executing-plans` → `code-reviewer`
 
 ### Bug Fix
-`systematic-debugging` → `debugging-wizard` → fix → `code-reviewer`
+`systematic-debugging` → fix → `code-reviewer`
 
 ### Release
 `conventional-commits` → `changelog-generator`
 
-## Content Chains
-
-### Blog / Report
-`content-strategy` → `writing-plans` → `copywriting` → `copy-editing`
-
 ## Frontend Chains
 
-### Web UI Page (Ant Design / Tailwind)
-`web-design-guidelines` → `ui-ux-pro-max` → `frontend-design` → `responsiveness-check` → `ux-audit`
+### Web UI Page
+`ui-ux-pro-max` → `frontend-design` → `critique` → `web-design-guidelines`
+
+### Dashboard / Admin Panel
+`ui-ux-pro-max` → `interface-design` → `critique`
 
 ### Tailwind Project Setup
-`tailwind-design-system` → `tailwind-theme-builder` → `shadcn-ui`
+`tailwind-theme-builder` → `shadcn-ui`
 
-### React App
-`vercel-react-best-practices` + `vercel-composition-patterns` → `web-design-guidelines` → `frontend-design` → `webapp-testing`
-
-### Next.js App
-`next-best-practices` → `better-auth-best-practices` → `supabase-postgres-best-practices` → `webapp-testing`
+### React/Next.js App
+`ui-ux-pro-max` → `frontend-design` + `senior-frontend` + `frontend-patterns` → `critique`
 
 ### React Native / Expo
-`vercel-react-native-skills` → `building-native-ui` → `webapp-testing`
+`vercel-react-native-skills` + `ui-ux-pro-max` → build → test
 
 ### WeChat Mini-program
 `taro-miniprogram` + `taro-miniprogram-ui` + `typescript-pro` → `test-master`
@@ -43,8 +38,5 @@ When a task spans multiple phases, chain skills in order. Only load what the cur
 ### API Development
 `api-designer` → `typescript-pro` → `test-master` → `security-reviewer`
 
-## Video
-`remotion-best-practices` → `vercel-react-best-practices`
-
 ## Prompt Engineering
-`prompt-architect` → `prompt-templates` → `prompt-engineering`
+`prompt-architect` (primary) + `prompt-templates` (Anthropic format) + `prompt-engineering` (advanced patterns)

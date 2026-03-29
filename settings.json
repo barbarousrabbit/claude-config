@@ -15,7 +15,8 @@
       "WebFetch(*)",
       "WebSearch(*)",
       "NotebookEdit(*)",
-      "Skill(*)"
+      "Skill(*)",
+      "Edit(~/.claude/skills/frontend-design/**)"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -24,7 +25,11 @@
       "Bash(mkfs*)",
       "Bash(> /dev/sda*)"
     ],
-    "additionalDirectories": []
+    "additionalDirectories": [
+      "C:\\Users\\Zhang\\.claude\\skills\\vercel-react-native-skills",
+      "C:\\Users\\Zhang\\.claude",
+      "C:\\Users\\Zhang\\.claude\\skills\\frontend-design"
+    ]
   },
   "hooks": {
     "UserPromptSubmit": [

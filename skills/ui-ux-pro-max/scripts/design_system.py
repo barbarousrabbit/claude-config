@@ -29,8 +29,20 @@ SEARCH_CONFIG = {
     "style": {"max_results": 3},
     "color": {"max_results": 2},
     "landing": {"max_results": 2},
-    "typography": {"max_results": 2}
+    "typography": {"max_results": 5}  # Increased to allow filtering banned fonts
 }
+
+# Fonts that look generic / AI-generated — frontend-design skill bans these
+BANNED_FONTS = {"Inter", "Roboto", "Arial", "Open Sans", "Helvetica Neue", "system-ui"}
+
+# Safe defaults when no match found (distinctive, not overused)
+DEFAULT_HEADING_FONT = "DM Sans"
+DEFAULT_BODY_FONT = "Source Sans 3"
+DEFAULT_PRIMARY_COLOR = "#1B4332"    # Deep forest green — avoids Tailwind blue
+DEFAULT_SECONDARY_COLOR = "#2D6A4F"
+DEFAULT_CTA_COLOR = "#E76F51"        # Warm terracotta accent
+DEFAULT_BG_COLOR = "#FAFAF8"         # Warm off-white, not pure white
+DEFAULT_TEXT_COLOR = "#1A1A2E"       # Near-black with subtle blue tint
 
 
 # ============ DESIGN SYSTEM GENERATOR ============
@@ -185,7 +197,15 @@ class DesignSystemGenerator:
 
         best_style = self._select_best_match(style_results, reasoning.get("style_priority", []))
         best_color = color_results[0] if color_results else {}
-        best_typography = typography_results[0] if typography_results else {}
+        # Filter banned fonts from typography results
+        safe_typography = [
+            t for t in typography_results
+            if t.get("Heading Font", "") not in BANNED_FONTS
+            and t.get("Body Font", "") not in BANNED_FONTS
+        ]
+        best_typography = safe_typography[0] if safe_typography else (
+            typography_results[0] if typography_results else {}
+        )
         best_landing = landing_results[0] if landing_results else {}
 
         # Step 5: Build final recommendation
@@ -214,16 +234,16 @@ class DesignSystemGenerator:
                 "accessibility": best_style.get("Accessibility", "")
             },
             "colors": {
-                "primary": best_color.get("Primary (Hex)", "#2563EB"),
-                "secondary": best_color.get("Secondary (Hex)", "#3B82F6"),
-                "cta": best_color.get("CTA (Hex)", "#F97316"),
-                "background": best_color.get("Background (Hex)", "#F8FAFC"),
-                "text": best_color.get("Text (Hex)", "#1E293B"),
+                "primary": best_color.get("Primary (Hex)", DEFAULT_PRIMARY_COLOR),
+                "secondary": best_color.get("Secondary (Hex)", DEFAULT_SECONDARY_COLOR),
+                "cta": best_color.get("CTA (Hex)", DEFAULT_CTA_COLOR),
+                "background": best_color.get("Background (Hex)", DEFAULT_BG_COLOR),
+                "text": best_color.get("Text (Hex)", DEFAULT_TEXT_COLOR),
                 "notes": best_color.get("Notes", "")
             },
             "typography": {
-                "heading": best_typography.get("Heading Font", "Inter"),
-                "body": best_typography.get("Body Font", "Inter"),
+                "heading": best_typography.get("Heading Font", DEFAULT_HEADING_FONT),
+                "body": best_typography.get("Body Font", DEFAULT_BODY_FONT),
                 "mood": best_typography.get("Mood/Style Keywords", reasoning.get("typography_mood", "")),
                 "best_for": best_typography.get("Best For", ""),
                 "google_fonts_url": best_typography.get("Google Fonts URL", ""),
@@ -578,11 +598,11 @@ def format_master_md(design_system: dict) -> str:
     lines.append("")
     lines.append("| Role | Hex | CSS Variable |")
     lines.append("|------|-----|--------------|")
-    lines.append(f"| Primary | `{colors.get('primary', '#2563EB')}` | `--color-primary` |")
-    lines.append(f"| Secondary | `{colors.get('secondary', '#3B82F6')}` | `--color-secondary` |")
-    lines.append(f"| CTA/Accent | `{colors.get('cta', '#F97316')}` | `--color-cta` |")
-    lines.append(f"| Background | `{colors.get('background', '#F8FAFC')}` | `--color-background` |")
-    lines.append(f"| Text | `{colors.get('text', '#1E293B')}` | `--color-text` |")
+    lines.append(f"| Primary | `{colors.get('primary', DEFAULT_PRIMARY_COLOR)}` | `--color-primary` |")
+    lines.append(f"| Secondary | `{colors.get('secondary', DEFAULT_SECONDARY_COLOR)}` | `--color-secondary` |")
+    lines.append(f"| CTA/Accent | `{colors.get('cta', DEFAULT_CTA_COLOR)}` | `--color-cta` |")
+    lines.append(f"| Background | `{colors.get('background', DEFAULT_BG_COLOR)}` | `--color-background` |")
+    lines.append(f"| Text | `{colors.get('text', DEFAULT_TEXT_COLOR)}` | `--color-text` |")
     lines.append("")
     if colors.get("notes"):
         lines.append(f"**Color Notes:** {colors.get('notes', '')}")
@@ -591,8 +611,8 @@ def format_master_md(design_system: dict) -> str:
     # Typography
     lines.append("### Typography")
     lines.append("")
-    lines.append(f"- **Heading Font:** {typography.get('heading', 'Inter')}")
-    lines.append(f"- **Body Font:** {typography.get('body', 'Inter')}")
+    lines.append(f"- **Heading Font:** {typography.get('heading', DEFAULT_HEADING_FONT)}")
+    lines.append(f"- **Body Font:** {typography.get('body', DEFAULT_BODY_FONT)}")
     if typography.get("mood"):
         lines.append(f"- **Mood:** {typography.get('mood', '')}")
     if typography.get("google_fonts_url"):
