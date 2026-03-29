@@ -97,11 +97,11 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | "帮我看看" / "改一下" / review partial work / "check my work" | Read work → compare against rubric/requirements → give feedback |
 | | "检查作业" / "check assignment" / "帮我查" / wants rubric review | `/user:check-assignment` (read rubric → compare point by point) |
 | | text sounds AI / Turnitin risk / "去AI痕迹" / "humanize" / "降重" | `humanizer` (rewrite to reduce AI fingerprint, keep meaning) |
-| **Execution** | hits error / stack trace / test failure / "why is this broken" | `systematic-debugging` |
+| **Execution** | hits error / stack trace / test failure / "why is this broken" / "报错" / "出错了" / "跑不了" / "功能不对" | `systematic-debugging` |
 | | says "review" / PR ready / wants code feedback | `requesting-code-review` → `code-reviewer` |
 | | receives code review feedback / applying suggestions | `receiving-code-review` |
 | | ready to commit / asks for commit message | `conventional-commits` |
-| | says "commit and push" / "push this" / "save my work" | `git-pushing` |
+| | says "commit and push" / "push this" / "save my work" / "提交代码" / "推代码" | `git-pushing` |
 | | asks for release notes / changelog / version bump | `changelog-generator` |
 | | feature complete / ready to merge branch | `finishing-a-development-branch` |
 | | about to say "done" / mark task complete | `verification-before-completion` |

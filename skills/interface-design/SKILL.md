@@ -390,3 +390,7 @@ For more detail on specific topics:
 - `/interface-design:audit` — Check code against system
 - `/interface-design:extract` — Extract patterns from code
 - `/interface-design:critique` — Critique your build for craft, then rebuild what defaulted
+
+## Chain Handoff
+
+After building the dashboard/admin UI, invoke `critique` for self-review before delivering to the user. If the critique reveals major issues, fix them before showing output.
