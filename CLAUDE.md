@@ -165,13 +165,13 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | code is slow / page loads sluggishly / "why is this slow" (app-level) | `performance-profiler` |
 | | slow query / query optimization / "查询太慢" (DB-level) | `database-optimizer` + `sql-pro` |
 | | checking dependencies for vulnerabilities / license compliance / outdated packages | `dependency-auditor` |
-| | writes tests / adds tests to existing code / coverage gaps / "写个测试" | `test-master` |
+| | writes tests / adds tests to existing code / coverage gaps / "写个测试" / "跑测试" / "跑一下测试" | `test-master` |
 | | implementing new feature/bugfix via TDD (test-first) / "先写测试" | `test-driven-development` |
 | | tests web app in browser / screenshots / clicks | `webapp-testing` |
 | | generates API docs / JSDoc / OpenAPI spec | `code-documenter` |
 | | runs automated accessibility scan / axe-core / WCAG compliance / "无障碍检测" | `claude-a11y` |
 | **DevOps** | joining unfamiliar codebase / onboarding new teammate / needs map of "what does what" / "看看这个项目" | `codebase-onboarding` |
-| | sets up CI/CD / Docker / K8s / deployment / "部署" / "写Dockerfile" | `devops-engineer` |
+| | sets up CI/CD / Docker / K8s / deployment / "部署" / "写Dockerfile" / "配环境" / "搭环境" | `devops-engineer` |
 | | designs system architecture / API contracts | `architecture-designer` + `api-designer` |
 | | builds MCP server / tool integration | `mcp-builder` |
 | **Research** | asks about recent trends / last 30 days / "最近有什么趋势" | `last30days` |
