@@ -105,6 +105,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | asks for release notes / changelog / version bump | `changelog-generator` |
 | | feature complete / ready to merge branch | `finishing-a-development-branch` |
 | | about to say "done" / mark task complete | `verification-before-completion` |
+| | wants to refactor / "重构" / "帮我优化代码" / simplify complex code | `code-auditor` → refactor → `verification-before-completion` |
+| | "review the code" / code health check (no PR context) | `code-auditor`; if PR exists → `requesting-code-review` → `code-reviewer` |
 | | needs isolated workspace for feature development | `using-git-worktrees` |
 | **Writing** | writes blog / doc / copy (no rubric, non-academic) | Plan outline → write → self-review |
 | | says "polish" / refine existing draft | Review → revise → proofread |
@@ -160,7 +162,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | **Quality** | asks "how good is this code" / wants codebase health check / technical debt audit | `code-auditor` |
 | | asks for security audit / reviews for vulnerabilities | `code-reviewer` + `security-reviewer` |
 | | reviewing a PR/MR and wants more than style nits (blast radius, security, breaking changes) | `pr-review-expert` |
-| | code is slow / page loads sluggishly / "why is this slow" | `performance-profiler` |
+| | code is slow / page loads sluggishly / "why is this slow" (app-level) | `performance-profiler` |
+| | slow query / query optimization / "查询太慢" (DB-level) | `database-optimizer` + `sql-pro` |
 | | checking dependencies for vulnerabilities / license compliance / outdated packages | `dependency-auditor` |
 | | writes tests / asks to write tests / coverage gaps | `test-master` + `test-driven-development` |
 | | tests web app in browser / screenshots / clicks | `webapp-testing` |
