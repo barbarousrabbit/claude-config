@@ -70,6 +70,26 @@ Default to `TeamCreate` for non-trivial tasks. Trigger on ANY of:
 - Single long task but benefits from a dedicated worker (e.g., one agent researches while another writes)
 Only go direct for: single-file edits, quick lookups, trivial one-liners.
 
+### Agency Agents — 178 specialized agents (`~/.claude/agents/`)
+When delegating via CEO Step 3, check if a specialized agent matches better than a generic skill. Consult `references/agent-routing.md` for the full index. Quick trigger rules:
+
+| When user scenario involves... | Agent division | Example agents |
+|-------------------------------|---------------|----------------|
+| 营销/增长/SEO/社媒/内容 | marketing/ | `growth-hacker`, `seo-specialist`, `content-creator` |
+| 小红书/抖音/快手/微信/微博/B站/知乎/百度 | marketing/ | `xiaohongshu-specialist`, `douyin-strategist`, etc. |
+| 电商/跨境/直播带货/私域 | marketing/ | `china-ecommerce-operator`, `cross-border-ecommerce` |
+| 广告投放/PPC/投放优化 | paid-media/ | `ppc-strategist`, `paid-social-strategist` |
+| 销售/BD/提案/客户管理 | sales/ | `outbound-strategist`, `deal-strategist`, `sales-engineer` |
+| 产品管理/Sprint/用户反馈/趋势 | product/ | `product-manager`, `sprint-prioritizer` |
+| 项目管理/排期/Jira | project-management/ | `project-shepherd`, `jira-workflow-steward` |
+| 游戏开发/关卡/叙事/音效 | game-development/ | `game-designer`, `level-designer`, `narrative-designer` |
+| VR/AR/XR/visionOS/空间计算 | spatial-computing/ | `visionos-spatial-engineer`, `xr-immersive-developer` |
+| 合规/法务/SOC2/HIPAA | specialized/ | `compliance-auditor`, `legal-compliance-checker` |
+| 财务/预算/报表 | support/ | `finance-tracker`, `analytics-reporter` |
+| 招聘/培训/留学 | specialized/ | `recruitment-specialist`, `study-abroad-advisor` |
+
+**Priority**: Skills > Agents for coding tasks (skills have structured chains). Agents for business/marketing/sales/PM/game/XR domains where no skill exists.
+
 ## Skill Routing
 Invoke matching skills BEFORE responding when the task clearly fits the routing table. If a skill fails to load, fall back to direct handling — never retry a failed skill invocation.
 
