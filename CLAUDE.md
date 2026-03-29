@@ -165,7 +165,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | code is slow / page loads sluggishly / "why is this slow" (app-level) | `performance-profiler` |
 | | slow query / query optimization / "查询太慢" (DB-level) | `database-optimizer` + `sql-pro` |
 | | checking dependencies for vulnerabilities / license compliance / outdated packages | `dependency-auditor` |
-| | writes tests / asks to write tests / coverage gaps | `test-master` + `test-driven-development` |
+| | writes tests / adds tests to existing code / coverage gaps / "写个测试" | `test-master` |
+| | implementing new feature/bugfix via TDD (test-first) / "先写测试" | `test-driven-development` |
 | | tests web app in browser / screenshots / clicks | `webapp-testing` |
 | | generates API docs / JSDoc / OpenAPI spec | `code-documenter` |
 | **DevOps** | joining unfamiliar codebase / onboarding new teammate / needs map of "what does what" | `codebase-onboarding` |
