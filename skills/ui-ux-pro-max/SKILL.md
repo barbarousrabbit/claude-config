@@ -397,3 +397,11 @@ Before delivering UI code, verify these items:
 - [ ] Form inputs have labels
 - [ ] Color is not the only indicator
 - [ ] `prefers-reduced-motion` respected
+
+## Chain Handoff
+
+After generating the design system, invoke the next skill in the UI chain:
+- General web pages/components → `frontend-design`
+- Dashboards/admin panels → `interface-design`
+
+Do NOT stop after the design system — continue to the build step.

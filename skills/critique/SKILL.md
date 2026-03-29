@@ -116,3 +116,10 @@ Provocative questions that might unlock better solutions:
 - Give concrete suggestions, not just "consider exploring..."
 - Prioritize ruthlessly—if everything is important, nothing is
 - Don't soften criticism—developers need honest feedback to ship great design
+
+## Chain Handoff
+
+If critique reveals the design is fundamentally broken ("太丑了" / major redesign needed):
+1. Invoke `ui-ux-pro-max` to generate a new design system
+2. Then `frontend-design` (or `interface-design` for dashboards) to rebuild
+3. Then `critique` again for final review
