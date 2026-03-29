@@ -135,23 +135,23 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | resizes / crops / converts / optimizes images | `image-processing` |
 | | creating a claude.ai HTML artifact (not project files) | `web-artifacts-builder` |
 | **UI Refinement** (impeccable) | "太丑了" / full visual overhaul / "重做设计" — scope is major redesign | `critique` → assess scope → `ui-ux-pro-max` → `frontend-design` → `critique` |
-| | checks UI quality / WCAG / "what's wrong" / responsiveness | `audit` |
-| | reviewing design / visual hierarchy / UX feedback | `critique` |
-| | final pass before shipping / spacing / alignment / consistency | `polish` |
-| | design too safe / generic / boring / needs more impact | `bolder` |
-| | design too loud / aggressive / cluttered | `quieter` |
-| | UI too gray / colorless / monotone | `colorize` |
-| | adding hover effects / transitions / micro-interactions | `animate` |
-| | UI cluttered / over-designed / needs simplification | `distill` |
-| | needs error states / i18n / loading states / edge cases | `harden` |
-| | component inconsistent / doesn't match design system | `normalize` |
-| | extracting reusable components / deduplicating UI patterns | `extract` |
-| | UI copy unclear / button labels / error messages confusing | `clarify` |
-| | UI functional but cold / needs personality / delight | `delight` |
-| | empty states / first-run experience / onboarding flows | `onboard` |
-| | UI loads slowly / animations stutter / bundle too large | `optimize` |
-| | adapting UI for mobile / tablet / cross-platform | `adapt` |
-| | first time using impeccable / establishing design context | `teach-impeccable` |
+| | checks UI quality / WCAG / "what's wrong" / responsiveness / "这个UI有什么问题" / "检查一下UI" | `audit` |
+| | reviewing design / visual hierarchy / UX feedback / "帮我看看设计" / "设计评审" | `critique` |
+| | final pass before shipping / spacing / alignment / "最后润色" / "上线前检查" / "微调一下" | `polish` |
+| | design too safe / generic / boring / needs more impact / "太平了" / "没特色" / "太普通" | `bolder` |
+| | design too loud / aggressive / cluttered / "太花了" / "太吵了" / "太花哨" | `quieter` |
+| | UI too gray / colorless / monotone / "太灰了" / "没颜色" / "加点颜色" | `colorize` |
+| | adding hover effects / transitions / micro-interactions / "加动效" / "加动画" | `animate` |
+| | UI cluttered / over-designed / needs simplification / "太复杂了" / "简化一下" / "精简" | `distill` |
+| | needs error states / i18n / loading states / edge cases / "加兜底" / "加载状态" / "异常处理" | `harden` |
+| | component inconsistent / doesn't match design system / "风格不统一" / "不一致" | `normalize` |
+| | extracting reusable components / deduplicating UI patterns / "提取组件" / "复用" / "抽组件" | `extract` |
+| | UI copy unclear / button labels / error messages confusing / "文案不清楚" / "提示语优化" / "看不懂" | `clarify` |
+| | UI functional but cold / needs personality / delight / "太冷了" / "没灵魂" / "加点趣味" | `delight` |
+| | empty states / first-run experience / onboarding flows / "引导页" / "新手引导" / "空状态设计" | `onboard` |
+| | UI loads slowly / animations stutter / bundle too large / "加载慢" / "卡顿" / "性能优化" | `optimize` |
+| | adapting UI for mobile / tablet / cross-platform / "手机适配" / "响应式" / "多端适配" | `adapt` |
+| | first time using impeccable / establishing design context / "设置设计规范" / "初始化设计" | `teach-impeccable` |
 | **Data** | analyzes CSV / data files / asks for data analysis | `csv-data-summarizer` + `exploratory-data-analysis` |
 | | needs interactive charts (hover/zoom) | `plotly` / `claude-d3js` |
 | | needs static publication figures | `matplotlib` / `seaborn` |
