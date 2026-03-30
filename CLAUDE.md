@@ -95,6 +95,8 @@ When delegating via CEO Step 3, check if a specialized agent matches better than
 ## Skill Routing
 Invoke matching skills BEFORE responding when the task clearly fits the routing table. If a skill fails to load, fall back to direct handling — never retry a failed skill invocation.
 
+**Agent check — MANDATORY**: If no skill matches but the task involves marketing/sales/product/PM/game/XR/compliance/finance/supply-chain/recruiting, you MUST check `references/agent-routing.md` and spawn the matching agent via the Agent tool. Agents are as mandatory as skills for their domains — not optional suggestions.
+
 **Design principle**: description = door sign (trigger scenarios), SKILL.md = manual (concise), references = filing cabinet (detailed templates). See `references/skill-chains.md` for multi-step chaining patterns.
 
 ### Routing Table
