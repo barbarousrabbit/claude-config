@@ -71,5 +71,6 @@
         "repo": "anthropics/skills"
       }
     }
-  }
+  },
+  "effortLevel": "max"
 }
