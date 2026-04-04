@@ -1,6 +1,6 @@
 ---
 name: "migration-architect"
-description: "Migration Architect"
+description: "Use when planning zero-downtime database or system migrations, version upgrades, data migration strategies, rollback plans, or compatibility validation between old and new systems. NOT for schema design (use database-schema-designer) or writing SQL (use sql-pro)."
 ---
 
 # Migration Architect

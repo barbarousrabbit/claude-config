@@ -1,6 +1,6 @@
 ---
 name: "observability-designer"
-description: "Observability Designer (POWERFUL)"
+description: "Use when designing monitoring, logging, or tracing systems — SLI/SLO frameworks, alerting rules, Grafana/Prometheus dashboards, OpenTelemetry instrumentation, or production observability strategy. NOT for application performance profiling (use performance-profiler)."
 ---
 
 # Observability Designer (POWERFUL)

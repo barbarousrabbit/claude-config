@@ -1,6 +1,6 @@
 ---
 name: "monorepo-navigator"
-description: "Monorepo Navigator"
+description: "Use when working in monorepos — Nx, Turborepo, Lerna, or pnpm workspace navigation, dependency graph analysis, affected package detection, or build system optimization."
 ---
 
 # Monorepo Navigator
