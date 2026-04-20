@@ -1,6 +1,0 @@
-
-======================================================================
-DETAILED ANALYSIS: script/DataTable/ActionData.rpyc
-======================================================================
-Total size: 1098 characters
-File size: 2078 bytes

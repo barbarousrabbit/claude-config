@@ -39,5 +39,6 @@ plugins/blocklist.json
 plugins/known_marketplaces.json
 
 # === Temporary files ===
+temp/
 *.jsonl
 mcp-needs-auth-cache.json

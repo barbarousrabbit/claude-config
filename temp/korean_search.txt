@@ -1,7 +1,0 @@
-================================================================================
-SEARCH FOR SPECIFIC KOREAN WORDS
-================================================================================
-
-[-] None of the test Korean words found
-
-[*] Let me try searching with ripgrep...
