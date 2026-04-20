@@ -1,0 +1,115 @@
+
+======================================================================
+FILE: script/DataTable/ActionData.rpyc
+Found 2 Korean word(s)
+======================================================================
+
+[RAW]: 펣
+Context snippet: '\x07\x02(~Jv{fw\x17<x5ց\x08d-w;v`\'\x05-(xp>dcCn۾e>J2\ryR\'xE.\x11y>?\x12<{<b+V\r\x0c,sKW\x1a\x7f\x1bI\x11ْq=^*\x12t,C\x12z]8\x05ht¼09C\x16Y^7\r\u0379h\'\x08dj^\x15[펣\r"kD-ї\x00\x1bdBr\x1f4\x11ţt\x02\\^'
+
+[RAW]: 펣
+Context snippet: '\x07\x02(~Jv{fw\x17<x5ց\x08d-w;v`\'\x05-(xp>dcCn۾e>J2\ryR\'xE.\x11y>?\x12<{<b+V\r\x0c,sKW\x1a\x7f\x1bI\x11ْq=^*\x12t,C\x12z]8\x05ht¼09C\x16Y^7\r\u0379h\'\x08dj^\x15[펣\r"kD-ї\x00\x1bdBr\x1f4\x11ţt\x02\\^'
+
+======================================================================
+FILE: script/DataTable/ActorData.rpyc
+Found 8 Korean word(s)
+======================================================================
+
+[RAW]: 쓊
+Context snippet: 'dd2Dd)\x01\x12\x1c\x0e\x1c2jj\\*J\x01#2m6\x04ۂKfv{vT%K7]=Yc\x0bC-hYB4ð\x0b\x10a\x17\x12Q,\t\x04\x1dqH\x01r\x00\x1c"@)\x15cK\x01\n?w\x07»0\x0fA\\5\ue922_:\x05!\x19\r=XTxWټ\x12[g5։:d8v쓊qGF_Β2\x04*.W\x0cq)<b\x03\x1aBc'
+
+[RAW]: 쫠
+Context snippet: 'S\\\x03J<b;<LCպ{r\n\x0cZ\x17N-nw\x0427\'\x7f\x13(.\x06#K\x18M%mGT"\x05~F\x15HĖ\x1e\x7f6`v!+\x19R_M\x0cXR\x0fgM\x19ǫIl\\џ\x0f\\\x0c\x07\x0f]̱c\x0f.\x1aꙌ4D\tl\x02!\x01\x02 ӋxËKhx%\x1b\x15=;쫠\x1d"#\x0b(h*4\\ cҡ$\x1cp&*#\x19'
+
+[RAW]: 퀮
+Context snippet: '\x02k\x8a\x04\ueb39ì\x02\x12u>Ø\x07{`7\x0fQ"!.,-ڰQ8D\x17TO\x15o9)%\x02I\x0cڸc\x1e\x196kE:\x1dF\x0e*6\x14]\x91eX%K\x06v]S\x1a\x08}\x0e\x1dy~+\x056ȿM\x7f_\x19$CN\x14x\x167ȵOer\x17ľ\x1a\x15eX\x00`\x1c\\2\x14N퀮\x0bҜP \x18\x1c߯j7\x08\x07i\\QL2HQ\x19'
+
+[RAW]: 봔
+Context snippet: '?P&Sx0DQ\x1b?GL\x7fm\x13?TFy"/\x0b~Z.*2OU̳K\x0f&\x04ShU{\x08\n($\x17-G,C]R&BRhG\nyd}?Vˊ,>\r3JPw/XD2X&VzO?\x0c9E(\x15\x0b\r2j=p\x02ɯ\rvbpEV\x14\x17j봔Uj\x03/5C\x00T\x16,GPZ\x13AG5BB'
+
+[RAW]: 쓊
+Context snippet: 'dd2Dd)\x01\x12\x1c\x0e\x1c2jj\\*J\x01#2m6\x04ۂKfv{vT%K7]=Yc\x0bC-hYB4ð\x0b\x10a\x17\x12Q,\t\x04\x1dqH\x01r\x00\x1c"@)\x15cK\x01\n?w\x07»0\x0fA\\5\ue922_:\x05!\x19\r=XTxWټ\x12[g5։:d8v쓊qGF_Β2\x04*.W\x0cq)<b\x03\x1aBc'
+
+[RAW]: 쫠
+Context snippet: 'S\\\x03J<b;<LCպ{r\n\x0cZ\x17N-nw\x0427\'\x7f\x13(.\x06#K\x18M%mGT"\x05~F\x15HĖ\x1e\x7f6`v!+\x19R_M\x0cXR\x0fgM\x19ǫIl\\џ\x0f\\\x0c\x07\x0f]̱c\x0f.\x1aꙌ4D\tl\x02!\x01\x02 ӋxËKhx%\x1b\x15=;쫠\x1d"#\x0b(h*4\\ cҡ$\x1cp&*#\x19'
+
+[RAW]: 퀮
+Context snippet: '\x02k\x8a\x04\ueb39ì\x02\x12u>Ø\x07{`7\x0fQ"!.,-ڰQ8D\x17TO\x15o9)%\x02I\x0cڸc\x1e\x196kE:\x1dF\x0e*6\x14]\x91eX%K\x06v]S\x1a\x08}\x0e\x1dy~+\x056ȿM\x7f_\x19$CN\x14x\x167ȵOer\x17ľ\x1a\x15eX\x00`\x1c\\2\x14N퀮\x0bҜP \x18\x1c߯j7\x08\x07i\\QL2HQ\x19'
+
+[RAW]: 봔
+Context snippet: '?P&Sx0DQ\x1b?GL\x7fm\x13?TFy"/\x0b~Z.*2OU̳K\x0f&\x04ShU{\x08\n($\x17-G,C]R&BRhG\nyd}?Vˊ,>\r3JPw/XD2X&VzO?\x0c9E(\x15\x0b\r2j=p\x02ɯ\rvbpEV\x14\x17j봔Uj\x03/5C\x00T\x16,GPZ\x13AG5BB'
+
+======================================================================
+FILE: script/DataTable/QuestData.rpyc
+Found 8 Korean word(s)
+======================================================================
+
+[RAW]: 놈
+Context snippet: '\x00A\x06\x00\x00\x02\x00\x00\x00o\x06\x00\x00A\x06\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00x^YOo\x1bE\x14wR\x0b\x07-\x10Tnho&4rD%(]c{23vk$$8j\x037.P\x03_\x03w.ٝ]ETK;ޛo\u07bc|s\x0f*\x1e5?q%6hc\x1bn^\x170c놈q\x17P=\x01l\x024hLExe\x19\x13*\x08|R'
+
+[RAW]: 럆
+Context snippet: '\x1bz\x1cY\x12m\x08>\x1aYQ\x1f\x1e#}\x04@\x1do\x7f>\\&\x0b\x1dI\x1b\x1d}^ٍno\x1c3䗵zGnjPn<Ak]\x06kz26\x0e\x1fz;q\x05]\x17PkO~zR(1Z\x1b6\x1dx6:Ύz\x11\x0f͋\x02\x06s\\\x19\\שsL{\x14K-If\x0c#(>PT럆,\x081\x13ZJi\x0c4b|\u206b4\x14=\x02\x04/6'
+
+[RAW]: 튌
+Context snippet: 'Cp\x1d#%\x17Y9߽<Bpo\x16\x1ca\x1b#T<XfC{>>NN\x1f\x7fsi]\x16.$\x13Z˼\x14ha8]O?ЮŮZH\x1etR\t\x08[\x1cb\x11\x00$\x11\x00\x06n\x7fN "\x1f\x17\'Eڄr**wfPiF?,]o\x18FSR<r\x01?od\x13!u튌9Zbv\x1a ;ى+K\x060僂c7^f-O'
+
+[RAW]: 쵯
+Context snippet: "2%\x1c\x12Һ|h\\\x10uY('KR\x7fĂ>ü>\r::}xͱu=\\bf\x0cɗ;i\x05\x1bck\x07Q\\8sdǦZ\\*JY$̅~2\x05f\x13\x08ړ=N\x03q.\x10[t7o \x1du\x11WS=b-WyC<Uf<s,}\x0e\x0c\x1b`^,^\x7f\x11Us쵯\x1dﶫ3~AFH\x1ek$gjZnE[_\x04ۯ"
+
+[RAW]: 놈
+Context snippet: '\x7f\x11Us쵯\x1dﶫ3~AFH\x1ek$gjZnE[_\x04ۯ\x14h\t\x01\x17x^YOo\x1bE\x14wR\x0b\x07-\x10Tnho&4rD%(]c{23vk$$8j\x037.P\x03_\x03w.ٝ]ETK;ޛo\u07bc|s\x0f*\x1e5?q%6hc\x1bn^\x170c놈q\x17P=\x01l\x024hLExe\x19\x13*\x08|R'
+
+[RAW]: 럆
+Context snippet: '\x1bz\x1cY\x12m\x08>\x1aYQ\x1f\x1e#}\x04@\x1do\x7f>\\&\x0b\x1dI\x1b\x1d}^ٍno\x1c3䗵zGnjPn<Ak]\x06kz26\x0e\x1fz;q\x05]\x17PkO~zR(1Z\x1b6\x1dx6:Ύz\x11\x0f͋\x02\x06s\\\x19\\שsL{\x14K-If\x0c#(>PT럆,\x081\x13ZJi\x0c4b|\u206b4\x14=\x02\x04/6'
+
+[RAW]: 튌
+Context snippet: 'Cp\x1d#%\x17Y9߽<Bpo\x16\x1ca\x1b#T<XfC{>>NN\x1f\x7fsi]\x16.$\x13Z˼\x14ha8]O?ЮŮZH\x1etR\t\x08[\x1cb\x11\x00$\x11\x00\x06n\x7fN "\x1f\x17\'Eڄr**wfPiF?,]o\x18FSR<r\x01?od\x13!u튌9Zbv\x1a ;ى+K\x060僂c7^f-O'
+
+[RAW]: 쵯
+Context snippet: "2%\x1c\x12Һ|h\\\x10uY('KR\x7fĂ>ü>\r::}xͱu=\\bf\x0cɗ;i\x05\x1bck\x07Q\\8sdǦZ\\*JY$̅~2\x05f\x13\x08ړ=N\x03q.\x10[t7o \x1du\x11WS=b-WyC<Uf<s,}\x0e\x0c\x1b`^,^\x7f\x11Us쵯\x1dﶫ3~AFH\x1ek$gjZnE[_\x04ۯ"
+
+======================================================================
+FILE: script/DataTable/RoomData.rpyc
+Found 2 Korean word(s)
+======================================================================
+
+[RAW]: 옢
+Context snippet: 'uS\x0e"8fY\x04gK98\x15Ni\x12`.w\x19֗X\x1fiC@M\x16n\x1f(F="X#\x1e\x1b\x7f\x1b:˷\x12?F.sro\x0b`w\x1eWbjm:q\x18S8Z)\x0f\x18\x101\x1e4\x14Me\x04ҒIk7^8Rx\x14\x10[L\\[\x19Jոb\x08\'t̎X\x14e\x1a옢E\x00\r3rba8^R!W\x02"B|u\x13\x16'
+
+[RAW]: 옢
+Context snippet: 'uS\x0e"8fY\x04gK98\x15Ni\x12`.w\x19֗X\x1fiC@M\x16n\x1f(F="X#\x1e\x1b\x7f\x1b:˷\x12?F.sro\x0b`w\x1eWbjm:q\x18S8Z)\x0f\x18\x101\x1e4\x14Me\x04ҒIk7^8Rx\x14\x10[L\\[\x19Jոb\x08\'t̎X\x14e\x1a옢E\x00\r3rba8^R!W\x02"B|u\x13\x16'
+
+======================================================================
+FILE: script/DataTable/no/Equipment.rpyc
+Found 10 Korean word(s)
+======================================================================
+
+[RAW]: 톥
+Context snippet: "H-!M&\x0eH;hg\x15j,RpZ\x00aRAZ\x0cRެC\x16h\x0b\x0b̫\x15\x12XL'բExOƣxk`kX}IeɕleH\x086fZ<L\x1dܴ0E\x02i\rr\x06,\x06\x01.6\x18.C\t,\x10Z*\x01R,,,\x0eiPreZH#2-)wQq9톥@Gmg[ĭ\x05M\rm\x0bg:2j1\\P"
+
+[RAW]: 쓹
+Context snippet: "cgb\x0fR\x12#\x1bO]'nZ}\x03?ӎ'\x00S\x00ye\x19u8Y\x15\\\x02\x15+Z\x1b=\x19V%&gAt~%o\x0bwʡ\x0e6R-k\x02\x1b\x05\x12\t\x7f\x12MʝIX\x0cw\x04@\x0c~/fJ2\x11S\x0c\nҭVhVT3\x06)\x00&\x03Eh\x14\\\x1aS\x12afP\x16쓹SA6\\\x7f\n\x1a\x15\x13vх\x0c a\rFa]y"
+
+[RAW]: 읁
+Context snippet: "\x1a\x15\x13vх\x0c a\rFa]yݧ\x1d@\x02|\x0eCM\x1f\x0e\x1awky=\x07\x16'bp]?_KJA)\x05M}J\x14z$˼pZԡ\x12f&\x11QGOQ\x12\x07ۑoqhsP\\匁LAZ<͈Ƙp!ٟ\x06?f9\x0chB\x1e6J\x17߃*2lLh3\x0e?d\n읁&2\x04M\x16Į\x00\n<!qLyh\x0e\x18v2\x00"
+
+[RAW]: 뭾
+Context snippet: '\t98"\x98\x11&\x17sl\x1ev6NYx\x1a!@\x08\x11\x0b3\x0c\x03<1\x10OGeoI\x17ňd<\x10M)\x0e(`!\x18\x19%:-ذ%6qxF~$P~\x05\x1f\x0bՑB<(\x12Wu,\x05,\x03X\'j+}\\zV\x0c\x08+%R\x11n\x7f5d\x7f\x08vʧ-7\x10\x01\x1b뭾*\\ZK[e4%\x10B8kl8_\x13p\x02%'
+
+[RAW]: 뭞
+Context snippet: 'f~Ĥ5%g5>e:Ʃf9F{q}J\x7f3\x05ظ\x1f\'\x1fR9b+\x16$y{N?sp\x1cH\x0cw\x14pޛ\u06dd&r\\sEa6GD_:w}\x7fvV"z-kZb4\x16/\x1f\x15{G\x017e-E=\x07n&}+A!\x1cT?A!BrPo{\x154{뭞dIK\x0ew)(",^<l+XB+\x16R*'
+
+[RAW]: 톥
+Context snippet: "H-!M&\x0eH;hg\x15j,RpZ\x00aRAZ\x0cRެC\x16h\x0b\x0b̫\x15\x12XL'բExOƣxk`kX}IeɕleH\x086fZ<L\x1dܴ0E\x02i\rr\x06,\x06\x01.6\x18.C\t,\x10Z*\x01R,,,\x0eiPreZH#2-)wQq9톥@Gmg[ĭ\x05M\rm\x0bg:2j1\\P"
+
+[RAW]: 쓹
+Context snippet: "cgb\x0fR\x12#\x1bO]'nZ}\x03?ӎ'\x00S\x00ye\x19u8Y\x15\\\x02\x15+Z\x1b=\x19V%&gAt~%o\x0bwʡ\x0e6R-k\x02\x1b\x05\x12\t\x7f\x12MʝIX\x0cw\x04@\x0c~/fJ2\x11S\x0c\nҭVhVT3\x06)\x00&\x03Eh\x14\\\x1aS\x12afP\x16쓹SA6\\\x7f\n\x1a\x15\x13vх\x0c a\rFa]y"
+
+[RAW]: 읁
+Context snippet: "\x1a\x15\x13vх\x0c a\rFa]yݧ\x1d@\x02|\x0eCM\x1f\x0e\x1awky=\x07\x16'bp]?_KJA)\x05M}J\x14z$˼pZԡ\x12f&\x11QGOQ\x12\x07ۑoqhsP\\匁LAZ<͈Ƙp!ٟ\x06?f9\x0chB\x1e6J\x17߃*2lLh3\x0e?d\n읁&2\x04M\x16Į\x00\n<!qLyh\x0e\x18v2\x00"
+
+[RAW]: 뭾
+Context snippet: '\t98"\x98\x11&\x17sl\x1ev6NYx\x1a!@\x08\x11\x0b3\x0c\x03<1\x10OGeoI\x17ňd<\x10M)\x0e(`!\x18\x19%:-ذ%6qxF~$P~\x05\x1f\x0bՑB<(\x12Wu,\x05,\x03X\'j+}\\zV\x0c\x08+%R\x11n\x7f5d\x7f\x08vʧ-7\x10\x01\x1b뭾*\\ZK[e4%\x10B8kl8_\x13p\x02%'
+
+[RAW]: 뭞
+Context snippet: 'f~Ĥ5%g5>e:Ʃf9F{q}J\x7f3\x05ظ\x1f\'\x1fR9b+\x16$y{N?sp\x1cH\x0cw\x14pޛ\u06dd&r\\sEa6GD_:w}\x7fvV"z-kZb4\x16/\x1f\x15{G\x017e-E=\x07n&}+A!\x1cT?A!BrPo{\x154{뭞dIK\x0ew)(",^<l+XB+\x16R*'

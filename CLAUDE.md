@@ -303,6 +303,11 @@ Record reusable knowledge on: task completion, root cause discovery, or user say
 On "Reflect on this mistake": Reflect → Abstract → Generalize → Write NEVER/ALWAYS rule to CLAUDE.md.
 Rule format: start with NEVER/ALWAYS · explain why (≤3 bullets) · include code/commands where helpful.
 
+**NEVER respond or create files before invoking the required skill for academic tasks** (2026-04-20):
+- When a message contains assignment brief, rubric, course code (32011/32516/32558/42850), "作业", or "整理成 + assignment" → the FIRST tool call must be `Skill(brainstorming)` or `Skill(EnterPlanMode)`, not text output
+- Root cause: skill check is passive (routing table) and gets bypassed under cognitive load; hook `claudeception-activator.sh` Layer 1 now fires `[skill-gate]` for academic keywords
+- "整理成作业/整理成Assignment" counts as academic task even if phrased as text-processing
+
 ## Skill Creation (Meta-Rules)
 - Skill value = **safety override** (force-correct bad input) + **consistency** (shared patterns) + **explanation-driven** output
 - Good evals: `without_skill` must NOT pass by common sense alone; verifiable from output files

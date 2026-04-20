@@ -1,0 +1,63 @@
+================================================================================
+COMPREHENSIVE SCAN: ALL FILES WITH KOREAN TEXT
+================================================================================
+
+DataTable files: 14 file(s)
+  script/DataTable/no/Equipment.rpyc: 10 chars
+  script/DataTable/ActorData.rpyc: 8 chars
+  script/DataTable/QuestData.rpyc: 8 chars
+  script/DataTable/CooldownManager.rpyc: 4 chars
+  script/DataTable/no/Couponr.rpyc: 4 chars
+  script/DataTable/no/DiaryData.rpyc: 4 chars
+  script/DataTable/no/ResorceData.rpyc: 4 chars
+  script/DataTable/no/StreamerData.rpyc: 4 chars
+  script/DataTable/ActionData.rpyc: 2 chars
+  script/DataTable/LpMusicData.rpyc: 2 chars
+  script/DataTable/MonsterData.rpyc: 2 chars
+  script/DataTable/RoomData.rpyc: 2 chars
+  script/DataTable/no/CardData.rpyc: 2 chars
+  script/DataTable/no/PictureData.rpyc: 2 chars
+
+ActorScript files: 51 file(s)
+  script/ActorScript/christmas.rpyc: 132 chars
+  script/ActorScript/amelia.rpyc: 128 chars
+  script/ActorScript/dana.rpyc: 117 chars
+  script/ActorScript/ruby.rpyc: 102 chars
+  script/ActorScript/nora.rpyc: 101 chars
+  script/ActorScript/sakura.rpyc: 98 chars
+  script/ActorScript/matilda.rpyc: 93 chars
+  script/ActorScript/ophelia.rpyc: 90 chars
+  script/ActorScript/anriel.rpyc: 78 chars
+  script/ActorScript/melissa.rpyc: 78 chars
+  script/ActorScript/luna.rpyc: 75 chars
+  script/ActorScript/icequeen.rpyc: 73 chars
+  script/ActorScript/chloe.rpyc: 63 chars
+  script/ActorScript/aria.rpyc: 52 chars
+  script/ActorScript/lamia.rpyc: 52 chars
+  script/ActorScript/erica.rpyc: 48 chars
+  script/ActorScript/helen.rpyc: 38 chars
+  script/ActorScript/otaku.rpyc: 36 chars
+  script/ActorScript/mother.rpyc: 35 chars
+  script/ActorScript/zuzana.rpyc: 35 chars
+
+Other: 60 file(s)
+  script/table_s.rpyc: 168 chars
+  script/table.rpyc: 158 chars
+  script/Setting/image.rpyc: 82 chars
+  script/event/minigame.rpyc: 73 chars
+  script/Menu/patch_note.rpyc: 42 chars
+  script/Setting/screens.rpyc: 42 chars
+  script/Menu/rank.rpyc: 40 chars
+  script/event/shop.rpyc: 40 chars
+  script/Inventory/InventoryItem.rpyc: 36 chars
+  script/event/act.rpyc: 34 chars
+  script/event/christmas_minigame.rpyc: 34 chars
+  script/Setting/transform.rpyc: 32 chars
+  script/Inventory/InventoryQuest.rpyc: 30 chars
+  script/Menu/sponsor.rpyc: 28 chars
+  script/Inventory/InventoryRoom.rpyc: 24 chars
+  script/event/computer.rpyc: 24 chars
+  script/event/minigame/drinkgame.rpyc: 23 chars
+  script/event/minigame/slotmachine.rpyc: 23 chars
+  script/Setting/function.rpyc: 22 chars
+  script/Inventory/InventoryMisson.rpyc: 20 chars

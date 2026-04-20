@@ -1,0 +1,87 @@
+================================================================================
+SEARCH FOR READABLE KOREAN IN ALL ARCHIVE FILES
+================================================================================
+
+[+] Found Korean in 30 files
+
+
+FILE: script/ActorScript/christmas.rpyc
+Matches: 1
+  ',hs퇞벆b'
+
+FILE: script/ActorScript/matilda.rpyc
+Matches: 1
+  'rIH랚핤O'
+
+FILE: script/ActorScript/redrose.rpyc
+Matches: 1
+  "H슖쪶L'"
+
+FILE: script/ActorScript/zuzana.rpyc
+Matches: 1
+  'M쁾둆s2s'
+
+FILE: script/Setting/image.rpyc
+Matches: 1
+  ',9윆케'
+
+FILE: tl/basic_tl/script/ActorScript/pearl.rpyc
+Matches: 1
+  '졮졲_'
+
+FILE: tl/basic_tl/script/table.rpyc
+Matches: 1
+  '=뵰뙍'
+
+FILE: tl/chinese_simplified/script/ActorScript/christmas.rpyc
+Matches: 1
+  '홤퇣"Y"'
+
+FILE: tl/chinese_simplified/script/ActorScript/grace.rpyc
+Matches: 1
+  'h궢늫'
+
+FILE: tl/chinese_traditional/script/ActorScript/christmas.rpyc
+Matches: 1
+  'tMY씄폅bF'
+
+FILE: tl/english/script/ActorScript/christmas.rpyc
+Matches: 2
+  'j:냩뤵۴'
+  '븒바1G'
+
+FILE: tl/english/script/ActorScript/zuzana.rpyc
+Matches: 1
+  'l싐틮'
+
+FILE: tl/english_index/script/ActorScript/erica.rpyc
+Matches: 1
+  '뺮븮{νuSu'
+
+FILE: tl/french/script/ActorScript/chloe.rpyc
+Matches: 1
+  'jDd읊싗t'
+
+FILE: tl/french/script/ActorScript/nora.rpyc
+Matches: 1
+  'wAoo닳뷶'
+
+FILE: tl/french/script/ActorScript/ophelia.rpyc
+Matches: 1
+  '툤갎T'
+
+FILE: tl/german/script/ActorScript/chloe.rpyc
+Matches: 1
+  '왆쬘L'
+
+FILE: tl/german/script/ActorScript/christmas.rpyc
+Matches: 1
+  'KD홝컦'
+
+FILE: tl/indonesian/script/ActorScript/redrose.rpyc
+Matches: 1
+  'GAP갉쵑OwbO'
+
+FILE: tl/japanese/script/ActorScript/aria.rpyc
+Matches: 1
+  '뺮:뺮뺮өn'

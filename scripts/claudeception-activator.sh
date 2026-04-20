@@ -1,7 +1,8 @@
 #!/bin/bash
 # claudeception-activator.sh
-# UserPromptSubmit hook — evaluates prompt for debugging/reflection patterns
-# Outputs a system reminder if the prompt suggests non-trivial debugging work
+# UserPromptSubmit hook — two detection layers:
+#   1. Academic/planning tasks  → mandatory skill invocation gate
+#   2. Debugging/reflection     → claudeception extraction reminder
 
 INPUT=$(cat 2>/dev/null || true)
 
@@ -21,10 +22,17 @@ except Exception:
     pass
 " 2>/dev/null || true)
 
-# Trigger keywords: debugging, errors, architectural reflection, learning extraction
+# Layer 1: Academic task detection (narrow — low false-positive risk)
+# Only fires on unambiguous academic indicators; avoids generic words like plan/build/implement
+if echo "$PROMPT" | grep -qiE \
+    "(assignment|rubric|marking|lab report|实验报告|实验$|作业|32011|32516|32558|42850|整理成|exam|考试|期末|期中)"; then
+    printf '{"type":"system","content":"[skill-gate] Academic task detected. MANDATORY FIRST ACTION: invoke brainstorming (vague spec) OR EnterPlanMode (clear spec/rubric) — before any text response or file creation. See CLAUDE.md Academic routing."}\n'
+fi
+
+# Layer 2: Debugging / reflection detection
+# Fires after resolving — reminds to extract reusable patterns via claudeception
 if echo "$PROMPT" | grep -qiE \
     "(debug|traceback|exception|stack trace|why is|broken|not working|reflect on|what did|reusable|learn from|extract|pattern|mistake|root cause)"; then
-    # Inject a brief reminder as system context
     printf '{"type":"system","content":"[claudeception] Non-trivial debugging or reflection detected. After resolving, consider invoking the claudeception skill to extract and save reusable patterns."}\n'
 fi
 

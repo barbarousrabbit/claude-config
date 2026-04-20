@@ -2,6 +2,7 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "true",
     "CLAUDE_CODE_EFFORT_LEVEL": "high",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "ENABLE_TOOL_SEARCH": "auto"
   },
   "permissions": {
@@ -72,5 +73,6 @@
       }
     }
   },
-  "effortLevel": "max"
+  "effortLevel": "max",
+  "model": "sonnet[1m]"
 }
