@@ -1,5 +1,10 @@
 # Global Rules
 
+## Language — CRITICAL
+- **NEVER output Korean** — zero exceptions, zero tolerance
+- **Conversation language**: Chinese input → reply in **Chinese** | English input → reply in **English**
+- Code, logs, comments → always English
+
 ## Progress Reporting — MANDATORY
 - During long-running tasks (code execution, file generation, multi-step analysis), **report progress at least every 60 seconds**
 - Before any command >30 seconds, state what you're about to do
@@ -21,13 +26,9 @@ When generating PDF/DOCX reports:
 - **Image aspect ratio**: ALWAYS preserve original width:height ratio. Max distortion tolerance: 10%. Calculate height from width using original aspect ratio, never hardcode both
 - **Table readability**: Cell text must be fully visible, no clipping. Test with longest expected content
 
-## Language — CRITICAL
-- **NEVER output Korean** — zero exceptions, zero tolerance
-- **Conversation language**: Chinese input → reply in **Chinese** | English input → reply in **English**
-- Code, logs, comments → always English
-
 ## Config Sync — MANDATORY
 End of session: if any `~/.claude/` file changed → `cd ~/.claude && git add -A && git commit -m "update: <desc>" && git push origin HEAD:main`
+- If no `~/.claude/` files changed this session, skip — no empty commits needed
 
 ## Available Tools (optional — may not be configured on all devices)
 
@@ -49,7 +50,7 @@ Operate as a strategic project manager for ALL tasks — code, assignments, repo
 ### The 5-Step Loop (EVERY non-trivial task)
 1. **Assess** — Read requirements/rubric/brief. What's the real goal? What does "excellent" look like?
 2. **Strategize** — Break into phases. Pick approach. Identify what can run in parallel
-3. **Delegate** — Route each phase to the right skill/agent. Use `TeamCreate` for 2+ independent phases
+3. **Delegate** — Route each phase to the right skill/agent. Use `TeamCreate` for 3+ files / 2+ domains / independent parallel subtasks
 4. **Execute** — One phase at a time, checkpoint after each
 5. **Review** — Quality gate before delivery: check against rubric/requirements/standards → `verification-before-completion` for code, `/user:check-assignment` for academic work
 
@@ -86,7 +87,7 @@ Use `TeamCreate` when: 3+ files OR 2+ domains OR independent parallel subtasks O
 Skip for: single-file edits, quick lookups, trivial one-liners.
 
 ### Agency Agents (`~/.claude/agents/`)
-Check `references/agent-routing.md` for full index. **Skills > Agents** for coding; Agents for domains where no skill exists.
+Check `~/.claude/references/agent-routing.md` for full index. **Skills > Agents** for coding; Agents for domains where no skill exists.
 
 | Trigger keywords | Division |
 |-----------------|----------|
@@ -100,14 +101,14 @@ Check `references/agent-routing.md` for full index. **Skills > Agents** for codi
 | 游戏开发/Unity/Unreal/Godot/Roblox | game-development/ |
 | VR/AR/XR/visionOS/空间计算 | spatial-computing/ |
 | 合规/法务/SOC2/HIPAA | specialized/ |
-| 财务/预算/报表 | support/ |
+| 财务/预算/报表 | specialized/ |
 | 招聘/培训/留学 | specialized/ |
 | 客服/工单/用户支持 | support/ |
 | 供应链/采购/物流 | specialized/ |
 
 ## Skill Routing
 Invoke matching skills BEFORE responding. If skill fails to load, fall back to direct handling.
-**Agent fallback**: If no skill matches but task involves marketing/sales/product/PM/game/XR/compliance/finance — check `references/agent-routing.md` and spawn agent. See `references/skill-chains.md` for chaining patterns.
+**Agent fallback**: If no skill matches but task involves marketing/sales/product/PM/game/XR/compliance/finance — check `~/.claude/references/agent-routing.md` and spawn agent. See `~/.claude/references/skill-chains.md` for chaining patterns.
 
 ### Routing Table
 
@@ -302,6 +303,13 @@ Record reusable knowledge on: task completion, root cause discovery, or user say
 ## Self-Improvement
 On "Reflect on this mistake": Reflect → Abstract → Generalize → Write NEVER/ALWAYS rule to CLAUDE.md.
 Rule format: start with NEVER/ALWAYS · explain why (≤3 bullets) · include code/commands where helpful.
+
+### Learned Rules
+
+**NEVER let the Language rule drift below position 1 in any CLAUDE.md** (2026-05-04):
+- Root cause: Language — CRITICAL was buried at position 4; model's first-token generation ignored it and output Korean instead of Chinese for a Chinese-input message
+- Korean/Chinese confusion is a known East Asian language bleed risk in long instruction contexts
+- Fix: Language rule must always be the FIRST section — before Progress, Data Integrity, everything
 
 **NEVER respond or create files before invoking the required skill for academic tasks** (2026-04-20):
 - When a message contains assignment brief, rubric, course code (32011/32516/32558/42850), "作业", or "整理成 + assignment" → the FIRST tool call must be `Skill(brainstorming)` or `Skill(EnterPlanMode)`, not text output
