@@ -131,7 +131,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | asks about course content / "这个概念什么意思" / "解释一下" / "不懂" / "teach me" / "怎么做" | Read course notes first → explain with analogies (beginner-friendly per project CLAUDE.md) |
 | | "帮我看看" / "改一下" / review partial work / "check my work" | Read work → compare against rubric/requirements → give feedback |
 | | "检查作业" / "check assignment" / "帮我查" / wants rubric review | `/user:check-assignment` (read rubric → compare point by point) |
-| | text sounds AI / Turnitin risk / "去AI痕迹" / "humanize" / "降重" | `humanizer` (rewrite to reduce AI fingerprint, keep meaning) |
+| | text sounds AI / Turnitin risk / "去AI痕迹" / "humanize" / "降重" — **academic context** (report / paper / thesis / assignment) | `humanizer_academic` (26 patterns, preserves technical terms, citations, data, academic tone) |
+| | text sounds AI / "去AI痕迹" / "humanize" / "降重" — **non-academic context** (blog / email / marketing / general) | `humanizer` (rewrite to reduce AI fingerprint, keep meaning) |
 | **Execution** | hits error / stack trace / test failure / "why is this broken" / "报错" / "出错了" / "跑不了" / "功能不对" | `systematic-debugging` |
 | | says "review" / PR ready / wants code feedback | `requesting-code-review` → `code-reviewer` |
 | | receives code review feedback / applying suggestions | `receiving-code-review` |
