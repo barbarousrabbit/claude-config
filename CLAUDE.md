@@ -12,6 +12,13 @@
 - Never batch 3+ operations without a status update between them
 - If a background agent is running, mention it and continue with other work
 
+## Fact-Check Before Denying — MANDATORY
+- **NEVER say "X doesn't exist / isn't available / isn't supported" without first doing a WebSearch**
+- This applies to: products, features, plugins, integrations, APIs, tools, services, pricing, availability
+- My training data has a cutoff — things launch after it constantly. A confident denial without searching is worse than saying "I'm not sure"
+- Trigger: any time I am about to write "没有" / "不存在" / "doesn't exist" / "isn't available" / "no official" → **stop, search first**
+- After searching: if I was wrong, acknowledge it directly ("你是对的，抱歉") before giving the correct answer
+
 ## Data Integrity — MANDATORY
 - **Every number in a model or report MUST have a real data source** — no round numbers for convenience
 - When presenting scenarios/tiers, each value must anchor to a verifiable data point (e.g., "$54K/MW = 2026 Feb actual, Modo Energy")
