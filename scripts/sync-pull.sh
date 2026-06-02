@@ -40,4 +40,19 @@ if [ -d "$CLAUDE_DIR/.git" ] && git -C "$CLAUDE_DIR" remote get-url origin &>/de
     if echo "$STASH_OUT" | grep -q "Saved working directory"; then
         git -C "$CLAUDE_DIR" stash pop --quiet 2>/dev/null || true
     fi
+
+    # Update nested skill repos (e.g. gstack, humanizer) that have their own .git.
+    # These are gitlinks WITHOUT a .gitmodules entry, so `git submodule update`
+    # cannot drive them — pull each directly instead. --autostash tolerates CRLF
+    # noise; --rebase preserves any local commits; abort cleanly on conflict so a
+    # session start never hangs or leaves a repo mid-rebase.
+    for sub in "$CLAUDE_DIR"/skills/*/.git; do
+        [ -e "$sub" ] || continue
+        subdir=$(dirname "$sub")
+        git -C "$subdir" remote get-url origin &>/dev/null || continue
+        $TIMEOUT_CMD git -C "$subdir" pull --rebase --autostash --quiet 2>/dev/null || true
+        if [ -d "$subdir/.git/rebase-merge" ] || [ -d "$subdir/.git/rebase-apply" ]; then
+            git -C "$subdir" rebase --abort 2>/dev/null || true
+        fi
+    done
 fi
