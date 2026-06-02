@@ -25,7 +25,7 @@ When a task spans multiple phases, chain skills in order. Only load what the cur
 `tailwind-theme-builder` → `shadcn-ui`
 
 ### React/Next.js App
-`ui-ux-pro-max` → `frontend-design` + `senior-frontend` + `frontend-patterns` → `critique`
+`ui-ux-pro-max` → `frontend-design` + `frontend-patterns` → `critique`
 
 ### React Native / Expo
 `vercel-react-native-skills` + `ui-ux-pro-max` → build → test

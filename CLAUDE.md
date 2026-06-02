@@ -115,6 +115,25 @@ Check `~/.claude/references/agent-routing.md` for full index. **Skills > Agents*
 
 ## Skill Routing
 Invoke matching skills BEFORE responding. If skill fails to load, fall back to direct handling.
+
+### Skill Invocation Red Flags
+If you catch yourself thinking any of these, STOP and invoke the matching skill:
+
+| Thought | Reality |
+|---------|---------|
+| "This is just a simple question" | Questions are tasks. Check for skills. |
+| "I need more context first" | Skill check comes BEFORE clarifying questions. |
+| "Let me explore the codebase first" | Skills tell you HOW to explore. Check first. |
+| "I can check git/files quickly" | Files lack conversation context. Check for skills. |
+| "Let me gather information first" | Skills tell you HOW to gather information. |
+| "This doesn't need a formal skill" | If a skill exists, use it. |
+| "I remember this skill" | Skills evolve. Read current version. |
+| "This doesn't count as a task" | Action = task. Check for skills. |
+| "The skill is overkill" | Simple things become complex. Use it. |
+| "I'll just do this one thing first" | Check BEFORE doing anything. |
+| "This feels productive" | Undisciplined action wastes time. Skills prevent this. |
+| "I know what that means" | Knowing the concept ≠ using the skill. Invoke it. |
+
 **Agent fallback**: If no skill matches but task involves marketing/sales/product/PM/game/XR/compliance/finance — check `~/.claude/references/agent-routing.md` and spawn agent. See `~/.claude/references/skill-chains.md` for chaining patterns.
 
 ### Routing Table
@@ -161,7 +180,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | writes SQL / slow query / schema design / indexing | `sql-pro` + `database-optimizer` |
 | **Frontend** *(all build tasks MUST follow UI Design Protocol §3-step chain)* | builds any web page, Vue/React component, or UI (generic) | `ui-ux-pro-max` → `frontend-design` → `critique` |
 | | builds dashboard / admin panel / data tool / product UI | `ui-ux-pro-max` → `interface-design` → `critique` |
-| | builds React/Next.js app with TypeScript, state, bundle concerns | `ui-ux-pro-max` → `frontend-design` + `senior-frontend` + `frontend-patterns` → `critique` |
+| | builds React/Next.js app with TypeScript, state, bundle concerns | `ui-ux-pro-max` → `frontend-design` + `frontend-patterns` → `critique` |
 | | needs React/Next.js patterns — hooks, composition, data fetching | `vercel-react-best-practices` + `vercel-composition-patterns` |
 | | needs style direction only — design style, palette, font pairing | `ui-ux-pro-max` |
 | | configures Tailwind / design tokens / theme CSS | `tailwind-theme-builder` → `shadcn-ui` |

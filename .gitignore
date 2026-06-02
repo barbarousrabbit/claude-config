@@ -43,3 +43,7 @@ plugins/known_marketplaces.json
 temp/
 *.jsonl
 mcp-needs-auth-cache.json
+skills/apple-hig-designer/
+skills/avdlee-swiftui/
+skills/dpearson-ios/
+skills/twostraws-swiftui/
