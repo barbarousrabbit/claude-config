@@ -1,3 +1,9 @@
+---
+name: humanizer_academic
+description: Use when an academic paper/report/thesis sounds AI-generated — '降重', '去AI痕迹', '论文humanize', '报告润色'. Preserves citations, data, technical terms, scholarly tone.
+user-invocable: true
+---
+
 # Humanizer Academic: Remove AI Writing Patterns from Academic Papers
 
 Use when: academic paper / report / thesis sounds AI-generated and needs to be rewritten to sound professionally human while preserving technical terms, citations, data, and scholarly tone. Trigger on: "降重", "去AI痕迹", "论文humanize", "报告润色", "academic humanize", "去除AI特征" in academic contexts.

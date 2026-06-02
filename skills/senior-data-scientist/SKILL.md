@@ -115,8 +115,8 @@ import xgboost as xgb
 import mlflow
 
 SCORERS = {
-    "roc_auc":  make_scorer(roc_auc_score, needs_proba=True),
-    "avg_prec": make_scorer(average_precision_score, needs_proba=True),
+    "roc_auc":  make_scorer(roc_auc_score, response_method="predict_proba"),
+    "avg_prec": make_scorer(average_precision_score, response_method="predict_proba"),
 }
 
 def evaluate_model(model, X, y, cv=5):
