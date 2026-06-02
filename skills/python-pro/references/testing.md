@@ -259,7 +259,7 @@ def test_future_feature() -> None:
     pass
 
 # Conditional skip
-@pytest.mark.skipif(sys.version_info < (3, 11), reason="Requires Python 3.11+")
+@pytest.mark.skipif(sys.version_info < (3, 13), reason="Requires Python 3.13+")
 def test_new_feature() -> None:
     pass
 

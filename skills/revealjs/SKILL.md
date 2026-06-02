@@ -12,7 +12,7 @@ Create HTML presentations using reveal.js. No build step required - just open th
 
 A reveal.js presentation consists of:
 
-1. **HTML file** - Contains slides and loads reveal.js from CDN
+1. **HTML file** - Contains slides and loads reveal.js 6.0 from CDN
 2. **CSS file** - Custom styles for layouts, colors, typography, and components
 
 ## Design Principles
@@ -366,6 +366,8 @@ Font Awesome is included in the scaffold. Usage:
 For fragments (progressive reveal), speaker notes, custom backgrounds, auto-animate, and transitions, see [references/advanced-features.md](references/advanced-features.md).
 
 ## Reveal.js Configuration
+
+**Note:** As of reveal.js 6.0, the build system migrated from Gulp to Vite. Plugins now use ES module syntax. The API method `Reveal.navigateTo()` is replaced by `Reveal.slide()`.
 
 ```javascript
 Reveal.initialize({

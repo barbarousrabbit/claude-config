@@ -8,6 +8,8 @@ args:
     required: false
 ---
 
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
+
 Strengthen interfaces against edge cases, errors, internationalization issues, and real-world usage scenarios that break idealized designs.
 
 ## Assess Hardening Needs

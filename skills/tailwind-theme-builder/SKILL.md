@@ -160,6 +160,29 @@ Copy from `assets/` directory:
 - `theme-provider.tsx` — Dark mode provider
 - `utils.ts` — `cn()` utility
 
+## Tailwind CSS 4.2 Features
+
+Tailwind CSS 4.2 adds:
+
+- **Webpack plugin** (`@tailwindcss/webpack`): First-class webpack support alongside the existing Vite plugin. Use in webpack-based projects (e.g., older Next.js or CRA setups):
+  ```js
+  // webpack.config.js
+  const tailwindcss = require('@tailwindcss/webpack');
+  module.exports = { plugins: [tailwindcss()] };
+  ```
+- **4 new color palettes**: `rose`, `fuchsia`, `violet`, and `cyan` join the default palette with full shade ranges (50-950).
+- **Expanded logical property utilities**: `ms-*`/`me-*` (margin-inline), `ps-*`/`pe-*` (padding-inline), `start-*`/`end-*` (inset-inline) for better RTL support.
+
+## shadcn/ui CLI v4
+
+The `shadcn` CLI v4 adds **design system presets** — preconfigured theme + component bundles:
+```bash
+pnpm dlx shadcn@latest init --preset <name>
+```
+Presets bundle CSS variables, component styles, and default variants into a single init step, replacing the manual palette + font selection process.
+
+---
+
 ## Reference Files
 
 - `references/common-gotchas.md` — 8 documented errors with GitHub sources

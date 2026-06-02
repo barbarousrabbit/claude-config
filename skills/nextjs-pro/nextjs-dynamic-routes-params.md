@@ -1,6 +1,6 @@
 ---
 name: nextjs-dynamic-routes-params
-description: Guide for Next.js App Router dynamic routes and pathname parameters. Use when building pages that depend on URL segments (IDs, slugs, nested paths), accessing the `params` prop, or fetching resources by identifier. Helps avoid over-nesting by defaulting to the simplest route structure (e.g., `app/[id]` instead of `app/products/[id]` unless the URL calls for it).
+description: Guide for Next.js 16 App Router dynamic routes and pathname parameters. Use when building pages that depend on URL segments (IDs, slugs, nested paths), accessing the `params` prop (MUST be awaited — sync access removed in Next.js 16), or fetching resources by identifier. Helps avoid over-nesting by defaulting to the simplest route structure (e.g., `app/[id]` instead of `app/products/[id]` unless the URL calls for it).
 allowed-tools:
   - Read
   - Write
@@ -10,7 +10,7 @@ allowed-tools:
   - Bash
 ---
 
-# Next.js Dynamic Routes and Pathname Parameters
+# Next.js Dynamic Routes and Pathname Parameters (Next.js 16)
 
 ## When to Use This Skill
 
@@ -129,10 +129,10 @@ Just because you're fetching a "product" or "user" doesn't mean you need `/produ
 
 ### In Server Components (page.tsx, layout.tsx)
 
-**CRITICAL: In Next.js 15+, `params` is a Promise and must be awaited!**
+**CRITICAL: In Next.js 16, `params` is a Promise and MUST be awaited. Synchronous access has been fully removed (it was deprecated with warnings in Next.js 15, now it throws runtime errors).**
 
 ```typescript
-// ✅ CORRECT - Next.js 15+
+// ✅ CORRECT - Next.js 16 (the only valid pattern)
 export default async function ProductPage({
   params,
 }: {
@@ -148,29 +148,14 @@ export default async function ProductPage({
 ```
 
 ```typescript
-// ❌ WRONG - Treating params as synchronous object (Next.js 15+)
+// ❌ WRONG - Treating params as synchronous object (THROWS in Next.js 16)
 export default async function ProductPage({
   params,
 }: {
-  params: { id: string };  // Missing Promise wrapper
+  params: { id: string };  // Missing Promise wrapper — WILL BREAK
 }) {
   const product = await fetch(`https://api.example.com/products/${params.id}`);
-  // This will fail because params is a Promise!
-}
-```
-
-**For Next.js 14 and earlier:**
-```typescript
-// Next.js 14 - params is synchronous
-export default async function ProductPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const product = await fetch(`https://api.example.com/products/${params.id}`)
-    .then(res => res.json());
-
-  return <div>{product.name}</div>;
+  // Runtime error: params is a Promise, not an object!
 }
 ```
 
@@ -400,12 +385,12 @@ export default async function PostPage({ params, searchParams }: PostPageProps) 
 
 ## Common Pitfalls and Solutions
 
-### Pitfall 1: Forgetting params is a Promise (Next.js 15+)
+### Pitfall 1: Forgetting params is a Promise (Next.js 16 — sync removed)
 
 ```typescript
-// ❌ WRONG
+// ❌ WRONG — throws runtime error in Next.js 16
 export default async function Page({ params }: { params: { id: string } }) {
-  const product = await getProduct(params.id);  // Error: params is Promise
+  const product = await getProduct(params.id);  // Error: params is a Promise
 }
 
 // ✅ CORRECT
@@ -494,9 +479,10 @@ export default async function ProductPage({
    - When in doubt, use fewer nesting levels
    - Top-level routes are simpler and more direct
 
-4. **Am I on Next.js 15+?**
-   - Yes: `params` is `Promise<{...}>`
-   - No: `params` is `{...}`
+4. **Am I on Next.js 16?**
+   - Yes (16+): `params` is `Promise<{...}>` — MUST await
+   - Next.js 15: `params` is `Promise<{...}>` with sync fallback (deprecated)
+   - Next.js 14 and earlier: `params` is `{...}` (sync)
 
 ## Examples: Real-World Scenarios
 
@@ -600,9 +586,9 @@ Before implementing a dynamic route, verify:
 - [ ] **Route structure is as simple as possible** (default to top-level unless told otherwise)
 - [ ] Not inferring route nesting from resource type names
 - [ ] Route structure matches URL requirements (not over-nested)
-- [ ] `params` is typed as `Promise<{...}>` for Next.js 15+
-- [ ] `params` is awaited before accessing properties (Next.js 15+)
-- [ ] Error handling for invalid IDs/slugs (use `notFound()`)
+- [ ] `params` is typed as `Promise<{...}>` (required in Next.js 16)
+- [ ] `params` is awaited before accessing properties (sync access throws in Next.js 16)
+- [ ] Error handling for invalid IDs/slugs (use `notFound()` or `forbidden()`)
 - [ ] TypeScript types are properly defined
 - [ ] Using Server Component unless client interactivity needed
 - [ ] Consider `generateStaticParams()` for SSG if applicable

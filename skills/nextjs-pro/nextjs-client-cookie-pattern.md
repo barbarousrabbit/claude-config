@@ -1,10 +1,10 @@
 ---
 name: nextjs-client-cookie-pattern
-description: Pattern for client components calling server actions to set cookies in Next.js. Covers the two-file pattern of a client component with user interaction (onClick, form submission) that calls a server action to modify cookies. Use when building features like authentication, preferences, or session management where client-side triggers need to set/modify server-side cookies.
+description: Pattern for client components calling server actions to set cookies in Next.js 16. Covers the two-file pattern of a client component with user interaction (onClick, form submission) that calls a server action to modify cookies. cookies() MUST be awaited (sync removed in Next.js 16). Use when building features like authentication, preferences, or session management where client-side triggers need to set/modify server-side cookies.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Next.js: Client Component + Server Action Cookie Pattern
+# Next.js: Client Component + Server Action Cookie Pattern (Next.js 16)
 
 ## Pattern Overview
 
@@ -375,8 +375,9 @@ When you need to set cookies from a button click:
 - [ ] Create server action file (e.g., `app/actions.ts`)
 - [ ] Add `'use server'` directive
 - [ ] Import `cookies` from `next/headers`
-- [ ] Await `cookies()` (Next.js 15+)
+- [ ] Await `cookies()` (required in Next.js 16 — sync access removed)
 - [ ] Call `cookieStore.set(name, value, options)`
+- [ ] NEVER use `cookies()` inside `'use cache'` functions
 - [ ] Import server action in client component
 - [ ] Call server action from handler
 

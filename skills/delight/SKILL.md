@@ -7,6 +7,7 @@ args:
     description: The feature or area to add delight to (optional)
     required: false
 ---
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
 
 Identify opportunities to add moments of joy, personality, and unexpected polish that transform functional interfaces into delightful experiences.
 
@@ -128,6 +129,13 @@ Add personality and joy through these methods:
 - Color shifts or glow effects
 - Tooltip reveals with personality
 - Cursor changes (custom cursors for branded experiences)
+
+**Page & route transitions (View Transitions API)**:
+- Use `document.startViewTransition()` for smooth crossfade or morph effects between pages/routes
+- Assign `view-transition-name` to shared elements (images, headings) for automatic morph animations
+- Creates cinematic transitions that feel native without heavy animation libraries
+- Supported in Chrome/Edge and Safari 18+; falls back to instant navigation gracefully
+- Especially delightful for: portfolio galleries, product detail pages, card-to-detail flows
 
 ### Personality in Copy
 
@@ -278,7 +286,7 @@ Loading messages rotation:
 ## Implementation Patterns
 
 **Animation libraries**:
-- Framer Motion (React)
+- Motion (React) — import from `motion/react` (formerly Framer Motion, renamed late 2024)
 - GSAP (universal)
 - Lottie (After Effects animations)
 - Canvas confetti (party effects)

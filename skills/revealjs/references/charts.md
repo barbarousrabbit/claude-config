@@ -13,7 +13,7 @@ The chart plugin is included by default in the scaffold. It adds these to your H
 <!-- Before Reveal.initialize() -->
 <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
 
-<!-- In Reveal.initialize() -->
+<!-- In Reveal.initialize() — note: reveal.js 6.0 uses ES module plugin syntax -->
 Reveal.initialize({
   plugins: [ RevealChart ],
   chart: {

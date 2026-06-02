@@ -1,14 +1,14 @@
 ---
 name: nextjs-advanced-routing
-description: Guide for advanced Next.js App Router patterns including Route Handlers, Parallel Routes, Intercepting Routes, Server Actions, error boundaries, draft mode, and streaming with Suspense. CRITICAL for server actions (action.ts, actions.ts files, 'use server' directive), setting cookies from client components, and form handling. Use when requirements involve server actions, form submissions, cookies, mutations, API routes, `route.ts`, parallel routes, intercepting routes, or streaming. Essential for separating server actions from client components.
+description: Guide for advanced Next.js 16 App Router patterns including Route Handlers, Parallel Routes, Intercepting Routes, Server Actions, proxy.ts (replaces middleware.ts), forbidden() API, error boundaries, draft mode, and streaming with Suspense. CRITICAL for server actions (action.ts, actions.ts files, 'use server' directive), setting cookies from client components, form handling, and proxy configuration. Use when requirements involve server actions, form submissions, cookies, mutations, API routes, `route.ts`, `proxy.ts`, parallel routes, intercepting routes, forbidden/403 errors, or streaming. Essential for separating server actions from client components.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Next.js Advanced Routing
+# Next.js Advanced Routing (Next.js 16)
 
 ## Overview
 
-Provide comprehensive guidance for advanced Next.js App Router features including Route Handlers (API routes), Parallel Routes, Intercepting Routes, Server Actions, error handling, draft mode, and streaming with Suspense.
+Provide comprehensive guidance for advanced Next.js 16 App Router features including Route Handlers (API routes), Parallel Routes, Intercepting Routes, Server Actions, proxy.ts (replaces middleware.ts), forbidden() API, error handling, draft mode, and streaming with Suspense. All request APIs (cookies, headers, params, searchParams, draftMode) must be awaited.
 
 ## TypeScript: NEVER Use `any` Type
 
@@ -26,12 +26,16 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) { ... }
 const data: string[] = [];
 ```
 
-### Common Next.js Type Patterns
+### Common Next.js 16 Type Patterns
 
 ```typescript
-// Page props
-function Page({ params }: { params: { slug: string } }) { ... }
-function Page({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) { ... }
+// Page props — ALWAYS Promise in Next.js 16
+async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+}
+async function Page({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const { q } = await searchParams;
+}
 
 // Form events
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => { ... }
@@ -48,6 +52,8 @@ Use this skill when:
 - Implementing parallel or intercepting routes
 - Building forms with Server Actions
 - Setting cookies or handling mutations
+- Configuring proxy.ts (formerly middleware.ts)
+- Using forbidden() API for 403 authorization errors
 - Creating error boundaries
 - Implementing draft mode for CMS previews
 - Setting up streaming and Suspense boundaries
@@ -1465,14 +1471,76 @@ export default function NewPost() {
 }
 ```
 
+## Proxy (Replaces Middleware) — Next.js 16
+
+In Next.js 16, `middleware.ts` is deprecated and replaced by `proxy.ts`.
+
+### Migration
+
+```bash
+# Automatic migration
+npx @next/codemod@latest middleware-to-proxy .
+```
+
+### Manual Migration
+
+```typescript
+// OLD: middleware.ts (deprecated, silently stops working)
+import { NextRequest, NextResponse } from 'next/server';
+
+export function middleware(request: NextRequest) {
+  return NextResponse.next();
+}
+
+// NEW: proxy.ts
+import { NextRequest, NextResponse } from 'next/server';
+
+export function proxy(request: NextRequest) {
+  return NextResponse.next();
+}
+```
+
+**Key Differences:**
+- File: `middleware.ts` -> `proxy.ts`
+- Export: `middleware()` -> `proxy()`
+- Config: `skipMiddlewareUrlNormalize` -> `skipProxyUrlNormalize`
+- Runtime: Always Node.js (Edge runtime requires keeping `middleware.ts`)
+- **No deprecation warning** — old file silently stops executing
+
+## Forbidden Boundary — Next.js 16
+
+The `forbidden()` function triggers a 403 error, rendered by `forbidden.tsx`:
+
+```typescript
+// app/admin/page.tsx
+import { forbidden } from 'next/navigation';
+
+export default async function AdminPage() {
+  const user = await getUser();
+  if (!user?.isAdmin) {
+    forbidden(); // Renders forbidden.tsx, returns 403
+  }
+  return <div>Admin content</div>;
+}
+
+// app/admin/forbidden.tsx
+export default function Forbidden() {
+  return <div><h2>403 - Access Denied</h2></div>;
+}
+```
+
+**Requires** `experimental.authInterrupts: true` in `next.config.ts`.
+
 ## Summary
 
 - **Route Handlers** - API endpoints in `route.ts` files with HTTP method exports
 - **Server Actions** - Server-side mutations with 'use server' directive
 - **Parallel Routes** - Multiple pages rendered simultaneously using `@folder` syntax
 - **Intercepting Routes** - Load routes in context using `(.)` syntax for modals
-- **Error Boundaries** - Handle errors with `error.tsx` and `global-error.tsx`
+- **Proxy** - Request interception via `proxy.ts` (replaces `middleware.ts` in Next.js 16)
+- **Error Boundaries** - Handle errors with `error.tsx`, `global-error.tsx`, and `forbidden.tsx`
+- **Forbidden** - Return 403 with `forbidden()` function and `forbidden.tsx` boundary
 - **Draft Mode** - Preview draft content from CMS
 - **Streaming** - Progressive rendering with Suspense boundaries
-- **Cookies** - Access and set cookies in Route Handlers and Server Actions
+- **Cookies** - Access and set cookies in Route Handlers and Server Actions (always `await`)
 - **Revalidation** - Invalidate cache with `revalidatePath` and `revalidateTag`

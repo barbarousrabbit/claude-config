@@ -40,18 +40,25 @@ myproject/
 
 module github.com/user/myproject
 
-go 1.21
+go 1.24
 
 require (
-    github.com/gin-gonic/gin v1.9.1
+    github.com/gin-gonic/gin v1.10.0
     github.com/lib/pq v1.10.9
-    go.uber.org/zap v1.26.0
+    go.uber.org/zap v1.27.0
 )
 
 require (
     // Indirect dependencies (automatically managed)
-    github.com/bytedance/sonic v1.9.1 // indirect
-    github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
+    github.com/bytedance/sonic v1.12.0 // indirect
+)
+
+// Tool directives (Go 1.24+) -- CLI tool dependencies
+// Managed separately from build dependencies
+tool (
+    golang.org/x/tools/cmd/stringer
+    github.com/sqlc-dev/sqlc/cmd/sqlc
+    github.com/golangci/golangci-lint/cmd/golangci-lint
 )
 
 // Replace directive for local development
@@ -59,6 +66,23 @@ replace github.com/user/mylib => ../mylib
 
 // Retract directive to mark bad versions
 retract v1.0.1 // Contains critical bug
+```
+
+### Tool Directives (Go 1.24+)
+
+```go
+// Before Go 1.24: tools.go hack (no longer needed)
+// //go:build tools
+// package tools
+// import _ "golang.org/x/tools/cmd/stringer"
+
+// Go 1.24+: use tool directive in go.mod
+// Install: go install tool
+// Run:     go tool stringer -type=MyType
+// Update:  go get golang.org/x/tools/cmd/stringer@latest
+
+// tool directive keeps tool deps out of the build graph
+// and tracks them with proper version pinning in go.sum
 ```
 
 ## Module Commands
@@ -190,7 +214,7 @@ monorepo/
         └── user.go
 
 // go.work
-go 1.21
+go 1.24
 
 use (
     ./services/api
@@ -320,7 +344,7 @@ help:
 
 ```dockerfile
 # Build stage
-FROM golang:1.21-alpine AS builder
+FROM golang:1.26-alpine AS builder
 
 WORKDIR /app
 

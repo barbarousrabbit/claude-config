@@ -244,6 +244,66 @@ type Assert<T extends true> = T;
 type Test = Assert<Equal<1 | 2, 2 | 1>>; // OK
 ```
 
+## Temporal Types (TS 6.0+ with es2025 lib)
+
+TypeScript 6.0 includes built-in type definitions for the `Temporal` API when targeting `es2025` or using `lib: ["esnext"]`.
+
+```typescript
+// Temporal replaces Date for new date/time logic
+const today: Temporal.PlainDate = Temporal.Now.plainDateISO();
+const meeting: Temporal.ZonedDateTime = Temporal.ZonedDateTime.from({
+  year: 2026,
+  month: 6,
+  day: 15,
+  hour: 14,
+  minute: 30,
+  timeZone: 'America/New_York'
+});
+
+// Duration arithmetic is type-safe
+const duration: Temporal.Duration = Temporal.Duration.from({ hours: 2, minutes: 30 });
+const later: Temporal.ZonedDateTime = meeting.add(duration);
+
+// Comparison returns Temporal.ComparisonResult
+const comparison: number = Temporal.PlainDate.compare(today, Temporal.PlainDate.from('2026-12-25'));
+
+// Type-safe formatting
+const formatted: string = meeting.toLocaleString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit',
+  timeZoneName: 'short'
+});
+```
+
+## es2025 Built-in Types
+
+The `es2025` lib adds types for new standard methods:
+
+```typescript
+// Set methods
+const a = new Set([1, 2, 3]);
+const b = new Set([2, 3, 4]);
+const union: Set<number> = a.union(b);           // {1, 2, 3, 4}
+const intersection: Set<number> = a.intersection(b); // {2, 3}
+const difference: Set<number> = a.difference(b);     // {1}
+
+// Promise.withResolvers
+const { promise, resolve, reject } = Promise.withResolvers<string>();
+
+// Object.groupBy / Map.groupBy
+const grouped: Partial<Record<string, number[]>> = Object.groupBy(
+  [1, 2, 3, 4, 5],
+  (n) => n % 2 === 0 ? 'even' : 'odd'
+);
+
+// Iterator.from
+const iter: Iterator<number> = Iterator.from([1, 2, 3]);
+```
+
 ## Quick Reference
 
 | Pattern | Use Case |
@@ -257,3 +317,5 @@ type Test = Assert<Equal<1 | 2, 2 | 1>>; // OK
 | `[T] extends [any]` | Non-distributive check |
 | `-?` modifier | Remove optional |
 | `readonly` modifier | Make immutable |
+| `Temporal.*` | Date/time types (es2025) |
+| `Set.union()` etc. | Set operations (es2025) |

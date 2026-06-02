@@ -4,7 +4,11 @@ description: "Use when first setting up project design guidelines, initializing 
 user-invocable: true
 ---
 
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
+
 Gather design context for this project, then persist it for all future sessions.
+
+**Note**: This skill aligns with [Impeccable v3.5.0](https://github.com/pbakaus/impeccable) and its 41-rule detector. When generating design context, consider all 41 Impeccable rules as the quality baseline. The rules cover typography, color, spacing, motion, interaction states, accessibility, and anti-patterns. If the project already has an Impeccable config or `.impeccable.json`, read it first and incorporate its rule overrides into the design context.
 
 ## Step 1: Explore the Codebase
 

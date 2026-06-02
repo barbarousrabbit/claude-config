@@ -1,10 +1,10 @@
 ---
 name: nextjs-use-search-params-suspense
-description: Pattern for using useSearchParams hook with Suspense boundary in Next.js. Covers the required combination of 'use client' directive and Suspense wrapper when accessing URL query parameters in client components. Use when building search interfaces, filters, pagination, or any feature that needs to read/manipulate URL query parameters client-side.
+description: Pattern for using useSearchParams hook with Suspense boundary in Next.js 16. Covers the required combination of 'use client' directive and Suspense wrapper when accessing URL query parameters in client components. In Server Components, searchParams is a Promise that MUST be awaited (sync removed in Next.js 16). Use when building search interfaces, filters, pagination, or any feature that needs to read/manipulate URL query parameters client-side.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Next.js: useSearchParams with Suspense Pattern
+# Next.js: useSearchParams with Suspense Pattern (Next.js 16)
 
 ## Pattern Overview
 
@@ -526,13 +526,13 @@ export default async function Page() {  // async = server component
 ```
 
 ```typescript
-// ✅ CORRECT - Use searchParams prop in server components
+// ✅ CORRECT - Use searchParams prop in server components (must await in Next.js 16)
 export default async function Page({
   searchParams,
 }: {
   searchParams: Promise<{ q?: string }>;
 }) {
-  const { q } = await searchParams;
+  const { q } = await searchParams;  // Must await — sync access removed in Next.js 16
   return <div>Query: {q}</div>;
 }
 ```

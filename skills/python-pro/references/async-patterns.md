@@ -31,7 +31,7 @@ async def safe_fetch_all(urls: list[str]) -> list[dict[str, str] | None]:
     return [r if not isinstance(r, Exception) else None for r in results]
 ```
 
-## Task Groups (Python 3.11+)
+## Task Groups (Python 3.11+, use by default)
 
 ```python
 from asyncio import TaskGroup

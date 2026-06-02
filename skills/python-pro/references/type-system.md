@@ -190,12 +190,44 @@ def query_user(conn: Connection, user_id: int) -> User:
     return conn.execute(f"SELECT * FROM users WHERE id = {user_id}")
 ```
 
+## Deferred Evaluation of Annotations (Python 3.14+, PEP 649/749)
+
+```python
+# Python 3.14+: annotations are evaluated lazily by default
+# No need for `from __future__ import annotations`
+import annotationlib
+
+class Tree:
+    # Forward references work without quotes — evaluation is deferred
+    def __init__(self, value: int, left: Tree | None = None, right: Tree | None = None) -> None:
+        self.value = value
+        self.left = left
+        self.right = right
+
+# Retrieve annotations programmatically
+annotations = annotationlib.get_annotations(Tree.__init__)
+# Returns: {'value': int, 'left': Tree | None, 'right': Tree | None, 'return': None}
+
+# Three evaluation formats:
+# VALUE — fully evaluated types (default, like typing.get_type_hints)
+annotationlib.get_annotations(Tree.__init__, format=annotationlib.Format.VALUE)
+
+# FORWARDREF — partially evaluated, unresolvable names become ForwardRef
+annotationlib.get_annotations(Tree.__init__, format=annotationlib.Format.FORWARDREF)
+
+# STRING — string representations (like PEP 563 behavior)
+annotationlib.get_annotations(Tree.__init__, format=annotationlib.Format.STRING)
+
+# For library authors: prefer annotationlib.get_annotations() over typing.get_type_hints()
+# typing.get_type_hints() still works but annotationlib is the new standard
+```
+
 ## Mypy Configuration
 
 ```toml
 # pyproject.toml
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.13"
 strict = true
 warn_return_any = true
 warn_unused_configs = true

@@ -8,6 +8,8 @@ args:
     required: false
 ---
 
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
+
 Create or improve onboarding experiences that help users understand, adopt, and succeed with the product quickly.
 
 ## Assess Onboarding Needs
@@ -115,6 +117,7 @@ Projects help you organize your work and collaborate with your team.
 - Brief explanation + benefit
 - Dismissable (with "Don't show again" option)
 - Optional "Learn more" link
+- **Prefer the Popover API** (`popover` attribute + `popovertarget`) for tooltips, tours, and disclosure widgets. Native HTML popovers provide built-in top-layer rendering (no z-index battles), light-dismiss behavior, accessible focus management, and `::backdrop` styling — eliminating the need for libraries like Tippy.js/Popper.js for simple use cases. Use `popover="auto"` for dismissable hints and `popover="manual"` for guided tour steps that require explicit progression.
 
 **Feature Announcements**:
 - Highlight new features when they're released
@@ -203,9 +206,9 @@ Illustration or icon (not just text on blank page)
 
 ### Technical approaches:
 
-**Tooltip libraries**: Tippy.js, Popper.js
+**Tooltip/popover**: Prefer native Popover API (`popover` attribute); fall back to Tippy.js/Popper.js only for complex positioning or older browser support
 **Tour libraries**: Intro.js, Shepherd.js, React Joyride
-**Modal patterns**: Focus trap, backdrop, ESC to close
+**Modal patterns**: `<dialog>` element for modals; Popover API for non-modal overlays; focus trap, backdrop, ESC to close
 **Progress tracking**: LocalStorage for "seen" states
 **Analytics**: Track completion, drop-off points
 

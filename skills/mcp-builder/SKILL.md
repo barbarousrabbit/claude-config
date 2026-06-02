@@ -11,6 +11,24 @@ license: Complete terms in LICENSE.txt
 
 Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.
 
+### MCP 2026-07-28 Spec RC
+
+The upcoming spec release candidate introduces:
+- **Stateless protocol core**: The base protocol no longer requires persistent sessions; stateful behavior is opt-in via Extensions.
+- **Extensions framework**: Modular capability negotiation replacing the monolithic capabilities object. Extensions cover sessions, resources, elicitation, etc.
+- **MCP Apps**: Servers can return HTML content rendered in sandboxed iframes within the client, enabling rich interactive UI (forms, dashboards, previews) without custom client code.
+
+### First-Party MCP Servers
+
+Official first-party MCP servers now exist for major services — use these instead of building from scratch when connecting to:
+- **Notion** — `@notionhq/mcp-server`
+- **Stripe** — `@stripe/mcp`
+- **Cloudflare** — `@cloudflare/mcp-server-cloudflare`
+- **Slack** — `@anthropic/mcp-server-slack`
+- **Vercel** — `@vercel/mcp`
+
+Check the [MCP server registry](https://github.com/modelcontextprotocol/servers) for the latest list before building a new server.
+
 ---
 
 # Process

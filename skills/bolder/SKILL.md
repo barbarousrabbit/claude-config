@@ -7,6 +7,7 @@ args:
     description: The feature or component to make bolder (optional)
     required: false
 ---
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
 
 Increase visual impact and personality in designs that are too safe, generic, or visually underwhelming, creating more engaging and memorable experiences.
 
@@ -107,6 +108,16 @@ Systematically increase impact across these dimensions:
 - **Diagonal flows**: Escape horizontal/vertical rigidity with diagonal arrangements
 - **Full-bleed elements**: Use full viewport width/height for impact
 - **Unexpected proportions**: Golden ratio? Throw it out. Try 70/30, 80/20 splits
+
+**WARNING - Common AI-Bold Patterns That Create More AI Slop**:
+When AI is asked to make something "bolder," it reliably reaches for the same bag of tricks. Avoid these -- they make the design look MORE generic, not less:
+- **Gradient text on hero metrics** -- the #1 AI-bold tell. Use solid color with extreme weight instead.
+- **Adding glassmorphism/frosted glass** -- overused since 2022, now signals "AI made this."
+- **Neon glow on dark backgrounds** -- cyan, purple, or green glow effects are AI comfort food.
+- **More rounded corners + more shadows** -- making existing elements "softer and floatier" is not bold.
+- **Replacing solid colors with gradients everywhere** -- especially purple-to-blue or pink-to-orange.
+- **Adding particle effects or animated backgrounds** -- visual noise is not visual impact.
+True boldness comes from **constraint and contrast**: one dominant color, extreme typographic scale, asymmetric layout, generous whitespace. It is the opposite of adding more effects.
 
 **NEVER**:
 - Add effects randomly without purpose (chaos ≠ bold)

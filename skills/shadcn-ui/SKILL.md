@@ -174,6 +174,24 @@ Combine components into working patterns. See [references/recipes.md](references
 
 Apply project-specific colours and variants using semantic tokens from the theme.
 
+## Recent Changes (2026)
+
+### Unified Radix UI Package (February 2026)
+Radix UI primitives have been consolidated into a single `@radix-ui/react` package. New installations pull from the unified package automatically. Existing `@radix-ui/react-dialog`, `@radix-ui/react-select`, etc. still work but are deprecated.
+
+### `shadcn apply` Command (April 2026)
+Use `shadcn apply` to apply changes (patches, updates, new variants) to existing components without overwriting your customisations:
+```bash
+pnpm dlx shadcn@latest apply <component>
+```
+This merges upstream changes into your local component files, preserving your custom variants and styles.
+
+### Rhea Style Option
+When running `shadcn init` or adding components, you can now select the **Rhea** style — a softer, more rounded design language as an alternative to the default New York style:
+```bash
+pnpm dlx shadcn@latest init --style rhea
+```
+
 ## Reference Files
 
 | When | Read |

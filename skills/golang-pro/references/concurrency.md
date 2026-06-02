@@ -317,13 +317,60 @@ func pipeline(ctx context.Context, input <-chan int) <-chan int {
 }
 ```
 
+## Iterator-Based Pipelines (Go 1.22+)
+
+```go
+import "iter"
+
+// For non-concurrent sequential pipelines, prefer range-over-func iterators
+// over channel-based pipelines. They are simpler, faster, and allocation-free.
+
+// Sequential pipeline with iterators (no goroutines needed)
+func Square(seq iter.Seq[int]) iter.Seq[int] {
+    return func(yield func(int) bool) {
+        for v := range seq {
+            if !yield(v * v) {
+                return
+            }
+        }
+    }
+}
+
+func FilterEven(seq iter.Seq[int]) iter.Seq[int] {
+    return func(yield func(int) bool) {
+        for v := range seq {
+            if v%2 == 0 {
+                if !yield(v) {
+                    return
+                }
+            }
+        }
+    }
+}
+
+// Usage: compose without goroutines or channels
+nums := func(yield func(int) bool) {
+    for i := 1; i <= 100; i++ {
+        if !yield(i) { return }
+    }
+}
+for v := range FilterEven(Square(nums)) {
+    fmt.Println(v)
+}
+
+// Rule of thumb:
+// - Sequential transforms → iter.Seq (Go 1.22+)
+// - Parallel processing / fan-out → channel pipelines with goroutines
+```
+
 ## Quick Reference
 
 | Pattern | Use Case | Key Points |
 |---------|----------|------------|
 | Worker Pool | Bounded concurrency | Limit goroutines, reuse workers |
 | Fan-out/Fan-in | Parallel processing | Distribute work, merge results |
-| Pipeline | Stream processing | Chain transformations |
+| Channel Pipeline | Concurrent stream processing | Chain goroutines via channels |
+| Iterator Pipeline | Sequential stream processing | Chain iter.Seq functions (Go 1.22+, no goroutines) |
 | Rate Limiter | API throttling | Control request rate |
 | Semaphore | Resource limits | Cap concurrent operations |
 | Done Channel | Graceful shutdown | Signal completion |

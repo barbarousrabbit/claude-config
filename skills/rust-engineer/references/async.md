@@ -267,12 +267,14 @@ async fn rwlock_example() {
 }
 ```
 
-## Async Traits (with async-trait)
+## Native Async Fn in Traits (Rust 1.85+ / 2024 Edition)
+
+Since Rust 1.75, async fn in traits is supported natively. Since Rust 1.85 (2024 edition),
+this is fully stable for **static dispatch**. The `async-trait` crate is no longer needed
+for most use cases.
 
 ```rust
-use async_trait::async_trait;
-
-#[async_trait]
+// Native async fn in traits — no #[async_trait] needed!
 trait AsyncRepository {
     async fn find_by_id(&self, id: u64) -> Result<User, Error>;
     async fn save(&self, user: User) -> Result<(), Error>;
@@ -282,7 +284,6 @@ struct DatabaseRepository {
     pool: sqlx::PgPool,
 }
 
-#[async_trait]
 impl AsyncRepository for DatabaseRepository {
     async fn find_by_id(&self, id: u64) -> Result<User, Error> {
         sqlx::query_as("SELECT * FROM users WHERE id = $1")
@@ -301,6 +302,39 @@ impl AsyncRepository for DatabaseRepository {
         Ok(())
     }
 }
+
+// Using with static dispatch (impl Trait) — works natively
+async fn process<R: AsyncRepository>(repo: &R) {
+    let user = repo.find_by_id(1).await.unwrap();
+    println!("Found: {}", user.name);
+}
+```
+
+### When You Still Need `async-trait` or Manual Desugaring
+
+Native async fn in traits use **opaque return types** (impl Future). This means
+the returned future's type is not nameable and cannot be made into a trait object directly.
+
+```rust
+// DOES NOT COMPILE: async fn in dyn trait objects
+// let repo: Box<dyn AsyncRepository> = Box::new(db_repo);
+
+// Option 1: Use async-trait crate for dyn dispatch (heap-allocates the future)
+use async_trait::async_trait;
+
+#[async_trait]
+trait DynAsyncRepository {
+    async fn find_by_id(&self, id: u64) -> Result<User, Error>;
+}
+
+// Option 2: Manual desugaring with Box<dyn Future> for dyn dispatch
+trait DynAsyncRepository2 {
+    fn find_by_id(&self, id: u64) -> Pin<Box<dyn Future<Output = Result<User, Error>> + Send + '_>>;
+}
+```
+
+**Rule of thumb**: Use native async fn in traits by default. Only reach for `async-trait`
+or manual `Pin<Box<dyn Future>>` when you need **dynamic dispatch** (`dyn Trait`).
 ```
 
 ## Pin and Futures
@@ -440,6 +474,72 @@ fn single_threaded() {
 }
 ```
 
+## Gen Blocks (Rust 2024 Edition)
+
+Gen blocks provide a way to create iterators using `yield` syntax, similar to
+Python generators or C# iterators. Available in Rust 2024 edition (nightly as of
+early 2025, stabilization in progress).
+
+```rust
+#![feature(gen_blocks)]
+
+// gen block returns an iterator
+fn fibonacci() -> impl Iterator<Item = u64> {
+    gen {
+        let (mut a, mut b) = (0, 1);
+        loop {
+            yield a;
+            (a, b) = (b, a + b);
+        }
+    }
+}
+
+// Use like any iterator
+fn main() {
+    for n in fibonacci().take(10) {
+        println!("{n}");
+    }
+}
+
+// Gen blocks work with Result for fallible iteration
+fn read_lines(path: &str) -> impl Iterator<Item = Result<String, std::io::Error>> + '_ {
+    gen {
+        let file = std::fs::read_to_string(path);
+        match file {
+            Ok(contents) => {
+                for line in contents.lines() {
+                    yield Ok(line.to_string());
+                }
+            }
+            Err(e) => yield Err(e),
+        }
+    }
+}
+
+// async gen blocks produce async iterators (Streams)
+async fn fetch_pages(base_url: &str) -> impl AsyncIterator<Item = String> + '_ {
+    gen {
+        let mut page = 1;
+        loop {
+            let url = format!("{base_url}?page={page}");
+            match reqwest::get(&url).await {
+                Ok(resp) => match resp.text().await {
+                    Ok(body) if !body.is_empty() => {
+                        yield body;
+                        page += 1;
+                    }
+                    _ => break,
+                },
+                Err(_) => break,
+            }
+        }
+    }
+}
+```
+
+**Note**: `gen` is a reserved keyword in Rust 2024 edition. Code using `gen` as an
+identifier must be updated when migrating from 2021 to 2024 edition.
+
 ## Best Practices
 
 - Use tokio::spawn for CPU-bound tasks on multi-threaded runtime
@@ -451,8 +551,9 @@ fn single_threaded() {
 - Avoid holding locks across .await points
 - Use timeout for all external I/O operations
 - Implement graceful shutdown with channels
-- Use async-trait for trait-based async code
+- **Use native async fn in traits** for static dispatch (Rust 1.85+); only use `async-trait` crate when you need `dyn Trait`
 - Prefer try_join! over manual error handling
 - Use Arc<Mutex<T>> sparingly (channels often better)
 - Test async code with tokio::test macro
 - Monitor task spawning to prevent unbounded growth
+- Use gen blocks for lazy iterators instead of collecting into Vec when possible (Rust 2024)

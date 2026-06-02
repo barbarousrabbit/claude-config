@@ -1,10 +1,10 @@
 ---
 name: nextjs-server-navigation
-description: Guide for implementing navigation in Next.js Server Components using Link component and redirect() function. Covers the difference between server and client navigation methods. Use when adding links, redirects, or navigation logic in server components without converting them to client components unnecessarily.
+description: Guide for implementing navigation in Next.js 16 Server Components using Link component, redirect(), and forbidden() functions. Covers the difference between server and client navigation methods. Use when adding links, redirects, authorization checks, or navigation logic in server components without converting them to client components unnecessarily.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Next.js: Server Component Navigation Pattern
+# Next.js: Server Component Navigation Pattern (Next.js 16)
 
 ## ⚠️ CRITICAL RULE
 
@@ -206,6 +206,8 @@ function handleClick(e: React.MouseEvent<HTMLButtonElement>) { ... }
 |---------|-----------------|------------------|
 | `<Link>` | ✅ Yes | ✅ Yes |
 | `redirect()` | ✅ Yes | ❌ No |
+| `forbidden()` | ✅ Yes (Next.js 16) | ❌ No |
+| `notFound()` | ✅ Yes | ❌ No |
 | `useRouter()` | ❌ No | ✅ Yes |
 | `usePathname()` | ❌ No | ✅ Yes |
 | async function | ✅ Yes | ❌ No |

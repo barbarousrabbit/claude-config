@@ -7,6 +7,7 @@ args:
     description: The feature or area to critique (optional)
     required: false
 ---
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
 
 Conduct a holistic design critique, evaluating whether the interface actually works—not just technically, but as a designed experience. Think like a design director giving feedback.
 
@@ -20,7 +21,7 @@ Evaluate the interface across these dimensions:
 
 **This is the most important check.** Does this look like every other AI-generated interface from 2024-2025?
 
-Review the design against ALL the **DON'T** guidelines in the frontend-design skill—they are the fingerprints of AI-generated work. Check for the AI color palette, gradient text, dark mode with glowing accents, glassmorphism, hero metric layouts, identical card grids, generic fonts, and all other tells.
+Review the design against ALL the **DON'T** guidelines in the frontend-design skill—they are the fingerprints of AI-generated work. Impeccable v3.5.0 now has **41 detection rules** (up from 28 in earlier versions) for identifying AI-generated UI patterns. Check for: the AI color palette, gradient text, dark mode with glowing accents, glassmorphism, hero metric layouts, identical card grids, generic fonts, and all other tells. The expanded ruleset also catches: AI-bold patterns (gradient text on metrics, neon glow), AI-layout patterns (symmetric everything, card-in-card nesting), AI-motion patterns (bounce/elastic easing, animating everything), and AI-copy patterns (generic placeholder text, "Welcome to [Product]" headers).
 
 **The test**: If you showed this to someone and said "AI made this," would they believe you immediately? If yes, that's the problem.
 

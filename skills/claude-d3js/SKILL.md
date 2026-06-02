@@ -768,7 +768,7 @@ const colours = {
 
 // Apply consistent typography
 svg.selectAll("text")
-  .style("font-family", "Inter, sans-serif")
+  .style("font-family", "'DM Sans', system-ui, -apple-system, sans-serif")
   .style("font-size", "12px");
 
 // Use subtle grid lines

@@ -1,14 +1,24 @@
 ---
 name: nextjs-app-router-fundamentals
-description: Guide for working with Next.js App Router (Next.js 13+). Use when migrating from Pages Router to App Router, creating layouts, implementing routing, handling metadata, or building Next.js 13+ applications. Activates for App Router migration, layout creation, routing patterns, or Next.js 13+ development tasks.
+description: Guide for working with Next.js App Router (Next.js 16+). Use when migrating from Pages Router to App Router, creating layouts, implementing routing, handling metadata, or building Next.js 16+ applications. Activates for App Router migration, layout creation, routing patterns, or Next.js 16+ development tasks. Covers Turbopack as default bundler, async request APIs, proxy.ts, and 'use cache' directive.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Next.js App Router Fundamentals
+# Next.js App Router Fundamentals (Next.js 16)
 
 ## Overview
 
-Provide comprehensive guidance for Next.js App Router (Next.js 13+), covering migration from Pages Router, file-based routing conventions, layouts, metadata handling, and modern Next.js patterns.
+Provide comprehensive guidance for Next.js App Router (Next.js 16+), covering migration from Pages Router, file-based routing conventions, layouts, metadata handling, Turbopack bundling, async request APIs, and modern Next.js patterns.
+
+## Next.js 16 Key Changes
+
+- **Turbopack is the default bundler** for both `next dev` and `next build`. Use `--webpack` flag to opt out.
+- **All request APIs are async**: `cookies()`, `headers()`, `params`, `searchParams`, `draftMode()` must be awaited. Synchronous access throws runtime errors.
+- **`middleware.ts` is deprecated**: Rename to `proxy.ts` with `export function proxy()`. Old file silently stops working with no warning.
+- **`'use cache'` directive**: Explicit caching for routes, components, and functions. Replaces implicit caching from Next.js 14.
+- **React 19.2**: View Transitions, useEffectEvent, Activity component, stable React Compiler.
+- **`connection()` API**: Opt into dynamic rendering cleanly (replaces `export const dynamic = 'force-dynamic'`).
+- **`forbidden()` API**: Return 403 errors with `forbidden.tsx` boundary (like `notFound()` for 404).
 
 ## TypeScript: NEVER Use `any` Type
 
@@ -26,12 +36,16 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) { ... }
 const data: string[] = [];
 ```
 
-### Common Next.js Type Patterns
+### Common Next.js Type Patterns (Next.js 16)
 
 ```typescript
-// Page props
-function Page({ params }: { params: { slug: string } }) { ... }
-function Page({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) { ... }
+// Page props — params and searchParams are ALWAYS Promises in Next.js 16
+async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+}
+async function Page({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const { q } = await searchParams;
+}
 
 // Form events
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => { ... }
@@ -45,7 +59,7 @@ async function myAction(formData: FormData) { ... }
 
 Use this skill when:
 - Migrating from Pages Router (`pages/` directory) to App Router (`app/` directory)
-- Creating Next.js 13+ applications from scratch
+- Creating Next.js 16+ applications from scratch
 - Working with layouts, templates, and nested routing
 - Implementing metadata and SEO optimizations
 - Building with App Router routing conventions
@@ -90,8 +104,13 @@ app/
 - `loading.tsx` - Loading UI with React Suspense
 - `error.tsx` - Error UI with Error Boundaries
 - `not-found.tsx` - 404 UI
+- `forbidden.tsx` - 403 UI (Next.js 16+, requires `experimental.authInterrupts`)
 - `template.tsx` - Similar to layout but re-renders on navigation
 - `route.ts` - API endpoints (Route Handlers)
+
+**Project Root Files:**
+- `proxy.ts` - Request interception and routing (replaces `middleware.ts` in Next.js 16)
+- `next.config.ts` - Next.js configuration
 
 **Colocation:**
 - Components, tests, and other files can be colocated in `app/`
@@ -231,13 +250,14 @@ export const metadata: Metadata = {
 ### Dynamic Metadata
 
 ```typescript
-// app/blog/[slug]/page.tsx
+// app/blog/[slug]/page.tsx (Next.js 16 — params is always a Promise)
 export async function generateMetadata({
   params
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const post = await getPost(params.slug);
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   return {
     title: post.title,
@@ -286,13 +306,14 @@ export default function BlogLayout({ children }) {
 ### Dynamic Routes
 
 ```typescript
-// app/blog/[slug]/page.tsx
-export default function BlogPost({
+// app/blog/[slug]/page.tsx (Next.js 16 — params is always a Promise)
+export default async function BlogPost({
   params
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  return <article>Post: {params.slug}</article>;
+  const { slug } = await params;
+  return <article>Post: {slug}</article>;
 }
 ```
 
@@ -300,12 +321,13 @@ export default function BlogPost({
 
 ```typescript
 // app/shop/[...slug]/page.tsx - Matches /shop/a, /shop/a/b, etc.
-export default function Shop({
+export default async function Shop({
   params
 }: {
-  params: { slug: string[] }
+  params: Promise<{ slug: string[] }>
 }) {
-  return <div>Path: {params.slug.join('/')}</div>;
+  const { slug } = await params;
+  return <div>Path: {slug.join('/')}</div>;
 }
 ```
 
@@ -492,6 +514,126 @@ export default async function Page() {
   return (/* render */);
 }
 ```
+
+## New Next.js 16 Features
+
+### The `'use cache'` Directive
+
+Mark routes, components, or functions as explicitly cacheable:
+
+```typescript
+// app/products/page.tsx — cache the entire page
+'use cache';
+
+export default async function ProductsPage() {
+  const products = await fetch('https://api.example.com/products').then(r => r.json());
+  return <ul>{products.map(p => <li key={p.id}>{p.name}</li>)}</ul>;
+}
+```
+
+```typescript
+// Cache a specific function
+async function getProducts() {
+  'use cache';
+  const res = await fetch('https://api.example.com/products');
+  return res.json();
+}
+```
+
+**Rules:**
+- Cannot use `cookies()`, `headers()`, or read `params` inside `'use cache'` functions
+- Variants: `'use cache'` (default), `'use cache: private'`, `'use cache: remote'`
+- Replaces the implicit caching behavior from Next.js 14
+
+### The `connection()` API
+
+Opt a route into dynamic rendering without using `cookies()` or `headers()`:
+
+```typescript
+// app/dashboard/page.tsx
+import { connection } from 'next/server';
+
+export default async function Dashboard() {
+  await connection(); // Signal this route is dynamic
+
+  // Environment variables read at runtime, not build time
+  const apiUrl = process.env.API_URL;
+  const data = await fetch(apiUrl).then(r => r.json());
+
+  return <div>{data.content}</div>;
+}
+```
+
+### The `forbidden()` API
+
+Return 403 authorization errors with a dedicated error boundary:
+
+```typescript
+// app/admin/page.tsx
+import { forbidden } from 'next/navigation';
+
+export default async function AdminPage() {
+  const user = await getUser();
+
+  if (!user?.isAdmin) {
+    forbidden(); // Renders forbidden.tsx with 403 status
+  }
+
+  return <div>Admin Dashboard</div>;
+}
+
+// app/admin/forbidden.tsx
+export default function Forbidden() {
+  return (
+    <div>
+      <h2>Access Denied</h2>
+      <p>You do not have permission to access this page.</p>
+    </div>
+  );
+}
+```
+
+**Requires** in `next.config.ts`:
+```typescript
+const nextConfig = {
+  experimental: {
+    authInterrupts: true,
+  },
+};
+```
+
+### The `proxy.ts` File (Replaces middleware.ts)
+
+```typescript
+// proxy.ts (project root)
+import { NextRequest, NextResponse } from 'next/server';
+
+export function proxy(request: NextRequest) {
+  // Check authentication
+  const token = request.cookies.get('session-token');
+
+  if (!token && request.nextUrl.pathname.startsWith('/dashboard')) {
+    return NextResponse.redirect(new URL('/login', request.url));
+  }
+
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: ['/dashboard/:path*', '/admin/:path*'],
+};
+```
+
+**Migration from middleware.ts:**
+```bash
+# Use the codemod
+npx @next/codemod@latest middleware-to-proxy .
+```
+
+**Key differences:**
+- Runtime is always Node.js (not Edge)
+- `skipMiddlewareUrlNormalize` is now `skipProxyUrlNormalize`
+- For Edge runtime, continue using `middleware.ts`
 
 ## Static Site Generation with generateStaticParams
 
@@ -764,17 +906,26 @@ When migrating or building with App Router, verify:
 ### Common Commands
 
 ```bash
-# Create new Next.js app with App Router
+# Create new Next.js app with App Router (includes AGENTS.md by default)
 npx create-next-app@latest my-app
 
-# Run development server
+# Run development server (uses Turbopack by default in Next.js 16)
 npm run dev
 
-# Build for production
+# Run dev server with webpack instead of Turbopack
+npm run dev -- --webpack
+
+# Build for production (uses Turbopack by default)
 npm run build
+
+# Build with webpack
+npm run build -- --webpack
 
 # Start production server
 npm start
+
+# Migrate middleware.ts to proxy.ts
+npx @next/codemod@latest middleware-to-proxy .
 ```
 
 ## Additional Resources

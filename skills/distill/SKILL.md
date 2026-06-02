@@ -7,6 +7,7 @@ args:
     description: The feature or component to distill (optional)
     required: false
 ---
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
 
 Remove unnecessary complexity from designs, revealing the essential elements and creating clarity through ruthless simplification.
 
@@ -108,6 +109,14 @@ Systematically remove complexity across these dimensions:
 - **Flatten component trees**: Reduce nesting depth
 - **Consolidate styles**: Merge similar styles, use utilities consistently
 - **Reduce variants**: Does that component need 12 variations, or can 3 cover 90% of cases?
+- **Use `content-visibility: auto`**: For long pages with many sections, apply `content-visibility: auto` with `contain-intrinsic-size` to skip rendering off-screen content. This lets the browser avoid layout and paint work for elements not in the viewport, dramatically improving initial render time for content-heavy pages.
+  ```css
+  .section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px; /* estimated height */
+  }
+  ```
+  This is especially effective when distilling complex pages -- even if you cannot remove content, you can defer its rendering cost. Combine with simplification: fewer elements per section + `content-visibility` on the sections themselves.
 
 **NEVER**:
 - Remove necessary functionality (simplicity ≠ feature-less)

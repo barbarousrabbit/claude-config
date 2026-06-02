@@ -1,10 +1,10 @@
 ---
 name: nextjs-pathname-id-fetch
-description: Focused pattern for fetching data using URL parameters in Next.js. Covers creating dynamic routes ([id], [slug]) and accessing route parameters in server components to fetch data from APIs. Use when building pages that display individual items (product pages, blog posts, user profiles) based on a URL parameter. Complements nextjs-dynamic-routes-params with a simplified, common-case pattern.
+description: Focused pattern for fetching data using URL parameters in Next.js 16. Covers creating dynamic routes ([id], [slug]) and accessing route parameters (MUST be awaited) in server components to fetch data from APIs. Use when building pages that display individual items (product pages, blog posts, user profiles) based on a URL parameter. Complements nextjs-dynamic-routes-params with a simplified, common-case pattern.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Next.js: Pathname ID Fetch Pattern
+# Next.js: Pathname ID Fetch Pattern (Next.js 16)
 
 ## When This Pattern Applies
 
@@ -97,25 +97,25 @@ export default async function Page({ params }) {
 export default async function Page({ params }) { ... }
 ```
 
-### 3. Params Must Be Awaited (Next.js 15+)
+### 3. Params Must Be Awaited (Next.js 16 — sync removed)
 ```typescript
-// ✅ CORRECT - Next.js 15+
+// ✅ CORRECT - Next.js 16 (the only valid pattern)
 export default async function Page({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await params;  // Must await
+  const { id } = await params;  // Must await — sync access throws
   // ...
 }
 
-// ⚠️ OLD (Next.js 14 and earlier - deprecated)
+// ❌ WRONG - Sync access removed in Next.js 16 (throws runtime error)
 export default async function Page({
   params,
 }: {
-  params: { id: string };
+  params: { id: string };  // WRONG type — params is Promise
 }) {
-  const { id } = params;  // No await needed in old versions
+  const { id } = params;  // THROWS in Next.js 16
   // ...
 }
 ```
@@ -251,7 +251,7 @@ Before shipping a pathname-driven detail page, confirm:
 
 - [ ] The route folder uses brackets (e.g., `app/[id]/page.tsx`)
 - [ ] The component stays server-side (no `'use client'` needed)
-- [ ] The `params` prop is typed as `Promise<{ id: string }>` for Next.js 15+
+- [ ] The `params` prop is typed as `Promise<{ id: string }>` in Next.js 16 (sync access removed)
 - [ ] You await the params and read the identifier safely
 - [ ] Data fetching logic uses that identifier
 - [ ] Rendering handles loading/error states appropriately

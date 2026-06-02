@@ -1,4 +1,4 @@
-# Modern JavaScript Syntax (ES2023+)
+# Modern JavaScript Syntax (ES2025+)
 
 ## Optional Chaining and Nullish Coalescing
 
@@ -101,13 +101,32 @@ const updated = items.with(2, 'newValue');
 const nestedResults = users.flatMap(user => user.posts);
 ```
 
+## Array Grouping (ES2024)
+
+```javascript
+// Object.groupBy() - group array elements into object
+const users = [
+  { name: 'Alice', role: 'admin' },
+  { name: 'Bob', role: 'user' },
+  { name: 'Charlie', role: 'admin' },
+];
+
+const byRole = Object.groupBy(users, user => user.role);
+// { admin: [Alice, Charlie], user: [Bob] }
+
+const byAge = Object.groupBy(people, p => p.age >= 18 ? 'adult' : 'minor');
+
+// Map.groupBy() - group into Map (useful when keys are non-strings)
+const byDate = Map.groupBy(events, event => event.date);
+// Map { Date(2025-01-01) => [...], Date(2025-01-02) => [...] }
+
+const byObj = Map.groupBy(items, item => item.category);
+// Map keys are object references, not coerced to strings
+```
+
 ## Object and String Enhancements
 
 ```javascript
-// Object.groupBy() - group array elements
-const groupedByAge = Object.groupBy(users, user => user.age);
-const groupedByStatus = Object.groupBy(orders, o => o.status);
-
 // Object.hasOwn() - safer hasOwnProperty
 if (Object.hasOwn(obj, 'key')) {
   // safer than obj.hasOwnProperty('key')
@@ -215,46 +234,156 @@ function handleResponse({ status, data, error }) {
 }
 ```
 
-## Iterator Helpers (Stage 3)
+## Iterator Helpers (ES2025)
 
 ```javascript
-// When available - chaining iterator operations
+// Chaining lazy iterator operations — no intermediate arrays
 const result = [1, 2, 3, 4, 5]
   .values()
   .map(x => x * 2)
   .filter(x => x > 5)
+  .toArray(); // [6, 8, 10]
+
+// Works on ANY iterable — Maps, Sets, generators
+const activeUsers = users.values()
+  .filter(u => u.active)
+  .map(u => u.name)
+  .take(10)
   .toArray();
 
-// Custom iterators
-const range = {
-  *[Symbol.iterator]() {
-    for (let i = 0; i < 10; i++) {
-      yield i;
-    }
-  }
-};
+// Available methods on Iterator.prototype:
+// .map(fn)        — lazy transform
+// .filter(fn)     — lazy predicate
+// .take(n)        — first n elements
+// .drop(n)        — skip first n elements
+// .flatMap(fn)    — lazy flatten + map
+// .reduce(fn, init) — eager reduction
+// .toArray()      — collect into array
+// .forEach(fn)    — eager side effects
+// .some(fn)       — short-circuit test
+// .every(fn)      — short-circuit test
+// .find(fn)       — short-circuit search
 
-for (const num of range) {
-  console.log(num);
+// Lazy evaluation — great for large/infinite sequences
+function* naturals() {
+  let i = 1;
+  while (true) yield i++;
+}
+
+const firstTenSquares = naturals()
+  .map(n => n ** 2)
+  .take(10)
+  .toArray(); // [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+// Iterator.from() — wrap any iterable into an iterator with helpers
+const mapIter = Iterator.from(myMap.entries())
+  .filter(([key]) => key.startsWith('user_'))
+  .map(([, value]) => value);
+```
+
+## Set Methods (ES2025)
+
+```javascript
+const frontend = new Set(['Alice', 'Bob', 'Charlie']);
+const backend = new Set(['Bob', 'Diana', 'Charlie']);
+
+// union() — all elements from both sets
+frontend.union(backend);
+// Set {'Alice', 'Bob', 'Charlie', 'Diana'}
+
+// intersection() — elements in both sets
+frontend.intersection(backend);
+// Set {'Bob', 'Charlie'}
+
+// difference() — elements in this but not other
+frontend.difference(backend);
+// Set {'Alice'}
+
+// symmetricDifference() — elements in either but not both
+frontend.symmetricDifference(backend);
+// Set {'Alice', 'Diana'}
+
+// isSubsetOf() — all elements of this are in other
+new Set(['Bob']).isSubsetOf(frontend); // true
+
+// isSupersetOf() — all elements of other are in this
+frontend.isSupersetOf(new Set(['Bob'])); // true
+
+// isDisjointFrom() — no elements in common
+new Set(['Eve']).isDisjointFrom(frontend); // true
+
+// Real-world: permission checking
+const userPerms = new Set(['read', 'write']);
+const requiredPerms = new Set(['read', 'admin']);
+const missing = requiredPerms.difference(userPerms); // Set {'admin'}
+if (missing.size > 0) {
+  throw new Error(`Missing permissions: ${[...missing].join(', ')}`);
 }
 ```
 
-## Temporal API (Stage 3)
+## Promise.withResolvers (ES2024)
 
 ```javascript
-// Modern date/time handling (when available)
-import { Temporal } from '@js-temporal/polyfill';
+// Create a Promise with externally accessible resolve/reject
+const { promise, resolve, reject } = Promise.withResolvers();
 
+// Replaces the common pattern:
+// let resolve, reject;
+// const promise = new Promise((res, rej) => { resolve = res; reject = rej; });
+
+// Use case: event-driven resolution
+function waitForEvent(target, eventName) {
+  const { promise, resolve } = Promise.withResolvers();
+  target.addEventListener(eventName, resolve, { once: true });
+  return promise;
+}
+
+// Use case: deferred pattern
+class Deferred {
+  constructor() {
+    Object.assign(this, Promise.withResolvers());
+  }
+}
+
+const deferred = new Deferred();
+setTimeout(() => deferred.resolve('done'), 1000);
+await deferred.promise; // 'done'
+```
+
+## Temporal API (enabled by default in Node.js 26)
+
+```javascript
+// No polyfill needed in Node.js 26+ — Temporal is globally available
 const now = Temporal.Now.instant();
-const date = Temporal.PlainDate.from('2024-01-15');
+const date = Temporal.PlainDate.from('2025-06-15');
 const time = Temporal.PlainTime.from('14:30:00');
+const dateTime = Temporal.PlainDateTime.from('2025-06-15T14:30:00');
 
 // Duration calculations
 const duration = Temporal.Duration.from({ hours: 2, minutes: 30 });
-const later = now.add(duration);
+const meeting = Temporal.PlainDateTime.from('2025-06-15T09:00:00');
+const endTime = meeting.add(duration); // 2025-06-15T11:30:00
 
-// Timezone handling
-const zonedTime = now.toZonedDateTimeISO('America/New_York');
+// Timezone-aware date/time
+const zonedNow = Temporal.Now.zonedDateTimeISO('America/New_York');
+const tokyoTime = zonedNow.withTimeZone('Asia/Tokyo');
+
+// Compare dates safely (no more Date gotchas)
+const start = Temporal.PlainDate.from('2025-01-01');
+const end = Temporal.PlainDate.from('2025-12-31');
+const diff = start.until(end); // P365D
+console.log(diff.days); // 365
+
+// Format with Intl
+const formatted = zonedNow.toLocaleString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+// NOTE: In browsers, Temporal is still Stage 3 — use @js-temporal/polyfill
+// In Node.js 26+, it works natively with no imports
 ```
 
 ## Quick Reference
@@ -270,3 +399,10 @@ const zonedTime = now.toZonedDateTimeISO('America/New_York');
 | Object.hasOwn() | ES2022 | `Object.hasOwn(obj, 'key')` |
 | Array.findLast() | ES2023 | `arr.findLast(fn)` |
 | toSorted() | ES2023 | `arr.toSorted()` |
+| Object.groupBy() | ES2024 | `Object.groupBy(arr, fn)` |
+| Map.groupBy() | ES2024 | `Map.groupBy(arr, fn)` |
+| Promise.withResolvers | ES2024 | `Promise.withResolvers()` |
+| Iterator Helpers | ES2025 | `iter.map(fn).filter(fn).toArray()` |
+| Set.union() | ES2025 | `setA.union(setB)` |
+| Set.intersection() | ES2025 | `setA.intersection(setB)` |
+| Set.difference() | ES2025 | `setA.difference(setB)` |

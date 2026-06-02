@@ -74,6 +74,5 @@
       }
     }
   },
-  "effortLevel": "max",
-  "model": "claude-opus-4-6[1m]"
+  "effortLevel": "max"
 }

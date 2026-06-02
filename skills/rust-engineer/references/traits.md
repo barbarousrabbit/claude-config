@@ -377,6 +377,34 @@ impl TryFrom<i64> for UserId {
 }
 ```
 
+## Async Fn in Traits (Rust 1.85+ / 2024 Edition)
+
+```rust
+// Native async fn in traits — stable since Rust 1.75 (basic), 1.85 (2024 edition)
+// No #[async_trait] crate needed for static dispatch!
+trait DataFetcher {
+    async fn fetch(&self, url: &str) -> Result<Vec<u8>, Box<dyn std::error::Error>>;
+}
+
+struct HttpFetcher;
+
+impl DataFetcher for HttpFetcher {
+    async fn fetch(&self, url: &str) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
+        let bytes = reqwest::get(url).await?.bytes().await?.to_vec();
+        Ok(bytes)
+    }
+}
+
+// Works with generics (static dispatch)
+async fn download<F: DataFetcher>(fetcher: &F, url: &str) {
+    let data = fetcher.fetch(url).await.unwrap();
+    println!("Downloaded {} bytes", data.len());
+}
+
+// For dyn dispatch, you still need manual desugaring or async-trait crate.
+// See references/async.md for details.
+```
+
 ## Const Traits (Nightly)
 
 ```rust
@@ -411,3 +439,4 @@ const fn compute() -> i32 {
 - Use #[derive] when possible instead of manual implementations
 - Implement standard traits (Debug, Clone, etc.) for better ecosystem integration
 - Use sealed traits to prevent external implementations when needed
+- Use native async fn in traits for static dispatch (Rust 1.85+); only use `async-trait` crate for `dyn Trait`

@@ -8,6 +8,8 @@ args:
     required: false
 ---
 
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
+
 **First**: Use the frontend-design skill for design principles and anti-patterns.
 
 Perform a meticulous final pass to catch all the small details that separate good work from great work. The difference between shipped and polished.
@@ -69,6 +71,7 @@ Work through these dimensions methodically:
 - **Accessible focus**: Focus indicators visible with sufficient contrast
 - **Tinted neutrals**: No pure gray or pure black—add subtle color tint (0.01 chroma)
 - **Gray on color**: Never put gray text on colored backgrounds—use a shade of that color or transparency
+- **`:has()` selector for parent-aware styling**: Use `:has()` to style parent containers based on child state without JavaScript (e.g., `.field:has(:invalid)` to highlight form groups with errors, `.card:has(img)` to adjust layout when image is present, `.nav:has(:focus-visible)` to style navigation when a child has keyboard focus). This eliminates many "state-up" class-toggling patterns and keeps styling declarative
 
 ### Interaction States
 

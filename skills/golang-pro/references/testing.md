@@ -50,7 +50,8 @@ func TestParallel(t *testing.T) {
     }
 
     for _, tt := range tests {
-        tt := tt // Capture range variable for parallel tests
+        // Note: tt := tt capture is no longer needed in Go 1.22+
+        // (range variables are per-iteration, not per-loop)
         t.Run(tt.name, func(t *testing.T) {
             t.Parallel() // Run subtests in parallel
 

@@ -19,7 +19,7 @@ The skill supports three configurable modes. Ask the user which mode they prefer
 
 1. **`runtime`** — Browser-based axe-core scan (default)
    - Injects axe-core into running pages via browser automation
-   - Tests against WCAG 2.1 Level AA (wcag2a, wcag2aa, wcag21a, wcag21aa) + best practices
+   - Tests against WCAG 2.1 + 2.2 Level AA (wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa) + best practices
    - Scans multiple pages if a sitemap or route list is available
    - Reports violations with impact level, affected elements, and fix recommendations
 
@@ -53,18 +53,18 @@ Look for routes in the project:
 For each page, use browser automation to:
 1. Navigate to the page
 2. Wait for content to load (2-3 seconds)
-3. Inject axe-core from CDN: `https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.8.4/axe.min.js`
+3. Inject axe-core from CDN: `https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.11.4/axe.min.js`
 4. Run the audit:
 ```javascript
 (async () => {
   if (!window.axe) {
     const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.8.4/axe.min.js';
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.11.4/axe.min.js';
     document.head.appendChild(script);
     await new Promise(resolve => { script.onload = resolve; });
   }
   const results = await axe.run(document, {
-    runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice']
+    runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice']
   });
   window.__axeResults = {
     page: window.location.pathname,
@@ -173,7 +173,7 @@ Always present the final report in this structure:
 ## Accessibility Audit Results
 
 **Scan mode:** [runtime/static/full]
-**Standards:** WCAG 2.1 Level AA + Best Practices
+**Standards:** WCAG 2.1 + 2.2 Level AA + Best Practices
 **Pages scanned:** [count]
 
 | Page | Violations | Passes | Worst Impact |

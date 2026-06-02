@@ -10,6 +10,7 @@ args:
     description: What to adapt for (mobile, tablet, desktop, print, email, etc.)
     required: false
 ---
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
 
 Adapt existing designs to work effectively across different contexts - different screen sizes, devices, platforms, or use cases.
 
@@ -145,9 +146,33 @@ Choose appropriate breakpoints:
 ### Layout Adaptation Techniques
 
 - **CSS Grid/Flexbox**: Reflow layouts automatically
-- **Container Queries**: Adapt based on container, not viewport
+- **Container Queries**: Adapt based on container, not viewport. Preferred over media queries for component-level responsiveness.
+  ```css
+  /* Define a containment context */
+  .card-container {
+    container-type: inline-size;
+    container-name: card;
+  }
+
+  /* Adapt based on container width, not viewport */
+  @container card (min-width: 400px) {
+    .card { flex-direction: row; }
+  }
+  @container card (max-width: 399px) {
+    .card { flex-direction: column; }
+  }
+  ```
+  **Tailwind v4 container query utilities**: Use `@container` variants directly in markup:
+  ```html
+  <div class="@container">
+    <div class="flex flex-col @sm:flex-row @md:grid @md:grid-cols-3">
+      <!-- Responds to container size, not viewport -->
+    </div>
+  </div>
+  ```
+  Container queries are superior to media queries for reusable components because they adapt to their parent context, not the viewport. Use them as the default for any component that may appear in different layout contexts (sidebars, modals, main content).
 - **`clamp()`**: Fluid sizing between min and max
-- **Media queries**: Different styles for different contexts
+- **Media queries**: Different styles for different contexts (prefer container queries for components, media queries for page-level layout)
 - **Display properties**: Show/hide elements per context
 
 ### Touch Adaptation

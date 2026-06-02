@@ -1,4 +1,4 @@
-# Node.js Essentials
+# Node.js Essentials (Node.js 26+)
 
 ## File System (fs/promises)
 
@@ -457,15 +457,145 @@ if (cluster.isPrimary) {
 }
 ```
 
+## Temporal API (Node.js 26 — enabled by default)
+
+```javascript
+// Temporal is globally available in Node.js 26+ (V8 14.6)
+// No imports or polyfills needed
+
+// Current time
+const now = Temporal.Now.instant();
+const today = Temporal.Now.plainDateISO();
+const zonedNow = Temporal.Now.zonedDateTimeISO('America/New_York');
+
+// Create specific dates/times
+const date = Temporal.PlainDate.from('2025-06-15');
+const time = Temporal.PlainTime.from('14:30:00');
+const dateTime = Temporal.PlainDateTime.from('2025-06-15T14:30:00');
+
+// Duration and arithmetic
+const duration = Temporal.Duration.from({ hours: 2, minutes: 30 });
+const meeting = Temporal.PlainDateTime.from('2025-06-15T09:00:00');
+const endTime = meeting.add(duration); // 2025-06-15T11:30:00
+
+// Compare and difference
+const start = Temporal.PlainDate.from('2025-01-01');
+const end = Temporal.PlainDate.from('2025-12-31');
+const diff = start.until(end); // P365D
+console.log(diff.days); // 365
+console.log(Temporal.PlainDate.compare(start, end)); // -1
+
+// Timezone conversions
+const nyTime = Temporal.Now.zonedDateTimeISO('America/New_York');
+const tokyoTime = nyTime.withTimeZone('Asia/Tokyo');
+console.log(tokyoTime.toString());
+
+// Replaces moment.js / date-fns for most use cases
+// Key advantage: immutable, unambiguous, timezone-safe
+```
+
+## Node.js 26 Breaking Changes & Migration
+
+```javascript
+// REMOVED: Internal _stream_* modules
+// Old (broken in Node 26):
+// const Readable = require('_stream_readable');
+// const Writable = require('_stream_writable');
+// New:
+import { Readable, Writable, Transform, Duplex } from 'node:stream';
+
+// DEPRECATED: module.register() for loader hooks
+// Old (deprecated):
+// import { register } from 'node:module';
+// register('./my-loader.mjs', import.meta.url);
+// New: use --import flag in CLI
+// node --import ./my-loader-register.mjs app.js
+
+// my-loader-register.mjs
+import { register } from 'node:module';
+register('./my-loader.mjs', import.meta.url);
+
+// V8 14.6 engine — new features available:
+// - Temporal API (global, no flag needed)
+// - Iterator Helpers (ES2025)
+// - Set methods (ES2025)
+// - Promise.withResolvers (ES2024)
+// - Object.groupBy / Map.groupBy (ES2024)
+// - RegExp.escape() (ES2025 — escapes special regex chars)
+
+// Always use node: protocol prefix for built-in modules
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { createServer } from 'node:http';
+```
+
+## Testing with Vitest (preferred for new projects)
+
+```javascript
+// vitest.config.js
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    globals: true,          // no need to import describe/it/expect
+    environment: 'node',    // or 'jsdom' for browser APIs
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'lcov'],
+      thresholds: { lines: 85 },
+    },
+  },
+});
+
+// example.test.js
+import { describe, it, expect, vi } from 'vitest';
+import { processData } from './processor.js';
+
+describe('processData', () => {
+  it('transforms input correctly', () => {
+    const result = processData([1, 2, 3]);
+    expect(result).toEqual([2, 4, 6]);
+  });
+
+  it('handles empty input', () => {
+    expect(processData([])).toEqual([]);
+  });
+
+  // Mocking
+  it('calls external API', async () => {
+    const mockFetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({ data: 'test' }),
+    });
+    vi.stubGlobal('fetch', mockFetch);
+
+    const result = await fetchData('/api/test');
+    expect(mockFetch).toHaveBeenCalledWith('/api/test');
+    expect(result).toEqual({ data: 'test' });
+
+    vi.unstubAllGlobals();
+  });
+});
+
+// Why Vitest over Jest for new projects:
+// - Native ESM support (no transform config)
+// - Built-in TypeScript support
+// - Watch mode with HMR (instant re-runs)
+// - Compatible with Jest API (easy migration)
+// - Vitest UI for browser-based test explorer
+// - Faster execution via Vite's transform pipeline
+```
+
 ## Quick Reference
 
 | Module | Use Case | Import |
 |--------|----------|--------|
-| `fs/promises` | Async file operations | `import { readFile } from 'fs/promises'` |
-| `path` | Path manipulation | `import { join } from 'path'` |
-| `stream` | Stream processing | `import { pipeline } from 'stream/promises'` |
-| `events` | Event emitters | `import { EventEmitter } from 'events'` |
-| `child_process` | Spawn processes | `import { spawn } from 'child_process'` |
-| `worker_threads` | Multi-threading | `import { Worker } from 'worker_threads'` |
-| `http` | HTTP server | `import { createServer } from 'http'` |
-| `cluster` | Multi-core scaling | `import cluster from 'cluster'` |
+| `node:fs/promises` | Async file operations | `import { readFile } from 'node:fs/promises'` |
+| `node:path` | Path manipulation | `import { join } from 'node:path'` |
+| `node:stream` | Stream processing | `import { pipeline } from 'node:stream/promises'` |
+| `node:events` | Event emitters | `import { EventEmitter } from 'node:events'` |
+| `node:child_process` | Spawn processes | `import { spawn } from 'node:child_process'` |
+| `node:worker_threads` | Multi-threading | `import { Worker } from 'node:worker_threads'` |
+| `node:http` | HTTP server | `import { createServer } from 'node:http'` |
+| `node:cluster` | Multi-core scaling | `import cluster from 'node:cluster'` |
+| `Temporal` | Date/time (global) | No import needed in Node.js 26+ |

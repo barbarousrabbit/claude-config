@@ -8,6 +8,8 @@ args:
     required: false
 ---
 
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
+
 Reduce visual intensity in designs that are too bold, aggressive, or overstimulating, creating a more refined and approachable aesthetic without losing effectiveness.
 
 ## MANDATORY PREPARATION

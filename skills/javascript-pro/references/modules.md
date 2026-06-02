@@ -328,11 +328,11 @@ export const api = {
 // Use .cjs for CommonJS files when type: "module"
 // Use .mjs for ESM files when type: "commonjs" (default)
 
-// Loading JSON in ESM
-import data from './data.json' assert { type: 'json' };
+// Loading JSON in ESM (import attributes — replaces deprecated assert syntax)
+import data from './data.json' with { type: 'json' };
 
 // OR using fs
-import { readFile } from 'fs/promises';
+import { readFile } from 'node:fs/promises';
 const data = JSON.parse(
   await readFile('./data.json', 'utf-8')
 );

@@ -429,14 +429,127 @@ func Serialize[T Serializable](data T) []byte {
 }
 ```
 
+## Generic Type Aliases (Go 1.24+)
+
+```go
+// Fully parameterized type aliases
+type Set[T comparable] = map[T]struct{}
+
+// Re-export a generic type from another package
+type Result[T any] = pkg.Result[T]
+
+// Alias with constrained parameter
+type OrderedSlice[T constraints.Ordered] = []T
+
+// Usage
+var s Set[string] = make(Set[string])
+s["hello"] = struct{}{}
+```
+
+## Self-Referencing Generic Constraints (Go 1.26+)
+
+```go
+// Type parameter references itself in the constraint
+type Comparable[T any] interface {
+    CompareTo(other T) int
+}
+
+// T must implement Comparable[T] -- self-referencing
+func Max[T Comparable[T]](a, b T) T {
+    if a.CompareTo(b) > 0 {
+        return a
+    }
+    return b
+}
+
+// Practical example: sortable types
+type Sortable[T any] interface {
+    Less(other T) bool
+}
+
+func Sort[T Sortable[T]](items []T) {
+    slices.SortFunc(items, func(a, b T) int {
+        if a.Less(b) {
+            return -1
+        }
+        return 1
+    })
+}
+
+// Implementation
+type Temperature struct {
+    Celsius float64
+}
+
+func (t Temperature) CompareTo(other Temperature) int {
+    if t.Celsius < other.Celsius {
+        return -1
+    }
+    if t.Celsius > other.Celsius {
+        return 1
+    }
+    return 0
+}
+
+// Usage
+hottest := Max(Temperature{36.5}, Temperature{38.1}) // Temperature{38.1}
+```
+
+## Range-Over-Func Iterators with Generics (Go 1.22+)
+
+```go
+import "iter"
+
+// Generic iterator that filters elements
+func Filter[T any](seq iter.Seq[T], pred func(T) bool) iter.Seq[T] {
+    return func(yield func(T) bool) {
+        for v := range seq {
+            if pred(v) {
+                if !yield(v) {
+                    return
+                }
+            }
+        }
+    }
+}
+
+// Generic iterator that transforms elements
+func Map[T, U any](seq iter.Seq[T], fn func(T) U) iter.Seq[U] {
+    return func(yield func(U) bool) {
+        for v := range seq {
+            if !yield(fn(v)) {
+                return
+            }
+        }
+    }
+}
+
+// Chain iterators (lazy, no intermediate allocations)
+func EvenSquares(n int) iter.Seq[int] {
+    nums := func(yield func(int) bool) {
+        for i := range n {
+            if !yield(i) { return }
+        }
+    }
+    return Filter(Map(nums, func(x int) int { return x * x }),
+        func(x int) bool { return x%2 == 0 })
+}
+
+// Collect results with slices.Collect
+result := slices.Collect(EvenSquares(10))
+```
+
 ## Quick Reference
 
-| Feature | Syntax | Use Case |
-|---------|--------|----------|
-| Basic generic | `func F[T any]()` | Any type |
-| Constraint | `func F[T Constraint]()` | Restricted types |
-| Multiple params | `func F[T, U any]()` | Multiple type variables |
-| Comparable | `func F[T comparable]()` | Types supporting == and != |
-| Ordered | `func F[T constraints.Ordered]()` | Types supporting <, >, <=, >= |
-| Union | `T interface{int \| string}` | Either type |
-| Approximate | `~int` | Include type aliases |
+| Feature | Syntax | Use Case | Since |
+|---------|--------|----------|-------|
+| Basic generic | `func F[T any]()` | Any type | 1.18 |
+| Constraint | `func F[T Constraint]()` | Restricted types | 1.18 |
+| Multiple params | `func F[T, U any]()` | Multiple type variables | 1.18 |
+| Comparable | `func F[T comparable]()` | Types supporting == and != | 1.18 |
+| Ordered | `func F[T cmp.Ordered]()` | Types supporting <, >, <=, >= | 1.21 |
+| Union | `T interface{int \| string}` | Either type | 1.18 |
+| Approximate | `~int` | Include type aliases | 1.18 |
+| Range-over-func | `iter.Seq[T]`, `iter.Seq2[K,V]` | Lazy iteration | 1.22 |
+| Generic type alias | `type A[T C] = B[T]` | Re-export generic types | 1.24 |
+| Self-referencing | `T Constraint[T]` | Recursive type bounds | 1.26 |

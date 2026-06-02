@@ -7,6 +7,7 @@ args:
     description: The feature or component to colorize (optional)
     required: false
 ---
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
 
 Strategically introduce color to designs that are too monochromatic, gray, or lacking in visual warmth and personality.
 

@@ -7,10 +7,13 @@ args:
     description: The feature or area to audit (optional)
     required: false
 ---
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
 
 Run systematic quality checks and generate a comprehensive audit report with prioritized issues and actionable recommendations. Don't fix issues - document them for other commands to address.
 
 **First**: Use the frontend-design skill for design principles and anti-patterns.
+
+**Note**: Impeccable v3.5.0 includes 41 detection rules (up from 28 in earlier versions), a 20x faster detector, Live Mode for real-time feedback, and Tailwind v4 CSS cascade resolution. When auditing, apply the full 41-rule set. Target **WCAG 2.2 Level AA** as the baseline standard (not just WCAG 2.1). Key WCAG 2.2 additions to check: focus appearance (2.4.11), dragging movements (2.5.7), target size minimum (2.5.8), and consistent help (3.2.6).
 
 ## Diagnostic Scan
 
@@ -20,9 +23,11 @@ Run comprehensive checks across multiple dimensions:
    - **Contrast issues**: Text contrast ratios < 4.5:1 (or 7:1 for AAA)
    - **Missing ARIA**: Interactive elements without proper roles, labels, or states
    - **Keyboard navigation**: Missing focus indicators, illogical tab order, keyboard traps
+   - **Focus appearance** (WCAG 2.2): Focus indicator must have sufficient area, contrast, and not be fully obscured
    - **Semantic HTML**: Improper heading hierarchy, missing landmarks, divs instead of buttons
    - **Alt text**: Missing or poor image descriptions
    - **Form issues**: Inputs without labels, poor error messaging, missing required indicators
+   - **Target size** (WCAG 2.2): Interactive targets must be at least 24x24 CSS pixels (2.5.8 minimum)
 
 2. **Performance** - Check for:
    - **Layout thrashing**: Reading/writing layout properties in loops

@@ -1,14 +1,14 @@
 ---
 name: nextjs-anti-patterns
-description: Identify and fix common Next.js App Router anti-patterns and mistakes. Use when reviewing code for Next.js best practices, debugging performance issues, migrating from Pages Router patterns, or preventing common pitfalls. Activates for code review, performance optimization, or detecting inappropriate useEffect/useState usage. CRITICAL: For browser detection, keep the logic in the user-facing component (or a composed helper that it renders) rather than isolating it in unused files.
+description: Identify and fix common Next.js 16 App Router anti-patterns and mistakes. Use when reviewing code for Next.js best practices, debugging performance issues, migrating from Pages Router or Next.js 15 patterns, or preventing common pitfalls. Activates for code review, performance optimization, detecting inappropriate useEffect/useState usage, synchronous request API access, old middleware.ts usage, or missing 'use cache'. CRITICAL: For browser detection, keep the logic in the user-facing component (or a composed helper that it renders) rather than isolating it in unused files.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Next.js Anti-Patterns
+# Next.js Anti-Patterns (Next.js 16)
 
 ## Overview
 
-Identify and correct common anti-patterns in Next.js App Router applications, focusing on misuse of useEffect, improper data fetching, unnecessary client-side state, and incorrect component boundaries.
+Identify and correct common anti-patterns in Next.js 16 App Router applications, focusing on misuse of useEffect, improper data fetching, unnecessary client-side state, incorrect component boundaries, synchronous request API access, old middleware.ts usage, and missing explicit caching.
 
 ## TypeScript: NEVER Use `any` Type
 
@@ -26,12 +26,16 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) { ... }
 const data: string[] = [];
 ```
 
-### Common Next.js Type Patterns
+### Common Next.js 16 Type Patterns
 
 ```typescript
-// Page props
-function Page({ params }: { params: { slug: string } }) { ... }
-function Page({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) { ... }
+// Page props — ALWAYS Promise in Next.js 16 (sync access removed)
+async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+}
+async function Page({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const { q } = await searchParams;
+}
 
 // Form events
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => { ... }
@@ -46,11 +50,14 @@ async function myAction(formData: FormData) { ... }
 Use this skill when:
 - Reviewing Next.js code for best practices
 - Debugging performance issues in App Router apps
-- Migrating from Pages Router with legacy patterns
+- Migrating from Pages Router or Next.js 15 with legacy patterns
 - Code shows excessive client-side JavaScript
 - Components are using useEffect unnecessarily
 - Detecting waterfall data fetching patterns
 - Identifying incorrect Server/Client component usage
+- Finding synchronous request API usage (cookies, headers, params, searchParams)
+- Detecting old middleware.ts files (should be proxy.ts)
+- Identifying `export const dynamic = 'force-dynamic'` (should use `connection()` API)
 
 ## Rendering Responsibilities
 
@@ -906,7 +913,7 @@ export default function ThemedButton() {
 
 ## Detection Checklist
 
-When reviewing Next.js App Router code, check for:
+When reviewing Next.js 16 App Router code, check for:
 
 - [ ] `useEffect` used for data fetching → Replace with Server Component
 - [ ] `useEffect` used for browser detection → Do it directly or use CSS
@@ -919,6 +926,12 @@ When reviewing Next.js App Router code, check for:
 - [ ] API routes for simple data fetching → Access database directly in Server Component
 - [ ] `window.location.href` for navigation → Use Link or useRouter
 - [ ] Missing Suspense boundaries for slow data → Add Suspense
+- [ ] **Synchronous `cookies()`/`headers()` access** → Must `await` (throws in Next.js 16)
+- [ ] **Synchronous `params`/`searchParams` access** → Must `await` (throws in Next.js 16)
+- [ ] **`middleware.ts` file exists** → Rename to `proxy.ts` with `export function proxy()`
+- [ ] **`export const dynamic = 'force-dynamic'`** → Replace with `await connection()` from `next/server`
+- [ ] **`cookies()`/`headers()` inside `'use cache'` functions** → Move outside or remove cache directive
+- [ ] **Webpack-specific config without `--webpack` flag** → Turbopack is default; add flag or migrate config
 
 ## Migration Strategy
 

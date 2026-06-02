@@ -8,6 +8,8 @@ args:
     required: false
 ---
 
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
+
 Identify and fix performance issues to create faster, smoother user experiences.
 
 ## Assess Performance Issues
@@ -36,7 +38,7 @@ Create systematic improvement plan:
 ### Loading Performance
 
 **Optimize Images**:
-- Use modern formats (WebP, AVIF)
+- Use modern formats — prefer **AVIF** for best compression (30-50% smaller than WebP), fall back to WebP, then JPEG/PNG. Use `<picture>` with `<source type="image/avif">` for progressive enhancement
 - Proper sizing (don't load 3000px image for 300px display)
 - Lazy loading for below-fold images
 - Responsive images (`srcset`, `picture` element)
@@ -59,6 +61,7 @@ Create systematic improvement plan:
 - Remove unused dependencies
 - Lazy load non-critical code
 - Use dynamic imports for large components
+- **Turbopack considerations**: If using Next.js with Turbopack, leverage its faster HMR and incremental compilation. Note that Turbopack's tree-shaking and chunking strategies differ from webpack — test bundle output with `next build --turbopack` and validate chunk sizes. Some webpack plugins may not have Turbopack equivalents yet
 
 ```javascript
 // Lazy load heavy component
@@ -147,6 +150,13 @@ elements.forEach((el, i) => {
 - Debounce/throttle scroll handlers
 - Use CSS animations when possible
 - Avoid long-running JavaScript during animations
+
+**View Transitions API**:
+- Use `document.startViewTransition()` for smooth page/state transitions without layout shift or flash
+- In Next.js/MPA contexts, use the `@view-transition` CSS at-rule with `navigation: auto` for cross-document transitions
+- Combine with `view-transition-name` CSS property to create element-level morph animations (e.g., shared element transitions between list and detail views)
+- Falls back gracefully — wrap in feature detection (`if (document.startViewTransition)`) for progressive enhancement
+- Replaces many JS-heavy transition libraries with native browser performance
 
 **Intersection Observer**:
 ```javascript

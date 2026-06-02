@@ -14,25 +14,35 @@ Analyze a codebase → generate audience-aware onboarding docs (architecture, ke
 
 ## Step 1 — Gather Facts
 
-```bash
-# Stack overview
-cat package.json | jq '{name,version,scripts,dependencies:(.dependencies|keys)}'
+Use cross-platform commands (work on Windows, macOS, Linux):
 
-# Directory structure (top 2 levels)
+```bash
+# Stack overview (cross-platform: use node instead of jq)
+node -e "const p=require('./package.json'); console.log(JSON.stringify({name:p.name,version:p.version,scripts:p.scripts,dependencies:Object.keys(p.dependencies||{})},null,2))"
+
+# Directory structure (top 2 levels) — use npx or built-in tools
+# On macOS/Linux:
 find . -maxdepth 2 -not -path '*/node_modules/*' -not -path '*/.git/*' | sort | head -60
+# On Windows (PowerShell):
+Get-ChildItem -Recurse -Depth 1 -Exclude node_modules,.git | Select-Object -First 60
 
 # Largest source files (often core modules)
+# On macOS/Linux:
 find src/ -name "*.ts" -not -path "*/test*" -exec wc -l {} + | sort -rn | head -20
+# On Windows (PowerShell):
+Get-ChildItem -Path src -Recurse -Filter "*.ts" | Where-Object { $_.FullName -notmatch 'test' } | ForEach-Object { [PSCustomObject]@{Lines=(Get-Content $_.FullName | Measure-Object -Line).Lines; File=$_.FullName} } | Sort-Object Lines -Descending | Select-Object -First 20
 
-# Routes (Next.js App Router)
-find app/ -name "route.ts" -o -name "page.tsx" | sort
+# Routes (Next.js App Router) — works cross-platform via glob tools
+# Use the Glob tool: pattern "app/**/route.ts" and "app/**/page.tsx"
 
-# Recent major changes
+# Recent major changes (git works cross-platform)
 git log --oneline --since="90 days ago" | grep -E "feat|refactor|breaking"
 
-# Top contributors
+# Top contributors (git works cross-platform)
 git shortlog -sn --no-merges | head -10
 ```
+
+**Tip:** When running in Claude Code, prefer using the Glob tool (for file search) and Read tool (for file contents) over shell commands — they work identically on all platforms.
 
 ---
 

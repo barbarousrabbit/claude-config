@@ -8,6 +8,8 @@ args:
     required: false
 ---
 
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
+
 Identify reusable patterns, components, and design tokens, then extract and consolidate them into the design system for systematic reuse.
 
 ## Discover
@@ -55,6 +57,7 @@ Build improved, reusable versions:
   - Proper variants for different use cases
   - Accessibility built in (ARIA, keyboard navigation, focus management)
   - Documentation and usage examples
+  - CSS `@layer` for component scoping — place component styles in a dedicated layer (e.g., `@layer components { ... }`) to prevent specificity conflicts and ensure predictable override behavior when components are composed together
   
 - **Design tokens**: Create tokens with:
   - Clear naming (primitive vs semantic)

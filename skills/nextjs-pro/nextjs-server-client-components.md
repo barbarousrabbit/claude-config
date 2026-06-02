@@ -1,14 +1,14 @@
 ---
 name: nextjs-server-client-components
-description: Guide for choosing between Server Components and Client Components in Next.js App Router. CRITICAL for useSearchParams (requires Suspense + 'use client'), navigation (Link, redirect, useRouter), cookies/headers access, and 'use client' directive. Activates when prompt mentions useSearchParams, Suspense, navigation, routing, Link component, redirect, pathname, searchParams, cookies, headers, async components, or 'use client'. Essential for avoiding mixing server/client APIs.
+description: Guide for choosing between Server Components and Client Components in Next.js 16 App Router. CRITICAL for useSearchParams (requires Suspense + 'use client'), navigation (Link, redirect, useRouter), cookies/headers access (MUST be awaited), 'use client' directive, 'use cache' directive, connection() API, and forbidden() API. Activates when prompt mentions useSearchParams, Suspense, navigation, routing, Link component, redirect, pathname, searchParams, cookies, headers, async components, 'use client', or 'use cache'. Essential for avoiding mixing server/client APIs.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Next.js Server Components vs Client Components
+# Next.js Server Components vs Client Components (Next.js 16)
 
 ## Overview
 
-Provide comprehensive guidance for choosing between Server Components and Client Components in Next.js App Router, including cookie/header access, searchParams handling, pathname routing, and React's 'use' API for promise unwrapping.
+Provide comprehensive guidance for choosing between Server Components and Client Components in Next.js 16 App Router, including cookie/header access (always async), searchParams handling, pathname routing, React 19.2's 'use' API, `'use cache'` directive, `connection()` API, and `forbidden()` API.
 
 ## TypeScript: NEVER Use `any` Type
 
@@ -26,12 +26,16 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) { ... }
 const data: string[] = [];
 ```
 
-### Common Next.js Type Patterns
+### Common Next.js 16 Type Patterns
 
 ```typescript
-// Page props
-function Page({ params }: { params: { slug: string } }) { ... }
-function Page({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) { ... }
+// Page props — ALWAYS Promise in Next.js 16 (sync access removed)
+async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+}
+async function Page({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const { q } = await searchParams;
+}
 
 // Form events
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => { ... }
@@ -45,11 +49,14 @@ async function myAction(formData: FormData) { ... }
 
 Use this skill when:
 - Deciding whether to use Server or Client Components
-- Accessing cookies, headers, or other server-side data
-- Working with searchParams or route parameters
+- Accessing cookies, headers, or other server-side data (must be awaited)
+- Working with searchParams or route parameters (must be awaited)
 - Needing pathname or routing information
-- Unwrapping promises with React 'use' API
+- Unwrapping promises with React 19.2 'use' API
 - Debugging 'use client' boundary issues
+- Using `'use cache'` directive for explicit caching
+- Using `connection()` API for dynamic rendering
+- Using `forbidden()` API for 403 authorization errors
 - Optimizing component rendering strategy
 
 ## Core Decision: Server vs Client Components
@@ -199,10 +206,11 @@ export default async function Dashboard() {
 ```
 
 **Important Notes:**
-- `cookies()` must be awaited in Next.js 15+
+- `cookies()` must be awaited (synchronous access removed in Next.js 16)
 - Cookies are read-only in Server Components
 - To set cookies, use Server Actions (see Advanced Routing skill)
 - Cookie access is only available in Server Components
+- NEVER use `cookies()` inside `'use cache'` functions
 
 ### Accessing Headers
 
@@ -247,17 +255,17 @@ export default async function SearchPage({
 
 **Important Notes:**
 - `searchParams` is only available in `page.tsx` files
-- In Next.js 15+, `searchParams` must be awaited
+- In Next.js 16, `searchParams` must be awaited (sync access fully removed)
 - searchParams is NOT available in `layout.tsx`
 - Use client-side `useSearchParams()` hook if needed in Client Components
 
-**⚠️ CRITICAL WARNING - Next.js 15+ searchParams:**
-When extracting parameters in Next.js 15+, you MUST use destructuring to keep the `searchParams` identifier visible in the same line as the parameter extraction. Do NOT use intermediate variables like `params` or `resolved` - this is an anti-pattern that breaks code readability and testing patterns.
+**⚠️ CRITICAL - Next.js 16 searchParams:**
+`searchParams` is always a Promise. Synchronous access that worked in Next.js 15 (with warnings) now throws runtime errors. You MUST use destructuring to keep the `searchParams` identifier visible in the same line as the parameter extraction.
 
-**Async searchParams (Next.js 15+):**
+**Async searchParams (Next.js 16):**
 
 ```typescript
-// app/search/page.tsx (Next.js 15+)
+// app/search/page.tsx (Next.js 16)
 export default async function SearchPage({
   searchParams,
 }: {
@@ -313,10 +321,10 @@ export default async function BlogPost({
 }
 ```
 
-**Async params (Next.js 15+):**
+**Async params (Next.js 16 — always required):**
 
 ```typescript
-// app/blog/[slug]/page.tsx (Next.js 15+)
+// app/blog/[slug]/page.tsx (Next.js 16)
 export default async function BlogPost({
   params,
 }: {
@@ -947,7 +955,10 @@ import { cookies } from 'next/headers'; // ERROR!
 - **Default to Server Components** - they're faster and more secure
 - **Use Client Components** only when you need interactivity or browser APIs
 - **Never fetch data in Client Components** with useEffect - use Server Components
-- **Pass promises** to Client Components with React 'use' API
-- **Access cookies/headers/searchParams** only in Server Components
+- **Pass promises** to Client Components with React 19.2 'use' API
+- **Access cookies/headers/searchParams** only in Server Components — always `await` them
+- **Use `'use cache'`** for explicit caching (no cookies/headers inside cached functions)
+- **Use `connection()`** to opt into dynamic rendering (replaces `export const dynamic = 'force-dynamic'`)
+- **Use `forbidden()`** for 403 authorization errors (like `notFound()` for 404)
 - **Use composition pattern** to mix Server and Client Components
 - **Fetch in parallel** with Promise.all to avoid waterfalls

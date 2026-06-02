@@ -1,11 +1,42 @@
 # TypeScript Configuration
 
-## Strict Mode Configuration
+## TS 6.0+ New Defaults
+
+TypeScript 6.0 (March 2026) changed several defaults for new projects:
+- `strict: true` is now the default (was `false`)
+- `module: "nodenext"` is now the default (was `"commonjs"`)
+- `target: "es2025"` is now the default (was `"es3"`)
+- `rootDir` is inferred from the `include` glob (was `.`)
+- `isolatedDeclarations` is now stable (no longer experimental)
+
+**Migration note**: Existing projects upgrading to TS 6.0 may need to explicitly set these if they relied on the old defaults. New projects benefit from the stricter defaults out of the box.
+
+## TS 7.0 Beta (Go Compiler)
+
+TypeScript 7.0 Beta (April 2026) is a full rewrite of the compiler in Go:
+- ~10x faster type-checking and emit via `tsgo` CLI
+- Shared-memory parallelism using goroutines
+- Same `tsconfig.json` format; no config changes needed
+- **Not yet production-ready**: language server and project references are still being ported
+- Benchmark with `tsgo --diagnostics` to compare against `tsc`
+
+```bash
+# Install TS 7.0 Beta for benchmarking
+npm install -D typescript@beta
+
+# Run the Go compiler (beta CLI)
+npx tsgo --diagnostics
+
+# Compare with standard tsc
+npx tsc --extendedDiagnostics
+```
+
+## Strict Mode Configuration (TS 6.0+)
 
 ```json
 {
   "compilerOptions": {
-    // Strict type checking
+    // Strict type checking (strict: true is default in TS 6.0+, shown explicitly for clarity)
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -25,10 +56,9 @@
     "noPropertyAccessFromIndexSignature": true,
 
     // Module resolution
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": true,
 
     // Emit
     "declaration": true,
@@ -36,15 +66,16 @@
     "sourceMap": true,
     "removeComments": false,
     "importHelpers": true,
+    "isolatedDeclarations": true,
 
     // Interop
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
 
-    // Target
-    "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    // Target (es2025 is default in TS 6.0+)
+    "target": "es2025",
+    "lib": ["es2025", "DOM", "DOM.Iterable"],
 
     // Skip checking
     "skipLibCheck": true
@@ -94,19 +125,19 @@
 ## Module Resolution Strategies
 
 ```json
-// Node16/NodeNext (recommended for Node.js)
+// NodeNext (default in TS 6.0+, recommended for Node.js)
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true
   }
 }
 
-// Bundler (for bundlers like Vite, esbuild)
+// Bundler (for bundlers like Vite, esbuild, webpack)
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "esnext",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "moduleDetection": "force"
@@ -116,13 +147,36 @@
 // Classic (legacy, avoid)
 {
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "commonjs",
     "moduleResolution": "node"
   }
 }
 ```
 
-## Path Mapping
+## Subpath Imports (TS 6.0+ preferred over paths)
+
+TS 6.0 fully supports `package.json` `"imports"` field with proper declaration emit. Prefer `#/` subpath imports over `paths` aliases in new projects — they work with all tools (bundlers, Node.js, tsc) without extra config.
+
+```json
+// package.json
+{
+  "imports": {
+    "#components/*": "./src/components/*",
+    "#utils/*": "./src/utils/*",
+    "#shared/*": "./packages/shared/src/*",
+    "#types": "./src/types/index.ts"
+  }
+}
+```
+
+```typescript
+// Usage with subpath imports (no tsconfig paths needed)
+import { Button } from '#components/Button';
+import { formatDate } from '#utils/date';
+import type { User } from '#types';
+```
+
+## Path Mapping (legacy approach, still supported)
 
 ```json
 {
@@ -205,6 +259,7 @@ export function createUser(name: string, email: string): User {
 
     // Faster builds
     "incremental": true,
+    "isolatedDeclarations": true,
     "assumeChangesOnlyAffectDirectDependencies": true,
 
     // Smaller output
@@ -212,10 +267,18 @@ export function createUser(name: string, email: string): User {
     "importHelpers": true,
 
     // Tree shaking support
-    "module": "ESNext",
-    "target": "ES2020"
+    "module": "esnext",
+    "target": "es2025"
   }
 }
+```
+
+### TS 7.0 Beta Build Benchmark
+
+```bash
+# Compare tsc vs tsgo on your project
+time npx tsc --extendedDiagnostics --noEmit
+time npx tsgo --diagnostics --noEmit
 ```
 
 ## Multiple Configurations
@@ -225,7 +288,7 @@ export function createUser(name: string, email: string): User {
 {
   "compilerOptions": {
     "strict": true,
-    "target": "ES2022"
+    "target": "es2025"
   }
 }
 
@@ -254,26 +317,27 @@ export function createUser(name: string, email: string): User {
 ## Framework-Specific Configs
 
 ```json
-// React + Vite
+// React + Vite (TS 6.0+)
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "target": "es2025",
+    "module": "esnext",
+    "lib": ["es2025", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "isolatedDeclarations": true,
     "noEmit": true,
     "strict": true
   }
 }
 
-// Next.js
+// Next.js (TS 6.0+)
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "es2025",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -294,13 +358,13 @@ export function createUser(name: string, email: string): User {
   "exclude": ["node_modules"]
 }
 
-// Node.js + Express
+// Node.js + Express (TS 6.0+)
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "lib": ["ES2022"],
+    "target": "es2025",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["es2025"],
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
@@ -309,6 +373,7 @@ export function createUser(name: string, email: string): User {
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "declaration": true,
+    "isolatedDeclarations": true,
     "sourceMap": true
   }
 }
@@ -394,8 +459,8 @@ function compile(fileNames: string[], options: ts.CompilerOptions): void {
 
 compile(['src/index.ts'], {
   noEmitOnError: true,
-  target: ts.ScriptTarget.ES2022,
-  module: ts.ModuleKind.ES2022,
+  target: ts.ScriptTarget.ES2025,
+  module: ts.ModuleKind.NodeNext,
   strict: true
 });
 ```
@@ -442,4 +507,5 @@ npx @typescript/analyze-trace trace
 | `sourceMap` | Generate source maps |
 | `noEmit` | Don't emit output (type check only) |
 | `isolatedModules` | Each file can be transpiled separately |
+| `isolatedDeclarations` | Generate .d.ts without cross-module inference (TS 6.0+ stable) |
 | `allowImportingTsExtensions` | Import .ts files directly |

@@ -7,6 +7,7 @@ args:
     description: The feature or component to animate (optional)
     required: false
 ---
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
 
 Analyze a feature and strategically add animations and micro-interactions that enhance understanding, provide feedback, and create delight.
 
@@ -146,7 +147,7 @@ Use appropriate techniques for each animation:
 ```javascript
 /* Use for complex, interactive animations */
 - Web Animations API for programmatic control
-- Framer Motion for React
+- Motion for React (import from "motion/react", formerly "framer-motion")
 - GSAP for complex sequences
 ```
 

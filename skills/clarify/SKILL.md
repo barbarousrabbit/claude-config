@@ -7,6 +7,7 @@ args:
     description: The feature or component with unclear copy (optional)
     required: false
 ---
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
 
 Identify and improve unclear, confusing, or poorly written interface text to make the product easier to understand and use.
 
@@ -142,6 +143,15 @@ Refine text across these common areas:
 - Use language users understand (not internal jargon)
 - Make hierarchy clear
 - Consider information scent (breadcrumbs, current location)
+
+## Reference: UX Writing Patterns
+
+For detailed guidance on writing patterns (error messages, empty states, button labels, loading text, confirmation dialogs), also consult the `frontend-design/reference/ux-writing.md` file. It contains expanded patterns for:
+- **Destructive action confirmations**: Naming the specific object and consequence
+- **Progressive loading messages**: Setting time expectations and showing progress
+- **Contextual help text**: Answering "why do you need this?" before users ask
+- **Accessibility-first copy**: Writing for screen readers, not just visual users
+- **Internationalization-ready text**: Avoiding idioms, cultural assumptions, and concatenated strings
 
 ## Apply Clarity Principles
 

@@ -1,5 +1,55 @@
 # Standard Library Mastery
 
+## Template Strings / t-strings (Python 3.14+, PEP 750)
+
+```python
+from string.templatelib import Template, Interpolation
+
+# t-strings produce Template objects, not strings
+name = "Alice"
+greeting = t"Hello {name}"
+# type(greeting) is Template, NOT str
+
+# Template has .strings and .interpolations attributes
+# Process template safely (e.g., HTML escaping)
+from html import escape
+
+def html(template: Template) -> str:
+    """Render template with HTML-escaped interpolations."""
+    parts: list[str] = []
+    for item in template:
+        if isinstance(item, str):
+            parts.append(item)
+        elif isinstance(item, Interpolation):
+            parts.append(escape(str(item.value)))
+    return "".join(parts)
+
+user_input = "<script>alert('xss')</script>"
+safe_html = html(t"<p>User said: {user_input}</p>")
+# "<p>User said: &lt;script&gt;alert(&#x27;xss&#x27;)&lt;/script&gt;</p>"
+
+# SQL parameterization with t-strings
+def sql(template: Template) -> tuple[str, list[object]]:
+    """Convert t-string to parameterized SQL query."""
+    query_parts: list[str] = []
+    params: list[object] = []
+    for item in template:
+        if isinstance(item, str):
+            query_parts.append(item)
+        elif isinstance(item, Interpolation):
+            query_parts.append("?")
+            params.append(item.value)
+    return "".join(query_parts), params
+
+user_id = 42
+query, params = sql(t"SELECT * FROM users WHERE id = {user_id}")
+# query: "SELECT * FROM users WHERE id = ?", params: [42]
+
+# t-strings support format specs and conversions like f-strings
+value = 3.14159
+template = t"Pi is {value:.2f}"
+```
+
 ## Pathlib for File Operations
 
 ```python

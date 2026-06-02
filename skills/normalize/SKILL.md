@@ -8,6 +8,8 @@ args:
     required: false
 ---
 
+<!-- Updated to align with Impeccable v3.5.0 (2026-05-29) -->
+
 Analyze and redesign the feature to perfectly match our design system standards, aesthetics, and established patterns.
 
 ## Plan
@@ -42,6 +44,7 @@ Systematically address all inconsistencies across these dimensions:
 - **Color & Theme**: Apply design system color tokens. Remove one-off color choices that break the palette.
 - **Spacing & Layout**: Use spacing tokens (margins, padding, gaps). Align with grid systems and layout patterns used elsewhere.
 - **Components**: Replace custom implementations with design system components. Ensure props and variants match established patterns.
+- **Design Tokens (DTCG format)**: When the project uses or is adopting design tokens, prefer the [DTCG (Design Token Community Group)](https://tr.designtokens.org/format/) standard format (`$value`, `$type`, `$description` keys in JSON). This ensures interoperability with tools like Style Dictionary, Figma Token Studio, and other token pipelines. When normalizing existing tokens, flag any non-standard formats and recommend migration to DTCG.
 - **Motion & Interaction**: Match animation timing, easing, and interaction patterns to other features.
 - **Responsive Behavior**: Ensure breakpoints and responsive patterns align with design system standards.
 - **Accessibility**: Verify contrast ratios, focus states, ARIA labels match design system requirements.
