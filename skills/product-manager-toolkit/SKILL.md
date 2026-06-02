@@ -1,5 +1,6 @@
 ---
 name: "product-manager-toolkit"
+user-invocable: true
 description: Comprehensive toolkit for product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use for feature prioritization, user research synthesis, requirement documentation, and product strategy development.
 ---
 

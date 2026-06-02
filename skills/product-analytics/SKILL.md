@@ -1,5 +1,6 @@
 ---
 name: product-analytics
+user-invocable: true
 description: Use when defining product KPIs, building metric dashboards, running cohort or retention analysis, or interpreting feature adoption trends across product stages.
 ---
 

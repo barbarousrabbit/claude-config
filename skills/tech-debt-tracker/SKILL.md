@@ -1,5 +1,6 @@
 ---
 name: tech-debt-tracker
+user-invocable: true
 description: "Scan codebases for technical debt with severity scoring, trend tracking, and prioritized remediation plans. Use for ongoing debt management, cleanup sprint planning, or legacy modernization roadmaps. For one-time code health checks or 'how good is this code' questions, use code-auditor instead."
 ---
 

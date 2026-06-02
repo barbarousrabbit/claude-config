@@ -1,5 +1,6 @@
 ---
 name: "ci-cd-pipeline-builder"
+user-invocable: true
 description: "Use when writing CI/CD pipeline configs from scratch — GitHub Actions workflows, GitLab CI, Jenkins pipelines, or CircleCI configs. For general Docker/K8s/cloud infra, use devops-engineer instead."
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: "incident-commander"
+user-invocable: true
 description: "Use when managing production incidents — severity classification, incident response coordination, status page updates, post-mortem writing, runbook execution, or on-call escalation procedures."
 ---
 
