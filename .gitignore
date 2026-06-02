@@ -8,6 +8,7 @@ local-env.sh
 
 # === Machine-local caches — auto-generated ===
 projects/
+sessions/
 session-env/
 telemetry/
 debug/

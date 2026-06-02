@@ -55,6 +55,19 @@
           }
         ]
       }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/scripts/sync-push.sh\"",
+            "timeout": 45,
+            "statusMessage": "Syncing ~/.claude to GitHub..."
+          }
+        ]
+      }
     ]
   },
   "enabledPlugins": {
