@@ -273,6 +273,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | SwiftUI navigation — NavigationStack/SplitView, sheets, tabs / "页面跳转" | `swiftui-navigation` |
 | | SwiftUI animations & transitions / "SwiftUI动画" | `swiftui-animation` |
 | | SwiftUI slow rendering / janky scroll / perf audit / "SwiftUI性能" | `swiftui-performance` |
+| | iOS widgets / Live Activities / Dynamic Island / Lock Screen / Control Center / WidgetKit / ActivityKit / "做小组件" / "灵动岛" | `swiftui-widgetkit` |
 | | reviewing SwiftUI code for best practices, modern APIs, Liquid Glass / "审查SwiftUI代码" | `avdlee-swiftui` + `twostraws-swiftui` |
 | | Apple HIG-compliant UI / SF Symbols / iOS-macOS native design / "苹果设计规范" / "HIG" | `apple-hig-designer` |
 | | Swift app architecture — MV/MVVM/TCA selection & migration / "Swift架构" | `swift-architecture` |
