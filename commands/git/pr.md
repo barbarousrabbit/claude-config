@@ -10,16 +10,18 @@ SOURCE_BRANCH: current branch (`git branch --show-current`)
 
 ## Workflow
 
-1. Ensure `/review` and `/security-scan` have passed locally.
-2. Confirm `ci-quality-gate` workflow succeeded for `SOURCE_BRANCH`.
-3. Create the PR using GitHub CLI:
+1. Run `/review` (and `/security-scan` if relevant) locally first.
+2. Push the branch if it isn't pushed yet: `git push -u origin "$SOURCE_BRANCH"`.
+3. Create the PR with GitHub CLI, writing the body inline (no template file assumed):
    ```bash
    gh pr create \
      --base "$TARGET_BRANCH" \
      --head "$SOURCE_BRANCH" \
      --title "<Conventional PR title>" \
-     --body-file .github/pull_request_template.md
+     --body "## Summary
+   <what changed and why>
+
+   ## Testing
+   <how it was verified>"
    ```
-   If no template exists, provide a summary referencing Context, Testing, and Security results.
-4. Add labels (`gh pr edit --add-label "status: in-review"`).
-5. Share the PR link with reviewers and ensure at least one human approval is obtained.
+4. Share the PR link with reviewers.

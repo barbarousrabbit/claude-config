@@ -1,6 +1,6 @@
 # Agency Agent Routing Index
 
-178 agents in `~/.claude/agents/`, organized by division. Use the Agent tool with the agent file path to invoke.
+178 files in `~/.claude/agents/`: 162 invocable agent definitions across 13 divisions, plus a `strategy/` directory of 16 orchestration playbooks/runbooks (the NEXUS framework — reference docs, not invocable agents). Use the Agent tool with the agent file path to invoke.
 
 ## Quick Routing Table
 

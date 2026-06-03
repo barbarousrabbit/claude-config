@@ -32,7 +32,6 @@ ok "Environment detected (Python=${CLAUDE_PYTHON:-NOT FOUND}, OS=${CLAUDE_OS:-un
 echo "-> Configuring git tracking..."
 cd "$CLAUDE_DIR"
 if ! git rev-parse --abbrev-ref --symbolic-full-name @{u} &>/dev/null 2>&1; then
-    git branch --set-upstream-to=origin/main master 2>/dev/null || \
     git branch --set-upstream-to=origin/main main 2>/dev/null || true
 fi
 ok "Git tracking configured"

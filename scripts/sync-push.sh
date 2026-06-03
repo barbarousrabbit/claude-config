@@ -1,7 +1,8 @@
 #!/bin/bash
 # sync-push.sh — Auto-commit and push uncommitted ~/.claude changes
-# Runs at SessionStart BEFORE sync-pull.sh to push leftover changes
-# from previous session. Fast no-op when working tree is clean.
+# Runs on SessionEnd (primary: auto-commit & push at shutdown) and at SessionStart
+# via hook-session-start.sh (catch-up push for leftover changes from the previous session).
+# Fast no-op when working tree is clean.
 
 CLAUDE_DIR="$HOME/.claude"
 

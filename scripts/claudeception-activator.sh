@@ -24,8 +24,12 @@ except Exception:
 
 # Layer 1: Academic task detection (narrow — low false-positive risk)
 # Only fires on unambiguous academic indicators; avoids generic words like plan/build/implement
+# NOTE (2026-06-03): removed bare course codes (32011 etc.) from this regex — they
+# matched the project PATH (which contains "32011"), causing false academic skill-gate
+# fires on non-academic tasks. A course code now signals academic work only alongside a
+# real task word (assignment/作业/exam/...), per CLAUDE.md Learned Rules.
 if echo "$PROMPT" | grep -qiE \
-    "(assignment|rubric|marking|lab report|实验报告|实验$|作业|32011|32516|32558|42850|整理成|exam|考试|期末|期中)"; then
+    "(assignment|rubric|marking|lab report|实验报告|实验$|作业|整理成|exam|考试|期末|期中|quiz)"; then
     printf '{"type":"system","content":"[skill-gate] Academic task detected. MANDATORY FIRST ACTION: invoke brainstorming (vague spec) OR EnterPlanMode (clear spec/rubric) — before any text response or file creation. See CLAUDE.md Academic routing."}\n'
 fi
 

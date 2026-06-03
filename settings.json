@@ -17,15 +17,15 @@
       "WebFetch(*)",
       "WebSearch(*)",
       "NotebookEdit(*)",
-      "Skill(*)",
-      "Edit(~/.claude/skills/frontend-design/**)"
+      "Skill(*)"
     ],
     "deny": [
-      "Bash(rm -rf /)",
-      "Bash(sudo rm -rf *)",
-      "Bash(format *)",
-      "Bash(mkfs*)",
-      "Bash(> /dev/sda*)"
+      "Bash(rm -rf:*)",
+      "Bash(sudo rm -rf:*)",
+      "Bash(git push --force:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(mkfs:*)",
+      "Bash(format:*)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Zhang\\.claude\\skills\\vercel-react-native-skills",

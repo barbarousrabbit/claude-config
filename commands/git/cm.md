@@ -7,8 +7,9 @@ description: Stage working tree changes and create a Conventional Commit (no pus
 3. Stage the files intentionally (`git add path/to/file`). Avoid `git add .` unless every change was reviewed.
 4. Generate a Conventional Commit message (types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert).
    - Commit subject ≤ 72 chars.
-   - Scope uses kebab-case (e.g., `feat(marketing-skill): ...`).
-   - Use `.github/commit-template.txt` for Context / Testing / Reviewers sections.
-5. Run `git commit` and paste the generated message + context from the template.
+   - Scope uses kebab-case (e.g., `docs(claude-md): ...`).
+   - If a structured body is useful, inline Context / Testing / Reviewers sections directly in the message.
+   - Never add AI attribution strings to commits.
+5. Run `git commit` with the prepared message.
 6. Show the resulting commit (`git log -1 --stat`) and keep the commit hash handy.
-7. **Do not push** in this command. Use `git/cp.md` when you're ready to publish.
+7. **Do not push** in this command. Use `/git:cp` when you're ready to publish.
