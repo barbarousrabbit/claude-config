@@ -11,7 +11,7 @@ metadata:
   role: specialist
   scope: implementation
   output-format: code
-  related-skills: fastapi-expert, devops-engineer
+  related-skills: senior-backend, devops-engineer
 ---
 
 # Python Pro

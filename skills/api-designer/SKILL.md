@@ -11,7 +11,7 @@ metadata:
   role: architect
   scope: design
   output-format: specification
-  related-skills: graphql-architect, fastapi-expert, nestjs-expert, spring-boot-engineer, security-reviewer
+  related-skills: senior-backend, security-reviewer
 ---
 
 # API Designer

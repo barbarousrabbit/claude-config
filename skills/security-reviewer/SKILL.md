@@ -12,7 +12,7 @@ metadata:
   role: specialist
   scope: review
   output-format: report
-  related-skills: secure-code-guardian, code-reviewer, devops-engineer, cloud-architect, kubernetes-specialist
+  related-skills: code-reviewer, devops-engineer, dependency-auditor
 ---
 
 # Security Reviewer

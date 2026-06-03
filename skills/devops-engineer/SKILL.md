@@ -11,7 +11,7 @@ metadata:
   role: engineer
   scope: implementation
   output-format: code
-  related-skills: 
+  related-skills: ci-cd-pipeline-builder, observability-designer, secrets-vault-manager
 ---
 
 # DevOps Engineer

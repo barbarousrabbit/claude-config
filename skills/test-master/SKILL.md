@@ -11,7 +11,7 @@ metadata:
   role: specialist
   scope: testing
   output-format: report
-  related-skills: fullstack-guardian, playwright-expert, devops-engineer
+  related-skills: playwright-pro, devops-engineer, code-reviewer
 ---
 
 # Test Master

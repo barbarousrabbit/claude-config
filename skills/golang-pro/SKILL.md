@@ -11,7 +11,7 @@ metadata:
   role: specialist
   scope: implementation
   output-format: code
-  related-skills: devops-engineer, microservices-architect, test-master
+  related-skills: devops-engineer, senior-architect, test-master
 ---
 
 # Golang Pro

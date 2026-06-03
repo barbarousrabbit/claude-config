@@ -11,7 +11,7 @@ metadata:
   role: specialist
   scope: implementation
   output-format: code
-  related-skills: spec-miner, fullstack-guardian, code-reviewer
+  related-skills: code-reviewer, code-auditor
 ---
 
 # Code Documenter
