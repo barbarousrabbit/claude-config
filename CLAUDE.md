@@ -49,7 +49,7 @@ End of session: if any `~/.claude/` file changed → `cd ~/.claude && git add -A
 | `github` | PRs, issues, repo search | Use `gh` CLI via Bash |
 
 **Hooks** (auto): SessionStart = git pull (`sync-pull.sh`); UserPromptSubmit = claudeception evaluation (`claudeception-activator.sh`).
-**Custom commands**: `/user:explain` · `/user:debug` · `/user:summarize` · `/user:check-assignment` · `/user:review` · `/user:security-scan` · `/git:cm` · `/git:cp` · `/git:pr`
+**Custom commands**: `/explain` · `/debug` · `/summarize` · `/check-assignment` · `/review` · `/security-scan` · `/git:cm` · `/git:cp` · `/git:pr`
 **Scope**: project `.claude/CLAUDE.md` overrides global rules.
 
 ## CEO Operating Mode — DEFAULT POSTURE
@@ -61,7 +61,7 @@ Operate as a strategic project manager for ALL tasks — code, assignments, repo
 2. **Strategize** — Break into phases. Pick approach. Identify what can run in parallel
 3. **Delegate** — Route each phase to the right skill/agent. Use `TeamCreate` for 3+ files / 2+ domains / independent parallel subtasks
 4. **Execute** — One phase at a time, checkpoint after each
-5. **Review** — Quality gate before delivery: check against rubric/requirements/standards → `verification-before-completion` for code, `/user:check-assignment` for academic work
+5. **Review** — Quality gate before delivery: check against rubric/requirements/standards → `verification-before-completion` for code, `/check-assignment` for academic work
 
 ### Planning triggers — AGGRESSIVE (not limited to code)
 Fire planning when ANY of these apply:
@@ -84,7 +84,7 @@ When multiple categories match, use this precedence: **Academic > Planning (CEO)
 
 | Task Type | Assess | Plan | Execute | Review |
 |-----------|--------|------|---------|--------|
-| **Assignment/Report** | Read rubric, identify "Excellent" criteria | Outline sections mapped 1:1 to rubric items | Write → format → cite (APA) → `docx` | `/user:check-assignment` point by point |
+| **Assignment/Report** | Read rubric, identify "Excellent" criteria | Outline sections mapped 1:1 to rubric items | Write → format → cite (APA) → `docx` | `/check-assignment` point by point |
 | **Data Analysis (BI)** | Read brief, understand data sources | Choose approach, pick visualizations | Clean → analyze → visualize → narrate | Validate findings, cross-check rubric |
 | **Network Lab** | Read lab requirements, note topology | Plan addressing/VLANs/routing, list commands | Configure step by step → verify connectivity | Test every requirement, document |
 | **Study/Review** | Scan all weeks' materials, identify scope | Plan reading order by priority | Read → synthesize `Course Notes.md` or `详细解析.docx` | Cross-check against slides |
@@ -157,15 +157,15 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | describes any multi-step task (3+ steps) regardless of domain / "多步任务" / "好几步" / "帮我搞定整个" | `brainstorming` or `EnterPlanMode` → plan → execute |
 | | 2+ independent subtasks / wants parallel execution / "并行做" / "同时进行" / "几件事一起办" | `dispatching-parallel-agents` |
 | **Academic** | mentions course number (32011/32516/32558/42850) or course name, OR context is clearly academic | Route to Academic first — read course CLAUDE.md → apply course-specific rules |
-| | presents assignment brief / rubric / "帮我做作业" / "写报告" / "做 assignment" / "help me with assignment" | Read rubric → `EnterPlanMode` (outline sections against rubric) → write → `/user:check-assignment` |
+| | presents assignment brief / rubric / "帮我做作业" / "写报告" / "做 assignment" / "help me with assignment" | Read rubric → `EnterPlanMode` (outline sections against rubric) → write → `/check-assignment` |
 | | has data to analyze / BI project / "分析数据" / "做分析" / Tableau / ETL / data warehouse | Assess data → `EnterPlanMode` → analyze → visualize → validate |
 | | NLP/ML work / "训练模型" / "做 notebook" / Jupyter / BERT / tokenization / word embedding | Read brief → `EnterPlanMode` → `python-pro` + `scikit-learn`/`pytorch-lightning` → validate |
-| | web dev assignment / "做网页作业" / HTML / CSS / JavaScript for course work | Read rubric → `EnterPlanMode` → `frontend-design` + `javascript-pro` → `/user:check-assignment` |
+| | web dev assignment / "做网页作业" / HTML / CSS / JavaScript for course work | Read rubric → `EnterPlanMode` → `frontend-design` + `javascript-pro` → `/check-assignment` |
 | | network lab / "配网络" / "做实验" / Packet Tracer / VLAN / OSPF / STP / subnetting | Read requirements → `EnterPlanMode` → configure → verify |
 | | needs study notes / "帮我看课件" / "复习" / "总结" / "详细解析" / "备考" / exam prep | `EnterPlanMode` (reading plan) → read all materials → synthesize `Course Notes.md` or `详细解析.docx` |
 | | asks about course content / "这个概念什么意思" / "解释一下" / "不懂" / "teach me" / "怎么做" | Read course notes first → explain with analogies (beginner-friendly per project CLAUDE.md) |
 | | "帮我看看" / "改一下" / review partial work / "check my work" | Read work → compare against rubric/requirements → give feedback |
-| | "检查作业" / "check assignment" / "帮我查" / wants rubric review | `/user:check-assignment` (read rubric → compare point by point) |
+| | "检查作业" / "check assignment" / "帮我查" / wants rubric review | `/check-assignment` (read rubric → compare point by point) |
 | | text sounds AI / Turnitin risk / "去AI痕迹" / "humanize" / "降重" — **academic context** (report / paper / thesis / assignment) | `humanizer_academic` (26 patterns, preserves technical terms, citations, data, academic tone) |
 | | text sounds AI / "去AI痕迹" / "humanize" / "降重" — **non-academic context** (blog / email / marketing / general) | `humanizer` (rewrite to reduce AI fingerprint, keep meaning) |
 | **Execution** | hits error / stack trace / test failure / "why is this broken" / "报错" / "出错了" / "跑不了" / "功能不对" | `systematic-debugging` |
