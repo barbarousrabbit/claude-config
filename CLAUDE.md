@@ -183,6 +183,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | builds React/Next.js app with TypeScript, state, bundle concerns | `ui-ux-pro-max` → `frontend-design` + `frontend-patterns` → `critique` |
 | | needs React/Next.js patterns — hooks, composition, data fetching | `vercel-react-best-practices` + `vercel-composition-patterns` |
 | | needs style direction only — design style, palette, font pairing | `ui-ux-pro-max` |
+| | wants UI that looks like a specific brand — "像 Stripe/Notion/Linear", "苹果风格", named brand design system | `brand-design-md` (73 brands) |
 | | configures Tailwind / design tokens / theme CSS | `tailwind-theme-builder` → `shadcn-ui` |
 | | needs brand palette from a hex / Tailwind color tokens / WCAG | `color-palette` |
 | | works with Next.js / app router / SSR / server actions | `nextjs-pro` |
