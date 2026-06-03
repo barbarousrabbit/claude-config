@@ -3,7 +3,9 @@
 ## Language — CRITICAL
 - **NEVER output Korean** — zero exceptions, zero tolerance
 - **Conversation language**: Chinese input → reply in **Chinese** | English input → reply in **English**
-- Code, logs, comments → always English
+- **Config content → ALWAYS English** — this includes: settings (settings.json), rules (CLAUDE.md and any rule files), skills (SKILL.md frontmatter + body + references), memory files, hooks, agent definitions, commit messages, code, logs, comments. Write the artifact in English even when the conversation is in Chinese.
+- **The split**: the chat reply to the user stays in the conversation language (usually Chinese); everything written into a file/config stays English.
+- **One exception**: Chinese **trigger keywords** inside a skill `description` or routing table (e.g. "苹果风格", "去AI痕迹", "做个像 Vercel 的页面") are allowed and intentional — they exist to match Chinese user input. These are matching tokens, NOT prose. All surrounding rule text, structure, and explanation stays English.
 
 ## Progress Reporting — MANDATORY
 - During long-running tasks (code execution, file generation, multi-step analysis), **report progress at least every 60 seconds**
