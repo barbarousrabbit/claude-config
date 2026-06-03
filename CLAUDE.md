@@ -268,6 +268,36 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | creating a skill from scratch with evals / benchmarks | `skill-creator` |
 | | writing or editing a skill SKILL.md file | `writing-skills` |
 | | completes non-trivial debugging / wants to extract reusable knowledge | `claudeception` |
+| **Apple / Swift** *(native iOS/macOS — distinct from Taro/RN)* | builds SwiftUI views / @Observable state / MV architecture / "做iOS界面" / "SwiftUI" | `swiftui-patterns` |
+| | SwiftUI layout — stacks, grids, lists, forms, scroll views / "SwiftUI布局" | `swiftui-layout-components` |
+| | SwiftUI navigation — NavigationStack/SplitView, sheets, tabs / "页面跳转" | `swiftui-navigation` |
+| | SwiftUI animations & transitions / "SwiftUI动画" | `swiftui-animation` |
+| | SwiftUI slow rendering / janky scroll / perf audit / "SwiftUI性能" | `swiftui-performance` |
+| | reviewing SwiftUI code for best practices, modern APIs, Liquid Glass / "审查SwiftUI代码" | `avdlee-swiftui` + `twostraws-swiftui` |
+| | Apple HIG-compliant UI / SF Symbols / iOS-macOS native design / "苹果设计规范" / "HIG" | `apple-hig-designer` |
+| | Swift app architecture — MV/MVVM/TCA selection & migration / "Swift架构" | `swift-architecture` |
+| | Swift concurrency errors / async-await / data races / actors / "Swift并发" | `swift-concurrency` |
+| | modern Swift language idioms (non-UI, non-concurrency) / "Swift语法" | `swift-language` |
+| | Swift Testing framework — @Test/@Suite/#expect / "Swift测试" | `swift-testing` |
+| | SwiftData persistence — @Model/@Query/@Relationship / "数据持久化" | `swiftdata` |
+| **dbt (Analytics Eng.)** | builds/modifies dbt models, ref()/source(), SQL transforms / "dbt建模" | `using-dbt-for-analytics-engineering` |
+| | runs dbt CLI commands (run/test/build/compile) / "跑dbt" | `running-dbt-commands` |
+| | adds dbt unit tests (mock inputs, expected outputs) / "dbt单元测试" | `adding-dbt-unit-test` |
+| | dbt Semantic Layer — metrics/dimensions/entities/MetricFlow / "dbt语义层" | `building-dbt-semantic-layer` |
+| **DuckDB** | queries data files with SQL / ad-hoc analysis / "用SQL查数据文件" | `duckdb-query` |
+| | attaches a DuckDB database file / explores schema / "挂载数据库" | `duckdb-attach-db` |
+| | converts data file format (CSV↔Parquet↔JSON↔Excel) / "转parquet" / "导出xlsx" | `duckdb-convert-file` |
+| | installs/updates DuckDB extensions | `install-duckdb` |
+| **HuggingFace / Embeddings** | "best model for X" / recommends or compares models by benchmark / "推荐模型" | `huggingface-best` |
+| | HF Dataset Viewer API — fetch rows, search, filter, parquet URLs / "HF数据集" | `huggingface-datasets` |
+| | trains/fine-tunes LLM via TRL/Unsloth on HF Jobs / GGUF convert / "微调大模型" | `huggingface-llm-trainer` |
+| | trains/fine-tunes sentence-transformers / embedding / reranker models / "训练嵌入模型" | `train-sentence-transformers` |
+| **More Quality / Exec** | step-by-step error debugging — interactive alt to `systematic-debugging` | `debugging-wizard` |
+| | reduce common LLM coding mistakes / surgical changes / "避免过度设计" | `karpathy-guidelines` |
+| | ultra-granular line-by-line context building before security/arch audit | `trailofbits-audit` |
+| | secure web app coding / security scan & best practices / "安全编码" | `vibesec` |
+| | headless browser QA testing / site dogfooding | `gstack` |
+| | animation-rich HTML presentation / convert PPT to web slides / "做网页幻灯片" | `frontend-slides` |
 
 ## UI Design Protocol — MANDATORY for any UI building task
 

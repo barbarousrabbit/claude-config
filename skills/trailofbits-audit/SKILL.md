@@ -1,5 +1,5 @@
 ---
-name: audit-context-building
+name: trailofbits-audit
 description: Enables ultra-granular, line-by-line code analysis to build deep architectural context before vulnerability or bug finding. Use when deep comprehension is needed before security auditing, architecture review, or threat modeling.
 ---
 
