@@ -142,13 +142,20 @@ If you catch yourself thinking any of these, STOP and invoke the matching skill:
 
 Trigger column describes **when to fire** (user scenario), not what the skill does.
 
+**Matching mechanism:**
+- Fire on **either** the English scenario **OR** any Chinese trigger phrase — both map to the same skill.
+- **Partial/fuzzy match counts**: a single keyword hit is enough; never require the whole phrase ("做小程序" alone → `taro-miniprogram`).
+- **Multiple rows match** → run the most specific one; when the cell shows `→` or `+`, chain/combine those skills in order.
+- **Unsure?** Invoke the candidate skill anyway — a wrong load is cheap, a missed skill is not.
+- **No row matches** but task fits marketing/sales/product/PM/game/XR/compliance/finance → fall back to an Agency Agent (see `~/.claude/references/agent-routing.md`).
+
 | Category | When user... | Skill(s) |
 |----------|-------------|----------|
-| **Planning (CEO)** | has a vague idea / "I want to build..." / "how should I..." / "what's the best approach" / asks "X or Y?" | `brainstorming` → `writing-plans` |
-| | has clear requirements / describes a specific feature or enhancement | `feature-planning` |
-| | has a clear plan, implementation touches 3+ files | `writing-plans` → `executing-plans` |
-| | describes any multi-step task (3+ steps) regardless of domain | `brainstorming` or `EnterPlanMode` → plan → execute |
-| | 2+ independent subtasks / wants parallel execution | `dispatching-parallel-agents` |
+| **Planning (CEO)** | has a vague idea / "I want to build..." / "how should I..." / "what's the best approach" / asks "X or Y?" / "我想做个X" / "X好还是Y好" / "怎么搞" / "有什么思路" | `brainstorming` → `writing-plans` |
+| | has clear requirements / describes a specific feature or enhancement / "加个功能" / "需求很明确" / "规划这个功能" | `feature-planning` |
+| | has a clear plan, implementation touches 3+ files / "有计划了" / "写实现计划" / "改好几个文件" | `writing-plans` → `executing-plans` |
+| | describes any multi-step task (3+ steps) regardless of domain / "多步任务" / "好几步" / "帮我搞定整个" | `brainstorming` or `EnterPlanMode` → plan → execute |
+| | 2+ independent subtasks / wants parallel execution / "并行做" / "同时进行" / "几件事一起办" | `dispatching-parallel-agents` |
 | **Academic** | mentions course number (32011/32516/32558/42850) or course name, OR context is clearly academic | Route to Academic first — read course CLAUDE.md → apply course-specific rules |
 | | presents assignment brief / rubric / "帮我做作业" / "写报告" / "做 assignment" / "help me with assignment" | Read rubric → `EnterPlanMode` (outline sections against rubric) → write → `/user:check-assignment` |
 | | has data to analyze / BI project / "分析数据" / "做分析" / Tableau / ETL / data warehouse | Assess data → `EnterPlanMode` → analyze → visualize → validate |
@@ -162,43 +169,43 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | text sounds AI / Turnitin risk / "去AI痕迹" / "humanize" / "降重" — **academic context** (report / paper / thesis / assignment) | `humanizer_academic` (26 patterns, preserves technical terms, citations, data, academic tone) |
 | | text sounds AI / "去AI痕迹" / "humanize" / "降重" — **non-academic context** (blog / email / marketing / general) | `humanizer` (rewrite to reduce AI fingerprint, keep meaning) |
 | **Execution** | hits error / stack trace / test failure / "why is this broken" / "报错" / "出错了" / "跑不了" / "功能不对" | `systematic-debugging` |
-| | says "review" / PR ready / wants code feedback | `requesting-code-review` → `code-reviewer` |
-| | receives code review feedback / applying suggestions | `receiving-code-review` |
-| | ready to commit / asks for commit message | `conventional-commits` |
+| | says "review" / PR ready / wants code feedback / "评审代码" / "审一下" / "看下我的代码" / "PR好了" | `requesting-code-review` → `code-reviewer` |
+| | receives code review feedback / applying suggestions / "处理评审意见" / "改一下评审建议" / "采纳反馈" | `receiving-code-review` |
+| | ready to commit / asks for commit message / "写commit" / "提交信息怎么写" / "commit message" | `conventional-commits` |
 | | says "commit and push" / "push this" / "save my work" / "提交代码" / "推代码" | `git-pushing` |
-| | asks for release notes / changelog / version bump | `changelog-generator` |
-| | feature complete / ready to merge branch | `finishing-a-development-branch` |
-| | about to say "done" / mark task complete | `verification-before-completion` |
+| | asks for release notes / changelog / version bump / "更新日志" / "发布说明" / "版本变更" / "changelog" | `changelog-generator` |
+| | feature complete / ready to merge branch / "功能做完了" / "合并分支" / "收尾分支" | `finishing-a-development-branch` |
+| | about to say "done" / mark task complete / "完成了" / "搞定了" / "标记完成" / "可以收工了" | `verification-before-completion` |
 | | wants to refactor / "重构" / "帮我优化代码" / simplify complex code | `code-auditor` → refactor → `verification-before-completion` |
-| | "review the code" / code health check (no PR context) | `code-auditor`; if PR exists → `requesting-code-review` → `code-reviewer` |
-| | needs isolated workspace for feature development | `using-git-worktrees` |
+| | "review the code" / code health check (no PR context) / "看看代码质量" / "代码健康度" / "体检一下" | `code-auditor`; if PR exists → `requesting-code-review` → `code-reviewer` |
+| | needs isolated workspace for feature development / "隔离工作区" / "worktree" / "开个独立分支环境" | `using-git-worktrees` |
 | **Writing** | writes blog / doc / copy (no rubric, non-academic) / "写博客" / "写文档" / "写文案" | Plan outline → write → self-review |
 | | says "polish" / refine existing draft / "润色" / "改一下文章" | Review → revise → proofread |
-| **Languages** | edits .py / uses pip / Django / Flask / pandas | `python-pro` |
-| | edits .ts / TS generics / type errors / monorepo types | `typescript-pro` |
-| | edits .js / vanilla JS / Node.js without TS | `javascript-pro` |
-| | edits .go / goroutines / Go modules | `golang-pro` |
-| | edits .rs / Cargo / ownership / lifetimes | `rust-engineer` |
-| | writes SQL / slow query / schema design / indexing | `sql-pro` + `database-optimizer` |
-| **Frontend** *(all build tasks MUST follow UI Design Protocol §3-step chain)* | builds any web page, Vue/React component, or UI (generic) | `ui-ux-pro-max` → `frontend-design` → `critique` |
-| | builds dashboard / admin panel / data tool / product UI | `ui-ux-pro-max` → `interface-design` → `critique` |
-| | builds React/Next.js app with TypeScript, state, bundle concerns | `ui-ux-pro-max` → `frontend-design` + `frontend-patterns` → `critique` |
-| | needs React/Next.js patterns — hooks, composition, data fetching | `vercel-react-best-practices` + `vercel-composition-patterns` |
-| | needs style direction only — design style, palette, font pairing | `ui-ux-pro-max` |
+| **Languages** | edits .py / uses pip / Django / Flask / pandas / "写Python" / "Python脚本" / "pip/Django/Flask/pandas" | `python-pro` |
+| | edits .ts / TS generics / type errors / monorepo types / "写TypeScript" / "类型报错" / "TS泛型" / "类型不对" | `typescript-pro` |
+| | edits .js / vanilla JS / Node.js without TS / "写JavaScript" / "原生JS" / "Node脚本" | `javascript-pro` |
+| | edits .go / goroutines / Go modules / "写Go" / "Go并发" / "goroutine" / "Go模块" | `golang-pro` |
+| | edits .rs / Cargo / ownership / lifetimes / "写Rust" / "所有权" / "生命周期" / "借用检查" | `rust-engineer` |
+| | writes SQL / slow query / schema design / indexing / "写SQL" / "查询慢" / "建索引" / "表结构设计" | `sql-pro` + `database-optimizer` |
+| **Frontend** *(all build tasks MUST follow UI Design Protocol §3-step chain)* | builds any web page, Vue/React component, or UI (generic) / "做网页" / "写组件" / "做个页面" / "做UI" | `ui-ux-pro-max` → `frontend-design` → `critique` |
+| | builds dashboard / admin panel / data tool / product UI / "做后台" / "管理面板" / "仪表盘" / "数据看板" | `ui-ux-pro-max` → `interface-design` → `critique` |
+| | builds React/Next.js app with TypeScript, state, bundle concerns / "做React应用" / "Next项目" / "前端工程化" | `ui-ux-pro-max` → `frontend-design` + `frontend-patterns` → `critique` |
+| | needs React/Next.js patterns — hooks, composition, data fetching / "React写法" / "hooks用法" / "数据获取模式" | `vercel-react-best-practices` + `vercel-composition-patterns` |
+| | needs style direction only — design style, palette, font pairing / "选风格" / "配色方案" / "字体搭配" / "设计方向" | `ui-ux-pro-max` |
 | | wants UI that looks like a specific brand — "像 Stripe/Notion/Linear", "苹果风格", named brand design system | `brand-design-md` (73 brands) |
-| | configures Tailwind / design tokens / theme CSS | `tailwind-theme-builder` → `shadcn-ui` |
-| | needs brand palette from a hex / Tailwind color tokens / WCAG | `color-palette` |
-| | works with Next.js / app router / SSR / server actions | `nextjs-pro` |
-| | builds WeChat mini-program / Taro pages / NutUI components | `taro-miniprogram` + `taro-miniprogram-ui` |
-| | builds React Native / Expo mobile app | `vercel-react-native-skills` + `ui-ux-pro-max` |
-| | checking mobile display / responsiveness issues | `responsiveness-check` + `adapt` |
-| | running a live UX walkthrough / QA sweep in browser | `ux-audit` |
-| | checking UI against Vercel guidelines / best practices compliance | `web-design-guidelines` |
-| | needs poster / static visual design / art | `canvas-design` |
-| | needs favicon / apple-touch-icon / PWA icons | `favicon-gen` |
-| | needs custom SVG icon set for a project | `icon-set-generator` |
-| | resizes / crops / converts / optimizes images | `image-processing` |
-| | creating a claude.ai HTML artifact (not project files) | `web-artifacts-builder` |
+| | configures Tailwind / design tokens / theme CSS / "配Tailwind" / "主题配置" / "设计token" | `tailwind-theme-builder` → `shadcn-ui` |
+| | needs brand palette from a hex / Tailwind color tokens / WCAG / "品牌配色" / "调色板" / "颜色token" / "对比度" | `color-palette` |
+| | works with Next.js / app router / SSR / server actions / "Next.js" / "做SSR" / "服务端渲染" / "server action" | `nextjs-pro` |
+| | builds WeChat mini-program / Taro pages / NutUI components / "做小程序" / "微信小程序" / "Taro页面" | `taro-miniprogram` + `taro-miniprogram-ui` |
+| | builds React Native / Expo mobile app / "做App" / "React Native" / "Expo" / "做手机应用" | `vercel-react-native-skills` + `ui-ux-pro-max` |
+| | checking mobile display / responsiveness issues / "手机显示" / "响应式检查" / "适配有问题" | `responsiveness-check` + `adapt` |
+| | running a live UX walkthrough / QA sweep in browser / "UX走查" / "体验检查" / "浏览器里过一遍" | `ux-audit` |
+| | checking UI against Vercel guidelines / best practices compliance / "对照规范检查" / "最佳实践审查" / "合规检查" | `web-design-guidelines` |
+| | needs poster / static visual design / art / "做海报" / "做配图" / "静态视觉" / "做张图" | `canvas-design` |
+| | needs favicon / apple-touch-icon / PWA icons / "做favicon" / "网站图标" / "PWA图标" | `favicon-gen` |
+| | needs custom SVG icon set for a project / "做图标集" / "定制图标" / "项目图标库" | `icon-set-generator` |
+| | resizes / crops / converts / optimizes images / "改图片" / "压缩图片" / "裁剪" / "转格式" | `image-processing` |
+| | creating a claude.ai HTML artifact (not project files) / "做HTML artifact" / "claude.ai页面" | `web-artifacts-builder` |
 | **UI Refinement** (impeccable) | "太丑了" / full visual overhaul / "重做设计" — scope is major redesign | `critique` → assess scope → `ui-ux-pro-max` → `frontend-design` → `critique` |
 | | checks UI quality / WCAG / "what's wrong" / responsiveness / "这个UI有什么问题" / "检查一下UI" | `audit` |
 | | reviewing design / visual hierarchy / UX feedback / "帮我看看设计" / "设计评审" | `critique` |
@@ -221,14 +228,14 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | needs interactive charts (hover/zoom) / "做个可交互的图" | `plotly` / `claude-d3js` |
 | | needs static publication figures / "画个图" / "做图表" | `matplotlib` / `seaborn` |
 | | trains models / ML pipeline / statistics / "训练模型" | `scikit-learn` + `statsmodels` + `pytorch-lightning` |
-| | analyzes networks / graph relationships | `networkx` |
+| | analyzes networks / graph relationships / "图分析" / "关系网络" / "图算法" / "节点关系" | `networkx` |
 | **Documents** | reads/creates PDF / Word / Excel / PPT / "读PDF" / "做Word" / "做Excel" | `pdf` · `docx` · `xlsx` · `pptx` |
 | | creates slide deck / presentation / EPUB / "做PPT" / "做幻灯片" | `revealjs` · `markdown-to-epub` |
 | **Quality** | asks "how good is this code" / wants codebase health check / "代码质量怎么样" | `code-auditor` |
 | | ongoing tech debt tracking / cleanup sprint planning / "技术债务跟踪" / "清理计划" / "债务评分" | `tech-debt-tracker` |
 | | asks for security audit / reviews for vulnerabilities / "安全审计" | `code-reviewer` + `security-reviewer` |
 | | auditing a third-party skill for malicious code / "审计skill安全性" | `skill-security-auditor` |
-| | reviewing a PR/MR and wants more than style nits (blast radius, security, breaking changes) | `pr-review-expert` |
+| | reviewing a PR/MR and wants more than style nits (blast radius, security, breaking changes) / "深度PR评审" / "影响面分析" / "破坏性变更" | `pr-review-expert` |
 | | code is slow / page loads sluggishly / "why is this slow" / "为什么这么慢" (app-level) | `performance-profiler` |
 | | slow query / query optimization / "查询太慢" (DB-level) | `database-optimizer` + `sql-pro` |
 | | checking dependencies for vulnerabilities / license compliance / outdated packages / "检查依赖" | `dependency-auditor` |
@@ -237,8 +244,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | Playwright E2E tests / fixing flaky tests / migrating from Cypress / "Playwright测试" / "E2E测试" | `playwright-pro` |
 | | implementing new feature/bugfix via TDD (test-first) / "先写测试" | `test-driven-development` |
 | | generates API integration tests / contract tests / "API测试" / "接口测试" | `api-test-suite-builder` |
-| | tests web app in browser / screenshots / clicks | `webapp-testing` |
-| | generates API docs / JSDoc / OpenAPI spec | `code-documenter` |
+| | tests web app in browser / screenshots / clicks / "浏览器测试" / "页面截图测试" / "点击测试" | `webapp-testing` |
+| | generates API docs / JSDoc / OpenAPI spec / "写文档" / "API文档" / "JSDoc" / "接口文档" | `code-documenter` |
 | | runs automated accessibility scan / axe-core / WCAG compliance / "无障碍检测" | `claude-a11y` |
 | **Engineering** | designs REST API backend / microservices / auth flows / "写API" / "后端开发" / "微服务" | `senior-backend` |
 | | system design interviews / architecture diagrams / tech stack comparison / "架构图" / "技术选型" / "画架构" | `senior-architect` |
@@ -257,7 +264,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | sets up secret management / HashiCorp Vault / cloud secret stores / "密钥管理" / "配Vault" / "管理密码" | `secrets-vault-manager` |
 | | navigates monorepos / Nx / Turborepo / dependency graph / "Monorepo" / "大仓库" / "多包管理" | `monorepo-navigator` |
 | | designs system architecture / API contracts / "系统架构" / "API设计" | `architecture-designer` + `api-designer` |
-| | builds MCP server / tool integration | `mcp-builder` |
+| | builds MCP server / tool integration / "做MCP" / "MCP服务器" / "工具集成" | `mcp-builder` |
 | **Product & Business** | defines product KPIs / metric dashboards / cohort analysis / "产品指标" / "KPI" / "留存分析" | `product-analytics` |
 | | RICE prioritization / PRD templates / customer interviews / "产品规划" / "PRD" / "优先级排序" | `product-manager-toolkit` |
 | | sprint planning / velocity tracking / retrospectives / "Sprint规划" / "敏捷" / "站会" / "迭代" | `scrum-master` |
@@ -268,9 +275,9 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | **Research** | asks about recent trends / last 30 days / "最近有什么趋势" | `last30days` |
 | | handles i18n / translations / locale setup / "翻译" / "多语言" | `i18n-expert` |
 | | designing or improving a prompt / system message / "写prompt" / "优化提示词" | `prompt-architect` (+ `prompt-templates` for Anthropic format, `prompt-engineering` for advanced patterns) |
-| | creating a skill from scratch with evals / benchmarks | `skill-creator` |
-| | writing or editing a skill SKILL.md file | `writing-skills` |
-| | completes non-trivial debugging / wants to extract reusable knowledge | `claudeception` |
+| | creating a skill from scratch with evals / benchmarks / "做个skill" / "创建技能" / "从零写skill" | `skill-creator` |
+| | writing or editing a skill SKILL.md file / "写SKILL.md" / "编辑skill" / "改技能" | `writing-skills` |
+| | completes non-trivial debugging / wants to extract reusable knowledge / "提取经验" / "总结教训" / "记录踩坑" | `claudeception` |
 | **Apple / Swift** *(native iOS/macOS — distinct from Taro/RN)* | builds SwiftUI views / @Observable state / MV architecture / "做iOS界面" / "SwiftUI" | `swiftui-patterns` |
 | | SwiftUI layout — stacks, grids, lists, forms, scroll views / "SwiftUI布局" | `swiftui-layout-components` |
 | | SwiftUI navigation — NavigationStack/SplitView, sheets, tabs / "页面跳转" | `swiftui-navigation` |
@@ -291,16 +298,16 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | **DuckDB** | queries data files with SQL / ad-hoc analysis / "用SQL查数据文件" | `duckdb-query` |
 | | attaches a DuckDB database file / explores schema / "挂载数据库" | `duckdb-attach-db` |
 | | converts data file format (CSV↔Parquet↔JSON↔Excel) / "转parquet" / "导出xlsx" | `duckdb-convert-file` |
-| | installs/updates DuckDB extensions | `install-duckdb` |
+| | installs/updates DuckDB extensions / "装DuckDB扩展" / "更新扩展" | `install-duckdb` |
 | **HuggingFace / Embeddings** | "best model for X" / recommends or compares models by benchmark / "推荐模型" | `huggingface-best` |
 | | HF Dataset Viewer API — fetch rows, search, filter, parquet URLs / "HF数据集" | `huggingface-datasets` |
 | | trains/fine-tunes LLM via TRL/Unsloth on HF Jobs / GGUF convert / "微调大模型" | `huggingface-llm-trainer` |
 | | trains/fine-tunes sentence-transformers / embedding / reranker models / "训练嵌入模型" | `train-sentence-transformers` |
-| **More Quality / Exec** | step-by-step error debugging — interactive alt to `systematic-debugging` | `debugging-wizard` |
+| **More Quality / Exec** | step-by-step error debugging — interactive alt to `systematic-debugging` / "分步调试" / "调试器设置" / "快速修复" | `debugging-wizard` |
 | | reduce common LLM coding mistakes / surgical changes / "避免过度设计" | `karpathy-guidelines` |
-| | ultra-granular line-by-line context building before security/arch audit | `trailofbits-audit` |
+| | ultra-granular line-by-line context building before security/arch audit / "深度审计准备" / "逐行分析" / "审计前建上下文" | `trailofbits-audit` |
 | | secure web app coding / security scan & best practices / "安全编码" | `vibesec` |
-| | headless browser QA testing / site dogfooding | `gstack` |
+| | headless browser QA testing / site dogfooding / "无头浏览器测试" / "网站自测" / "dogfooding" | `gstack` |
 | | animation-rich HTML presentation / convert PPT to web slides / "做网页幻灯片" | `frontend-slides` |
 
 ## UI Design Protocol — MANDATORY for any UI building task
