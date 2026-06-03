@@ -11,7 +11,7 @@ metadata:
   role: specialist
   scope: analysis
   output-format: analysis
-  related-skills: test-master, fullstack-guardian, monitoring-expert
+  related-skills: systematic-debugging, test-master, performance-profiler
 ---
 
 # Debugging Wizard
