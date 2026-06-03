@@ -200,7 +200,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | builds React Native / Expo mobile app / "做App" / "React Native" / "Expo" / "做手机应用" | `vercel-react-native-skills` + `ui-ux-pro-max` |
 | | checking mobile display / responsiveness issues / "手机显示" / "响应式检查" / "适配有问题" | `responsiveness-check` + `adapt` |
 | | running a live UX walkthrough / QA sweep in browser / "UX走查" / "体验检查" / "浏览器里过一遍" | `ux-audit` |
-| | checking UI against Vercel guidelines / best practices compliance / "对照规范检查" / "最佳实践审查" / "合规检查" | `web-design-guidelines` |
+| | checking UI against Vercel guidelines / best practices compliance / "对照规范检查" / "最佳实践审查" | `web-design-guidelines` |
 | | needs poster / static visual design / art / "做海报" / "做配图" / "静态视觉" / "做张图" | `canvas-design` |
 | | needs favicon / apple-touch-icon / PWA icons / "做favicon" / "网站图标" / "PWA图标" | `favicon-gen` |
 | | needs custom SVG icon set for a project / "做图标集" / "定制图标" / "项目图标库" | `icon-set-generator` |
@@ -245,7 +245,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | implementing new feature/bugfix via TDD (test-first) / "先写测试" | `test-driven-development` |
 | | generates API integration tests / contract tests / "API测试" / "接口测试" | `api-test-suite-builder` |
 | | tests web app in browser / screenshots / clicks / "浏览器测试" / "页面截图测试" / "点击测试" | `webapp-testing` |
-| | generates API docs / JSDoc / OpenAPI spec / "写文档" / "API文档" / "JSDoc" / "接口文档" | `code-documenter` |
+| | generates API docs / JSDoc / OpenAPI spec / "写代码文档" / "API文档" / "JSDoc" / "接口文档" | `code-documenter` |
 | | runs automated accessibility scan / axe-core / WCAG compliance / "无障碍检测" | `claude-a11y` |
 | **Engineering** | designs REST API backend / microservices / auth flows / "写API" / "后端开发" / "微服务" | `senior-backend` |
 | | system design interviews / architecture diagrams / tech stack comparison / "架构图" / "技术选型" / "画架构" | `senior-architect` |
