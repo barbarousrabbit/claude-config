@@ -37,7 +37,7 @@ When generating PDF/DOCX reports:
 
 ## Config Sync — MANDATORY
 Syncing `~/.claude` to GitHub is automated by the hooks (see Available Tools below) — you normally do NOT run git yourself, and the model cannot reliably detect "end of session" anyway:
-- **SessionEnd** runs `sync-push.sh` → stages tracked changes + safe-list dirs (skills, scripts, agents, references, memory) with `git add -u` (deliberately NOT `git add -A`, to avoid committing untracked secrets), commits as `auto-sync: …`, pushes `HEAD:main`. No-op when clean.
+- **SessionEnd** runs `sync-push.sh` → stages tracked changes with `git add -u`, then adds untracked files inside the safe-list dirs (skills, scripts, agents, references, memory) via `git add <dir>/` (deliberately NOT `git add -A`, so untracked files OUTSIDE those dirs — e.g. stray secrets — are never committed), commits as `auto-sync: …`, pushes `HEAD:main`. No-op when clean.
 - **SessionStart** runs a catch-up `sync-push.sh`, then `sync-pull.sh`.
 - **Optional**: when a change deserves a searchable message, hand-author one — `git -C ~/.claude commit -m "<description>"` then push. Do NOT run `git add -A`.
 - **Fallback only if hooks are not installed on this device**: `git -C ~/.claude add -u && git -C ~/.claude commit -m "<desc>" && git -C ~/.claude push origin HEAD:main`
@@ -140,51 +140,11 @@ If you catch yourself thinking any of these, STOP and invoke the matching skill:
 
 ## UI Design Protocol — MANDATORY for any UI building task
 
-**Relationship to CEO Mode**: This protocol runs during the CEO **Execute** phase. When CEO Mode triggers planning for a UI task, the plan MUST include these 3 steps as execution phases. The CEO Review step maps to Step 3 below.
+**Relationship to CEO Mode**: This protocol runs during the CEO **Execute** phase. When CEO Mode triggers planning for a UI task, the plan MUST include these 3 steps as execution phases. The CEO Review step maps to Step 3 (Self-Review) in `references/ui-design-protocol.md`.
 
 Any task that produces **new pages, new components, or changes 3+ visual properties** MUST follow this 3-step chain. Skip for: single CSS fix, button color, text edit, icon swap.
 
-### Step 1: Design System (`ui-ux-pro-max`) — BEFORE writing any UI code
-```bash
-python3 ~/.claude/skills/ui-ux-pro-max/scripts/search.py "<product> <industry> <keywords>" --design-system -p "Project"
-```
-- Generates: style direction, color palette, font pairing, effects, anti-patterns
-- **CRITICAL**: If the script outputs a banned font (Inter, Roboto, Open Sans, Arial, system-ui), **override it immediately** — pick from `frontend-design/reference/typography.md`
-- If the script fails or user is in a hurry, at minimum manually decide: palette (3-5 colors with hex), font pair, and overall tone (e.g. "warm minimal", "dark editorial")
-- NEVER skip this step — a page without a design system is a page that looks like AI slop
-
-### Step 2: Build (`frontend-design` / `interface-design`) — with the design system in hand
-- Apply the chosen palette, fonts, and style from Step 1
-- **Read the reference files** in `frontend-design/reference/` for detailed guidance:
-  - `typography.md` — banned fonts list + recommended alternatives by tone
-  - `color-and-contrast.md` — OKLCH system, tinted neutrals, banned color patterns
-  - `spatial-design.md` — spacing scale, visual rhythm, grid systems
-  - `motion-design.md` — timing, easing functions, performance rules
-  - `interaction-design.md` — states, focus indicators, form patterns
-  - `responsive-design.md` — breakpoints, container queries, fluid design
-  - `ux-writing.md` — button labels, error messages, empty states
-- Follow all DON'T rules in `frontend-design` (no Inter/Roboto, no pure black/white, no emoji icons, no card-in-card, no center-everything)
-- Use `interface-design` for dashboards/admin panels, `frontend-design` for everything else
-
-### Step 3: Self-Review (`critique`) — BEFORE delivering to user
-- Review the output against `frontend-design` anti-patterns (The AI Slop Test)
-- Check: color contrast ≥ 4.5:1, no layout shift on hover, consistent spacing rhythm, responsive at 375/768/1024px
-- **Verify against Step 1**: Does the final output actually use the design system from Step 1? Or did defaults creep in?
-- If anything fails, fix it before showing to user
-- For thorough review, also invoke `web-design-guidelines`
-
-### Quick Checklist (verify before delivery)
-- [ ] Design system generated (not random defaults)
-- [ ] No banned fonts (Inter, Roboto, Open Sans, system-ui)
-- [ ] No AI palette (cyan-on-dark, purple-blue gradient, neon, Tailwind #2563EB)
-- [ ] Tinted neutrals (no pure gray/black/white)
-- [ ] No identical card grids or center-everything layout
-- [ ] No emoji icons — use Lucide/Heroicons SVGs
-- [ ] Text contrast ≥ 4.5:1, hover no layout shift, `cursor-pointer` on clickables
-- [ ] Consistent spacing scale, ease-out-quart/quint/expo animations
-- [ ] Interactive states (focus, active, disabled) styled
-- [ ] Responsive at 375/768/1024/1440px, mobile-first
-- [ ] Microcopy clear and actionable
+> The detailed 3-step execution chain (Design System -> Build -> Self-Review) and the pre-delivery Quick Checklist now live in `references/ui-design-protocol.md`. Load it when a UI task meets the trigger above. The "generate a design system first" mandate and the DON'T rules (no Inter/Roboto, no pure black/white, no emoji icons, no card-in-card, no center-everything) are non-negotiable — re-read them there before building.
 
 ## Project Onboarding
 New project: scan stack → match routing table → write `.claude/CLAUDE.md` (applicable skills + conventions).
