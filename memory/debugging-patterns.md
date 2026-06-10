@@ -40,3 +40,20 @@ These DLLs CANNOT be overridden by placing a copy in the application directory:
 - `librenpython.dll` contains statically linked SDL2 — cannot update SDL2 separately
 - Renderer preference stored in persistent data — may need to reset programmatically
 - `renpy.style.rebuild()` is compiled Cython — can corrupt heap on certain GPU/driver combos
+
+## Windows: hook/CLI stdin must be read as UTF-8 bytes for char-level analysis
+A hook (e.g. a UserPromptSubmit hook) that reads its JSON payload from stdin and then inspects characters in Python — counting CJK to detect language, etc. — silently fails on Windows if it uses text-mode stdin.
+- **Symptom**: Chinese input is misclassified (e.g. a `[reply-language]` detector reports "English" for a Chinese message; a `grep` for 作业/考试 never matches). Char counts come back 0 even though the text clearly contains those chars.
+- **Root cause**: Python text-mode `sys.stdin` / `json.load(sys.stdin)` decodes with the OS locale codec (cp1252/gbk on Windows), NOT UTF-8. Non-ASCII bytes get mojibake'd, so any codepoint/range check returns 0.
+- **Why a bash pipeline survives but Python char-ops don't**: `python -c "print(d['prompt'])" | grep …` works because the mis-decode is reversed when stdout re-encodes with the same wrong codec — a byte round-trip that bash byte-matches. The moment you do `ord(ch)` or a regex char-class INSIDE Python, the mis-decode is fatal.
+- **Fix 1 — read bytes, decode UTF-8 explicitly**:
+```python
+raw = sys.stdin.buffer.read().decode('utf-8', 'replace')
+prompt = json.loads(raw).get('prompt', '') or ''
+```
+- **Fix 2 — never embed CJK literals or `\uXXXX` escapes inside a `python -c "…"` string passed through bash**; argv/file encoding can corrupt them on a different machine. Use codepoint math with ASCII hex bounds:
+```python
+han = sum(1 for ch in prompt if 0x4e00 <= ord(ch) <= 0x9fff)   # CJK Unified
+lat = sum(1 for ch in prompt if ('A' <= ch <= 'Z') or ('a' <= ch <= 'z'))
+```
+Used in `scripts/hook-user-prompt.sh` Layer 0 (reply-language anti-drift detection). A 2-hour debugging session compressed to: "read stdin as UTF-8 bytes."
