@@ -87,6 +87,6 @@
       }
     }
   },
-  "effortLevel": "max",
+  "effortLevel": "xhigh",
   "model": "claude-fable-5[1m]"
 }
