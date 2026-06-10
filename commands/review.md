@@ -7,8 +7,8 @@ Review pass for this `~/.claude` config repo (Windows host):
 1. Confirm the working tree has only intentional changes: `git -C ~/.claude status --short`.
 2. Validate JSON configs are well-formed:
    ```bash
-   for f in "$HOME/.claude/settings.json" "$HOME/.claude/settings.local.json" "$HOME/.claude/.mcp.json" "$HOME/.claude"/plugins/*.json; do
-     python -c "import json,sys; json.load(open(sys.argv[1]))" "$f" && echo "OK $(basename "$f")" || echo "BAD $f"
+   for f in settings.json settings.local.json .mcp.json plugins/*.json; do
+     python -c "import json,sys; json.load(open(sys.argv[1]))" "$HOME/.claude/$f" && echo "OK $f" || echo "BAD $f"
    done
    ```
 3. Lint shell hooks/scripts (if shellcheck is available):

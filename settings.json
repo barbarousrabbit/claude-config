@@ -24,9 +24,8 @@
       "Bash(sudo rm -rf:*)",
       "Bash(git push --force:*)",
       "Bash(git reset --hard:*)",
-      "Bash(mkfs*)",
-      "Bash(format:*)",
-      "Bash(dd:*)"
+      "Bash(mkfs:*)",
+      "Bash(format:*)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Zhang\\.claude\\skills\\vercel-react-native-skills",
@@ -88,5 +87,6 @@
       }
     }
   },
-  "effortLevel": "max"
+  "effortLevel": "xhigh",
+  "model": "claude-fable-5[1m]"
 }

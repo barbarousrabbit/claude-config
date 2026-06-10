@@ -43,7 +43,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | has a clear plan, implementation touches 3+ files / "有计划了" / "写实现计划" / "改好几个文件" | `writing-plans` → `executing-plans` |
 | | describes any multi-step task (3+ steps) regardless of domain / "多步任务" / "好几步" / "帮我搞定整个" | `brainstorming` or `EnterPlanMode` → plan → execute |
 | | 2+ independent subtasks / wants parallel execution / "并行做" / "同时进行" / "几件事一起办" | `dispatching-parallel-agents` |
-| **Academic** | course number (32011/32516/32558/42850) or course name **accompanied by an academic task word** (assignment/作业/rubric/exam/期末/...), OR context is clearly academic | Route to Academic first — read course CLAUDE.md → apply course-specific rules. A bare course code appearing only in a file path does NOT trigger Academic routing. |
+| **Academic** | mentions course number (32011/32516/32558/42850) or course name, OR context is clearly academic | Route to Academic first — read course CLAUDE.md → apply course-specific rules |
 | | presents assignment brief / rubric / "帮我做作业" / "写报告" / "做 assignment" / "help me with assignment" / "整理成作业" / "整理成Assignment" | Read rubric → Assignment Workflow (Step 1: Reference Docs → Step 2: Plans) → `EnterPlanMode` → write → `/check-assignment` |
 | | has data to analyze **for a course/assignment (rubric present)** / BI project / "分析数据" / "做分析" / Tableau / ETL / data warehouse | Assess data → Assignment Workflow (Step 1: Reference Docs if rubric exists) → `EnterPlanMode` → analyze → visualize → validate |
 | | NLP/ML work / "训练模型" / "做 notebook" / Jupyter / BERT / tokenization / word embedding | Read brief → `EnterPlanMode` → `python-pro` + `scikit-learn`/`pytorch-lightning` → validate |

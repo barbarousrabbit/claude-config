@@ -22,16 +22,6 @@ except Exception:
     pass
 " 2>/dev/null || true)
 
-# Skip system-injected prompts. In this harness UserPromptSubmit ALSO fires for
-# task-notifications (background task / workflow / agent completion); their prompt
-# field is the FULL notification text — including workflow <result> JSON that often
-# contains academic words — which is NOT a genuine user request. Gating those is a
-# false positive, so bail out before the keyword checks. (Verified 2026-06-05 via a
-# stdin trace: prompt = "<task-notification>...</task-notification>".)
-case "$PROMPT" in
-    *"<task-notification>"*) exit 0 ;;
-esac
-
 # Layer 1: Academic task detection (narrow — low false-positive risk)
 # Only fires on unambiguous academic indicators; avoids generic words like plan/build/implement
 # NOTE (2026-06-03): removed bare course codes (32011 etc.) from this regex — they
