@@ -2,9 +2,8 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "true",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
-    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
     "ENABLE_TOOL_SEARCH": "auto",
-    "ANTHROPIC_MODEL": "claude-opus-4-8[1m]"
+    "ANTHROPIC_MODEL": "claude-fable-5[1m]"
   },
   "permissions": {
     "allow": [
