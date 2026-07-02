@@ -2,8 +2,7 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "true",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
-    "ENABLE_TOOL_SEARCH": "auto",
-    "ANTHROPIC_MODEL": "claude-opus-4-6[1m]"
+    "ENABLE_TOOL_SEARCH": "auto"
   },
   "permissions": {
     "allow": [
@@ -87,5 +86,7 @@
     }
   },
   "effortLevel": "max",
-  "model": "claude-opus-4-6[1m]"
+  "model": "claude-fable-5",
+  "ultracode": true,
+  "switchModelsOnFlag": false
 }
