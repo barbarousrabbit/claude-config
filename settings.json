@@ -85,8 +85,8 @@
       }
     }
   },
-  "effortLevel": "max",
   "model": "claude-fable-5[1m]",
-  "ultracode": true,
+  "effortLevel": "max",
+  "ultracode": false,
   "switchModelsOnFlag": false
 }
