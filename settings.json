@@ -31,6 +31,7 @@
       "C:\\Users\\Zhang\\.claude\\skills\\frontend-design"
     ]
   },
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -85,8 +86,6 @@
       }
     }
   },
-  "model": "claude-fable-5[1m]",
-  "effortLevel": "max",
   "ultracode": false,
   "switchModelsOnFlag": false
 }
