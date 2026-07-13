@@ -5,7 +5,7 @@ When a task spans multiple phases, chain skills in order. Only load what the cur
 ## Workflow Chains
 
 ### New Feature (full lifecycle)
-`brainstorming` → `writing-plans` → `test-driven-development` → `executing-plans` → `code-reviewer`
+`brainstorming` → `EnterPlanMode` → `test-driven-development` → implement → `code-reviewer`
 
 ### Bug Fix
 `systematic-debugging` → fix → `code-reviewer`
@@ -16,7 +16,7 @@ When a task spans multiple phases, chain skills in order. Only load what the cur
 ## Frontend Chains
 
 ### Web UI Page
-`ui-ux-pro-max` → `frontend-design` → `critique` → `web-design-guidelines`
+`ui-ux-pro-max` → `frontend-design` → `critique`
 
 ### Dashboard / Admin Panel
 `ui-ux-pro-max` → `interface-design` → `critique`
@@ -31,12 +31,12 @@ When a task spans multiple phases, chain skills in order. Only load what the cur
 `vercel-react-native-skills` + `ui-ux-pro-max` → build → test
 
 ### WeChat Mini-program
-`taro-miniprogram` + `taro-miniprogram-ui` + `typescript-pro` → `test-master`
+`taro-miniprogram` + `taro-miniprogram-ui` + `typescript-pro` → `test-driven-development`
 
 ## Backend Chains
 
 ### API Development
-`api-designer` → `typescript-pro` → `test-master` → `security-reviewer`
+`api-and-interface-design` → `typescript-pro` → `api-test-suite-builder` → `/security-review`
 
 ## Prompt Engineering
-`prompt-architect` (primary) + `prompt-templates` (Anthropic format) + `prompt-engineering` (advanced patterns)
+`prompt-architect` (sole prompt skill; covers templates and advanced patterns via its references)

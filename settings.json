@@ -69,9 +69,7 @@
       }
     ]
   },
-  "enabledPlugins": {
-    "superpowers@superpowers-marketplace": true
-  },
+  "enabledPlugins": {},
   "extraKnownMarketplaces": {
     "superpowers-marketplace": {
       "source": {

@@ -29,7 +29,6 @@ python3 ~/.claude/skills/ui-ux-pro-max/scripts/search.py "<product> <industry> <
 - Check: color contrast >= 4.5:1, no layout shift on hover, consistent spacing rhythm, responsive at the breakpoints `frontend-design/reference/responsive-design.md` defines
 - Verify against Step 1: does the final output actually use the design system, or did defaults creep in?
 - If anything fails, fix it before showing the user
-- For a thorough review, also invoke `web-design-guidelines`
 
 ## Pre-delivery checklist
 - [ ] Design system generated (not random defaults)

@@ -67,7 +67,7 @@ When multiple categories match, use this precedence: **Academic > Planning (CEO)
 When delegating parallel work, pick ONE orchestration method (mutually exclusive):
 1. **`TeamCreate`** → ONLY when ALL THREE hold: (a) 3+ files, (b) 2+ distinct domains, AND (c) agents must exchange state mid-task (e.g., frontend + backend + tests). If any one is false, use option 2 or inline work.
 2. **`dispatching-parallel-agents`** → 2+ truly independent tasks that share no state (e.g., 3 unrelated bug fixes)
-3. **`subagent-driven-development`** → sequential tasks in same session with two-stage review
+3. **Agent tool (sequential)** → sequential tasks in same session; add a second review agent when two-stage review is warranted
 Skip all for: single-file edits, quick lookups, trivial one-liners.
 
 ### Agency Agents (`~/.claude/agents/`)
