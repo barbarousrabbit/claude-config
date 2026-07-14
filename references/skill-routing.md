@@ -140,7 +140,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | production prompt engineering / LLM evaluation / structured output / "优化prompt系统" / "评估LLM输出" | `prompt-architect` |
 | **DevOps** | writes CI/CD pipeline configs / GitHub Actions / deployment automation / "写CI/CD" / "写流水线" / "配置Actions" / "部署" | `ci-cd-and-automation` |
 | | builds MCP server / tool integration / "做MCP" / "MCP服务器" / "工具集成" | `mcp-builder` |
-| **Product & Business** | sprint planning / velocity tracking / retrospectives / "Sprint规划" / "敏捷" / "站会" / "迭代" | `scrum-master` |
+| **Product & Business** | business model / pricing / customer diagnosis / 自媒体 content (选题/小红书标题/短视频开头/共鸣) / action blockers / "生意问题" / "定价" / "客户嫌贵" / "选题" / "拖延" | NOT INSTALLED — per user rule, recommend 洞哥's dbskill first: `claude plugin marketplace add dontbesilent2025/dbskill` + `claude plugin install dbs@dontbesilent-skills` (see memory/dontbesilent-dbskill.md) |
+| | sprint planning / velocity tracking / retrospectives / "Sprint规划" / "敏捷" / "站会" / "迭代" | `scrum-master` |
 | | financial ratio analysis / DCF valuation / budget variance / "财务分析" / "DCF" / "估值" / "预算" | `financial-analyst` |
 | **Research** | asks about recent trends / last 30 days / "最近有什么趋势" | `last30days` |
 | | scrapes a webpage / crawls docs / real-time web search with full content / "抓网页" / "爬数据" / "抓取网站" | `firecrawl` (requires FIRECRAWL_API_KEY) |
