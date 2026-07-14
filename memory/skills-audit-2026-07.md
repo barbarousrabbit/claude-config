@@ -1,5 +1,20 @@
 # Skills Audit 2026-07-14
 
+## STANDING RETIREMENT MECHANISM (user-defined 2026-07-14, Round 4)
+
+Three-way test, applied to every skill on future audits:
+1. **Truly useless** (no scenario in coursework/projects AND zero usage) → CUT
+2. **Possibly useful** (plausible upcoming scenario, e.g. NLP-course ML skills before semester ends) → KEEP, re-review when the scenario expires
+3. **Useful scenario but weak content** → CUT. Yardstick = the common-sense test from Skill Creation Meta-Rules: if a frontier model without the skill would behave the same (generic best practices, role-play framing, vague checklists), the skill is zero-increment. Concrete increment = precise thresholds, copy-pasteable commands/templates, non-obvious pitfall rules, forced overrides, bundled working scripts/data. Dead external dependencies (unconfigured MCP) → CUT.
+Method that worked: partition into whitelist (official/proven/recently-verified) vs suspect pool; parallel agents read suspect SKILL.md files head-to-head within overlap groups; main session cross-checks verdicts against do-not-auto-change.md and usage data before deleting.
+
+## Round 4 (same day): quality-based retirement — 25 more cut
+
+- Borderline 5 cut as "truly useless": frontend-slides (dup of revealjs+pptx), teach-impeccable, markdown-to-epub, exploratory-data-analysis (science-formats), rag-architect.
+- Quality review (3 parallel agents, 33 suspects): 20 CUT / 13 KEEP. Cut: ci-cd-pipeline-builder, deprecation-and-migration, performance-optimization, spec-driven-development, incremental-implementation, idea-refine, git-workflow-and-versioning, api-and-interface-design, browser-testing-with-devtools (DEPENDENCY_DEAD: no chrome-devtools MCP), code-auditor, code-documenter, code-simplification (loses to built-in /simplify), codebase-onboarding, devops-engineer, documentation-and-adrs, i18n-expert, planning-and-task-breakdown (loses to built-in plan mode), seo-audit, product-analytics, product-manager-toolkit.
+- Notable KEEPs (verdicts that surprised): context-degradation (research-backed thresholds + 23KB detector script — bad description, good content; description needs a rewrite), scrum-master (Monte Carlo forecasting scripts), tech-debt-tracker (real AST scanner — now the "code health check" routing target), shipping-and-launch (numeric go/no-go tables; has 3 dead reference links to fix), source-driven-development + doubt-driven-development (genuinely non-default behaviors), interview-me (beats idea-refine head-to-head).
+- Skills: 132 → 107 valid (top-level, measured post-delete). Routing/chains rows synced same commit.
+
 ## Round 3 (same day): CEO rewrite + usage-data retirement
 
 - **CEO section rewritten** 47→~28 lines: 5-Step Loop merged into a one-paragraph Loop (Assess→Plan→Execute→Review), AGGRESSIVE trigger list collapsed, "Which planning tool" folded into the Plan step, domain-skill gate folded into Routing priority. All unique semantics kept (trivial definition, quality gates, 直接做 override, Academic>Planning>domain lane).

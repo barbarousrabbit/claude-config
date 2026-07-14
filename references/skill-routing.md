@@ -39,7 +39,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | Category | When user... | Skill(s) |
 |----------|-------------|----------|
 | **Planning (CEO)** | has a vague idea / "I want to build..." / "how should I..." / "what's the best approach" / asks "X or Y?" / "我想做个X" / "X好还是Y好" / "怎么搞" / "有什么思路" | `brainstorming` → design approval → implement |
-| | has clear requirements / describes a specific feature or enhancement / "加个功能" / "需求很明确" / "规划这个功能" | `EnterPlanMode` → `planning-and-task-breakdown` |
+| | has clear requirements / describes a specific feature or enhancement / "加个功能" / "需求很明确" / "规划这个功能" | `EnterPlanMode` |
 | | has a clear plan, implementation touches 3+ files / "有计划了" / "写实现计划" / "改好几个文件" | `EnterPlanMode` → execute phase by phase |
 | | describes any multi-step task (3+ steps) regardless of domain / "多步任务" / "好几步" / "帮我搞定整个" | `brainstorming` or `EnterPlanMode` → plan → execute |
 | | 2+ independent subtasks / wants parallel execution / "并行做" / "同时进行" / "几件事一起办" | `dispatching-parallel-agents` |
@@ -63,8 +63,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | feature complete / ready to merge branch / "功能做完了" / "合并分支" / "收尾分支" | `verification-before-completion` → `git-pushing` or `/git:pr` |
 | | deploys to production / launch / release / "上线" / "发布" / "部署到生产" / "deploy to production" / "go live" | `shipping-and-launch` |
 | | about to say "done" / mark task complete / "完成了" / "搞定了" / "标记完成" / "可以收工了" | `verification-before-completion` |
-| | wants to refactor / "重构" / "帮我优化代码" / simplify complex code | `code-auditor` → refactor → `verification-before-completion` |
-| | "review the code" / code health check (no PR context) / "看看代码质量" / "代码健康度" / "体检一下" | `code-auditor`; if PR exists → `/code-review` |
+| | wants to refactor / "重构" / "帮我优化代码" / simplify complex code | refactor → `verification-before-completion` (use built-in `/simplify` for pure cleanups) |
+| | "review the code" / code health check (no PR context) / "看看代码质量" / "代码健康度" / "体检一下" | `tech-debt-tracker` (scripted scan); if PR exists → `/code-review` |
 | | needs isolated workspace for feature development / "隔离工作区" / "worktree" / "开个独立分支环境" | `using-git-worktrees` |
 | **Writing** | writes blog / doc / copy (no rubric, non-academic) / "写博客" / "写文档" / "写文案" | Plan outline → write → self-review |
 | | says "polish" / refine existing draft / "润色" / "改一下文章" | Review → revise → proofread |
@@ -109,15 +109,14 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | empty states / first-run experience / onboarding flows / "引导页" / "新手引导" / "空状态设计" | `onboard` |
 | | UI loads slowly / animations stutter / bundle too large / "加载慢" / "卡顿" / "性能优化" | `optimize` |
 | | adapting UI for mobile / tablet / cross-platform / "手机适配" / "响应式" / "多端适配" | `adapt` |
-| | first time using impeccable / establishing design context / "设置设计规范" / "初始化设计" | `teach-impeccable` |
-| **Data** *(CEO gate: if 3+ steps, plan first)* | analyzes a standalone CSV / data file **outside any course (no rubric)** / "分析数据" / "看看这个数据" | CEO planning → `csv-data-summarizer` + `exploratory-data-analysis` |
+| **Data** *(CEO gate: if 3+ steps, plan first)* | analyzes a standalone CSV / data file **outside any course (no rubric)** / "分析数据" / "看看这个数据" | CEO planning → `csv-data-summarizer` |
 | | needs interactive charts (hover/zoom) / "做个可交互的图" | `plotly` / `claude-d3js` |
 | | needs static publication figures / "画个图" / "做图表" | `matplotlib` / `seaborn` |
 | | trains models / ML pipeline / statistics / "训练模型" | `scikit-learn` + `statsmodels` + `pytorch-lightning` |
 | | analyzes networks / graph relationships / "图分析" / "关系网络" / "图算法" / "节点关系" | `networkx` |
 | **Documents** *(CEO gate: if 3+ steps, plan first)* | reads/creates PDF / Word / Excel / PPT / "读PDF" / "做Word" / "做Excel" | For read-only: `pdf` · `docx` · `xlsx` · `pptx` directly. For creation (3+ steps): CEO planning → skill |
-| | creates slide deck / presentation / EPUB / "做PPT" / "做幻灯片" | CEO planning (outline) → `revealjs` · `pptx` · `markdown-to-epub` |
-| **Quality** | asks "how good is this code" / wants codebase health check / "代码质量怎么样" | `code-auditor` |
+| | creates slide deck / presentation / "做PPT" / "做幻灯片" | CEO planning (outline) → `revealjs` · `pptx` |
+| **Quality** | asks "how good is this code" / wants codebase health check / "代码质量怎么样" | `tech-debt-tracker` |
 | | ongoing tech debt tracking / cleanup sprint planning / "技术债务跟踪" / "清理计划" / "债务评分" | `tech-debt-tracker` |
 | | asks for security audit / reviews for vulnerabilities / "安全审计" | `trailofbits-audit` or `/security-review` (built-in) |
 | | auditing a third-party skill for malicious code / "审计skill安全性" | `skill-security-auditor` |
@@ -130,30 +129,21 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | implementing new feature/bugfix via TDD (test-first) / "先写测试" | `test-driven-development` |
 | | generates API integration tests / contract tests / "API测试" / "接口测试" | `api-test-suite-builder` |
 | | tests web app in browser / screenshots / clicks / "浏览器测试" / "页面截图测试" / "点击测试" | `webapp-testing` |
-| | generates API docs / JSDoc / OpenAPI spec / "写代码文档" / "API文档" / "JSDoc" / "接口文档" | `code-documenter` |
 | | runs automated accessibility scan / axe-core / WCAG compliance / "无障碍检测" | `claude-a11y` |
-| **Engineering** | designs REST API backend / microservices / auth flows / "写API" / "后端开发" / "微服务" | `api-and-interface-design` + language skill (`python-pro` etc.) |
-| | system design interviews / architecture diagrams / tech stack comparison / "架构图" / "技术选型" / "画架构" | Software Architect agent + `api-and-interface-design` |
+| **Engineering** | designs REST API backend / microservices / auth flows / "写API" / "后端开发" / "微服务" | language skill directly (`python-pro` / `typescript-pro`); tests via `api-test-suite-builder` |
+| | system design interviews / architecture diagrams / tech stack comparison / "架构图" / "技术选型" / "画架构" | Software Architect agent |
 | | designs ERD / normalizes database schemas / table relationships / "设计数据库" / "ERD" / "建表" / "数据库设计" | `database-schema-designer` |
 | | plans zero-downtime migrations / version upgrades / rollback / "数据迁移" / "系统迁移" / "升级方案" | `migration-architect` |
-| | designs RAG pipelines / vector search / embedding models / knowledge retrieval / "RAG" / "向量检索" / "知识库" | `rag-architect` |
 | | deploys ML models to production / MLOps / MLflow / feature stores / "部署模型" / "MLOps" / "模型上线" | AI Engineer agent + `huggingface-llm-trainer` |
 | | statistical modeling / A/B testing / causal inference / experiment design / "统计建模" / "AB测试" / "因果分析" | `statsmodels` + `scikit-learn` |
 | | autonomous optimization loop / measurable metric improvement / "自动优化" / "实验循环" | `autoresearch-agent` |
 | | production prompt engineering / LLM evaluation / structured output / "优化prompt系统" / "评估LLM输出" | `prompt-architect` |
-| **DevOps** | joining unfamiliar codebase / onboarding new teammate / needs map of "what does what" / "看看这个项目" | `codebase-onboarding` |
-| | sets up Docker / K8s / cloud infra / deployment / "部署" / "写Dockerfile" / "配环境" / "搭环境" | `devops-engineer` |
-| | writes CI/CD pipeline configs from scratch / GitHub Actions / GitLab CI / "写CI/CD" / "写流水线" / "配置Actions" | `ci-cd-pipeline-builder` |
-| | designs system architecture / API contracts / "系统架构" / "API设计" | `api-and-interface-design` (+ Software Architect agent for large systems) |
+| **DevOps** | writes CI/CD pipeline configs / GitHub Actions / deployment automation / "写CI/CD" / "写流水线" / "配置Actions" / "部署" | `ci-cd-and-automation` |
 | | builds MCP server / tool integration / "做MCP" / "MCP服务器" / "工具集成" | `mcp-builder` |
-| **Product & Business** | defines product KPIs / metric dashboards / cohort analysis / "产品指标" / "KPI" / "留存分析" | `product-analytics` |
-| | RICE prioritization / PRD templates / customer interviews / "产品规划" / "PRD" / "优先级排序" | `product-manager-toolkit` |
-| | sprint planning / velocity tracking / retrospectives / "Sprint规划" / "敏捷" / "站会" / "迭代" | `scrum-master` |
+| **Product & Business** | sprint planning / velocity tracking / retrospectives / "Sprint规划" / "敏捷" / "站会" / "迭代" | `scrum-master` |
 | | financial ratio analysis / DCF valuation / budget variance / "财务分析" / "DCF" / "估值" / "预算" | `financial-analyst` |
-| | SEO site audit / technical SEO / ranking issues / "SEO审计" / "为什么没排名" / "技术SEO" | `seo-audit` |
 | **Research** | asks about recent trends / last 30 days / "最近有什么趋势" | `last30days` |
 | | scrapes a webpage / crawls docs / real-time web search with full content / "抓网页" / "爬数据" / "抓取网站" | `firecrawl` (requires FIRECRAWL_API_KEY) |
-| | handles i18n / translations / locale setup / "翻译" / "多语言" | `i18n-expert` |
 | | designing or improving a prompt / system message / "写prompt" / "优化提示词" | `prompt-architect` |
 | | creating a skill from scratch with evals / benchmarks / "做个skill" / "创建技能" / "从零写skill" | `skill-creator` |
 | | writing or editing a skill SKILL.md file / "写SKILL.md" / "编辑skill" / "改技能" | `skill-creator` |
@@ -170,5 +160,4 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | **More Quality / Exec** | reduce common LLM coding mistakes / surgical changes / "避免过度设计" | `karpathy-guidelines` |
 | | ultra-granular line-by-line context building before security/arch audit / "深度审计准备" / "逐行分析" / "审计前建上下文" | `trailofbits-audit` |
 | | secure web app coding / security scan & best practices / "安全编码" | `/security-review` (built-in) |
-| | animation-rich HTML presentation / convert PPT to web slides / "做网页幻灯片" | `frontend-slides` |
 

@@ -33,7 +33,7 @@ When a task spans multiple phases, chain skills in order. Only load what the cur
 ## Backend Chains
 
 ### API Development
-`api-and-interface-design` → `typescript-pro` → `api-test-suite-builder` → `/security-review`
+`typescript-pro` (or `python-pro`) → `api-test-suite-builder` → `/security-review`
 
 ## Prompt Engineering
 `prompt-architect` (sole prompt skill; covers templates and advanced patterns via its references)
