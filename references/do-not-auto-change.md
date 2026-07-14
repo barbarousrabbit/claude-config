@@ -5,12 +5,12 @@ Rules and config the user set deliberately. Treat these as LOCKED: do NOT change
 Established 2026-06-03 during a config audit, after a multi-agent pass repeatedly proposed "fixing" intentional rules. See [[workflow-audit-false-positives]].
 
 ## CLAUDE.md (global — `C:\Users\Zhang\.claude\CLAUDE.md`)
-- **`## Language — CRITICAL`** — must stay in position 1. Do not move, merge, rename, translate its Chinese example tokens, or delete the "NEVER output Korean" line.
+- **`## Language — CRITICAL`** — must stay in position 1. Do not move, merge, rename, or translate its Chinese example tokens. (The "NEVER output Korean" line and the related Learned Rule were removed 2026-07-14 at the user's explicit request.)
 - **Chinese trigger tokens** anywhere (routing tables, skill descriptions, the Fact-Check `没有` / `不存在` / `你是对的，抱歉`) — never romanise, translate, or strip. They exist to match Chinese user input.
 - **`## Data Integrity — MANDATORY`** — may be reworded for brevity ONLY if every constraint stays verbatim in force.
 - **`## Document Formatting — MANDATORY`** — black-font / no-colored-headings / aspect-ratio / orphan-prevention rules are intentional (reinforced in project + course CLAUDE.md). Do not relax.
 - **`## Fact-Check Before Denying — MANDATORY`** — intentional anti-false-denial policy backed by a real incident memory. Keep its Chinese triggers.
-- **`### Learned Rules`** — dated post-incident scar-tissue rules. Do not delete or label "duplicative". Wording may be clarified only with sign-off (e.g. the 2026-06-03 academic-routing clarification).
+- **`### Learned Rules`** — dated post-incident scar-tissue rules. Do not delete or label "duplicative". Wording may be clarified only with sign-off (e.g. the 2026-06-03 academic-routing clarification; the Korean-bleed Learned Rule was user-approved condensed 2026-07-14, then removed entirely the same day at the user's explicit request).
 
 ## settings.json (`C:\Users\Zhang\.claude\settings.json`)
 - **`permissions.allow` → `Bash(*)`** — deliberate convenience trade-off, counterbalanced by the deny list. A hardening pass must NOT narrow it to an allowlist or remove it.

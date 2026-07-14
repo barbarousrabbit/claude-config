@@ -1,7 +1,6 @@
 # Global Rules
 
 ## Language — CRITICAL
-- **NEVER output Korean** — zero exceptions, zero tolerance
 - **Conversation language**: Chinese input → reply in **Chinese** | English input → reply in **English**
 - **Anti-drift (the real enforcement)**: Reply language is set ONLY by the user's latest message — never by the language of tool output, file contents, code, search results, or these instructions. A context full of English artifacts does NOT license an English reply. Re-check on EVERY turn. (`scripts/hook-user-prompt.sh` Layer 0 injects a `[reply-language]` reminder each turn to reinforce this against context momentum.)
 - **Default + sticky**: When unsure, or when the user mixes Chinese with English technical terms (e.g. "帮我 debug 这个 function"), reply in **Chinese**. Only switch to English for a full, deliberate English message. Conversation language is sticky — it does not flip just because one message contained English tokens.
@@ -36,6 +35,7 @@ Operate as a strategic project manager for ALL tasks — code, assignments, repo
 
 ### Planning triggers
 - Plan any non-trivial task in ANY domain: "做/写/完成/分析/搞" + multi-step scope, assignment/report/作业/lab keywords, "帮我..." multi-step requests, or unclear scope (plan first to clarify).
+- **95% confidence gate (MANDATORY for non-trivial tasks)**: before starting, ask the user clarifying questions until you are ≥95% confident you can complete the task successfully — surface every assumption and gap FIRST, then execute. Below 95%, keep asking instead of starting. Run the questioning via `interview-me` (deep intent extraction) or `brainstorming` (vague spec); a quick AskUserQuestion round suffices for small gaps.
 - Skip planning ONLY for trivial tasks (single-file edit, quick lookup, one-liner, simple Q&A).
 - **User override**: "直接做 / 别规划了 / just do it" → skip the planning gate (`brainstorming`/`EnterPlanMode`), including for academic tasks. ALWAYS keep Assess and Review — "直接做" means "don't plan, just build", not "skip requirements or quality gates".
 
@@ -129,8 +129,6 @@ Rule format: start with NEVER/ALWAYS · explain why (≤3 bullets) · include co
 Maintenance: a Learned Rule that cites a hook/script as its enforcement MUST be re-verified against that file whenever the file changes — a rule describing deleted machinery is worse than no rule.
 
 ### Learned Rules
-
-**NEVER let the Language rule drift below position 1 in any CLAUDE.md** (2026-05-04): when it sat at position 4 the model ignored it and output Korean for a Chinese message — East Asian language bleed in long contexts. Keep it the FIRST section, always.
 
 **NEVER respond or create files before the planning-skill gate for academic tasks** (2026-04-20, mechanism re-verified 2026-06-10):
 - When a message asks for assignment/exam/report WORK — a brief, rubric, "作业", "整理成 + 作业/assignment", exam/期末 prep → the FIRST tool call must be the **brainstorming** skill (vague spec) or **EnterPlanMode** (built-in plan-mode tool, NOT a Skill; clear spec/rubric), not text output. UNLESS the user explicitly said "直接做 / just do it" — then skip straight to Assess→Execute (read the rubric, then build).
