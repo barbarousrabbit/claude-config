@@ -1,5 +1,13 @@
 # Skills Audit 2026-07-14
 
+## Round 3 (same day): CEO rewrite + usage-data retirement
+
+- **CEO section rewritten** 47→~28 lines: 5-Step Loop merged into a one-paragraph Loop (Assess→Plan→Execute→Review), AGGRESSIVE trigger list collapsed, "Which planning tool" folded into the Plan step, domain-skill gate folded into Routing priority. All unique semantics kept (trivial definition, quality gates, 直接做 override, Academic>Planning>domain lane).
+- **Verified by subagent walkthrough** (6 scenarios, rules-text-only): A/B/C/F routed correctly; exposed 2 REAL ambiguities (also present in the old text) — both patched: (1) in-between specs (concrete deliverable, unspecified details) now default to EnterPlanMode; (2) "when in doubt, treat as non-trivial" added so the Review gate can't be dodged by fuzzy triviality.
+- **Usage mining** (~/.claude/projects, 128MB, 2026-06-15→07-14, THIS machine only): only 8 skills ever explicitly invoked via Skill tool (update-config ×4, ui-ux-pro-max, frontend-design, critique, audit, polish, code-auditor, brand-design-md ×1 each); slash commands ≈ only /model ×10. Most skills work via description-influence, not invocation — zero-invocation alone is NOT sufficient reason to delete; it must pair with out-of-scenario.
+- **Retired 13** (zero-usage + no scenario in coursework/projects): taro-miniprogram ×2, golang-pro, rust-engineer, dbt family ×4, saas-metrics-coach, secrets-vault-manager, monorepo-navigator, incident-commander, observability-designer. Skills: 143→132 valid. Routing rows removed in the same commit.
+- **Borderline NOT deleted** (decide later if unused by ~2026-09): markdown-to-epub, teach-impeccable, train-sentence-transformers, huggingface-llm-trainer, huggingface-datasets, pytorch-lightning (NLP course may need), product-analytics, product-manager-toolkit, scrum-master (group projects may need), frontend-slides (overlaps revealjs+pptx), exploratory-data-analysis (science-formats-oriented), rag-architect, context-compression, context-degradation, multi-agent-patterns, networkx. financial-analyst KEPT deliberately (BESS financial modeling is a real user scenario).
+
 ## Round 2 (same day): CEO decay + UI direction coverage + CLAUDE.md slimming
 
 - **CEO mode verdict**: mechanism intact (hooks + academic gate + surviving skills all verified). ONE real decay found and fixed: `TeamCreate` tool no longer exists in the harness (Agent tool native teams replaced it) — Delegation priority #1 rewritten. Community consensus 2026: no "stronger CEO skill" exists; the play is lean CLAUDE.md + built-in plan mode + hooks. Context-rot threshold ≈150-200 instructions — stay under it.

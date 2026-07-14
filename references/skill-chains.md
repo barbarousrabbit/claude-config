@@ -30,9 +30,6 @@ When a task spans multiple phases, chain skills in order. Only load what the cur
 ### React Native / Expo
 `vercel-react-native-skills` + `ui-ux-pro-max` → build → test
 
-### WeChat Mini-program
-`taro-miniprogram` + `taro-miniprogram-ui` + `typescript-pro` → `test-driven-development`
-
 ## Backend Chains
 
 ### API Development

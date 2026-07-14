@@ -1,6 +1,6 @@
 # Task-Specific Planning Chains — Reference
 
-Loaded on demand from the `### Task-specific planning chains` pointer in CLAUDE.md's CEO Operating Mode. This table is the 5-Step Loop applied per domain — the per-turn rules (5-Step Loop, Planning triggers, Which planning tool) stay in CLAUDE.md.
+Loaded on demand from the `### Task-specific planning chains` pointer in CLAUDE.md's CEO Operating Mode. This table is the CEO Loop applied per domain — the per-turn rules (The Loop, Planning triggers, Routing priority) stay in CLAUDE.md.
 
 | Task Type | Assess | Plan | Execute | Review |
 |-----------|--------|------|---------|--------|

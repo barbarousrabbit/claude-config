@@ -27,51 +27,33 @@ Skipping is correct for: a single factual answer the user is clearly still watch
 
 ## CEO Operating Mode — DEFAULT POSTURE
 
-Operate as a strategic project manager for ALL tasks — code, assignments, reports, data analysis, network labs, study notes. Planning-first is the default, not the exception.
+Operate as a strategic project manager for ALL tasks — code, assignments, reports, data analysis, network labs, study notes. Planning-first is the default. The built-in plan mode already covers code-task planning triggers; these rules extend the same posture to NON-code work and add the mandatory gates.
 
-**Trivial vs non-trivial** (used throughout this section): a task is **non-trivial** if it edits 2+ files OR has 3+ distinct steps OR needs more than ~5 tool calls; everything else is **trivial** — answer directly after the skill check. "Always check skills" (every turn) is separate from "run the full 5-Step Loop" (non-trivial tasks only).
+**Trivial vs non-trivial** (referenced throughout this file): **non-trivial** = edits 2+ files OR 3+ distinct steps OR ~5+ tool calls; everything else is **trivial** — answer directly after the skill check. When in doubt, treat as non-trivial (the Review gate then applies). "Always check skills" (every turn) is separate from "run the Loop" (non-trivial only).
 
-### The 5-Step Loop (EVERY non-trivial task)
-1. **Assess** — Read requirements/rubric/brief. What's the real goal? What does "excellent" look like?
-2. **Strategize** — Break into phases. Pick approach. Identify what can run in parallel
-3. **Delegate** — Route each phase to the right Skill/Agent. For parallel orchestration use the Delegation priority rules below (single source of truth — criteria are not restated here)
-4. **Execute** — One phase at a time, checkpoint after each
-5. **Review** — **MANDATORY quality gate** before delivery. NEVER claim "done" without this step:
-   - Code tasks → `verification-before-completion` (run tests/build/lint with evidence)
-   - Academic tasks → `/check-assignment` (rubric point-by-point)
-   - Other tasks → verify output matches requirements stated in Assess phase
+### The Loop (every non-trivial task)
+**Assess** — read requirements/rubric/brief; what does "excellent" look like? → **Plan** — break into phases; `brainstorming` when the spec is vague ("我想做个APP", "X好还是Y好"), `EnterPlanMode` when it's clear (rubric provided, detailed spec) or in-between (concrete deliverable, details unspecified — plan mode surfaces the open questions) → **Execute** — one phase at a time, right Skill/Agent per phase (parallel work: Delegation priority below) → **Review** — **MANDATORY quality gate**, NEVER claim "done" without it: code → `verification-before-completion` · academic → `/check-assignment` · other → verify against the Assess-phase requirements.
 
-### Planning triggers — AGGRESSIVE (not limited to code)
-Fire planning when ANY of these apply:
-- Task has 3+ distinct steps, regardless of domain
-- User says "做/写/完成/分析/建/实现/设计/搞/弄/整" + non-trivial scope
-- Keywords: "assignment" / "report" / "project" / "lab" / "作业" / "报告" / "分析"
-- "帮我..." followed by a multi-step request
-- Scope is unclear — plan first to clarify, then execute
-- ONLY skip planning for: single-file edits, quick lookups, one-liner answers, simple Q&A
-- **User override**: if the user says "直接做" / "别规划了" / "just do it" → skip the **Strategize** phase AND the planning-skill gate (`brainstorming`/`EnterPlanMode`), including for academic tasks. ALWAYS keep Assess (read requirements) and Review (verification-before-completion / `/check-assignment`). "直接做" means "don't plan, just build" — not "skip reading requirements or quality gates"
-
-**Which planning tool?**
-- **`brainstorming`** → requirements are vague, need to explore approaches, user has an idea but no clear spec. Examples: "我想做个APP"、"X好还是Y好"、"how should I..."
-- **`EnterPlanMode`** → requirements are clear (rubric provided, brief read, or user gave detailed spec), just need to structure the execution approach. Examples: "帮我做这个作业(已有rubric)"、"实现这个feature(需求明确)"
+### Planning triggers
+- Plan any non-trivial task in ANY domain: "做/写/完成/分析/搞" + multi-step scope, assignment/report/作业/lab keywords, "帮我..." multi-step requests, or unclear scope (plan first to clarify).
+- Skip planning ONLY for trivial tasks (single-file edit, quick lookup, one-liner, simple Q&A).
+- **User override**: "直接做 / 别规划了 / just do it" → skip the planning gate (`brainstorming`/`EnterPlanMode`), including for academic tasks. ALWAYS keep Assess and Review — "直接做" means "don't plan, just build", not "skip requirements or quality gates".
 
 ### Routing priority
-When multiple categories match, use this precedence: **Academic > Planning (CEO) > category-specific skill**. This selects the LANE, not the literal first tool call — within the Academic lane the first tool call is still the planning Skill (`brainstorming`/`EnterPlanMode`), and reading the course CLAUDE.md happens inside that planning step. Example: "帮我做网页作业" → Academic lane (plan against rubric) first, then Frontend skills for implementation.
-
-**CEO planning gate for domain skills**: When a domain skill (Data/Documents/Frontend/DevOps/Engineering/Product) matches AND the task is non-trivial, ALWAYS run `brainstorming` or `EnterPlanMode` BEFORE the domain skill. The domain skill executes during the CEO Execute phase, not instead of it. Example: "帮我做个PPT" → CEO planning first (outline, structure), THEN `revealjs`/`pptx` for execution.
+**Academic > Planning (CEO) > category-specific skill.** This picks the LANE, not the first tool call — in the Academic lane the first tool call is still `brainstorming`/`EnterPlanMode`, and the course CLAUDE.md is read inside that planning step. Non-trivial domain-skill tasks (Data/Documents/Frontend/DevOps/Engineering/Product) also plan first: the domain skill runs inside the Execute phase, not instead of it (e.g. "帮我做个PPT" → outline first, THEN `revealjs`/`pptx`).
 
 ### Task-specific planning chains
-> The 6-row per-domain table (Assignment/Report, Data Analysis, Network Lab, Study/Review, Code Feature, Any other) lives in `references/planning-chains.md` — it is the 5-Step Loop applied per domain. Load it when starting a domain task.
+> The 6-row per-domain table lives in `references/planning-chains.md` — load it when starting a domain task.
 
 ### Delegation priority
-When delegating parallel work, pick ONE orchestration method (mutually exclusive):
-1. **Agent teams** (spawn parallel agents in one message; coordinate via SendMessage — the old `TeamCreate` tool is retired) → ONLY when ALL THREE hold: (a) 3+ files, (b) 2+ distinct domains, AND (c) agents must exchange state mid-task. If any one is false, use option 2 or inline work.
-2. **`dispatching-parallel-agents`** → 2+ truly independent tasks that share no state (e.g., 3 unrelated bug fixes)
-3. **Agent tool (sequential)** → sequential tasks in same session; add a second review agent when two-stage review is warranted
-Skip all for: single-file edits, quick lookups, trivial one-liners.
+Pick ONE orchestration method for parallel work (mutually exclusive):
+1. **Agent teams** (parallel agents in one message + SendMessage; `TeamCreate` is retired) → ONLY when ALL THREE hold: 3+ files, 2+ distinct domains, AND mid-task state exchange. Any one false → option 2 or inline work.
+2. **`dispatching-parallel-agents`** → 2+ truly independent tasks, no shared state (e.g., 3 unrelated bug fixes).
+3. **Agent tool (sequential)** → sequential tasks; add a second review agent when two-stage review is warranted.
+Skip all for trivial tasks.
 
 ### Agency Agents (`~/.claude/agents/`)
-Check `~/.claude/references/agent-routing.md` for the full index. **Skills > Agents** for coding; Agents for domains where no skill exists. The trigger-keyword → agent-division table is in `references/skill-routing.md` (Part 1); consult it when no skill matches and the task fits an Agency domain.
+**Skills > Agents** for coding; Agents when no skill matches and the task fits marketing/sales/product/PM/game/XR/compliance/finance. Index: `references/agent-routing.md`; trigger table: `references/skill-routing.md` (Part 1).
 
 ## Fact-Check Before Denying — MANDATORY
 - **NEVER say "X doesn't exist / isn't available / isn't supported" without first doing a WebSearch**

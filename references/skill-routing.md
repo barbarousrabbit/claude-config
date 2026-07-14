@@ -31,7 +31,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 
 **Matching mechanism:**
 - Fire on **either** the English scenario **OR** any Chinese trigger phrase — both map to the same skill.
-- **Partial/fuzzy match counts**: a single keyword hit is enough; never require the whole phrase ("做小程序" alone → `taro-miniprogram`).
+- **Partial/fuzzy match counts**: a single keyword hit is enough; never require the whole phrase ("做海报" alone → `canvas-design`).
 - **Multiple rows match** → resolve by precedence first (**Academic > Planning > category-specific skill**, per CLAUDE.md Routing priority); within the same tier, run the most specific row (the one whose parenthetical context matches the user's situation). When the cell shows `→` or `+`, chain/combine those skills in order.
 - **Unsure?** Invoke the candidate skill anyway — a wrong load is cheap, a missed skill is not.
 - **No row matches** but task fits marketing/sales/product/PM/game/XR/compliance/finance → fall back to an Agency Agent (see `~/.claude/references/agent-routing.md`).
@@ -71,8 +71,6 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | **Languages** | edits .py / uses pip / Django / Flask / pandas / "写Python" / "Python脚本" / "pip/Django/Flask/pandas" | `python-pro` |
 | | edits .ts / TS generics / type errors / monorepo types / "写TypeScript" / "类型报错" / "TS泛型" / "类型不对" | `typescript-pro` |
 | | edits .js / vanilla JS / Node.js without TS / "写JavaScript" / "原生JS" / "Node脚本" | `javascript-pro` |
-| | edits .go / goroutines / Go modules / "写Go" / "Go并发" / "goroutine" / "Go模块" | `golang-pro` |
-| | edits .rs / Cargo / ownership / lifetimes / "写Rust" / "所有权" / "生命周期" / "借用检查" | `rust-engineer` |
 | | writes SQL / slow query / schema design / indexing / "写SQL" / "查询慢" / "建索引" / "表结构设计" | `sql-pro` + `database-optimizer` |
 | **Frontend** *(all build tasks MUST follow UI Design Protocol §3-step chain)* | builds any web page, Vue/React component, or UI (generic) / "做网页" / "写组件" / "做个页面" / "做UI" | `ui-ux-pro-max` → `frontend-design` → `critique` |
 | | builds dashboard / admin panel / data tool / product UI / "做后台" / "管理面板" / "仪表盘" / "数据看板" | `ui-ux-pro-max` → `interface-design` → `critique` |
@@ -84,7 +82,6 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | configures Tailwind / design tokens / theme CSS / "配Tailwind" / "主题配置" / "设计token" | `tailwind-theme-builder` → `shadcn-ui` |
 | | needs brand palette from a hex / Tailwind color tokens / WCAG / "品牌配色" / "调色板" / "颜色token" / "对比度" | `color-palette` |
 | | works with Next.js / app router / SSR / server actions / "Next.js" / "做SSR" / "服务端渲染" / "server action" | `nextjs-pro` |
-| | builds WeChat mini-program / Taro pages / NutUI components / "做小程序" / "微信小程序" / "Taro页面" | `taro-miniprogram` + `taro-miniprogram-ui` |
 | | builds React Native / Expo mobile app / "做App" / "React Native" / "Expo" / "做手机应用" | `vercel-react-native-skills` + `ui-ux-pro-max` |
 | | checking mobile display / responsiveness issues / "手机显示" / "响应式检查" / "适配有问题" | `responsiveness-check` + `adapt` |
 | | running a live UX walkthrough / QA sweep in browser / "UX走查" / "体验检查" / "浏览器里过一遍" | `ux-audit` |
@@ -147,17 +144,12 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | **DevOps** | joining unfamiliar codebase / onboarding new teammate / needs map of "what does what" / "看看这个项目" | `codebase-onboarding` |
 | | sets up Docker / K8s / cloud infra / deployment / "部署" / "写Dockerfile" / "配环境" / "搭环境" | `devops-engineer` |
 | | writes CI/CD pipeline configs from scratch / GitHub Actions / GitLab CI / "写CI/CD" / "写流水线" / "配置Actions" | `ci-cd-pipeline-builder` |
-| | designs monitoring / logging / alerting / SLI/SLO / Grafana / "监控" / "日志" / "告警" / "可观测性" | `observability-designer` |
-| | manages production incidents / severity / post-mortem / "生产故障" / "事故响应" / "出故障了" | `incident-commander` |
-| | sets up secret management / HashiCorp Vault / cloud secret stores / "密钥管理" / "配Vault" / "管理密码" | `secrets-vault-manager` |
-| | navigates monorepos / Nx / Turborepo / dependency graph / "Monorepo" / "大仓库" / "多包管理" | `monorepo-navigator` |
 | | designs system architecture / API contracts / "系统架构" / "API设计" | `api-and-interface-design` (+ Software Architect agent for large systems) |
 | | builds MCP server / tool integration / "做MCP" / "MCP服务器" / "工具集成" | `mcp-builder` |
 | **Product & Business** | defines product KPIs / metric dashboards / cohort analysis / "产品指标" / "KPI" / "留存分析" | `product-analytics` |
 | | RICE prioritization / PRD templates / customer interviews / "产品规划" / "PRD" / "优先级排序" | `product-manager-toolkit` |
 | | sprint planning / velocity tracking / retrospectives / "Sprint规划" / "敏捷" / "站会" / "迭代" | `scrum-master` |
 | | financial ratio analysis / DCF valuation / budget variance / "财务分析" / "DCF" / "估值" / "预算" | `financial-analyst` |
-| | SaaS metrics / ARR / MRR / churn / LTV / CAC / "SaaS指标" / "月收入" / "客户流失" | `saas-metrics-coach` |
 | | SEO site audit / technical SEO / ranking issues / "SEO审计" / "为什么没排名" / "技术SEO" | `seo-audit` |
 | **Research** | asks about recent trends / last 30 days / "最近有什么趋势" | `last30days` |
 | | scrapes a webpage / crawls docs / real-time web search with full content / "抓网页" / "爬数据" / "抓取网站" | `firecrawl` (requires FIRECRAWL_API_KEY) |
@@ -167,10 +159,6 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | writing or editing a skill SKILL.md file / "写SKILL.md" / "编辑skill" / "改技能" | `skill-creator` |
 | | completes non-trivial debugging / wants to extract reusable knowledge / "提取经验" / "总结教训" / "记录踩坑" | `claudeception` |
 | **Apple** *(Swift/SwiftUI skill family removed 2026-07-14 — reinstall if native iOS/macOS work resumes)* | Apple HIG-compliant UI / SF Symbols / iOS-macOS native design / "苹果设计规范" / "HIG" | `apple-hig-designer` |
-| **dbt (Analytics Eng.)** | builds/modifies dbt models, ref()/source(), SQL transforms / "dbt建模" | `using-dbt-for-analytics-engineering` |
-| | runs dbt CLI commands (run/test/build/compile) / "跑dbt" | `running-dbt-commands` |
-| | adds dbt unit tests (mock inputs, expected outputs) / "dbt单元测试" | `adding-dbt-unit-test` |
-| | dbt Semantic Layer — metrics/dimensions/entities/MetricFlow / "dbt语义层" | `building-dbt-semantic-layer` |
 | **DuckDB** | queries data files with SQL / ad-hoc analysis / "用SQL查数据文件" | `duckdb-query` |
 | | attaches a DuckDB database file / explores schema / "挂载数据库" | `duckdb-attach-db` |
 | | converts data file format (CSV↔Parquet↔JSON↔Excel) / "转parquet" / "导出xlsx" | `duckdb-convert-file` |
