@@ -50,7 +50,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | web dev assignment / "做网页作业" / HTML / CSS / JavaScript for course work | Read rubric → `EnterPlanMode` → `frontend-design` + `javascript-pro` → `/check-assignment` |
 | | network lab / "配网络" / "做实验" / Packet Tracer / VLAN / OSPF / STP / subnetting | Read requirements → `EnterPlanMode` → configure → verify |
 | | needs study notes / "帮我看课件" / "复习" / "总结" / "详细解析" / "备考" / exam prep | `EnterPlanMode` (reading plan) → read all materials → synthesize `Course Notes.md` or `详细解析.docx` |
-| | asks about course content / "这个概念什么意思" / "解释一下" / "不懂" / "teach me" / "怎么做" | Read course notes first → explain with analogies (beginner-friendly per project CLAUDE.md) |
+| | asks about course content / "这个概念什么意思" / "解释一下" / "不懂" / "怎么做" | Read course notes first → explain with analogies (beginner-friendly per project CLAUDE.md) |
+| | wants a TUTOR for deep learning of a topic / Socratic guided study / progress tracked across sessions / "教我" / "当我的导师" / "深入学习" / "苏格拉底式" / "tutor me" | `professor-synapse` (learning sessions ONLY — not assignments, not quick lookups) |
 | | "帮我看看" / "改一下" / review partial work / "check my work" | Read work → compare against rubric/requirements → give feedback |
 | | "检查作业" / "check assignment" / "帮我查" / wants rubric review | `/check-assignment` (read rubric → compare point by point) |
 | | text sounds AI / Turnitin risk / "去AI痕迹" / "humanize" / "降重" — **academic context** (report / paper / thesis / assignment) | `humanizer_academic` (26 patterns, preserves technical terms, citations, data, academic tone) |
