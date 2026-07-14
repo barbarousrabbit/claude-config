@@ -65,7 +65,7 @@ When multiple categories match, use this precedence: **Academic > Planning (CEO)
 
 ### Delegation priority
 When delegating parallel work, pick ONE orchestration method (mutually exclusive):
-1. **`TeamCreate`** → ONLY when ALL THREE hold: (a) 3+ files, (b) 2+ distinct domains, AND (c) agents must exchange state mid-task (e.g., frontend + backend + tests). If any one is false, use option 2 or inline work.
+1. **Agent teams** (spawn parallel agents in one message; coordinate via SendMessage — the old `TeamCreate` tool is retired) → ONLY when ALL THREE hold: (a) 3+ files, (b) 2+ distinct domains, AND (c) agents must exchange state mid-task. If any one is false, use option 2 or inline work.
 2. **`dispatching-parallel-agents`** → 2+ truly independent tasks that share no state (e.g., 3 unrelated bug fixes)
 3. **Agent tool (sequential)** → sequential tasks in same session; add a second review agent when two-stage review is warranted
 Skip all for: single-file edits, quick lookups, trivial one-liners.
@@ -115,14 +115,8 @@ Syncing `~/.claude` to GitHub is automated by the hooks (see Available Tools bel
 - In memory files, code samples, commit messages, and skills, redact as `<REDACTED>` or `${ENV_VAR}`. A real token in an example counts as a leak.
 - Before writing a user-supplied value into a tracked file, ask: would this show up in `git log`? If yes and it's sensitive, don't write it.
 
-## Available Tools (optional — may not be configured on all devices)
-
-| MCP | Use when | Fallback if unavailable |
-|-----|----------|------------------------|
-| `fetch` | Read web pages, docs, API refs | Use `WebFetch` tool |
-| `memory` | Persist facts across sessions | Use auto memory files |
-| `sequential-thinking` | Complex multi-step analysis | Think step-by-step inline |
-| `github` | PRs, issues, repo search | Use `gh` CLI via Bash |
+## Available Tools
+Optional MCPs (`fetch` / `memory` / `sequential-thinking` / `github`) exist on some devices only; the built-in equivalents (WebFetch, memory files, inline reasoning, `gh` CLI) are always the fallback — never block on a missing MCP.
 
 **Hooks** (auto): SessionStart = `hook-session-start.sh` (push leftover changes → pull latest → skill staleness check); UserPromptSubmit = `hook-user-prompt.sh` (Layer 0 `[reply-language]` re-anchor, then `claudeception-activator.sh` skill-gate); SessionEnd = `sync-push.sh` (auto-commit & push).
 **Custom commands**: `/explain` · `/debug` · `/summarize` · `/check-assignment` · `/review` · `/security-scan` · `/git:cm` · `/git:cp` · `/git:pr`
@@ -154,10 +148,7 @@ Maintenance: a Learned Rule that cites a hook/script as its enforcement MUST be 
 
 ### Learned Rules
 
-**NEVER let the Language rule drift below position 1 in any CLAUDE.md** (2026-05-04):
-- Root cause: Language — CRITICAL was buried at position 4; model's first-token generation ignored it and output Korean instead of Chinese for a Chinese-input message
-- Korean/Chinese confusion is a known East Asian language bleed risk in long instruction contexts
-- Fix: Language rule must always be the FIRST section — before Progress, Data Integrity, everything
+**NEVER let the Language rule drift below position 1 in any CLAUDE.md** (2026-05-04): when it sat at position 4 the model ignored it and output Korean for a Chinese message — East Asian language bleed in long contexts. Keep it the FIRST section, always.
 
 **NEVER respond or create files before the planning-skill gate for academic tasks** (2026-04-20, mechanism re-verified 2026-06-10):
 - When a message asks for assignment/exam/report WORK — a brief, rubric, "作业", "整理成 + 作业/assignment", exam/期末 prep → the FIRST tool call must be the **brainstorming** skill (vague spec) or **EnterPlanMode** (built-in plan-mode tool, NOT a Skill; clear spec/rubric), not text output. UNLESS the user explicitly said "直接做 / just do it" — then skip straight to Assess→Execute (read the rubric, then build).
@@ -168,15 +159,8 @@ Maintenance: a Learned Rule that cites a hook/script as its enforcement MUST be 
 New project: scan stack → match routing table → write `.claude/CLAUDE.md` (applicable skills + conventions).
 
 ## Skill Creation (Meta-Rules)
-- Skill value = **safety override** (force-correct bad input) + **consistency** (shared patterns) + **explanation-driven** output
-- Good evals: `without_skill` must NOT pass by common sense alone; verifiable from output files
-- ALWAYS include explicit override: *"If user provides [bad input], change to [correct] and explain why"*
-- **Description must describe trigger scenarios, not capabilities** — "When user asks to compare competitors" not "Competitive analysis tool"
-- **Description length ~80 chars, SKILL.md body ≤200 lines** — expand description (more trigger keywords = higher hit rate), compress SKILL.md body (shorter = more context window for actual task = better output). Move detailed templates to `references/`. One up, one down.
+> Full meta-rules live in `references/skill-creation-rules.md` — load when creating or editing a skill. Core: description = trigger scenarios (not capabilities), rich in keywords; SKILL.md body ≤200 lines with templates pushed to `references/`.
 
 ## New Device Setup (Windows)
-Run once in **Git Bash** (`~` must resolve to Windows home `C:\Users\<you>`):
-```bash
-bash ~/.claude/scripts/bootstrap.sh
-```
+One-time, in **Git Bash** (`~` = `C:\Users\<you>`): `bash ~/.claude/scripts/bootstrap.sh` → put real GitHub PAT into `~/.claude/.mcp.json` → restart Claude Code.
 Then edit `~/.claude/.mcp.json` → replace `ghp_YOUR_TOKEN_HERE` with real GitHub PAT → restart Claude Code.

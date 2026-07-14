@@ -1,5 +1,11 @@
 # Skills Audit 2026-07-14
 
+## Round 2 (same day): CEO decay + UI direction coverage + CLAUDE.md slimming
+
+- **CEO mode verdict**: mechanism intact (hooks + academic gate + surviving skills all verified). ONE real decay found and fixed: `TeamCreate` tool no longer exists in the harness (Agent tool native teams replaced it) — Delegation priority #1 rewritten. Community consensus 2026: no "stronger CEO skill" exists; the play is lean CLAUDE.md + built-in plan mode + hooks. Context-rot threshold ≈150-200 instructions — stay under it.
+- **UI direction coverage**: motion was the weakest axis (only `animate`). Added `emil-design-eng` + `improve-animations` from emilkowalski/skills (animations.dev author). Did NOT install apple-design (overlaps apple-hig-designer/brand-design-md) or animation-vocabulary (human-facing). Updated `ui-ux-pro-max` to upstream (nextlevelbuilder): 97→161 palettes, +161 product types, +99 UX guidelines.
+- **CLAUDE.md slimming**: 182 lines/20.5KB → see measured value in commit; MCP table→2 lines, Skill Creation→references/skill-creation-rules.md, Learned Rule #1 + Device Setup compressed. MANDATORY behavior sections (Language/Fact-Check/Data Integrity/Secrets/Shell/UI Protocol) deliberately untouched.
+
 **What**: Removed 41 skill dirs (183 → 145 entries incl. 3 new adds); disabled superpowers plugin in `settings.json` `enabledPlugins`; trimmed `brainstorming`; synced all routing tables.
 
 **Why**: 183 skill descriptions injected ~10.6k tokens into EVERY session (42,313 chars measured). The superpowers chain (brainstorming → writing-plans → executing-plans → subagent-driven-development → requesting-code-review) forced full design ceremony on every task including config changes, and spawned 3 fresh-context agents per task. Community evidence: obra/superpowers#953 (100% quota burned in 5 min), #1456 (auto-injection complaint). CEO Operating Mode in CLAUDE.md already covers the same loop.
@@ -12,4 +18,4 @@
 
 **How**: All removals via `git rm` in ~/.claude repo — recoverable with `git revert` of commit `refactor(skills): audit 2026-07`. Routing tables (`references/skill-routing.md`, `skill-chains.md`, `planning-chains.md`, `ui-design-protocol.md`) and CLAUDE.md Delegation priority were synced in the same commit — when adding/removing skills, ALWAYS grep these 5 files for dangling references (the audit found a pre-existing dangling `api-designer` ref, now fixed to `api-and-interface-design`).
 
-**Per-session math**: description overhead ~10.6k → ~7.6k tokens (Swift family alone was ~1.5k; senior-*/scrum descriptions were 6-10x the ~80-char guideline). Remaining long descriptions (scrum-master 767, huggingface-llm-trainer 674, autoresearch-agent 642, visual-explainer 596) left as-is — they are trigger-keyword rich; compress only if further savings needed.
+**Per-session math** (measured 2026-07-14, recursive scan, full multi-line descriptions): 198 SKILL.md / 56,678 chars ≈ 14.2k tokens → 152 SKILL.md / 41,835 chars ≈ 10.5k tokens = **-3.7k tokens every session (-26%)**. The bigger, unmeasurable win is the removed superpowers invoke-chain (forced writing-plans→executing-plans handoffs + 3 fresh-context subagents per task). Remaining long descriptions (scrum-master 767, huggingface-llm-trainer 674, autoresearch-agent 642, visual-explainer 596) left as-is — they are trigger-keyword rich; compress only if further savings needed.

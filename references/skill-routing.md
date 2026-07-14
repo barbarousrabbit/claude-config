@@ -101,7 +101,8 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | design too safe / generic / boring / needs more impact / "太平了" / "没特色" / "太普通" | `bolder` |
 | | design too loud / aggressive / cluttered / "太花了" / "太吵了" / "太花哨" | `quieter` |
 | | UI too gray / colorless / monotone / "太灰了" / "没颜色" / "加点颜色" | `colorize` |
-| | adding hover effects / transitions / micro-interactions / "加动效" / "加动画" | `animate` |
+| | adding hover effects / transitions / micro-interactions / "加动效" / "加动画" | `animate` (quick pass) or `emil-design-eng` (component motion decisions, taste-level polish) |
+| | animation audit across whole codebase / motion roadmap / "动效审计" / "整体动效体检" | `improve-animations` |
 | | UI cluttered / over-designed / needs simplification / "太复杂了" / "简化一下" / "精简" | `distill` |
 | | needs error states / i18n / loading states / edge cases / "加兜底" / "加载状态" / "异常处理" | `harden` |
 | | component inconsistent / doesn't match design system / "风格不统一" / "不一致" | `normalize` |
