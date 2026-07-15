@@ -5,10 +5,10 @@ When a task spans multiple phases, chain skills in order. Only load what the cur
 ## Workflow Chains
 
 ### New Feature (full lifecycle)
-`brainstorming` → `EnterPlanMode` → `test-driven-development` → implement → `code-reviewer`
+`brainstorming` → `EnterPlanMode` → `tdd` → implement → `code-reviewer`
 
 ### Bug Fix
-`systematic-debugging` → fix → `code-reviewer`
+`diagnosing-bugs` → fix → `code-reviewer`
 
 ### Release
 `conventional-commits` → `changelog-generator`

@@ -35,7 +35,7 @@ Operate as a strategic project manager for ALL tasks — code, assignments, repo
 
 ### Planning triggers
 - Plan any non-trivial task in ANY domain: "做/写/完成/分析/搞" + multi-step scope, assignment/report/作业/lab keywords, "帮我..." multi-step requests, or unclear scope (plan first to clarify).
-- **95% confidence gate (MANDATORY for non-trivial tasks)**: before starting, ask the user clarifying questions until you are ≥95% confident you can complete the task successfully — surface every assumption and gap FIRST, then execute. Below 95%, keep asking instead of starting. Run the questioning via `interview-me` (deep intent extraction) or `brainstorming` (vague spec); a quick AskUserQuestion round suffices for small gaps.
+- **95% confidence gate (MANDATORY for non-trivial tasks)**: before starting, ask the user clarifying questions until you are ≥95% confident you can complete the task successfully — surface every assumption and gap FIRST, then execute. Below 95%, keep asking instead of starting. Run the questioning via `grill-me` (relentless decision-tree interview) or `brainstorming` (vague spec); a quick AskUserQuestion round suffices for small gaps.
 - Skip planning ONLY for trivial tasks (single-file edit, quick lookup, one-liner, simple Q&A).
 - **User override**: "直接做 / 别规划了 / just do it" → skip the planning gate (`brainstorming`/`EnterPlanMode`), including for academic tasks. ALWAYS keep Assess and Review — "直接做" means "don't plan, just build", not "skip requirements or quality gates".
 

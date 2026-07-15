@@ -56,7 +56,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | "检查作业" / "check assignment" / "帮我查" / wants rubric review | `/check-assignment` (read rubric → compare point by point) |
 | | text sounds AI / Turnitin risk / "去AI痕迹" / "humanize" / "降重" — **academic context** (report / paper / thesis / assignment) | `humanizer_academic` (26 patterns, preserves technical terms, citations, data, academic tone) |
 | | text sounds AI / "去AI痕迹" / "humanize" / "降重" — **non-academic context** (blog / email / marketing / general) | `humanizer` (rewrite to reduce AI fingerprint, keep meaning) |
-| **Execution** | hits error / stack trace / test failure / "why is this broken" / "报错" / "出错了" / "跑不了" / "功能不对" | `systematic-debugging` |
+| **Execution** | hits error / stack trace / test failure / "why is this broken" / "报错" / "出错了" / "跑不了" / "功能不对" | `diagnosing-bugs` |
 | | says "review" / PR ready / wants code feedback / "评审代码" / "审一下" / "看下我的代码" / "PR好了" | `/code-review` (built-in) |
 | | ready to commit / asks for commit message / "写commit" / "提交信息怎么写" / "commit message" | `conventional-commits` |
 | | says "commit and push" / "push this" / "save my work" / "提交代码" / "推代码" | `git-pushing` |
@@ -125,9 +125,9 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | code is slow / page loads sluggishly / "why is this slow" / "为什么这么慢" (app-level) | `performance-profiler` |
 | | slow query / query optimization / "查询太慢" (DB-level) | `database-optimizer` + `sql-pro` |
 | | checking dependencies for vulnerabilities / license compliance / outdated packages / "检查依赖" | `dependency-auditor` |
-| | writes tests / adds tests to existing code / coverage gaps / "写个测试" / "跑测试" / "跑一下测试" / "生成测试" / "测试覆盖率" | `test-driven-development` |
+| | writes tests / adds tests to existing code / coverage gaps / "写个测试" / "跑测试" / "跑一下测试" / "生成测试" / "测试覆盖率" | `tdd` |
 | | Playwright E2E tests / fixing flaky tests / migrating from Cypress / "Playwright测试" / "E2E测试" | `webapp-testing` + pw plugin (`/pw:generate`, `/pw:fix`) |
-| | implementing new feature/bugfix via TDD (test-first) / "先写测试" | `test-driven-development` |
+| | implementing new feature/bugfix via TDD (test-first) / "先写测试" | `tdd` |
 | | generates API integration tests / contract tests / "API测试" / "接口测试" | `api-test-suite-builder` |
 | | tests web app in browser / screenshots / clicks / "浏览器测试" / "页面截图测试" / "点击测试" | `webapp-testing` |
 | | runs automated accessibility scan / axe-core / WCAG compliance / "无障碍检测" | `claude-a11y` |
