@@ -130,6 +130,11 @@ Maintenance: a Learned Rule that cites a hook/script as its enforcement MUST be 
 
 ### Learned Rules
 
+**NEVER send an email without the user's explicit confirmation given after reviewing the draft** (2026-07-21, global):
+- Applies to every send-capable channel acting as the user: Outlook/Gmail connector send_mail / send_draft / forward / reply-send, and any future messaging connector delivering to third parties.
+- A task request like "发给X / send this to HR" authorizes COMPOSING ONLY: create the draft, show the user recipients + subject + body (or a faithful summary), then STOP and wait. Send only after the user confirms in a follow-up message ("发/确认/send it"). No confirmation → leave the draft in Drafts and give its webLink.
+- Origin: 2026-07-21 Lark Fix session — a staff-data email was sent to HR/accounts directly from the initial "发给hr和account" instruction; the user then set this global confirm-before-send rule. Creating drafts, calendar responses, and reading mail are NOT gated by this rule; anything that transmits a composed message to another person is.
+
 **NEVER respond or create files before the planning-skill gate for academic tasks** (2026-04-20, mechanism re-verified 2026-06-10):
 - When a message asks for assignment/exam/report WORK — a brief, rubric, "作业", "整理成 + 作业/assignment", exam/期末 prep → the FIRST tool call must be the **brainstorming** skill (vague spec) or **EnterPlanMode** (built-in plan-mode tool, NOT a Skill; clear spec/rubric), not text output. UNLESS the user explicitly said "直接做 / just do it" — then skip straight to Assess→Execute (read the rubric, then build).
 - A course code (e.g. 32011) is NOT itself a trigger: it gates only alongside a real academic task word, and a code appearing solely in a file path never triggers.
