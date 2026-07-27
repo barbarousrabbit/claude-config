@@ -1,0 +1,19 @@
+# Third-party skill repositories installed per device.
+#
+# WHY THIS FILE EXISTS
+# These skills live in their own git repos, so they are .gitignore'd from
+# claude-config (tracking them would either bloat this repo or create broken
+# gitlinks). Without this manifest a fresh clone silently lacks them and there
+# is no record of what was supposed to be there -- exactly how skills/gstack
+# and skills/humanizer became empty, unrecoverable directories (removed
+# 2026-07-27; gstack was github.com/garrytan/gstack, humanizer's origin was
+# already unrecoverable by then).
+#
+# FORMAT: <dest-path-relative-to-~/.claude><TAB><git-clone-url>
+# Lines starting with # and blank lines are ignored.
+# Consumed by scripts/install-third-party-skills.sh (called from bootstrap.sh).
+#
+# TO ADD a third-party skill: add its line here AND a matching entry in
+# .gitignore, then commit both. Never let one exist without the other.
+
+skills/apple-hig-designer	https://github.com/axiaoge2/Apple-Hig-Designer.git

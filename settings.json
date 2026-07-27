@@ -26,9 +26,7 @@
       "Bash(mkfs:*)",
       "Bash(format:*)"
     ],
-    "additionalDirectories": [
-      "C:\\Users\\Xuyu Zhang\\.claude"
-    ]
+    "additionalDirectories": []
   },
   "model": "claude-fable-5",
   "hooks": {

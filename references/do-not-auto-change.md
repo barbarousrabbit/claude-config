@@ -20,6 +20,7 @@ Established 2026-06-03 during a config audit, after a multi-agent pass repeatedl
 ## Auto-managed / out of scope
 - `plugins/blocklist.json`, `plugins/*.json` — auto-managed by the plugin system and git-ignored. Do not hand-edit.
 - `settings.json` `additionalDirectories` — the harness may rewrite per session; the child entries may be intentional. Do not "dedupe" without confirming harness prefix-matching behaviour.
+  - **2026-07-27, user sign-off**: the single entry `C:\Users\Xuyu Zhang\.claude` was DELETED (array left empty). It was a stale absolute path carried over from another device/account — verified absent on this machine (`/c/Users/` holds only `zhang`), so it was a dead entry, not an intentional one. Rule unchanged for any FUTURE entries: still ask before touching. Never re-add an absolute per-user path here; `~/.claude` itself needs no entry.
 - **Project file** `e:\UTS\2026 Semester  1\CLAUDE.md` and **course CLAUDE.md files** — the "NEVER include AI usage declaration" rule, "AI Trap Detection" procedure, and document-formatting rules live there. A global-config pass must not touch them.
 
 ## How to use this file

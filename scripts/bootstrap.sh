@@ -29,12 +29,35 @@ source "$CLAUDE_DIR/local-env.sh" 2>/dev/null || true
 ok "Environment detected (Python=${CLAUDE_PYTHON:-NOT FOUND}, OS=${CLAUDE_OS:-unknown})"
 
 # -- 1. Git branch tracking --
+# Never hard-code the branch name: a device whose git defaults to `master`
+# would silently skip this step (that is exactly what happened before
+# 2026-07-27). Resolve the remote's real default branch, then make the local
+# branch match it so every device converges on one name.
 echo "-> Configuring git tracking..."
 cd "$CLAUDE_DIR"
-if ! git rev-parse --abbrev-ref --symbolic-full-name @{u} &>/dev/null 2>&1; then
-    git branch --set-upstream-to=origin/main main 2>/dev/null || true
+REMOTE_HEAD=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||')
+if [ -z "$REMOTE_HEAD" ]; then
+    git remote set-head origin --auto &>/dev/null
+    REMOTE_HEAD=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||')
 fi
-ok "Git tracking configured"
+REMOTE_HEAD="${REMOTE_HEAD:-main}"
+LOCAL_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+
+if [ -n "$LOCAL_BRANCH" ] && [ "$LOCAL_BRANCH" != "$REMOTE_HEAD" ]; then
+    if git show-ref --verify --quiet "refs/heads/$REMOTE_HEAD"; then
+        warn "Local branch '$LOCAL_BRANCH' differs from remote default '$REMOTE_HEAD' and both exist — resolve manually"
+    else
+        git branch -m "$LOCAL_BRANCH" "$REMOTE_HEAD" 2>/dev/null \
+            && info "Renamed local branch '$LOCAL_BRANCH' -> '$REMOTE_HEAD'"
+        LOCAL_BRANCH="$REMOTE_HEAD"
+    fi
+fi
+git branch --set-upstream-to="origin/$REMOTE_HEAD" "$LOCAL_BRANCH" &>/dev/null || true
+ok "Git tracking configured (branch '$LOCAL_BRANCH' -> origin/$REMOTE_HEAD)"
+
+# -- 1b. Third-party skill repos --
+echo "-> Installing third-party skill repos..."
+bash "$CLAUDE_DIR/scripts/install-third-party-skills.sh" || warn "Some third-party skills failed to install (see above)"
 
 # -- 2. Python dependencies --
 echo "-> Installing Python skill dependencies..."
