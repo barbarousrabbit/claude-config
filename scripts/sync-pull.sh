@@ -60,11 +60,19 @@ if [ -d "$CLAUDE_DIR/.git" ] && git -C "$CLAUDE_DIR" remote get-url origin &>/de
         fi
     fi
 
-    # Update nested skill repos (e.g. gstack, humanizer) that have their own .git.
-    # These are gitlinks WITHOUT a .gitmodules entry, so `git submodule update`
-    # cannot drive them — pull each directly instead. --autostash tolerates CRLF
-    # noise; --rebase preserves any local commits; abort cleanly on conflict so a
-    # session start never hangs or leaves a repo mid-rebase.
+    # Refresh nested skill repos that carry their own .git (currently just
+    # apple-hig-designer). They are gitignored rather than tracked, so their
+    # clone URLs live in scripts/third-party-skills.tsv and are installed by
+    # install-third-party-skills.sh; this loop only keeps existing ones current.
+    #
+    # This used to say "e.g. gstack, humanizer". Those were gitlinks with no
+    # .gitmodules entry, which `git submodule update` cannot drive — they ended
+    # up as empty directories with their .git gone and their origins lost, and
+    # were removed 2026-07-27. The manifest exists so that cannot recur.
+    #
+    # --autostash tolerates line-ending churn; --rebase preserves any local
+    # commits; abort cleanly on conflict so a session start never hangs or
+    # leaves a repo mid-rebase.
     for sub in "$CLAUDE_DIR"/skills/*/.git; do
         [ -e "$sub" ] || continue
         subdir=$(dirname "$sub")
