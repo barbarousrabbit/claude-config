@@ -17,7 +17,8 @@
       "NotebookEdit(*)",
       "Skill(*)"
     ],
-    "deny": [
+    "deny": [],
+    "ask": [
       "Bash(rm -rf:*)",
       "Bash(sudo rm -rf:*)",
       "Bash(git push --force:*)",
