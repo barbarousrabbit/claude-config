@@ -1,0 +1,51 @@
+# =============================================================
+# Line-ending policy — one canonical form, independent of each device's
+# core.autocrlf setting.
+# =============================================================
+# WHY: before 2026-07-27 this repo had no policy at all. Blobs happened to be
+# stored LF, but only because this device runs core.autocrlf=true, which
+# converts on commit. That is a per-device git *installation* setting, not a
+# repo guarantee: a device set to false or input would start committing CRLF
+# blobs, and every untouched file would then show as fully rewritten on the
+# other machines. A verified renormalize on 2026-07-27 touched 0 existing
+# files, confirming this pins the status quo rather than changing it.
+#
+# NOT the cause of the settings.json conflict-marker corruption -- that was
+# .last-cleanup being tracked (see the note in .gitignore). Recorded here so
+# the wrong root cause does not get re-derived later.
+
+# Store every text file as LF in the repo AND check it out as LF.
+# text=auto lets git detect binary content; eol=lf pins the checkout form.
+* text=auto eol=lf
+
+# Shell scripts: LF is not cosmetic. MSYS2 bash tolerates CRLF, but WSL bash
+# and any non-Windows shell fail with "$'\r': command not found".
+*.sh text eol=lf
+
+# Windows-native scripts are the deliberate exception — cmd.exe needs CRLF.
+# None exist today; this rule is here so adding one cannot silently break it.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary — must never be line-ending normalized or diffed as text.
+# The 54 tracked .ttf files are the reason this section is explicit rather
+# than relying on text=auto detection alone.
+*.ttf   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
+*.eot   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.pdf   binary
+*.docx  binary
+*.xlsx  binary
+*.pptx  binary
+*.zip   binary
+*.gz    binary
+*.pyc   binary
