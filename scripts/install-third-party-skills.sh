@@ -7,7 +7,9 @@
 # Deliberately NOT `set -e`: one unreachable repo must not abort the rest,
 # and this runs inside bootstrap where a hard exit would skip later steps.
 
-CLAUDE_DIR="$HOME/.claude"
+# Overridable so a fresh clone can be verified without touching the live
+# ~/.claude (that is how this script was tested on 2026-07-27).
+CLAUDE_DIR="${CLAUDE_DIR:-$HOME/.claude}"
 MANIFEST="$CLAUDE_DIR/scripts/third-party-skills.tsv"
 
 # Never let a credential prompt hang this (bootstrap may run unattended).

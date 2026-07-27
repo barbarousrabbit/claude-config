@@ -147,5 +147,24 @@ New project: scan stack → match routing table → write `.claude/CLAUDE.md` (a
 > Full meta-rules live in `references/skill-creation-rules.md` — load when creating or editing a skill. Core: description = trigger scenarios (not capabilities), rich in keywords; SKILL.md body ≤200 lines with templates pushed to `references/`.
 
 ## New Device Setup (Windows)
-One-time, in **Git Bash** (`~` = `C:\Users\<you>`): `bash ~/.claude/scripts/bootstrap.sh` → put real GitHub PAT into `~/.claude/.mcp.json` → restart Claude Code.
-Then edit `~/.claude/.mcp.json` → replace `ghp_YOUR_TOKEN_HERE` with real GitHub PAT → restart Claude Code.
+One-time, in **Git Bash** (`~` = `C:\Users\<you>`). Run in order — step 1 must
+come BEFORE the clone, and the clone step was missing from this list until
+2026-07-27 (it silently assumed `~/.claude` already existed):
+
+```bash
+git config --global core.longpaths true          # 1. before cloning
+git clone https://github.com/barbarousrabbit/claude-config.git ~/.claude
+bash ~/.claude/scripts/bootstrap.sh              # 3. deps, branch, 3rd-party skills
+```
+
+Then edit `~/.claude/.mcp.json` → replace `ghp_YOUR_TOKEN_HERE` with a real
+GitHub PAT → restart Claude Code.
+
+- **`core.longpaths` first**: the deepest tracked path is ~134 chars. Clone
+  into a short directory (`~/.claude` is fine) or Windows' 260-char MAX_PATH
+  truncates the checkout and files go missing with only a warning.
+- **`bootstrap.sh` is idempotent** — safe to re-run any time. It resolves the
+  remote's default branch (never assumes `main`), installs Python deps, and
+  clones the per-device skill repos listed in `scripts/third-party-skills.tsv`.
+- **Verify** with `bash ~/.claude/scripts/install-third-party-skills.sh` —
+  it reports installed/refreshed/failed and exits non-zero on any failure.
