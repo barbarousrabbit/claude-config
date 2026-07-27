@@ -25,6 +25,9 @@ teams/
 alireza-skills/
 
 # === Runtime state — session-specific, not for sync ===
+# .last-cleanup is a per-device timestamp rewritten every session. Tracking it
+# made every pull conflict, which is how conflict markers landed in settings.json.
+.last-cleanup
 learnings-queue.json
 plugins/installed_plugins.json
 skills/docx/scripts/office/helpers/__pycache__/

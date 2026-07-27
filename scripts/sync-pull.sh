@@ -38,7 +38,26 @@ if [ -d "$CLAUDE_DIR/.git" ] && git -C "$CLAUDE_DIR" remote get-url origin &>/de
 
     # Re-apply stashed changes only if something was stashed
     if echo "$STASH_OUT" | grep -q "Saved working directory"; then
-        git -C "$CLAUDE_DIR" stash pop --quiet 2>/dev/null || true
+        if ! git -C "$CLAUDE_DIR" stash pop --quiet 2>/dev/null; then
+            # A conflicted pop used to be swallowed by `|| true`. That left raw
+            # <<<<<<< markers inside settings.json, so the whole config failed to
+            # parse for the rest of the session and every permission rule silently
+            # stopped applying. Instead: keep the freshly pulled version of each
+            # conflicted file, and leave the stash intact so nothing is lost.
+            CONFLICTED=$(git -C "$CLAUDE_DIR" diff --name-only --diff-filter=U 2>/dev/null)
+            if [ -n "$CONFLICTED" ]; then
+                printf '%s\n' "$CONFLICTED" | while IFS= read -r f; do
+                    [ -n "$f" ] || continue
+                    git -C "$CLAUDE_DIR" checkout --ours -- "$f" 2>/dev/null || true
+                    git -C "$CLAUDE_DIR" reset -q HEAD -- "$f" 2>/dev/null || true
+                done
+                {
+                    echo "[sync-pull] stash pop conflicted — kept the pulled version of:"
+                    printf '%s\n' "$CONFLICTED" | sed 's/^/  /'
+                    echo "[sync-pull] your local copy is preserved; recover it with: git -C ~/.claude stash list"
+                } >&2
+            fi
+        fi
     fi
 
     # Update nested skill repos (e.g. gstack, humanizer) that have their own .git.
