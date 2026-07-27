@@ -1,0 +1,4925 @@
+<?xml version="1.0" encoding="UTF-8"?><w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16du="http://schemas.microsoft.com/office/word/2023/wordml/word16du" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16sdtfl="http://schemas.microsoft.com/office/word/2024/wordml/sdtformatlock" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh w16sdtfl w16du wp14">
+  <w:body>
+    <w:p w14:paraId="1C9ADAD4" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:before="1440"/>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:b/>
+          <w:sz w:val="44"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:t>Fake News Detection using NLP:</w:t>
+      <w:br/><w:t>A Comparative Study of TF-IDF and DistilBERT</w:t></w:r>
+      
+    </w:p>
+    <w:p w14:paraId="7BC9AFCF" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:before="480"/>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="36"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:t>42850 Natural Language Processing Algorithms</w:t>
+      <w:br/><w:t>Assessment 3 — Project Development</w:t><w:br/><w:t>University of Technology Sydney</w:t></w:r>
+      
+      
+    </w:p>
+    <w:p w14:paraId="036A8C44" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:before="720"/>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:b/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Group Members</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2993CE1E" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Xuyu Zhang  |  Student ID: 26025395</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="26571E54" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Tongji Huang  |  Student ID: 25694148</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="773356A7" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Tianyu Wang  |  Student ID: 25973203</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="07903238" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Qiushi Huang  |  Student ID: 25668904</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="41E33109" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Junjie Cheng  |  Student ID: 25658271</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="43DD03EE" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:before="480"/>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Due: 15 May 2026</w:t>
+      <w:br/><w:t>GitHub: https://github.com/barbarousrabbit/42850-fake-news-detection</w:t></w:r>
+      
+    </w:p>
+    <w:p w14:paraId="10EC9D40" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:sdt>
+      <w:sdtPr>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsiaTheme="minorEastAsia" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+          <w:lang w:val="zh-CN" w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:id w:val="-271241532"/>
+        <w:docPartObj>
+          <w:docPartGallery w:val="Table of Contents"/>
+          <w:docPartUnique/>
+        </w:docPartObj>
+      </w:sdtPr>
+      <w:sdtEndPr>
+        <w:rPr>
+          <w:rFonts w:cstheme="minorBidi"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+          <w:lang w:eastAsia="en-US"/>
+        </w:rPr>
+      </w:sdtEndPr>
+      <w:sdtContent>
+        <w:p w14:paraId="018AFA5C" w14:textId="4BB33BF1" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593" w:rsidP="001B666E">
+          <w:pPr>
+            <w:pStyle w:val="TOC"/>
+            <w:jc w:val="center"/>
+            <w:rPr>
+              <w:rFonts w:ascii="Times New Roman" w:eastAsia="宋体" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+              <w:sz w:val="32"/>
+              <w:szCs w:val="32"/>
+              <w:lang w:val="zh-CN" w:eastAsia="zh-CN"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:rFonts w:ascii="Times New Roman" w:eastAsia="宋体" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+              <w:sz w:val="32"/>
+              <w:szCs w:val="32"/>
+              <w:lang w:val="zh-CN" w:eastAsia="zh-CN"/>
+            </w:rPr>
+            <w:t>Table of Contents</w:t>
+          </w:r>
+        </w:p>
+        <w:p w14:paraId="4B63C290" w14:textId="3345EB28" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC1"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="24"/>
+            </w:rPr>
+            <w:fldChar w:fldCharType="begin"/>
+          <w:instrText xml:space="preserve"> TOC \o &quot;1-3&quot; \h \z \u </w:instrText><w:fldChar w:fldCharType="separate"/></w:r>
+          
+          
+          <w:hyperlink w:anchor="_Toc229324545" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Abstract</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324545 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>3</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="4D2BD8F1" w14:textId="70F3E4CE" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC1"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324546" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>1. Introduction</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324546 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>4</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="262E6C18" w14:textId="2EBC1809" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC1"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324547" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>2. Background: Challenges in Fake News Detection</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324547 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>5</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="5DF5A6B0" w14:textId="6D1D1B09" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324548" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>2.1 Challenge 1: Linguistic Style Manipulation</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324548 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>5</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="3408A334" w14:textId="30114AE8" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324549" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>2.2 Challenge 2: Data Quality and Source Artifact Bias</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324549 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>5</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="4A69BFA2" w14:textId="48F2DCAA" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324550" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>2.3 Challenge 3: Domain Shift and Cross-Domain Generalisation</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324550 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>6</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="55E9771A" w14:textId="2B8288F2" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC1"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324551" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>3. Methodology</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324551 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>7</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="788B04B2" w14:textId="077503F8" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324552" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>3.1 Dataset</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324552 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>7</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="08402238" w14:textId="1B611749" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324553" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>3.2 Text Preprocessing (TF-IDF Pipeline)</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324553 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>7</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="1F6D7412" w14:textId="55F027D5" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324554" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>3.3 Method 1: TF-IDF with Traditional ML Classifiers</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324554 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>7</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="450A9315" w14:textId="0CE911C0" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324555" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>3.4 Method 2: DistilBERT Fine-tuning</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324555 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>8</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="41B95D7A" w14:textId="73BAA0DA" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324556" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>3.5 Theoretical Justification: Why DistilBERT Should Outperform TF-IDF</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324556 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>8</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="7F43EAC8" w14:textId="7B1A20CB" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC1"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324557" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>4. Experiment Results</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324557 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>10</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="6B92F636" w14:textId="0A7E653B" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324558" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>4.1 TF-IDF Classifier Results</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324558 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>10</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="7FFC63AF" w14:textId="7684BC1B" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324559" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>4.2 DistilBERT Results</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324559 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>10</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="10892A56" w14:textId="656F96C4" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC2"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:ind w:left="440"/>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324560" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>4.3 Comparative Analysis</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324560 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>11</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="7929DF29" w14:textId="73182058" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC1"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324561" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>5. Conclusion</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324561 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>12</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="56631164" w14:textId="20AF0959" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC1"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324562" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>6. Team Member Contributions</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324562 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>13</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="319F1FF1" w14:textId="1150DA25" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:pStyle w:val="TOC1"/>
+            <w:tabs>
+              <w:tab w:val="right" w:leader="dot" w:pos="9350"/>
+            </w:tabs>
+            <w:rPr>
+              <w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi"/>
+              <w:noProof/>
+              <w:color w:val="auto"/>
+              <w:kern w:val="2"/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="28"/>
+              <w:lang w:eastAsia="zh-CN"/>
+              <w14:ligatures w14:val="standardContextual"/>
+            </w:rPr>
+          </w:pPr>
+          <w:hyperlink w:anchor="_Toc229324563" w:history="1">
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="aff9"/>
+                <w:rFonts w:eastAsia="Times New Roman"/>
+                <w:noProof/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>References</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:noProof/>
+                <w:webHidden/>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:tab/>
+            <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve"> PAGEREF _Toc229324563 \h </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>14</w:t><w:fldChar w:fldCharType="end"/></w:r>
+            
+            
+            
+            
+            
+            
+          </w:hyperlink>
+        </w:p>
+        <w:p w14:paraId="279B422A" w14:textId="409928A2" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+          <w:pPr>
+            <w:rPr>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="24"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:b/>
+              <w:bCs/>
+              <w:sz w:val="24"/>
+              <w:szCs w:val="24"/>
+              <w:lang w:val="zh-CN"/>
+            </w:rPr>
+            <w:fldChar w:fldCharType="end"/>
+          </w:r>
+        </w:p>
+      </w:sdtContent>
+    </w:sdt>
+    <w:p w14:paraId="58A75024" w14:textId="77777777" w:rsidR="00ED1593" w:rsidRPr="00ED1593" w:rsidRDefault="00ED1593">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:eastAsia="宋体"/>
+          <w:b/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="24"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="1870F328" w14:textId="3C2E5608" w:rsidR="00F65FA8" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="402D12EF" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="1"/>
+        <w:spacing w:before="280" w:after="120"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="0" w:name="_Toc229324545"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>Abstract</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="0"/>
+    </w:p>
+    <w:p w14:paraId="1C3C26A7" w14:textId="57E86ECC" w:rsidR="001B666E" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Fake news poses a significant threat to public discourse, democratic processes, and social cohesion. Manual fact-checking cannot scale to the volume of digital content produced daily, necessitating automated natural language processing solutions. This paper presents an NLP-based fake news detection system that compares a TF-IDF bag-of-words baseline using four traditional machine learning classifiers, Logistic Regression, Passive Aggressive Classifier, Naive Bayes, and Random Forest, against a fine-tuned DistilBERT transformer model. Experiments were conducted on the Kaggle Fake and Real News Dataset comprising 44,898 news articles. The best TF-IDF classifier (Random Forest) achieved an F1 score of 99.80% on 8,980 test articles, while DistilBERT achieved a perfect F1 of 100.00% on a balanced 2,000-article test subset. Three challenges were identified and analysed: linguistic style manipulation, data quality and source artifact bias, and cross-domain generalisation. The results show that while contextual transformers provide superior theoretical robustness, traditional ML classifiers remain highly competitive for well-curated in-domain datasets.</w:t>
+      </w:r>
+      
+      
+      
+      
+    </w:p>
+    <w:p w14:paraId="54B8FDAB" w14:textId="058C6559" w:rsidR="000309BF" w:rsidRPr="001B666E" w:rsidRDefault="001B666E" w:rsidP="001B666E">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:eastAsia="宋体" w:hint="eastAsia"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4AA3A79D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="1"/>
+        <w:spacing w:before="280" w:after="120"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="1" w:name="_Toc229324546"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>1. Introduction</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="1"/>
+    </w:p>
+    <w:p w14:paraId="03620ECD" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Fake news has spread rapidly across digital platforms, posing documented risks to public health, financial markets, and democratic processes. Vosoughi, Roy, and Aral (2018) found that false information spreads approximately six times faster than true information on Twitter, reaching far more users and penetrating deeper into social networks. Public health misinformation during the COVID-19 pandemic has been reported to be associated with vaccine hesitancy; fabricated financial news has triggered flash crashes in stock markets; and politically motivated disinformation campaigns have been reported to be associated with interference in democratic elections across multiple countries.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="63DE7D00" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>The scale of the problem makes manual fact-checking fundamentally impractical. Social media platforms collectively receive over 500 million new posts per day, far exceeding the capacity of any human review team. Existing rule-based keyword filtering systems are easily circumvented by adversarial content creators who deliberately rephrase misleading content to avoid detection. There is therefore an urgent need for automated, data-driven methods capable of identifying fake news based on linguistic and semantic content rather than surface-level keyword matching.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="696E617C" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Natural language processing offers a promising solution. Text classification techniques, ranging from classical bag-of-words approaches to modern deep learning transformers, can learn discriminative patterns in large labelled corpora of news articles. However, the choice of method involves significant trade-offs: simpler models are faster and more interpretable, while deep learning models capture subtle contextual nuances but require substantial computational resources.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4A9EAEE2" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>This project builds and evaluates an NLP-based fake news detection system with two complementary objectives. First, we establish a strong baseline using TF-IDF feature extraction with four traditional machine learning classifiers and provide interpretable insights into which linguistic features distinguish real from fake news. Second, we fine-tune a DistilBERT transformer model to evaluate whether contextual language representations provide meaningful accuracy gains over the bag-of-words baseline. Experiments are conducted on the Kaggle Fake and Real News Dataset (Ahmed et al., 2018), comprising 44,898 labelled news articles spanning US political news from 2015 to 2018. The GitHub repository containing all code and instructions is available at: https://github.com/barbarousrabbit/42850-fake-news-detection.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="44A7EFF7" w14:textId="1477CEC7" w:rsidR="001B666E" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>The remainder of this report is structured as follows: Section 2 analyses the core challenges in automated fake news detection; Section 3 describes the theoretical methodology and implementation pipeline; Section 4 presents experimental results and discussion; Section 5 concludes with key findings and future directions.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="638C3270" w14:textId="254A6983" w:rsidR="000309BF" w:rsidRPr="001B666E" w:rsidRDefault="001B666E" w:rsidP="001B666E">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:eastAsia="宋体" w:hint="eastAsia"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="79ADA4BA" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="1"/>
+        <w:spacing w:before="280" w:after="120"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="2" w:name="_Toc229324547"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>2. Background: Challenges in Fake News Detection</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="2"/>
+    </w:p>
+    <w:p w14:paraId="15957726" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Automated fake news detection is a significantly harder problem than general text classification. Three interconnected challenges make it particularly difficult, each requiring careful methodological consideration.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="22089EC9" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="3" w:name="_Toc229324548"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>2.1 Challenge 1: Linguistic Style Manipulation</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="3"/>
+    </w:p>
+    <w:p w14:paraId="3FC03E6A" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Fake news authors often employ sophisticated writing strategies designed to mimic the conventions of credible journalism. Surface-level features such as formal grammar, headline structure, and vocabulary are often indistinguishable from legitimate reporting. This deliberate stylistic convergence undermines simple lexical detection approaches.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4D274797" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>At a deeper linguistic level, however, subtle patterns distinguish fake from real news. Pérez-Rosas et al. (2018) demonstrated that deceptive text exhibits characteristic stylistic markers including increased use of emotional intensifiers, rhetorical exaggeration, and appeals to urgency. Our exploratory analysis confirms this for the present dataset: a linguistic feature analysis of four hand-crafted style variables, average sentence length, all-capitalised word ratio, exclamation mark density, and punctuation density, reveals notable differences between real and fake articles. Fake news articles tend to use shorter, punchier sentences designed to create urgency, more ALL-CAPS words for emotional emphasis, and a higher density of exclamation marks to manipulate reader affect.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="76F258F3" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>This distinction has an important technical implication. TF-IDF (Term Frequency-Inverse Document Frequency) represents text as a bag of words, explicitly discarding word order, sentence structure, and all stylistic cues. A model trained on TF-IDF features can detect frequent fake-news keywords but cannot model the sequential patterns of emotional manipulation or the logical inconsistencies embedded within sentences. Contextual models such as DistilBERT, by contrast, encode each word in the context of its surrounding sequence and are therefore better suited to capturing subtle linguistic manipulation. This challenge directly motivates our two-method comparison.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4A4B4E19" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="4" w:name="_Toc229324549"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>2.2 Challenge 2: Data Quality and Source Artifact Bias</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="4"/>
+    </w:p>
+    <w:p w14:paraId="45FFFD9B" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Fake news datasets are notoriously susceptible to collection bias and spurious correlations that can lead models to learn shortcut features rather than genuine linguistic signals. Zhou and Zafarani (2020) systematically documented how dataset construction choices, including the source of real news, the time period covered, and the definition of fake news itself, introduce systematic biases that inflate in-distribution accuracy while reducing real-world generalisability.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="08B10C10" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Our dataset analysis reveals a concrete example of this phenomenon. The keyword 'Reuters' appears in 48.3% of all articles in the dataset. A detailed breakdown shows that 'Reuters' is heavily concentrated in real news articles, reflecting the fact that the dataset's real news component was scraped from Reuters and AP wire services, while fake news articles originated from unreliable blogs. A TF-IDF classifier that learns to associate 'Reuters' with real news is </w:t>
+      <w:lastRenderedPageBreak/><w:t>effectively learning news source identity rather than content quality (a brittle signal that would not transfer to new contexts in which real news from non-Reuters sources must be distinguished from sophisticated fake news that includes Reuters-style datelines).</w:t></w:r>
+      
+    </w:p>
+    <w:p w14:paraId="0B2872BF" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Feature importance analysis of our Logistic Regression model confirms this concern: 'reuters' appears among the top coefficients predicting real news. This motivates critical scrutiny of high accuracy figures and confirms that perfect or near-perfect classification performance on benchmark datasets does not guarantee robust real-world deployment.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="29C6ADF4" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="5" w:name="_Toc229324550"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>2.3 Challenge 3: Domain Shift and Cross-Domain Generalisation</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="5"/>
+    </w:p>
+    <w:p w14:paraId="460C35B1" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Machine learning models trained on one distribution of data often fail when deployed on a different distribution, a phenomenon known as domain shift. In the context of fake news detection, this challenge is particularly acute because: (1) the Kaggle dataset exclusively covers US political news from 2015 to 2018, creating a topic-specific vocabulary of political entities and events; and (2) real-world misinformation spans diverse domains including public health, scientific research, financial markets, and celebrity culture.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5D74AF26" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>TF-IDF-based models are especially vulnerable to domain shift. The 5,000-token vocabulary selected from political news data will be dominated by politically charged terms, names of politicians, political institutions, and policy-specific terminology, that carry little signal when applied to health misinformation. A Random Forest classifier trained on these features would encounter entirely new vocabulary when processing, for example, COVID-19 vaccine misinformation, rendering its learned decision boundaries largely ineffective.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="60703B90" w14:textId="101A69B1" w:rsidR="001B666E" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>DistilBERT, pre-trained on approximately 3.3 billion words spanning diverse text genres, develops general-purpose semantic representations that transfer more effectively across domains. When fine-tuned on news data, these pre-trained representations provide a semantic foundation that is not purely dependent on in-domain vocabulary. This theoretical advantage in cross-domain robustness motivates the inclusion of a transformer-based model in our evaluation, even though both approaches are evaluated on the same in-domain test set in this study.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="53B2DECE" w14:textId="28FF3B82" w:rsidR="000309BF" w:rsidRPr="001B666E" w:rsidRDefault="001B666E" w:rsidP="001B666E">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:eastAsia="宋体" w:hint="eastAsia"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4CA9FFB1" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="1"/>
+        <w:spacing w:before="280" w:after="120"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="6" w:name="_Toc229324551"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>3. Methodology</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="6"/>
+    </w:p>
+    <w:p w14:paraId="30C31739" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="7" w:name="_Toc229324552"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>3.1 Dataset</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="7"/>
+    </w:p>
+    <w:p w14:paraId="475EAB17" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>The Kaggle Fake and Real News Dataset (Ahmed et al., 2018) contains 44,898 English-language news articles collected between 2015 and 2018. The dataset comprises 21,417 real news articles sourced from Reuters and Associated Press wire services (label = 1) and 23,481 fake news articles from unreliable online sources (label = 0). Each article includes four fields: title, article body text, subject category, and publication date. The class distribution is approximately balanced (47.7% real, 52.3% fake). Average article length is 386 words for real news and 423 words for fake news. The full dataset was used for TF-IDF experiments (80/20 train-test split: 35,918 training articles, 8,980 test articles). For DistilBERT fine-tuning, a stratified subset of 10,000 articles (5,000 per class) was used due to GPU memory constraints on free Colab, with an 80/20 split yielding 8,000 training and 2,000 test articles.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="15D672D7" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="8" w:name="_Toc229324553"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>3.2 Text Preprocessing (TF-IDF Pipeline)</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="8"/>
+    </w:p>
+    <w:p w14:paraId="5F0061A5" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>A seven-step preprocessing pipeline was applied to prepare text for TF-IDF vectorisation. The article title and body text were first concatenated into a single content field to maximise available linguistic signal. The combined text was then lowercased to ensure that lexical variants ('Fake' and 'fake') map to the same token. URLs and HTML tags were removed using regular expressions, as they provide no journalistic content signal. All non-alphabetic characters (digits, punctuation) were stripped, reducing vocabulary noise. The cleaned text was tokenised using NLTK's word_tokenize function (Bird et al., 2009). English stop words were removed using NLTK's stopwords list, reducing feature dimensionality by eliminating high-frequency tokens with little discriminative value. Finally, each token was lemmatised using NLTK's WordNetLemmatizer. This step normalised inflected word forms (e.g., 'running' to 'run'), which reduced vocabulary size and improved feature sparsity. DistilBERT bypasses this preprocessing pipeline entirely. It uses the raw concatenated content field and performs its own subword tokenisation through the WordPiece algorithm, which allows the model to handle out-of-vocabulary terms that TF-IDF would discard entirely.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2CAED1FB" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="9" w:name="_Toc229324554"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>3.3 Method 1: TF-IDF with Traditional ML Classifiers</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="9"/>
+    </w:p>
+    <w:p w14:paraId="49BA5842" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t xml:space="preserve">TF-IDF, or Term Frequency-Inverse Document Frequency (Manning et al., 2008), converts each preprocessed article into a sparse numerical vector by weighting each term according to how frequently it appears in the document relative to how rarely it appears across the corpus. The TF-IDF weight for term t in document d is computed as: TF(t,d) × log(N / df(t)), where N is the total number of documents and df(t) is the number of documents containing t. High-frequency, distinctive terms receive high weights; common terms such as 'the' or 'said' receive near-zero weights. The vectoriser was configured with max_features=5,000 (retaining the 5,000 most informative terms), ngram_range=(1,2) (including both single words and two-word phrases such as 'fake news' and 'white house'), and sublinear_tf=True (applying logarithmic normalisation to </w:t>
+      <w:lastRenderedPageBreak/><w:t>term frequency to reduce the influence of very frequent terms). All classifiers were implemented using scikit-learn (Pedregosa et al., 2011). Four classifiers were trained and evaluated:</w:t></w:r>
+      
+    </w:p>
+    <w:p w14:paraId="0CD8C029" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="60"/>
+        <w:ind w:left="567"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>1. Logistic Regression: A linear probabilistic classifier that estimates P(fake | features) via gradient descent on a logistic loss. It is well-suited to high-dimensional sparse text data and provides interpretable coefficients that reveal which features are most predictive.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="725092BF" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="60"/>
+        <w:ind w:left="567"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>2. Passive Aggressive Classifier: An online learning algorithm (Crammer et al., 2006) that aggressively updates its decision boundary when it makes errors while remaining passive when correct. It is particularly efficient for high-dimensional text classification and converges rapidly.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="181AAFE3" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="60"/>
+        <w:ind w:left="567"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>3. Naive Bayes (Multinomial): A probabilistic model that applies Bayes' theorem under the assumption of conditional feature independence. It is extremely fast and provides a strong baseline for text classification despite its independence assumption.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="52DA4CBD" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="60"/>
+        <w:ind w:left="567"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>4. Random Forest: An ensemble of 100 decision trees (Breiman, 2001) trained on random feature subsets. It is robust to overfitting through variance reduction via averaging and handles non-linear feature interactions that linear classifiers cannot capture.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1BBECE1F" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="10" w:name="_Toc229324555"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>3.4 Method 2: DistilBERT Fine-tuning</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="10"/>
+    </w:p>
+    <w:p w14:paraId="01F63E7A" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>DistilBERT (Sanh et al., 2019) is a compressed version of BERT (Devlin et al., 2019) produced through knowledge distillation: a smaller student network is trained to replicate the output distributions of the larger BERT-base teacher model, rather than training from scratch on raw text. DistilBERT retains approximately 97% of BERT-base's performance while being 40% smaller (66 million parameters compared to 110 million) and 60% faster. DistilBERT is therefore the practical choice for free Colab GPU environments, where memory and computation are limited.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5EC77F2C" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>The fine-tuning procedure adds a two-class classification head (a linear layer followed by softmax) to the pre-trained DistilBERT model. All parameters, including the transformer backbone, are updated jointly during fine-tuning. Key hyperparameters: learning rate = 2e-5 (following the recommendation of Devlin et al., 2019 for fine-tuning), batch size = 16, 3 training epochs, maximum sequence length = 256 tokens with truncation and padding, and a linear warmup schedule over the first 10% of training steps to stabilise early gradient updates. The AdamW optimiser was used with gradient clipping at norm 1.0 to prevent gradient explosion. Each article was tokenised using the WordPiece tokeniser, which splits rare words into subword units. This allows the model to handle out-of-vocabulary terms that TF-IDF would discard entirely.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2666A550" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="11" w:name="_Toc229324556"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>3.5 Theoretical Justification: Why DistilBERT Should Outperform TF-IDF</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="11"/>
+    </w:p>
+    <w:p w14:paraId="4AE0AEE0" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t xml:space="preserve">TF-IDF has four fundamental limitations when applied to fake news detection. First, it ignores word order, treating 'The president attacked the senator' and 'The senator attacked the president' as identical feature vectors. Second, it produces context-free representations: the word 'bank' </w:t>
+      <w:lastRenderedPageBreak/><w:t>receives the same weight whether it refers to a financial institution or a riverbank. Third, it has no pre-trained linguistic knowledge; each new corpus starts from scratch with no transfer from previously seen text. Fourth, it cannot model long-range dependencies: the relationship between a claim in the first sentence and a contradictory qualifier in the last sentence is invisible to a bag-of-words model.</w:t></w:r>
+      
+    </w:p>
+    <w:p w14:paraId="28A1A5C9" w14:textId="658021F0" w:rsidR="001B666E" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>DistilBERT addresses all four limitations. Its transformer architecture uses multi-head self-attention, which computes a weighted representation of each token conditioned on all other tokens in the sequence, explicitly capturing word order and long-range dependencies. Pre-training on a 3.3-billion-word corpus (Wikipedia and BookCorpus) develops rich contextual embeddings that transfer effectively to downstream tasks. Fine-tuning adapts these general representations to the specific linguistic patterns of fake news, such as emotionally charged language, logical inconsistencies, and rhetorical manipulation. These patterns require contextual understanding beyond simple frequency counting.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5D1764BA" w14:textId="0B3902FA" w:rsidR="000309BF" w:rsidRPr="001B666E" w:rsidRDefault="001B666E" w:rsidP="001B666E">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:eastAsia="宋体" w:hint="eastAsia"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5C61E4C3" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="1"/>
+        <w:spacing w:before="280" w:after="120"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="12" w:name="_Toc229324557"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>4. Experiment Results</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="12"/>
+    </w:p>
+    <w:p w14:paraId="3291F764" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="13" w:name="_Toc229324558"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>4.1 TF-IDF Classifier Results</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="13"/>
+    </w:p>
+    <w:p w14:paraId="24CC760C" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>All four TF-IDF classifiers were trained on 35,918 articles and evaluated on 8,980 test articles. Table 1 summarises the performance metrics.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="52D95F1C" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Table 1. TF-IDF classifier performance on 8,980 test articles.</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblStyle w:val="aff1"/>
+        <w:tblW w:w="0" w:type="auto"/>
+        <w:jc w:val="center"/>
+        <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="2530"/>
+        <w:gridCol w:w="1412"/>
+        <w:gridCol w:w="1411"/>
+        <w:gridCol w:w="1408"/>
+        <w:gridCol w:w="1408"/>
+        <w:gridCol w:w="1407"/>
+      </w:tblGrid>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="74061463" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="78228A36" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Model</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="601D4009" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Accuracy</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5D2E9460" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Precision</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5EFF116C" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Recall</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="7A4C414F" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>F1 Score</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5A72752D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Train Time</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="55175927" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="28492063" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Logistic Regression</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="186C4AB6" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.37%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="0D7AEC4E" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.05%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="3FC82B0D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.63%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="7D286CD5" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.34%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="12E422CA" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>0.45s</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="5931725C" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="7BC408BA" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Passive Aggressive</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="2A8FC66D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.74%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="68BC0B01" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.67%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="10FF032D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.79%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="222998B6" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.73%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="30D43CE9" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>0.28s</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="31F9C07E" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="58FD2AB5" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Naive Bayes</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="035C4231" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>95.31%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="0563FC84" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>94.89%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="67DAF598" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>95.31%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="560CB769" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>95.10%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="40E52643" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>0.03s</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="771A187E" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="555A67AE" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Random Forest</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="08486A1D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.81%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5D1B7D3A" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.72%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="029FF7BC" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.88%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="4DEF9CB8" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.80%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="7C5C2C3D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>43.08s</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p w14:paraId="3F2A8F30" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>The Passive Aggressive Classifier and Random Forest are the strongest performers, both achieving F1 scores above 99.7%. The Passive Aggressive Classifier is especially notable: it achieves 99.74% accuracy in just 0.28 seconds of training and is therefore the optimal choice for resource-constrained deployment scenarios. Random Forest is the best overall performer (F1 = 99.80%) but requires 43 seconds for training. This reflects the computational cost of fitting 100 ensemble members. Naive Bayes achieves 95.31% accuracy, a strong result given its severe conditional independence assumption, but trails the other three classifiers by approximately four percentage points. Logistic Regression achieves 99.37% accuracy with sub-second training and offers an excellent accuracy-efficiency trade-off.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5EC3F030" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Error analysis on the best TF-IDF model (Random Forest) reveals that only 17 of 8,980 test articles (0.2%) were misclassified. Inspection of misclassified fake articles shows that they tend to use formal, declarative language devoid of the emotional markers typically associated with fake news. For example, the headline &quot;AUDIT REVEALS: 150 AFGHAN TROOPS Have Gone AWOL In U.S. During Training&quot; uses professional military terminology and presents a plausible-sounding audit finding, making it difficult to distinguish from real investigative journalism based on word-level features alone.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1DE253C8" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="14" w:name="_Toc229324559"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>4.2 DistilBERT Results</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="14"/>
+    </w:p>
+    <w:p w14:paraId="0EB4DA2E" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>DistilBERT was fine-tuned on 8,000 articles and evaluated on 2,000 articles (a balanced stratified subset). Table 2 presents per-epoch training loss and final evaluation metrics.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4B22C4DE" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Table 2. DistilBERT training loss per epoch.</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblStyle w:val="aff1"/>
+        <w:tblW w:w="0" w:type="auto"/>
+        <w:jc w:val="center"/>
+        <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="3402"/>
+        <w:gridCol w:w="3402"/>
+      </w:tblGrid>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="77367023" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="3402" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="0FE74E4B" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Epoch</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="3402" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="37B35E53" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Training Loss</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="6EAE7C0A" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="3402" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="7E78F4AF" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>1</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="3402" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="014FD517" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>0.1103</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="1D48D4A6" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="3402" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="36D97DAD" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>2</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="3402" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="50B72665" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>0.0043</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="5229BBA1" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="3402" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="0E12A39F" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>3</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="3402" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="7C1BD0E4" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>0.0004</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p w14:paraId="260FF29F" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Table 3. DistilBERT evaluation results.</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblStyle w:val="aff1"/>
+        <w:tblW w:w="0" w:type="auto"/>
+        <w:jc w:val="center"/>
+        <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="2268"/>
+        <w:gridCol w:w="1417"/>
+        <w:gridCol w:w="1417"/>
+        <w:gridCol w:w="1417"/>
+        <w:gridCol w:w="1417"/>
+        <w:gridCol w:w="1417"/>
+      </w:tblGrid>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="5BD6FFC3" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2268" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="4CDB7D27" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Model</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="1B5D0E46" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Accuracy</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5BF94362" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Precision</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="049AEA09" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Recall</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="4611102B" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>F1 Score</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="17A6249B" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Test Set</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="66F91CF8" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2268" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="621EB12E" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>DistilBERT</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="4E802DA4" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>100.00%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="2663D70E" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>100.00%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5F3DEBD5" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>100.00%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="658D299C" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>100.00%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="738240B4" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>2,000 articles</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p w14:paraId="7DD93F5D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>Training loss decreased across three epochs: from 0.1103 in epoch 1 to 0.0043 in epoch 2 and 0.0004 in epoch 3. These values indicate rapid and stable convergence. DistilBERT achieved perfect classification (100% accuracy, precision, recall, and F1) on the 2,000-article balanced test set, with zero misclassifications. This result must be interpreted cautiously: the perfect score reflects classification performance on a balanced subset of a dataset known to contain source-identity artifacts (Section 2.2). DistilBERT may be learning source-style signals as effectively as TF-IDF, rather than purely genuine journalistic quality signals. The dataset's inherent separability, confirmed by TF-IDF models exceeding 99% accuracy, likely means that even the contextual representations do not need to model subtle linguistic manipulation to achieve near-perfect classification on this benchmark.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1260DADC" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="21"/>
+        <w:spacing w:before="160" w:after="80"/>
+        <w:rPr>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="15" w:name="_Toc229324560"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="28"/>
+          <w:szCs w:val="28"/>
+        </w:rPr>
+        <w:t>4.3 Comparative Analysis</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="15"/>
+    </w:p>
+    <w:p w14:paraId="28B8D801" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Table 4 presents a unified comparison of all five models.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="56436D09" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="center"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Table 4. All models comparison.</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblStyle w:val="aff1"/>
+        <w:tblW w:w="0" w:type="auto"/>
+        <w:jc w:val="center"/>
+        <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="2551"/>
+        <w:gridCol w:w="1587"/>
+        <w:gridCol w:w="1587"/>
+        <w:gridCol w:w="1984"/>
+        <w:gridCol w:w="1361"/>
+      </w:tblGrid>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="2A042E50" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="73BAE7D4" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Model</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="645CAFFE" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Accuracy</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="52D88667" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>F1 Score</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="57A9032B" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Train Time</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1361" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="09EB7C17" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Test Size</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="3C2B4F31" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="7D717020" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Logistic Regression</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="03E77D41" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.37%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="62BCE361" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.34%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="036BE5FF" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>0.45s (CPU)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1361" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5D630E60" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>8,980</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="73869052" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="6489EE3B" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Passive Aggressive</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="1A8528B3" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.74%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="017717A6" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.73%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="50D2ECC2" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>0.28s (CPU)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1361" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="46D1A3D2" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>8,980</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="0290110B" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="0C5B7C40" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Naive Bayes</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="2CBA4A70" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>95.31%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="01C68475" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>95.10%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="37D420D8" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>0.03s (CPU)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1361" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5FFCDBFB" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>8,980</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="7EA153FC" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="6BEA72D7" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Random Forest</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="1C448384" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.81%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="0B762E9B" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>99.80%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="4FE6A701" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>43.08s (CPU)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1361" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5EA1C221" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>8,980</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="0AF2A24C" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2551" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="0E1FEF40" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>DistilBERT</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="7A2A11BC" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>100.00%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1587" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="3AF74EEF" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>100.00%</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="3C9C078F" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>~10 min (GPU)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1361" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="48DABF88" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>2,000</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p w14:paraId="1948E194" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>DistilBERT achieves the highest accuracy and F1 score, but the comparison is complicated by the different test set sizes (2,000 versus 8,980 articles) and the fact that DistilBERT requires a GPU and approximately ten minutes of training. Random Forest and Passive Aggressive Classifier are within 0.3 percentage points of DistilBERT's F1 score while running in under one minute on a CPU. For practical deployment in environments where GPU access is unavailable or latency is critical, TF-IDF with Passive Aggressive Classification or Random Forest is a compelling alternative. DistilBERT's advantage lies in its theoretical robustness. Its contextual representations should generalise better to adversarial fake news and cross-domain scenarios, even if this advantage is not fully measurable on the current benchmark dataset.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1C02A570" w14:textId="2ECCE7A1" w:rsidR="001B666E" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>An ensemble demonstration confirmed that all five models unanimously agreed on both a fabricated fake news example (5/5 models: FAKE, with individual confidence scores of 97.0-100.0%) and a real Reuters news article (5/5 models: REAL, with confidence scores of 97.0-100.0%). This multi-model consensus approach, in which a 3/5 majority vote determines the final verdict, provides a practical architecture for real-world deployment and reduces the risk of any single model's failure mode dominating the prediction.</w:t>
+      </w:r>
+      
+      
+      
+      
+    </w:p>
+    <w:p w14:paraId="103DD2CE" w14:textId="4E8D0D2D" w:rsidR="000309BF" w:rsidRPr="001B666E" w:rsidRDefault="001B666E" w:rsidP="001B666E">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:eastAsia="宋体" w:hint="eastAsia"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2C9175C8" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="1"/>
+        <w:spacing w:before="280" w:after="120"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="16" w:name="_Toc229324561"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>5. Conclusion</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="16"/>
+    </w:p>
+    <w:p w14:paraId="6360470E" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>This paper presented an NLP-based fake news detection system comparing TF-IDF bag-of-words classifiers against a fine-tuned DistilBERT transformer on the Kaggle Fake and Real News Dataset. Three challenges were analysed: linguistic style manipulation (fake news mimics journalistic conventions but exhibits measurable stylistic differences), data quality and source artifact bias (the dataset contains source-identity shortcuts that inflate accuracy), and cross-domain generalisation (models trained on political news may not transfer to other misinformation domains).</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7F92D646" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Experimental results showed that all TF-IDF classifiers achieved high accuracy, with Random Forest reaching 99.80% F1 and Passive Aggressive Classifier achieving 99.73% F1 in under one second of training. DistilBERT achieved perfect classification on a balanced 2,000-article test subset, though this result must be contextualised within the dataset's known artifact biases. TF-IDF with efficient linear classifiers is a strong and computationally inexpensive solution for in-domain fake news detection on well-curated datasets. DistilBERT's contextual representations offer theoretical advantages in robustness and generalisation that become more pronounced in adversarial or cross-domain settings.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="3F3334BD" w14:textId="6BDCB26C" w:rsidR="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Several limitations constrain the scope of these conclusions. The dataset covers only English political news from 2015-2018 and limits generalisability to other languages, time periods, and topic domains. The DistilBERT evaluation used a smaller, balanced subset due to computational constraints, which prevented direct comparison on identical test sets. Future work should evaluate multilingual variants (mBERT or XLM-R) for cross-lingual fake news detection, conduct systematic cross-domain evaluation across health, science, and financial news domains, and develop real-time detection APIs integrating social media data streams.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0CB5DACA" w14:textId="77777777" w:rsidR="00ED1593" w:rsidRDefault="00ED1593">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2A7B137F" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="1"/>
+        <w:spacing w:before="280" w:after="120"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="17" w:name="_Toc229324562"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>6. Team Member Contributions</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="17"/>
+    </w:p>
+    <w:p w14:paraId="4EA7CB00" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="120"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>This project was completed as a group assignment. Contributions are summarised below. All members actively participated in the development, analysis, and reporting process.</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblStyle w:val="aff1"/>
+        <w:tblW w:w="0" w:type="auto"/>
+        <w:jc w:val="center"/>
+        <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="1984"/>
+        <w:gridCol w:w="1417"/>
+        <w:gridCol w:w="5669"/>
+      </w:tblGrid>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="1862AFD7" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="16238D01" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Member</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="6CE51635" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Student ID</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="5669" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="2B91EDF6" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="21"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+              <w:t>Contributions</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="347A2D90" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="1D008ACC" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Xuyu Zhang</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="38D976B9" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>26025395</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="5669" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="09AC5D0B" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Authored the full written report across all sections: Introduction, Background (challenge analysis), Methodology, Experiment Results, Conclusion, and References. Coordinated project structure, applied APA referencing, and prepared the final submission document.</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="5485A518" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="4E32BA7D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Tongji Huang</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="0B292AB3" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>25694148</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="5669" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="4557CDF9" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Delivered the group oral presentation during the Week 12 workshop. Rehearsed the full presentation flow, timed each section to fit the four-minute window, and communicated the project findings and conclusions clearly to the audience on behalf of the group.</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="34B6649A" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="261B692E" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Tianyu Wang</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="049ECCED" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>25973203</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="5669" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5B2850F3" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Implemented the TF-IDF baseline pipeline: text preprocessing (lowercasing, URL removal, stop-word removal, lemmatisation), TF-IDF vectorisation with bigram support, and training and evaluation of all four traditional classifiers (Logistic Regression, Passive Aggressive Classifier, Naive Bayes, and Random Forest). Conducted feature importance analysis and error analysis on misclassified articles.</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="1A00225F" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="543E381E" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Qiushi Huang</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="71FBBE5F" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>25668904</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="5669" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="61C33CCB" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Designed and produced the group presentation slide deck. Structured the slides to follow the four-section presentation outline (Introduction, Proposed Solution, Experiment Results, Conclusion and Contributions), selected key figures and tables from the notebook, and ensured visual clarity and consistency throughout.</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="000309BF" w:rsidRPr="00ED1593" w14:paraId="3BF276D0" w14:textId="77777777">
+        <w:trPr>
+          <w:jc w:val="center"/>
+        </w:trPr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1984" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="12335C33" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Junjie Cheng</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="1417" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="5764C128" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>25658271</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="5669" w:type="dxa"/>
+          </w:tcPr>
+          <w:p w14:paraId="4F52F0F3" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+            <w:pPr>
+              <w:rPr>
+                <w:sz w:val="24"/>
+                <w:szCs w:val="24"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="20"/>
+              </w:rPr>
+              <w:t>Implemented the DistilBERT fine-tuning pipeline: constructed the custom PyTorch Dataset class and DataLoader, loaded the pre-trained DistilBERT model with a two-class classification head, and implemented the training loop with AdamW optimiser, linear warmup scheduler, and gradient clipping. Evaluated the model on the balanced test subset and implemented the five-model ensemble consensus demonstration.</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p w14:paraId="09AD2926" w14:textId="77777777" w:rsidR="00ED1593" w:rsidRDefault="00ED1593">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman" w:cstheme="majorBidi"/>
+          <w:b/>
+          <w:bCs/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:bookmarkStart w:id="18" w:name="_Toc229324563"/>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:br w:type="page"/>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5FC4EFEA" w14:textId="0BBDC14C" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:pStyle w:val="1"/>
+        <w:spacing w:before="280" w:after="120"/>
+        <w:rPr>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+          <w:color w:val="000000"/>
+          <w:sz w:val="32"/>
+          <w:szCs w:val="32"/>
+        </w:rPr>
+        <w:lastRenderedPageBreak/>
+        <w:t>References</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="18"/>
+    </w:p>
+    <w:p w14:paraId="2134C27F" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Ahmed, H., Traore, I., &amp; Saad, S. (2018). Detecting opinion spams and fake news using text classification. Security and Privacy, 1(1), e9. https://doi.org/10.1002/spy2.9</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0016377D" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Bird, S., Klein, E., &amp; Loper, E. (2009). Natural language processing with Python. O'Reilly Media.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6F5B7679" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Breiman, L. (2001). Random forests. Machine Learning, 45(1), 5-32. https://doi.org/10.1023/A:1010933404324</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="22DCE56A" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Crammer, K., Dekel, O., Keshet, J., Shalev-Shwartz, S., &amp; Singer, Y. (2006). Online passive-aggressive algorithms. Journal of Machine Learning Research, 7, 551-585. https://jmlr.org/papers/v7/crammer06a.html</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0F59D287" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. Proceedings of NAACL-HLT 2019, 4171–4186. https://doi.org/10.18653/v1/N19-1423</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="03EE2F4E" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Manning, C. D., Raghavan, P., &amp; Schutze, H. (2008). Introduction to information retrieval. Cambridge University Press. https://doi.org/10.1017/CBO9780511809071</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="639987E5" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J., Passos, A., Cournapeau, D., Brucher, M., Perrot, M., &amp; Duchesnay, E. (2011). Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12, 2825–2830. https://jmlr.org/papers/v12/pedregosa11a.html</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="13FF3DC0" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Pérez-Rosas, V., Kleinberg, B., Lefevre, A., &amp; Mihalcea, R. (2018). Automatic detection of fake news. Proceedings of the 27th International Conference on Computational Linguistics (COLING 2018), 3391–3401. https://aclanthology.org/C18-1287</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="41F0B542" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Sanh, V., Debut, L., Chaumond, J., &amp; Wolf, T. (2019). DistilBERT, a distilled version of BERT: Smaller, faster, cheaper and lighter [Paper presented at the 5th Workshop on Energy Efficient Machine Learning and Cognitive Computing, NeurIPS 2019]. arXiv preprint arXiv:1910.01108. https://arxiv.org/abs/1910.01108</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4A667BE5" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Vosoughi, S., Roy, D., &amp; Aral, S. (2018). The spread of true and false news online. Science, 359(6380), 1146–1151. https://doi.org/10.1126/science.aap9559</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="58ABCEA4" w14:textId="77777777" w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidRDefault="00000000">
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:ind w:left="720" w:hanging="720"/>
+        <w:jc w:val="both"/>
+        <w:rPr>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:eastAsia="Times New Roman"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t>Zhou, X., &amp; Zafarani, R. (2020). A survey of fake news: Fundamental theories, detection methods, and opportunities. ACM Computing Surveys, 53(5), 1–40. https://doi.org/10.1145/3395046</w:t>
+      </w:r>
+    </w:p>
+    <w:sectPr w:rsidR="000309BF" w:rsidRPr="00ED1593" w:rsidSect="00034616">
+      <w:pgSz w:w="12240" w:h="15840"/>
+      <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="720" w:footer="720" w:gutter="0"/>
+      <w:cols w:space="720"/>
+      <w:docGrid w:linePitch="360"/>
+    </w:sectPr>
+  </w:body>
+</w:document>
