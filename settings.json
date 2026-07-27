@@ -26,12 +26,10 @@
       "Bash(format:*)"
     ],
     "additionalDirectories": [
-      "C:\\Users\\Zhang\\.claude\\skills\\vercel-react-native-skills",
-      "C:\\Users\\Zhang\\.claude",
-      "C:\\Users\\Zhang\\.claude\\skills\\frontend-design"
+      "C:\\Users\\Xuyu Zhang\\.claude"
     ]
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5",
   "hooks": {
     "UserPromptSubmit": [
       {
