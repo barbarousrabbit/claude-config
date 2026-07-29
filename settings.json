@@ -28,7 +28,6 @@
     ],
     "additionalDirectories": []
   },
-  "model": "claude-fable-5",
   "hooks": {
     "UserPromptSubmit": [
       {
