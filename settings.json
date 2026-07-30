@@ -15,7 +15,15 @@
       "WebFetch(*)",
       "WebSearch(*)",
       "NotebookEdit(*)",
-      "Skill(*)"
+      "Skill(*)",
+      "Bash(mkdir -p C:/Users/zhang/AppData/Local/Temp/claude/d--Program-6-Digit-Password-Generation/d6f961a6-c9f8-4115-8c47-804af118bff0/scratchpad/rotate-test)",
+      "Bash(cp 'd:/Program/6-Digit Password Generation/pwgen.py' C:/Users/zhang/AppData/Local/Temp/claude/d--Program-6-Digit-Password-Generation/d6f961a6-c9f8-4115-8c47-804af118bff0/scratchpad/rotate-test/)",
+      "Bash(cd C:/Users/zhang/AppData/Local/Temp/claude/d--Program-6-Digit-Password-Generation/d6f961a6-c9f8-4115-8c47-804af118bff0/scratchpad/rotate-test)",
+      "Bash(echo \"=== syntax check ===\")",
+      "Bash(python -c \"import ast,pathlib; ast.parse\\(pathlib.Path\\('pwgen.py'\\).read_text\\(encoding='utf-8'\\)\\); print\\('parses OK'\\)\")",
+      "Bash(python pwgen.py gen ALPHA BETA GAMMA)",
+      "Bash(python pwgen.py rotate -y)",
+      "Bash(python pwgen.py list)"
     ],
     "deny": [],
     "ask": [
