@@ -89,5 +89,6 @@
     }
   },
   "ultracode": false,
-  "switchModelsOnFlag": false
+  "switchModelsOnFlag": false,
+  "model": "claude-fable-5[1m]"
 }
