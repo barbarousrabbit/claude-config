@@ -23,7 +23,14 @@
       "Bash(python -c \"import ast,pathlib; ast.parse\\(pathlib.Path\\('pwgen.py'\\).read_text\\(encoding='utf-8'\\)\\); print\\('parses OK'\\)\")",
       "Bash(python pwgen.py gen ALPHA BETA GAMMA)",
       "Bash(python pwgen.py rotate -y)",
-      "Bash(python pwgen.py list)"
+      "Bash(python pwgen.py list)",
+      "Bash(python -c ' *)",
+      "Bash(rm -f nul test_error.txt test_output.txt test_exe.bat)",
+      "Bash(python -m PyInstaller CalendarScheduler.spec --noconfirm)",
+      "Bash(rm -f run.py src/scheduler.py src/oauth.py src/record_tracker.py src/direct_calendar_uploader.py src/lark_bitable_upload.py src/table_export.py src/encoding_fix.py src/logger.py src/lark_token.py CalendarScheduler.spec CalendarScheduler.zip Lark_Calendar.ico scheduler.pid)",
+      "Bash(rm -f calendars.json)",
+      "Bash(printf '# Python\\\\nvenv/\\\\n__pycache__/\\\\n*.py[cod]\\\\n\\\\n# 令牌（含refresh_token，绝不提交）\\\\ntoken.json\\\\n\\\\n# 提取结果\\\\nresults/\\\\n\\\\n# IDE\\\\n.vscode/\\\\n.idea/\\\\n*.swp\\\\n\\\\n# OS\\\\n.DS_Store\\\\nThumbs.db\\\\n')",
+      "Bash(PYTHONIOENCODING=utf-8 python -c ' *)"
     ],
     "deny": [],
     "ask": [
@@ -36,6 +43,7 @@
     ],
     "additionalDirectories": []
   },
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -89,6 +97,5 @@
     }
   },
   "ultracode": false,
-  "switchModelsOnFlag": false,
-  "model": "claude-fable-5[1m]"
+  "switchModelsOnFlag": false
 }
