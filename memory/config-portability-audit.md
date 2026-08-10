@@ -28,6 +28,19 @@ devices, because on the origin machine the missing pieces are already present.
   their `.git` gone — the origin URLs were lost. Detect with:
   `git ls-files -s | grep ^160000`. Any third-party repo that is gitignored
   needs a checked-in manifest of clone URLs, or it silently disappears.
+  (Epilogue 2026-08-11: the desktop still had intact clones of both; origins
+  recovered and re-registered in `third-party-skills.tsv` — gstack =
+  github.com/garrytan/gstack, humanizer = github.com/blader/humanizer.)
+- **Silent-abort sync means devices drift without any error.** `sync-pull.sh`
+  deliberately aborts on rebase conflict so session start never blocks. Cost:
+  a device with a local customization commit on a nested skill repo (e.g.
+  `user-invocable: true` in SKILL.md frontmatter) re-conflicts every time
+  upstream touches that frontmatter, and the abort is silent — the desktop
+  fell 41 commits behind on gstack over ~4 weeks with zero visible errors.
+  Fix pattern: manually `git pull --rebase`, resolve by taking upstream's
+  frontmatter + re-adding the one customization line, keep the local commit
+  on top (steady state is "ahead 1"). Check for drift with:
+  `git -C <skill> rev-list --count HEAD..@{u}` after a fetch.
 
 **How to apply:** clone to a short path (`C:\Users\<u>\clonetest`, NOT a deep
 temp dir — Windows' 260-char MAX_PATH truncates the checkout and reports only a
