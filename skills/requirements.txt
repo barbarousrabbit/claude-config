@@ -28,6 +28,10 @@ PyMuPDF>=1.23         # pdf (fitz)
 fpdf2>=2.7            # pdf 生成
 ebooklib>=0.18        # markdown-to-epub
 
+# markitdown skill. Extras cover the formats actually read here; audio-transcription,
+# youtube-transcription, and az-doc-intel are deliberately excluded (heavy / need keys).
+markitdown[pdf,docx,pptx,xlsx,xls,outlook]>=0.1.7
+
 # === MCP 服务 ===
 mcp-server-fetch>=0.1 # fetch MCP server (python -m mcp_server_fetch)
 
