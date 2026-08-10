@@ -7,7 +7,9 @@
 # is no record of what was supposed to be there -- exactly how skills/gstack
 # and skills/humanizer became empty, unrecoverable directories (removed
 # 2026-07-27; gstack was github.com/garrytan/gstack, humanizer's origin was
-# already unrecoverable by then).
+# already unrecoverable by then). Both were re-registered 2026-08-11 from an
+# intact desktop copy that still had working clones -- including humanizer's
+# origin (github.com/blader/humanizer), which this recovered.
 #
 # FORMAT: <dest-path-relative-to-~/.claude><TAB><git-clone-url>
 # Lines starting with # and blank lines are ignored.
@@ -30,3 +32,5 @@
 #                       see skills/ponytail/PROVENANCE.md for pin + update steps
 
 skills/apple-hig-designer	https://github.com/axiaoge2/Apple-Hig-Designer.git
+skills/gstack	https://github.com/garrytan/gstack.git
+skills/humanizer	https://github.com/blader/humanizer
