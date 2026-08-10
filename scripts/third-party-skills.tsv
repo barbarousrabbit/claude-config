@@ -15,5 +15,18 @@
 #
 # TO ADD a third-party skill: add its line here AND a matching entry in
 # .gitignore, then commit both. Never let one exist without the other.
+#
+# NOT EVERY THIRD-PARTY SKILL BELONGS HERE. This mechanism clones a whole repo
+# to skills/<dest>/, so it only works when that repo has SKILL.md at its ROOT.
+# A repo that nests skills one level down (skills/<name>/SKILL.md) would land
+# the file too deep to be discovered. Those are vendored as tracked files
+# instead -- copied in, committed, with origin + pinned commit recorded in a
+# PROVENANCE.md beside them. Vendored skills are NOT listed below and are NOT
+# .gitignore'd; they are tracked, so the silent-disappearance failure this
+# manifest guards against does not apply to them.
+#
+# Vendored (tracked, not cloned):
+#   skills/ponytail  <- github.com/DietrichGebert/ponytail (skills/ponytail/SKILL.md)
+#                       see skills/ponytail/PROVENANCE.md for pin + update steps
 
 skills/apple-hig-designer	https://github.com/axiaoge2/Apple-Hig-Designer.git
