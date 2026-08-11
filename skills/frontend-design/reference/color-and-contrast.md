@@ -11,6 +11,7 @@
 | Tailwind default blue (#2563EB) as primary | Too generic; signals no palette was designed |
 | Pure black (#000) backgrounds | Harsh; never occurs in nature |
 | Pure white (#fff) surfaces | Flat; always tint slightly |
+| Brown/khaki-leaning dark-mode neutrals ("poop brown") | GLOBAL user rule (2026-08-11): dark surfaces and mid-tone neutrals must never read as brown. Danger zone: mid lightness (L 30–75%) + warm hue (roughly 25–50° HSL / 50–90° OKLCH) + visible saturation. Warm tint in dark mode is fine only while invisible as brown: keep OKLCH chroma ≤ ~0.01 (rule of thumb in sRGB: R−B spread ≤ ~8 per channel-255). Blue-slate OLED is not the fix — neutral charcoal is. |
 
 ## OKLCH Color System
 

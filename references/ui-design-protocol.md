@@ -35,6 +35,7 @@ python3 ~/.claude/skills/ui-ux-pro-max/scripts/search.py "<product> <industry> <
 - [ ] No banned fonts (Inter, Roboto, Open Sans, system-ui)
 - [ ] No AI palette (cyan-on-dark, purple-blue gradient, neon, Tailwind #2563EB)
 - [ ] Tinted neutrals (no pure gray/black/white)
+- [ ] Dark mode: no brown/khaki-leaning neutrals — GLOBAL rule, see the banned table in `frontend-design/reference/color-and-contrast.md`
 - [ ] No identical card grids or center-everything layout
 - [ ] No emoji icons — use Lucide/Heroicons SVGs
 - [ ] Text contrast >= 4.5:1, hover no layout shift, `cursor-pointer` on clickables
