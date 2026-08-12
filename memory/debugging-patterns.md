@@ -57,3 +57,21 @@ han = sum(1 for ch in prompt if 0x4e00 <= ord(ch) <= 0x9fff)   # CJK Unified
 lat = sum(1 for ch in prompt if ('A' <= ch <= 'Z') or ('a' <= ch <= 'z'))
 ```
 Used in `scripts/hook-user-prompt.sh` Layer 0 (reply-language anti-drift detection). A 2-hour debugging session compressed to: "read stdin as UTF-8 bytes."
+
+## PowerShell: a helper function named `Git` shadows the real git command
+A wrapper function that pins repo/flags for every call — a natural pattern for sync scripts — dies instantly if you name it after the command it wraps.
+- **Symptom**: `The script failed due to call depth overflow. CategoryInfo: InvalidOperation (0:Int32) [], ParentContainsErrorRecordException, FullyQualifiedErrorId: CallDepthOverflow`. Nothing runs; no git output at all.
+- **Root cause**: PowerShell resolves command names **case-insensitively**, and functions outrank external executables in the command-precedence order. So inside `function Git { & git -C $Root @Args }`, the `git` call resolves back to `Git` itself and recurses until the call-depth limit.
+```powershell
+function Git { & git -C $RepoRoot @Args }   # infinite recursion
+```
+- **Fix — two independent guards, use both**: name the helper with a verb-noun that cannot collide, and call the executable by its full name so function lookup can't match it.
+```powershell
+function Invoke-Git {
+    param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
+    & git.exe -C $RepoRoot -c core.quotepath=false @Args
+}
+```
+- `git.exe` is the load-bearing half: it makes the recursion impossible even if someone later renames the function back. The rename is what stops a future `git status` typed inside the script from silently recursing.
+- **Same trap** for any wrapper named after its tool: `Docker`, `Npm`, `Gh`, `Python`. Applies to aliases too — `Set-Alias git Invoke-Git` then calling `git` inside `Invoke-Git` recurses identically.
+- Bonus, same family of scripts: native git prints UTF-8, but PowerShell 5.1 decodes native output with the ANSI codepage, so CJK filenames come back mangled. Set `[Console]::OutputEncoding = [Text.Encoding]::UTF8` at the top and pass `-c core.quotepath=false`.
