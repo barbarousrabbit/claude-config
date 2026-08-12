@@ -75,3 +75,17 @@ function Invoke-Git {
 - `git.exe` is the load-bearing half: it makes the recursion impossible even if someone later renames the function back. The rename is what stops a future `git status` typed inside the script from silently recursing.
 - **Same trap** for any wrapper named after its tool: `Docker`, `Npm`, `Gh`, `Python`. Applies to aliases too — `Set-Alias git Invoke-Git` then calling `git` inside `Invoke-Git` recurses identically.
 - Bonus, same family of scripts: native git prints UTF-8, but PowerShell 5.1 decodes native output with the ANSI codepage, so CJK filenames come back mangled. Set `[Console]::OutputEncoding = [Text.Encoding]::UTF8` at the top and pass `-c core.quotepath=false`.
+
+### Same family: a PowerShell parameter named `$Args` swallows `-A`
+The wrapper above has a second trap in its parameter, not its name:
+```powershell
+function Invoke-Git {
+    param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)   # bad
+    & git.exe @Args
+}
+Invoke-Git add -A
+# Invoke-Git : Missing an argument for parameter 'Args'.
+```
+- **Root cause**: PowerShell binds parameters by **prefix**, so `-A` matches the parameter `-Args` and is consumed as a parameter name; the next token becomes its value, or binding fails outright. Any argument that prefix-matches the parameter name is stolen before `ValueFromRemainingArguments` ever sees it. (`$Args` also shadows the automatic `$args`.)
+- **Fix**: never name a catch-all parameter after something a passthrough argument could prefix-match — `$GitArgs`, `$Rest`, `$Passthru`. Verify with the actual flag: `Invoke-Git add -A` must reach git.
+- **Related**: passing a long multi-line string as a native-command argument (`git commit -m $msg`) is fragile on 5.1 — quoting and the ANSI codepage both apply. Write it to a UTF-8 file and use the tool's file flag (`git commit -F <file>`); git reads the bytes and no shell quoting happens.

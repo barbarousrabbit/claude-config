@@ -13,6 +13,8 @@ args:
 
 # Codex Dream Skin — Video Wallpaper (Windows)
 
+Chinese translation (reading aid only): [SKILL.zh-CN.md](./SKILL.zh-CN.md)
+
 Upstream Codex Dream Skin supports **still images only on Windows**; video exists
 only in a macOS fork. This skill applies a local port of the video layer and
 drives the whole change-the-video workflow.
@@ -164,3 +166,10 @@ Restore the three pristine files from `assets/original/` into `payload\`, delete
 `injector.mjs --check-payload --theme-dir <active-theme>` validates placeholder
 substitution and parses the assembled script. Run it after any edit; `"pass":true`
 means the payload is well-formed.
+
+## Upstream
+
+The single source of truth for this patch is `video-patch/` in the **Codex-Skins**
+repository. The copies in this skill directory are a mirror kept so the skill runs
+standalone; changes flow repo → skill, never the reverse. The verified clip and its
+companion theme live there as `themes/freedom-gundam-video/`.
