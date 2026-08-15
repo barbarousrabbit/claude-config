@@ -8,3 +8,4 @@
 - [Config portability audit](config-portability-audit.md) — cross-device breakage needs a FRESH CLONE to find; gitignore ignores only untracked paths, gitlinks without .gitmodules die silently
 - [Dark mode no brown](dark-mode-no-brown.md) — GLOBAL UI RULE: dark palettes must never lean brown/khaki (nor blue-slate OLED); neutral charcoal, R−B spread ≤ 8
 - [git-pushing skill limits](git-pushing-skill-limits.md) — smart_commit.sh dies on an unborn HEAD (set -e + rev-parse); bootstrap a new repo by hand, script handles later pushes only
+- [Windows disk usage scanning](windows-disk-usage-scanning.md) — size dirs with `robocopy /L` not `Get-ChildItem -Recurse` (600s timeout → seconds); /XJ avoids junction double-count, exit 0-7 = success
