@@ -89,3 +89,28 @@ Invoke-Git add -A
 - **Root cause**: PowerShell binds parameters by **prefix**, so `-A` matches the parameter `-Args` and is consumed as a parameter name; the next token becomes its value, or binding fails outright. Any argument that prefix-matches the parameter name is stolen before `ValueFromRemainingArguments` ever sees it. (`$Args` also shadows the automatic `$args`.)
 - **Fix**: never name a catch-all parameter after something a passthrough argument could prefix-match — `$GitArgs`, `$Rest`, `$Passthru`. Verify with the actual flag: `Invoke-Git add -A` must reach git.
 - **Related**: passing a long multi-line string as a native-command argument (`git commit -m $msg`) is fragile on 5.1 — quoting and the ANSI codepage both apply. Write it to a UTF-8 file and use the tool's file flag (`git commit -F <file>`); git reads the bytes and no shell quoting happens.
+
+## Windows: `Get-ChildItem` silently skips Hidden files — cleanup scripts under-report as "done"
+Any sweep that enumerates files to delete/count/validate must pass `-Force`, or hidden items are invisible and the script reports success over an incomplete job.
+- **Symptom**: a cleanup reports "0 remaining", but `ls -la` in Git Bash (or `dir /a`) still lists the files. The two tools disagree because only PowerShell applies the hidden filter by default.
+- **Root cause**: `Get-ChildItem` omits Hidden/System entries unless `-Force` is given. `-Filter`/`-File`/`-Recurse` do not re-include them. BitTorrent clients, installers, and sync tools routinely set Hidden on sidecar files (`.torrent`, `.nfo`, state files).
+- **Cost when missed**: a "delete all `.torrent` library-wide" pass reported complete; two batches later 57 hidden ones were still there, because the per-folder cleanup used `Get-ChildItem -File -Filter *.torrent` with no `-Force`.
+- **Fix — enumerate with `-Force`, and clear the attribute before deleting** (`Remove-Item -Force` handles ReadOnly, not always Hidden+System combos):
+```powershell
+Get-ChildItem -LiteralPath $dir -Recurse -File -Force -Filter *.torrent |
+  ForEach-Object { $_.Attributes = [IO.FileAttributes]::Normal; Remove-Item -LiteralPath $_.FullName -Force }
+```
+- **Verify by invariant, not by the script's own count**: measure something the operation must not change (e.g. video-file count before/after a `.torrent` purge) and assert it held. A self-reported "N deleted" cannot detect what it never saw.
+- **Cross-check cheaply**: `Get-ChildItem -Force | Measure-Object` vs the same without `-Force`; any gap is hidden items.
+
+## Windows: NTFS junctions store an ABSOLUTE path and do not survive a parent rename
+A junction created inside a tree keeps pointing at the old absolute path after any ancestor directory is renamed or moved — it does not resolve relatively.
+- **Symptom**: the junction directory still exists and looks fine in Explorer, but enumerating it yields nothing. Scripts that only check `Test-Path <junction>` report **valid** (the reparse point exists) — the breakage is one level deeper.
+- **Detection**: a broken junction is a directory that exists but enumerates empty; compare `(Get-Item $j).Target` against the real path.
+```powershell
+$broken = @(Get-ChildItem $dir -Directory |
+  Where-Object { @(Get-ChildItem -LiteralPath $_.FullName -Force -EA SilentlyContinue).Count -eq 0 })
+```
+- **Audit blind spot that hides this for months**: link-validation passes usually glob `*.lnk`. Junctions are directories, so `-Filter *.lnk` never sees them and the audit prints all-green. Any audit that validates shortcuts must enumerate `-Directory` too.
+- **Removing one is dangerous**: `Remove-Item -Recurse` on a junction deletes the *target's* contents. Detach the reparse point only: `[IO.Directory]::Delete($path, $false)` or `cmd /c rmdir "$path"` (no `/s`). Verify the target's files still exist afterward.
+- **Rule**: any script that rewrites hardcoded root paths after a rename (e.g. `sed` over a `_tools/` directory) must also **rebuild every junction** — text substitution fixes scripts, not reparse points already on disk.
