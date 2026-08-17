@@ -100,7 +100,7 @@ Syncing `~/.claude` to GitHub is automated by the hooks (see Available Tools bel
 ## Available Tools
 Optional MCPs (`fetch` / `memory` / `sequential-thinking` / `github`) exist on some devices only; the built-in equivalents (WebFetch, memory files, inline reasoning, `gh` CLI) are always the fallback — never block on a missing MCP.
 
-**Hooks** (auto): SessionStart = `hook-session-start.sh` (push leftover changes → pull latest → skill staleness check); UserPromptSubmit = `hook-user-prompt.sh` (Layer 0 `[reply-language]` re-anchor, then `claudeception-activator.sh` skill-gate); SessionEnd = `sync-push.sh` (auto-commit & push).
+**Hooks** (auto): SessionStart = `hook-session-start.sh` (push leftover changes → pull latest → skill staleness check → `mirror-skills-to-codex.sh`, which copies the skills listed in `scripts/codex-mirror-skills.txt` one-way into `~/.codex/skills/` so Codex has them too; no-op without Codex); UserPromptSubmit = `hook-user-prompt.sh` (Layer 0 `[reply-language]` re-anchor, then `claudeception-activator.sh` skill-gate); SessionEnd = `sync-push.sh` (auto-commit & push).
 **Custom commands**: `/explain` · `/debug` · `/summarize` · `/check-assignment` · `/review` · `/security-scan` · `/git:cm` · `/git:cp` · `/git:pr`
 **Scope**: project `.claude/CLAUDE.md` overrides global rules.
 
@@ -164,7 +164,11 @@ GitHub PAT → restart Claude Code.
   into a short directory (`~/.claude` is fine) or Windows' 260-char MAX_PATH
   truncates the checkout and files go missing with only a warning.
 - **`bootstrap.sh` is idempotent** — safe to re-run any time. It resolves the
-  remote's default branch (never assumes `main`), installs Python deps, and
-  clones the per-device skill repos listed in `scripts/third-party-skills.tsv`.
+  remote's default branch (never assumes `main`), installs Python deps,
+  clones the per-device skill repos listed in `scripts/third-party-skills.tsv`,
+  and mirrors the Codex-format skills listed in `scripts/codex-mirror-skills.txt`
+  into `~/.codex/skills/` (skipped when Codex is not installed).
 - **Verify** with `bash ~/.claude/scripts/install-third-party-skills.sh` —
-  it reports installed/refreshed/failed and exits non-zero on any failure.
+  it reports installed/refreshed/failed and exits non-zero on any failure —
+  and `bash ~/.claude/scripts/mirror-skills-to-codex.sh --dry-run`, which must
+  report `0 failed` and nothing left to install.

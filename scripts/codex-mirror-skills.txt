@@ -1,0 +1,39 @@
+# Skills mirrored from ~/.claude/skills/ into ~/.codex/skills/ so Codex can load them.
+#
+# WHY THIS FILE EXISTS
+# Codex reads skills from ~/.codex/skills/ only; it never looks inside ~/.claude/.
+# Some skills in ~/.claude/skills/ already ship in Codex format (they carry an
+# agents/openai.yaml next to SKILL.md), so the same folder works for both agents.
+# This manifest names the ones Codex should have. Without it, "Codex has grill-me"
+# would depend on someone remembering to copy a folder by hand -- and forgetting
+# to re-copy it after the next upstream update.
+#
+# DIRECTION IS ONE-WAY
+# ~/.claude/skills/<name>/ is the single source of truth. The copy under
+# ~/.codex/skills/<name>/ is disposable: it is replaced whenever the source
+# differs and deleted when the name leaves this list. Never edit the Codex copy.
+# Each mirrored copy carries a `.claude-mirror` marker file saying exactly that;
+# the marker is also how the script tells its own copies apart from skills that
+# other tools installed there (e.g. a repository's install-skills.ps1) and from
+# Codex's own `.system/` vendor skills -- those are never touched.
+#
+# FORMAT: one skill directory name per line, relative to ~/.claude/skills/.
+# Lines starting with # and blank lines are ignored.
+# Consumed by scripts/mirror-skills-to-codex.sh, which runs from the SessionStart
+# hook (after sync-pull, so upstream updates propagate) and from bootstrap.sh.
+#
+# TO ADD a skill: it must have SKILL.md (and ideally agents/openai.yaml, otherwise
+# Codex shows it without display metadata). Add its name here; the next session
+# start installs it, or run the script by hand:
+#     bash ~/.claude/scripts/mirror-skills-to-codex.sh            # apply
+#     bash ~/.claude/scripts/mirror-skills-to-codex.sh --dry-run  # report only
+# TO REMOVE a skill: delete its line; the next run prunes the Codex copy.
+
+# mattpocock/skills v1.1.0 (installed 2026-07-15) -- all ship agents/openai.yaml.
+# grill-me is a one-line wrapper that starts a grilling session, so the two
+# travel together.
+diagnosing-bugs
+grill-me
+grilling
+handoff
+tdd

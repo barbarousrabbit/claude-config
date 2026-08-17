@@ -59,6 +59,10 @@ ok "Git tracking configured (branch '$LOCAL_BRANCH' -> origin/$REMOTE_HEAD)"
 echo "-> Installing third-party skill repos..."
 bash "$CLAUDE_DIR/scripts/install-third-party-skills.sh" || warn "Some third-party skills failed to install (see above)"
 
+# -- 1c. Codex-format skills -> ~/.codex/skills (one-way mirror; no-op without Codex) --
+echo "-> Mirroring Codex-format skills into ~/.codex/skills..."
+bash "$CLAUDE_DIR/scripts/mirror-skills-to-codex.sh" || warn "Codex skill mirror reported a problem (see above)"
+
 # -- 2. Python dependencies --
 echo "-> Installing Python skill dependencies..."
 if [ -n "$CLAUDE_PIP" ] && command -v "$CLAUDE_PIP" &>/dev/null; then
