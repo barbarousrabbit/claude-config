@@ -9,3 +9,4 @@
 - [Dark mode no brown](dark-mode-no-brown.md) — GLOBAL UI RULE: dark palettes must never lean brown/khaki (nor blue-slate OLED); neutral charcoal, R−B spread ≤ 8
 - [git-pushing skill limits](git-pushing-skill-limits.md) — smart_commit.sh dies on an unborn HEAD (set -e + rev-parse); bootstrap a new repo by hand, script handles later pushes only
 - [Windows disk usage scanning](windows-disk-usage-scanning.md) — size dirs with `robocopy /L` not `Get-ChildItem -Recurse` (600s timeout → seconds); /XJ avoids junction double-count, exit 0-7 = success
+- [Windows hidden launcher](windows-hidden-launcher.md) — `-WindowStyle Hidden` alone still flashes under Windows Terminal (need .lnk WindowStyle=7 too); Process.MainWindowHandle is 0 for tray-hidden windows → EnumWindows + SW_SHOW; Invoke-WebRequest on a closed loopback port eats the full timeout → TcpClient probe first
