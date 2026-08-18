@@ -74,6 +74,29 @@ superseding `third-party-skills.tsv` (clone URLs only, bootstrap-time only).
 - Cache-dir names derive from `basename(url)-sha1(url)[0:10]`: a URL-escaped name hit
   Windows' path limit inside the sandbox.
 
+- **Clone-mode skills that carry a local commit are misreported as "behind".** gstack and
+  humanizer each have one local commit (2026-06-02: `user-invocable: true` / trigger-style
+  `description:`) that `sync-pull.sh` rebases onto upstream every session start, so they sit
+  exactly on top of upstream HEAD -- but `--check` tests `lhead == rhead` only (line ~216) and
+  prints `clone behind upstream <local>..<remote> (--apply fast-forwards)`; the summary says
+  "2 available (gstack humanizer)" every week. `--apply`'s `pull --ff-only` then answers
+  "Already up to date" and is counted as applied. Harmless, but noise. Fix when touching the
+  script: also treat `git -C <clone> merge-base --is-ancestor "$rhead" "$lhead"` as current
+  ("N local commit(s) on top of upstream").
+- **When upstream rewrites the very lines the local commit touched, that rebase conflicts**
+  and the SessionStart output shows `Auto-merging SKILL.md` / `CONFLICT (content): Merge
+  conflict in SKILL.md` -- that is `sync-pull.sh`'s per-clone `pull --rebase --autostash`
+  aborting (by design; the clone then silently stops updating: `ahead 1, behind N`). Seen
+  2026-08-18 for humanizer when upstream v2.11.0 rewrote `description:`. Recipe (took
+  humanizer 2.9.1 -> 2.11.1 with the local front matter kept): `git -C ~/.claude/skills/<s>
+  rebase origin/main` -> `git checkout --ours -- SKILL.md` (in a rebase, ours = upstream) ->
+  re-apply the front-matter override (`user-invocable: true` + one-line description) ->
+  `git add SKILL.md && GIT_EDITOR=true git rebase --continue`. Byte-check the CJK trigger
+  words afterwards (`od -c`), the console mangles them but the file is fine. It will recur
+  whenever upstream touches the description block; a `pull --rebase -X theirs` in
+  sync-pull.sh (rebase "theirs" = the local commit) would auto-resolve in favour of the local
+  front matter -- a policy change, not applied.
+
 ## How to apply
 
 ```bash
