@@ -46,7 +46,7 @@ INTERVAL_DAYS="${SKILL_UPDATE_INTERVAL_DAYS:-7}"
 NET_TIMEOUT="${SKILL_UPDATE_NET_TIMEOUT:-120}"
 MIRROR="$CLAUDE_DIR/scripts/mirror-skills-to-codex.sh"
 INSTALLER="$CLAUDE_DIR/scripts/install-third-party-skills.sh"
-IGNORE_RE='(^|/)(PROVENANCE\.md|__pycache__/.*|.*\.pyc)$'
+IGNORE_RE='(^|[ /])(PROVENANCE.md|__pycache__/.*|.*.pyc)$'   # matches bare relpaths and "sha relpath" lines
 
 MODE=""; ONLY=""; DRY=0; FORCE=0; FROM_AUTO=0
 while [ $# -gt 0 ]; do
