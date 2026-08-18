@@ -55,6 +55,10 @@ fi
 git branch --set-upstream-to="origin/$REMOTE_HEAD" "$LOCAL_BRANCH" &>/dev/null || true
 ok "Git tracking configured (branch '$LOCAL_BRANCH' -> origin/$REMOTE_HEAD)"
 
+# -- 1a2. Working-copy line endings per .gitattributes (content untouched; skips modified files) --
+echo "-> Normalising working-copy line endings..."
+bash "$CLAUDE_DIR/scripts/normalize-eol.sh" || warn "normalize-eol.sh reported a problem"
+
 # -- 1b. Third-party skill repos (mode=clone rows of scripts/skill-sources.tsv) --
 echo "-> Installing third-party skill repos..."
 bash "$CLAUDE_DIR/scripts/install-third-party-skills.sh" || warn "Some third-party skills failed to install (see above)"

@@ -66,7 +66,11 @@ superseding `third-party-skills.tsv` (clone URLs only, bootstrap-time only).
   that predate the .gitattributes policy. `git checkout-index -f` does NOT rewrite an
   existing file; delete + `git checkout-index --` does, then `git add -u -- skills`
   clears the stat-only " M" (blob identical, nothing staged). 397 CRLF files remain
-  outside skills/ (deliberately left; same recipe applies).
+  outside skills/ -- fixed on 2026-08-18 by `scripts/normalize-eol.sh` (394 files), which
+  now runs from the SessionStart hook (step 2b) and bootstrap so every device self-heals.
+- **`grep -c $''` is a false positive on MSYS/Git Bash** -- it counted every line of a
+  pure-LF file as a match. Detect CR with `tr -cd '' < f | wc -c` or `git ls-files --eol`
+  (this false positive also produced the phantom "CR files left: 9" in the sandbox).
 - Cache-dir names derive from `basename(url)-sha1(url)[0:10]`: a URL-escaped name hit
   Windows' path limit inside the sandbox.
 

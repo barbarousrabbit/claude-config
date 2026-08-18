@@ -8,6 +8,11 @@ bash "$CLAUDE_DIR/scripts/sync-push.sh" 2>/dev/null || true
 # 2. Pull latest config from remote
 bash "$CLAUDE_DIR/scripts/sync-pull.sh" 2>/dev/null || true
 
+# 2b. Make working-copy line endings agree with .gitattributes (content untouched; skips
+#     files with real local changes). Heals checkouts that predate the eol=lf policy so the
+#     byte-level tools below (Codex mirror, upstream 3-way merges) do not see phantom edits.
+bash "$CLAUDE_DIR/scripts/normalize-eol.sh" 2>/dev/null || true
+
 # 3. Check skills for staleness
 bash "$CLAUDE_DIR/scripts/skill-check.sh" 2>/dev/null || true
 
