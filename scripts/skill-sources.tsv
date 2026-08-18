@@ -92,7 +92,7 @@ dispatching-parallel-agents	vendor	https://github.com/obra/superpowers	skills/di
 using-git-worktrees	vendor	https://github.com/obra/superpowers	skills/using-git-worktrees	bb2ff5d309e5da6e021eb517c5012eb53c50a969	track	frontmatter-only
 
 # --- huggingface/skills ---
-huggingface-best	vendor	https://github.com/huggingface/skills	skills/huggingface-best	be02c15f4b81c901b6d71a8896e56f93837d8050	track	exact
+huggingface-best	vendor	https://github.com/huggingface/skills	skills/huggingface-best	ec0108293521ef698e451ec044e8b4feba6b732b	track	exact
 huggingface-datasets	vendor	https://github.com/huggingface/skills	skills/huggingface-datasets	b3df145a3a5a3e64ac075d781c625896d9d2bfcd	track	frontmatter-only
 huggingface-llm-trainer	vendor	https://github.com/huggingface/skills	skills/huggingface-llm-trainer	d0d3f4301358fc1351d408a58596d5644b5a8114	track	exact
 train-sentence-transformers	vendor	https://github.com/huggingface/skills	skills/train-sentence-transformers	3ac5910959e2b9fae3aea94badcc3b280781c9c2	track	exact
