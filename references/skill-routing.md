@@ -137,7 +137,7 @@ Trigger column describes **when to fire** (user scenario), not what the skill do
 | | plans zero-downtime migrations / version upgrades / rollback / "数据迁移" / "系统迁移" / "升级方案" | `migration-architect` |
 | | deploys ML models to production / MLOps / MLflow / feature stores / "部署模型" / "MLOps" / "模型上线" | AI Engineer agent + `huggingface-llm-trainer` |
 | | statistical modeling / A/B testing / causal inference / experiment design / "统计建模" / "AB测试" / "因果分析" | `statsmodels` + `scikit-learn` |
-| | autonomous optimization loop / measurable metric improvement / "自动优化" / "实验循环" | `autoresearch-agent` |
+| | autonomous optimization loop / measurable metric improvement / "自动优化" / "实验循环" | `autoresearch-agent:autoresearch-agent` (plugin-namespaced since upstream v2.9.0, 2026-08-18; commands `autoresearch-agent:setup/run/loop/status/resume`) |
 | | production prompt engineering / LLM evaluation / structured output / "优化prompt系统" / "评估LLM输出" | `prompt-architect` |
 | **DevOps** | writes CI/CD pipeline configs / GitHub Actions / deployment automation / "写CI/CD" / "写流水线" / "配置Actions" / "部署" | `ci-cd-and-automation` |
 | | builds MCP server / tool integration / "做MCP" / "MCP服务器" / "工具集成" | `mcp-builder` |
