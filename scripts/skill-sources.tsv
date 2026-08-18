@@ -74,7 +74,7 @@ vercel-composition-patterns	vendor	https://github.com/vercel-labs/agent-skills	s
 vercel-react-native-skills	vendor	https://github.com/vercel-labs/agent-skills	skills/react-native-skills	485beb804924eb4d96ea99e88a44439039c1ab5e	track	frontmatter-only
 
 # --- anthropics/skills (official) ---
-docx	vendor	https://github.com/anthropics/skills	skills/docx	3d59511518591fa82e6cfcf0438d68dd5dad3e76	track	frontmatter-only; local dir also holds unpacked_* scratch dirs (leaked 2026-07-27, not upstream)
+docx	vendor	https://github.com/anthropics/skills	skills/docx	f379e5ad66e2febc1616cf8d6284666fecbe514e	track	frontmatter-only; local dir also holds unpacked_* scratch dirs (leaked 2026-07-27, not upstream)
 pdf	vendor	https://github.com/anthropics/skills	skills/pdf	1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563	track	frontmatter-only
 pptx	vendor	https://github.com/anthropics/skills	skills/pptx	1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563	track	frontmatter-only
 xlsx	vendor	https://github.com/anthropics/skills	skills/xlsx	1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563	track	frontmatter-only
