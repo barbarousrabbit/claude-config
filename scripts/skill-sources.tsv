@@ -77,7 +77,7 @@ vercel-react-native-skills	vendor	https://github.com/vercel-labs/agent-skills	sk
 docx	vendor	https://github.com/anthropics/skills	skills/docx	f379e5ad66e2febc1616cf8d6284666fecbe514e	track	frontmatter-only; local dir also holds unpacked_* scratch dirs (leaked 2026-07-27, not upstream)
 pdf	vendor	https://github.com/anthropics/skills	skills/pdf	1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563	track	frontmatter-only
 pptx	vendor	https://github.com/anthropics/skills	skills/pptx	f379e5ad66e2febc1616cf8d6284666fecbe514e	track	frontmatter-only
-xlsx	vendor	https://github.com/anthropics/skills	skills/xlsx	1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563	track	frontmatter-only
+xlsx	vendor	https://github.com/anthropics/skills	skills/xlsx	f379e5ad66e2febc1616cf8d6284666fecbe514e	track	frontmatter-only
 skill-creator	vendor	https://github.com/anthropics/skills	skills/skill-creator	3d59511518591fa82e6cfcf0438d68dd5dad3e76	track	frontmatter-only
 canvas-design	vendor	https://github.com/anthropics/skills	skills/canvas-design	f379e5ad66e2febc1616cf8d6284666fecbe514e	track	frontmatter-only
 mcp-builder	vendor	https://github.com/anthropics/skills	skills/mcp-builder	ef740771ac901e03fbca3ce4e1c453a96010f30a	review	SKILL.md body edited locally; flip to track once the first report shows the merge is clean
