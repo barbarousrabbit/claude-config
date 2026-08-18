@@ -1,0 +1,109 @@
+# skill-sources.tsv -- where every third-party skill in ~/.claude/skills comes from,
+# and how it is kept current. Consumed by scripts/update-skills.sh (weekly, from the
+# SessionStart hook and bootstrap.sh) and by scripts/install-third-party-skills.sh
+# (the mode=clone rows only). Supersedes scripts/third-party-skills.tsv (2026-08-18).
+#
+# WHY THIS FILE EXISTS
+# A skill copied into ~/.claude/skills has no memory of where it came from. Without
+# a recorded upstream + pinned commit nobody can tell whether it is current, whether
+# a local edit exists, or how to refresh it -- which is why, before 2026-08-18, only
+# 1 of 114 skills (ponytail, via a hand-written PROVENANCE.md) could be updated at all,
+# and clone-mode skills registered here were missing on devices that never re-ran
+# bootstrap. This table makes "is it current?" answerable by a script.
+#
+# COLUMNS (tab-separated; # and blank lines ignored)
+#   skill    directory name under ~/.claude/skills/
+#   mode     clone  = the whole upstream repo is git-cloned to skills/<skill>/ and is
+#                     .gitignore'd (its own .git keeps it current; the .gitignore
+#                     entry and this row must always exist together)
+#            vendor = files copied at <pinned> from <path> inside <repo>, tracked in
+#                     this config repo like any other file
+#   repo     https clone URL
+#   path     path inside the repo: a directory, a single file (only that file is
+#            vendored, e.g. ponytail), or . for the repo root
+#   pinned   full commit hash the local copy was verified against, or - when the local
+#            copy matches no upstream commit (then policy is effectively review until
+#            someone pins it). For clone rows this is informational only.
+#   policy   track  = when upstream changes, apply automatically: files you never
+#                     touched are replaced; files you edited get a 3-way merge
+#                     (upstream-at-pinned -> upstream-HEAD onto your copy); any
+#                     conflict downgrades that skill to review for this run
+#            review = never write; report the diff and leave the merge to a human
+#            pin    = never write, never report (deliberately frozen)
+#   note     free text, no tabs
+#
+# HOW pinned WAS ESTABLISHED (2026-08-18): for each skill the upstream history was
+# scanned for the newest commit whose files, compared as sorted "blob-sha relpath"
+# lines (mode-agnostic; PROVENANCE.md, __pycache__ and *.pyc ignored), equal the local
+# copy. "frontmatter-only" means the ONLY local difference at that commit is the
+# SKILL.md front matter (descriptions rewritten to trigger-scenario style in the
+# 2026-07 skill audit); "exact" means byte-identical. Rows with pinned=- matched no
+# commit even ignoring SKILL.md.
+#
+# TO ADD a skill: vendor it (copy the upstream path in), then add a row with the
+# commit you copied from and policy=track. Run
+#     bash ~/.claude/scripts/update-skills.sh --check --skill <name>
+# to confirm it reports "current". Skills authored in this repo (dream-skin-*,
+# codex-video-skin, humanizer_academic, claudeception, ...) do NOT belong here.
+# TO REMOVE a skill from tracking: delete its row (the files stay).
+#
+# skill	mode	repo	path	pinned	policy	note
+
+# --- clone mode (whole repo, .gitignore'd; installed by install-third-party-skills.sh) ---
+apple-hig-designer	clone	https://github.com/axiaoge2/Apple-Hig-Designer.git	.	-	track	SKILL.md at repo root
+gstack	clone	https://github.com/garrytan/gstack.git	.	-	track	SKILL.md at repo root; re-registered 2026-08-11 from an intact desktop copy
+humanizer	clone	https://github.com/blader/humanizer	.	-	track	SKILL.md at repo root; origin recovered 2026-08-11
+
+# --- mattpocock/skills (installed 2026-07-15 as v1.1.0; grill-me is a one-line wrapper around grilling) ---
+grilling	vendor	https://github.com/mattpocock/skills	skills/productivity/grilling	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
+grill-me	vendor	https://github.com/mattpocock/skills	skills/productivity/grill-me	697d4ce9742da558fd1ba6697c8e9775e2e302dd	track	exact
+handoff	vendor	https://github.com/mattpocock/skills	skills/productivity/handoff	697d4ce9742da558fd1ba6697c8e9775e2e302dd	track	exact
+tdd	vendor	https://github.com/mattpocock/skills	skills/engineering/tdd	697d4ce9742da558fd1ba6697c8e9775e2e302dd	track	exact
+diagnosing-bugs	vendor	https://github.com/mattpocock/skills	skills/engineering/diagnosing-bugs	697d4ce9742da558fd1ba6697c8e9775e2e302dd	track	exact
+
+# --- single-file vendoring ---
+ponytail	vendor	https://github.com/DietrichGebert/ponytail	skills/ponytail/SKILL.md	b6c04480c03e8db2f035751d7c46289779ec3362	track	exact; only SKILL.md is vendored (upstream ships hooks/scripts/MCP we keep out); LICENSE copied from repo root
+
+# --- emilkowalski/skills (motion / design-eng) ---
+emil-design-eng	vendor	https://github.com/emilkowalski/skills	skills/emil-design-eng	ecf66bbd1fb33c25332b6b0e454d08049978284c	track	exact
+improve-animations	vendor	https://github.com/emilkowalski/skills	skills/improve-animations	f736679c420f34e5a63d2dfdc74db35520d75a7b	track	exact
+
+# --- vercel-labs/agent-skills (local dirs carry a vercel- prefix; upstream dirs do not) ---
+vercel-react-best-practices	vendor	https://github.com/vercel-labs/agent-skills	skills/react-best-practices	618914ccde8d87cce3e54baf21ab4b35c744d2ab	track	frontmatter-only; upstream added metadata.json/_sections.md/_template.md later
+vercel-composition-patterns	vendor	https://github.com/vercel-labs/agent-skills	skills/composition-patterns	a5343bd997c4cc4d8bf2ca61021bdc74b4d6c9d5	track	frontmatter-only
+vercel-react-native-skills	vendor	https://github.com/vercel-labs/agent-skills	skills/react-native-skills	485beb804924eb4d96ea99e88a44439039c1ab5e	track	frontmatter-only
+
+# --- anthropics/skills (official) ---
+docx	vendor	https://github.com/anthropics/skills	skills/docx	3d59511518591fa82e6cfcf0438d68dd5dad3e76	track	frontmatter-only; local dir also holds unpacked_* scratch dirs (leaked 2026-07-27, not upstream)
+pdf	vendor	https://github.com/anthropics/skills	skills/pdf	1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563	track	frontmatter-only
+pptx	vendor	https://github.com/anthropics/skills	skills/pptx	1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563	track	frontmatter-only
+xlsx	vendor	https://github.com/anthropics/skills	skills/xlsx	1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563	track	frontmatter-only
+skill-creator	vendor	https://github.com/anthropics/skills	skills/skill-creator	3d59511518591fa82e6cfcf0438d68dd5dad3e76	track	frontmatter-only
+canvas-design	vendor	https://github.com/anthropics/skills	skills/canvas-design	ef740771ac901e03fbca3ce4e1c453a96010f30a	track	frontmatter-only
+mcp-builder	vendor	https://github.com/anthropics/skills	skills/mcp-builder	ef740771ac901e03fbca3ce4e1c453a96010f30a	review	SKILL.md body edited locally; flip to track once the first report shows the merge is clean
+webapp-testing	vendor	https://github.com/anthropics/skills	skills/webapp-testing	ef740771ac901e03fbca3ce4e1c453a96010f30a	review	SKILL.md body edited locally
+web-artifacts-builder	vendor	https://github.com/anthropics/skills	skills/web-artifacts-builder	ef740771ac901e03fbca3ce4e1c453a96010f30a	review	SKILL.md body edited locally
+frontend-design	vendor	https://github.com/anthropics/skills	skills/frontend-design	-	review	heavily customised locally (reference/ dir, global UI rules); matches no upstream commit
+
+# --- obra/superpowers ---
+brainstorming	vendor	https://github.com/obra/superpowers	skills/brainstorming	-	pin	customised + depended on by the academic-gate hook; matches no upstream commit
+verification-before-completion	vendor	https://github.com/obra/superpowers	skills/verification-before-completion	48410c7f1973bd66569a627ef27ef6619e0ba923	track	frontmatter-only
+dispatching-parallel-agents	vendor	https://github.com/obra/superpowers	skills/dispatching-parallel-agents	-	review	body edited locally; matches no upstream commit
+using-git-worktrees	vendor	https://github.com/obra/superpowers	skills/using-git-worktrees	bb2ff5d309e5da6e021eb517c5012eb53c50a969	track	frontmatter-only
+
+# --- huggingface/skills ---
+huggingface-best	vendor	https://github.com/huggingface/skills	skills/huggingface-best	be02c15f4b81c901b6d71a8896e56f93837d8050	track	exact
+huggingface-datasets	vendor	https://github.com/huggingface/skills	skills/huggingface-datasets	b3df145a3a5a3e64ac075d781c625896d9d2bfcd	track	frontmatter-only
+huggingface-llm-trainer	vendor	https://github.com/huggingface/skills	skills/huggingface-llm-trainer	d0d3f4301358fc1351d408a58596d5644b5a8114	track	exact
+train-sentence-transformers	vendor	https://github.com/huggingface/skills	skills/train-sentence-transformers	3ac5910959e2b9fae3aea94badcc3b280781c9c2	track	exact
+
+# --- duckdb/duckdb-skills (local names carry a duckdb- prefix except install-duckdb) ---
+duckdb-attach-db	vendor	https://github.com/duckdb/duckdb-skills	skills/attach-db	04fc07c92ffee3d1d4b9dc212c5246095dcd6748	track	frontmatter-only
+duckdb-convert-file	vendor	https://github.com/duckdb/duckdb-skills	skills/convert-file	2bf9f47e342b500fcaaffda041cc21db6fd6051f	track	frontmatter-only
+duckdb-query	vendor	https://github.com/duckdb/duckdb-skills	skills/query	ca36c23317a8468933617c8ea680a99a770b676e	track	frontmatter-only
+install-duckdb	vendor	https://github.com/duckdb/duckdb-skills	skills/install-duckdb	6e57977a89d6e0582a97c62051d382a1a6b4733c	track	exact
+
+# --- single-skill repos / others ---
+autoresearch-agent	vendor	https://github.com/alirezarezvani/claude-skills	engineering/autoresearch-agent	7911cf957ae21061228eb11e6571cf4fb1167d27	track	exact; whole plugin dir (agents/, evaluators/, skills/) vendored
+last30days	vendor	https://github.com/mvanhorn/last30days-skill	skills/last30days	-	review	local is a 2.9.5 build (ClawHub?) with 59 files upstream never had; matches no commit
+ui-ux-pro-max	vendor	https://github.com/nextlevelbuilder/ui-ux-pro-max-skill	.claude/skills/ui-ux-pro-max	-	review	local matches no commit (probably a release build); upstream is far ahead (192 palettes vs 161)
