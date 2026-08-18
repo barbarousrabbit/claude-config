@@ -59,7 +59,7 @@ grilling	vendor	https://github.com/mattpocock/skills	skills/productivity/grillin
 grill-me	vendor	https://github.com/mattpocock/skills	skills/productivity/grill-me	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
 handoff	vendor	https://github.com/mattpocock/skills	skills/productivity/handoff	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
 tdd	vendor	https://github.com/mattpocock/skills	skills/engineering/tdd	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
-diagnosing-bugs	vendor	https://github.com/mattpocock/skills	skills/engineering/diagnosing-bugs	697d4ce9742da558fd1ba6697c8e9775e2e302dd	track	exact
+diagnosing-bugs	vendor	https://github.com/mattpocock/skills	skills/engineering/diagnosing-bugs	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
 
 # --- single-file vendoring ---
 ponytail	vendor	https://github.com/DietrichGebert/ponytail	skills/ponytail/SKILL.md	b6c04480c03e8db2f035751d7c46289779ec3362	track	exact; only SKILL.md is vendored (upstream ships hooks/scripts/MCP we keep out); LICENSE copied from repo root
