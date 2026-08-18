@@ -65,7 +65,7 @@ diagnosing-bugs	vendor	https://github.com/mattpocock/skills	skills/engineering/d
 ponytail	vendor	https://github.com/DietrichGebert/ponytail	skills/ponytail/SKILL.md	b6c04480c03e8db2f035751d7c46289779ec3362	track	exact; only SKILL.md is vendored (upstream ships hooks/scripts/MCP we keep out); LICENSE copied from repo root
 
 # --- emilkowalski/skills (motion / design-eng) ---
-emil-design-eng	vendor	https://github.com/emilkowalski/skills	skills/emil-design-eng	ecf66bbd1fb33c25332b6b0e454d08049978284c	track	exact
+emil-design-eng	vendor	https://github.com/emilkowalski/skills	skills/emil-design-eng	78761e1b57f97dce65b983d640c70a68f39e8163	track	exact
 improve-animations	vendor	https://github.com/emilkowalski/skills	skills/improve-animations	f736679c420f34e5a63d2dfdc74db35520d75a7b	track	exact
 
 # --- vercel-labs/agent-skills (local dirs carry a vercel- prefix; upstream dirs do not) ---
