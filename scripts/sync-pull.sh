@@ -62,7 +62,7 @@ if [ -d "$CLAUDE_DIR/.git" ] && git -C "$CLAUDE_DIR" remote get-url origin &>/de
 
     # Refresh nested skill repos that carry their own .git (currently just
     # apple-hig-designer). They are gitignored rather than tracked, so their
-    # clone URLs live in scripts/third-party-skills.tsv and are installed by
+    # clone URLs live in the mode=clone rows of scripts/skill-sources.tsv and are installed by
     # install-third-party-skills.sh; this loop only keeps existing ones current.
     #
     # This used to say "e.g. gstack, humanizer". Those were gitlinks with no

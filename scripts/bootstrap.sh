@@ -55,13 +55,17 @@ fi
 git branch --set-upstream-to="origin/$REMOTE_HEAD" "$LOCAL_BRANCH" &>/dev/null || true
 ok "Git tracking configured (branch '$LOCAL_BRANCH' -> origin/$REMOTE_HEAD)"
 
-# -- 1b. Third-party skill repos --
+# -- 1b. Third-party skill repos (mode=clone rows of scripts/skill-sources.tsv) --
 echo "-> Installing third-party skill repos..."
 bash "$CLAUDE_DIR/scripts/install-third-party-skills.sh" || warn "Some third-party skills failed to install (see above)"
 
 # -- 1c. Codex-format skills -> ~/.codex/skills (one-way mirror; no-op without Codex) --
 echo "-> Mirroring Codex-format skills into ~/.codex/skills..."
 bash "$CLAUDE_DIR/scripts/mirror-skills-to-codex.sh" || warn "Codex skill mirror reported a problem (see above)"
+
+# -- 1d. Upstream check for vendored skills (report only; the SessionStart hook applies weekly) --
+echo "-> Checking vendored skills against upstream (scripts/skill-sources.tsv)..."
+bash "$CLAUDE_DIR/scripts/update-skills.sh" --check || warn "Some upstreams were unreachable or misconfigured (see .skill-update/report.txt)"
 
 # -- 2. Python dependencies --
 echo "-> Installing Python skill dependencies..."

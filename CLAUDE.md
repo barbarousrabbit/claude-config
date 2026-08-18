@@ -100,7 +100,7 @@ Syncing `~/.claude` to GitHub is automated by the hooks (see Available Tools bel
 ## Available Tools
 Optional MCPs (`fetch` / `memory` / `sequential-thinking` / `github`) exist on some devices only; the built-in equivalents (WebFetch, memory files, inline reasoning, `gh` CLI) are always the fallback — never block on a missing MCP.
 
-**Hooks** (auto): SessionStart = `hook-session-start.sh` (push leftover changes → pull latest → skill staleness check → `mirror-skills-to-codex.sh`, which copies the skills listed in `scripts/codex-mirror-skills.txt` one-way into `~/.codex/skills/` so Codex has them too; no-op without Codex); UserPromptSubmit = `hook-user-prompt.sh` (Layer 0 `[reply-language]` re-anchor, then `claudeception-activator.sh` skill-gate); SessionEnd = `sync-push.sh` (auto-commit & push).
+**Hooks** (auto): SessionStart = `hook-session-start.sh` (push leftover changes → pull latest → skill staleness check → `mirror-skills-to-codex.sh`, which copies the skills listed in `scripts/codex-mirror-skills.txt` one-way into `~/.codex/skills/` so Codex has them too; no-op without Codex → `update-skills.sh --auto`, which every 7 days runs a detached background check of the third-party skills in `scripts/skill-sources.tsv` against upstream, auto-applies `track` rows as one commit per skill (3-way merge keeps local edits; conflicts → review), and prints one `[skill-update] …` summary line; `--report` shows details); UserPromptSubmit = `hook-user-prompt.sh` (Layer 0 `[reply-language]` re-anchor, then `claudeception-activator.sh` skill-gate); SessionEnd = `sync-push.sh` (auto-commit & push).
 **Custom commands**: `/explain` · `/debug` · `/summarize` · `/check-assignment` · `/review` · `/security-scan` · `/git:cm` · `/git:cp` · `/git:pr`
 **Scope**: project `.claude/CLAUDE.md` overrides global rules.
 
@@ -165,10 +165,17 @@ GitHub PAT → restart Claude Code.
   truncates the checkout and files go missing with only a warning.
 - **`bootstrap.sh` is idempotent** — safe to re-run any time. It resolves the
   remote's default branch (never assumes `main`), installs Python deps,
-  clones the per-device skill repos listed in `scripts/third-party-skills.tsv`,
-  and mirrors the Codex-format skills listed in `scripts/codex-mirror-skills.txt`
-  into `~/.codex/skills/` (skipped when Codex is not installed).
+  clones the per-device skill repos (the `mode=clone` rows of
+  `scripts/skill-sources.tsv`), mirrors the Codex-format skills listed in
+  `scripts/codex-mirror-skills.txt` into `~/.codex/skills/` (skipped when Codex is
+  not installed), and runs `update-skills.sh --check` once so the upstream state of
+  every vendored skill is known from day one.
 - **Verify** with `bash ~/.claude/scripts/install-third-party-skills.sh` —
   it reports installed/refreshed/failed and exits non-zero on any failure —
   and `bash ~/.claude/scripts/mirror-skills-to-codex.sh --dry-run`, which must
   report `0 failed` and nothing left to install.
+- **Third-party skill provenance** lives in `scripts/skill-sources.tsv` (upstream
+  repo, path, pinned commit, policy `track|review|pin` per skill). Never hand-copy an
+  upstream update over a vendored skill: `bash ~/.claude/scripts/update-skills.sh
+  --apply --skill <name>` does it as a 3-way merge that keeps local edits and records
+  the new pin; `--check` / `--report` show what upstream has that we do not.

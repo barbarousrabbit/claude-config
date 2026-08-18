@@ -23,14 +23,18 @@ teams/
 
 # === Third-party skill repos — installed per device ===
 # These have their own git repos, so they are NOT tracked here. The clone URLs
-# live in scripts/third-party-skills.tsv and bootstrap.sh installs them on a
-# new device. Adding an entry here WITHOUT a matching manifest line is how a
-# skill silently goes missing after a re-clone -- always update both.
+# live in the mode=clone rows of scripts/skill-sources.tsv (was third-party-skills.tsv
+# until 2026-08-18) and bootstrap.sh installs them on a new device. Adding an entry
+# here WITHOUT a matching manifest row is how a skill silently goes missing after a
+# re-clone -- always update both.
 skills/apple-hig-designer/
 skills/gstack/
 skills/humanizer/
 
 # === Runtime state — session-specific, not for sync ===
+# .skill-update/ is update-skills.sh state: last-check timestamp, last report, run log,
+# lock, and a cache of blobless upstream clones (repos/). Per device, never synced.
+.skill-update/
 # .last-cleanup is a per-device timestamp rewritten every session. Tracking it
 # made every pull conflict, which is how conflict markers landed in settings.json.
 .last-cleanup

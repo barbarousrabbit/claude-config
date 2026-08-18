@@ -30,7 +30,9 @@ devices, because on the origin machine the missing pieces are already present.
   needs a checked-in manifest of clone URLs, or it silently disappears.
   (Epilogue 2026-08-11: the desktop still had intact clones of both; origins
   recovered and re-registered in `third-party-skills.tsv` — gstack =
-  github.com/garrytan/gstack, humanizer = github.com/blader/humanizer.)
+  github.com/garrytan/gstack, humanizer = github.com/blader/humanizer.
+  2026-08-18: that manifest was folded into `scripts/skill-sources.tsv` as its
+  `mode=clone` rows; see [[skill-update-mechanism]].)
 - **Silent-abort sync means devices drift without any error.** `sync-pull.sh`
   deliberately aborts on rebase conflict so session start never blocks. Cost:
   a device with a local customization commit on a nested skill repo (e.g.
