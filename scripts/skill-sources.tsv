@@ -69,7 +69,7 @@ emil-design-eng	vendor	https://github.com/emilkowalski/skills	skills/emil-design
 improve-animations	vendor	https://github.com/emilkowalski/skills	skills/improve-animations	78761e1b57f97dce65b983d640c70a68f39e8163	track	exact
 
 # --- vercel-labs/agent-skills (local dirs carry a vercel- prefix; upstream dirs do not) ---
-vercel-react-best-practices	vendor	https://github.com/vercel-labs/agent-skills	skills/react-best-practices	618914ccde8d87cce3e54baf21ab4b35c744d2ab	track	frontmatter-only; upstream added metadata.json/_sections.md/_template.md later
+vercel-react-best-practices	vendor	https://github.com/vercel-labs/agent-skills	skills/react-best-practices	b8caa260a420a73042e35521de4b5c8baf6446cc	track	frontmatter-only; upstream added metadata.json/_sections.md/_template.md later
 vercel-composition-patterns	vendor	https://github.com/vercel-labs/agent-skills	skills/composition-patterns	a5343bd997c4cc4d8bf2ca61021bdc74b4d6c9d5	track	frontmatter-only
 vercel-react-native-skills	vendor	https://github.com/vercel-labs/agent-skills	skills/react-native-skills	485beb804924eb4d96ea99e88a44439039c1ab5e	track	frontmatter-only
 
