@@ -57,7 +57,7 @@ humanizer	clone	https://github.com/blader/humanizer	.	-	track	SKILL.md at repo r
 # --- mattpocock/skills (installed 2026-07-15 as v1.1.0; grill-me is a one-line wrapper around grilling) ---
 grilling	vendor	https://github.com/mattpocock/skills	skills/productivity/grilling	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
 grill-me	vendor	https://github.com/mattpocock/skills	skills/productivity/grill-me	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
-handoff	vendor	https://github.com/mattpocock/skills	skills/productivity/handoff	697d4ce9742da558fd1ba6697c8e9775e2e302dd	track	exact
+handoff	vendor	https://github.com/mattpocock/skills	skills/productivity/handoff	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
 tdd	vendor	https://github.com/mattpocock/skills	skills/engineering/tdd	697d4ce9742da558fd1ba6697c8e9775e2e302dd	track	exact
 diagnosing-bugs	vendor	https://github.com/mattpocock/skills	skills/engineering/diagnosing-bugs	697d4ce9742da558fd1ba6697c8e9775e2e302dd	track	exact
 
