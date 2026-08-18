@@ -104,6 +104,6 @@ duckdb-query	vendor	https://github.com/duckdb/duckdb-skills	skills/query	ca36c23
 install-duckdb	vendor	https://github.com/duckdb/duckdb-skills	skills/install-duckdb	6e57977a89d6e0582a97c62051d382a1a6b4733c	track	exact
 
 # --- single-skill repos / others ---
-autoresearch-agent	vendor	https://github.com/alirezarezvani/claude-skills	engineering/autoresearch-agent	7911cf957ae21061228eb11e6571cf4fb1167d27	track	exact; whole plugin dir (agents/, evaluators/, skills/) vendored
+autoresearch-agent	vendor	https://github.com/alirezarezvani/claude-skills	engineering/autoresearch-agent	aa8d778811a557a2c28ccadda4cf3d0bd028a4cc	track	exact; whole plugin dir (agents/, evaluators/, skills/) vendored
 last30days	vendor	https://github.com/mvanhorn/last30days-skill	skills/last30days	-	review	local is a 2.9.5 build (ClawHub?) with 59 files upstream never had; matches no commit
 ui-ux-pro-max	vendor	https://github.com/nextlevelbuilder/ui-ux-pro-max-skill	.claude/skills/ui-ux-pro-max	-	review	local matches no commit (probably a release build); upstream is far ahead (192 palettes vs 161)
