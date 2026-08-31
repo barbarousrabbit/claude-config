@@ -58,7 +58,7 @@ humanizer	clone	https://github.com/blader/humanizer	.	-	track	SKILL.md at repo r
 grilling	vendor	https://github.com/mattpocock/skills	skills/productivity/grilling	6654f6b60cd9d5be8b54c6fafe44346dabeb3b76	track	exact
 grill-me	vendor	https://github.com/mattpocock/skills	skills/productivity/grill-me	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
 handoff	vendor	https://github.com/mattpocock/skills	skills/productivity/handoff	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
-tdd	vendor	https://github.com/mattpocock/skills	skills/engineering/tdd	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
+tdd	vendor	https://github.com/mattpocock/skills	skills/engineering/tdd	6654f6b60cd9d5be8b54c6fafe44346dabeb3b76	track	exact
 diagnosing-bugs	vendor	https://github.com/mattpocock/skills	skills/engineering/diagnosing-bugs	9c9f36ccd3995266cd675468af71639c8dde1ec5	track	exact
 
 # --- single-file vendoring ---
