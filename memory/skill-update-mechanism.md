@@ -97,6 +97,16 @@ superseding `third-party-skills.tsv` (clone URLs only, bootstrap-time only).
   sync-pull.sh (rebase "theirs" = the local commit) would auto-resolve in favour of the local
   front matter -- a policy change, not applied.
 
+- **update-skills.sh commits stayed local for hours on 2026-08-31 (5 commits, never
+  pushed).** It commits each applied skill but does not push, relying on `sync-push.sh`;
+  `sync-push.sh` however only pushed after creating its own auto-sync commit and exited
+  early on a clean tree / empty index -- so "ahead of origin" was never a push trigger.
+  Fixed 2026-08-31: `sync-push.sh` defines `push_if_ahead()` (`rev-list --count
+  origin/main..HEAD` > 0 -> `push HEAD:main`) and calls it on both early-exit paths.
+  Symptom to recognise: `git -C ~/.claude rev-list --left-right --count HEAD...origin/main`
+  prints `N 0` with a clean `git status` right after a session that printed
+  `[skill-update] … applied`.
+
 ## How to apply
 
 ```bash

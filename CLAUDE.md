@@ -85,7 +85,7 @@ When generating PDF/DOCX reports:
 
 ## Config Sync
 Syncing `~/.claude` to GitHub is automated by the hooks (see Available Tools below) — you normally do NOT run git yourself, and the model cannot reliably detect "end of session" anyway:
-- **SessionEnd** runs `sync-push.sh` → stages tracked changes + safe-list dirs (skills, scripts, agents, references, memory) with `git add -u` (deliberately NOT `git add -A`, to avoid committing untracked secrets), commits as `auto-sync: …`, pushes `HEAD:main`. No-op when clean.
+- **SessionEnd** runs `sync-push.sh` → stages tracked changes + safe-list dirs (skills, scripts, agents, references, memory) with `git add -u` (deliberately NOT `git add -A`, to avoid committing untracked secrets), commits as `auto-sync: …`, pushes `HEAD:main`. Also pushes commits that are already ahead of origin (e.g. the local-only commits `update-skills.sh` makes) even when the tree is clean; no-op only when clean AND nothing is unpushed.
 - **SessionStart** runs a catch-up `sync-push.sh`, then `sync-pull.sh`.
 - **Optional**: when a change deserves a searchable message, hand-author one — `git -C ~/.claude commit -m "<description>"` then push. Do NOT run `git add -A`.
 - **Fallback only if hooks are not installed on this device**: `git -C ~/.claude add -u && git -C ~/.claude commit -m "<desc>" && git -C ~/.claude push origin HEAD:main`
