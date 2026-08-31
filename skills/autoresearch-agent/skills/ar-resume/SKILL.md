@@ -1,18 +1,18 @@
 ---
-name: "resume"
-description: "Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating. Use when the user runs /ar:resume or asks to pick up a previously started autoresearch experiment."
-command: /ar:resume
+name: "ar-resume"
+description: "Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating. Use when the user runs /ar:ar-resume or asks to pick up a previously started autoresearch experiment."
+command: /ar:ar-resume
 ---
 
-# /ar:resume — Resume Experiment
+# /ar:ar-resume — Resume Experiment
 
 Resume a paused or context-limited experiment. Reads all history and continues where you left off.
 
 ## Usage
 
 ```
-/ar:resume                                  # List experiments, let user pick
-/ar:resume engineering/api-speed            # Resume specific experiment
+/ar:ar-resume                                  # List experiments, let user pick
+/ar:ar-resume engineering/api-speed            # Resume specific experiment
 ```
 
 ## What It Does

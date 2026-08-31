@@ -1,21 +1,21 @@
 ---
-name: "status"
-description: "Show experiment dashboard with results, active loops, and progress. Use when the user runs /ar:status or asks how an autoresearch experiment is going."
-command: /ar:status
+name: "ar-status"
+description: "Show experiment dashboard with results, active loops, and progress. Use when the user runs /ar:ar-status or asks how an autoresearch experiment is going."
+command: /ar:ar-status
 ---
 
-# /ar:status — Experiment Dashboard
+# /ar:ar-status — Experiment Dashboard
 
 Show experiment results, active loops, and progress across all experiments.
 
 ## Usage
 
 ```
-/ar:status                                  # Full dashboard
-/ar:status engineering/api-speed            # Single experiment detail
-/ar:status --domain engineering             # All experiments in a domain
-/ar:status --format markdown                # Export as markdown
-/ar:status --format csv --output results.csv  # Export as CSV
+/ar:ar-status                                  # Full dashboard
+/ar:ar-status engineering/api-speed            # Single experiment detail
+/ar:ar-status --domain engineering             # All experiments in a domain
+/ar:ar-status --format markdown                # Export as markdown
+/ar:ar-status --format csv --output results.csv  # Export as CSV
 ```
 
 ## What It Does

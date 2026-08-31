@@ -9,7 +9,7 @@ turns that skill into `review` until a human resolves it.
 |---|---|
 | Upstream | https://github.com/alirezarezvani/claude-skills |
 | Source path | `engineering/autoresearch-agent` |
-| Pinned commit | `aa8d778811a557a2c28ccadda4cf3d0bd028a4cc` (2026-07-17) |
-| Last updated | 2026-08-18 |
+| Pinned commit | `19392f7a08264ed00486a251f5b2098321771f94` (2026-08-26) |
+| Last updated | 2026-08-31 |
 
 Row in the manifest: `autoresearch-agent` -- edit the policy there, not this file.
