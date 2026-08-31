@@ -95,7 +95,7 @@ using-git-worktrees	vendor	https://github.com/obra/superpowers	skills/using-git-
 huggingface-best	vendor	https://github.com/huggingface/skills	skills/huggingface-best	ec0108293521ef698e451ec044e8b4feba6b732b	track	exact
 huggingface-datasets	vendor	https://github.com/huggingface/skills	skills/huggingface-datasets	b3df145a3a5a3e64ac075d781c625896d9d2bfcd	track	frontmatter-only
 huggingface-llm-trainer	vendor	https://github.com/huggingface/skills	skills/huggingface-llm-trainer	ec0108293521ef698e451ec044e8b4feba6b732b	track	exact
-train-sentence-transformers	vendor	https://github.com/huggingface/skills	skills/train-sentence-transformers	3ac5910959e2b9fae3aea94badcc3b280781c9c2	track	exact
+train-sentence-transformers	vendor	https://github.com/huggingface/skills	skills/train-sentence-transformers	cead19e10754e773bad24fecef83cb64be24094e	track	exact
 
 # --- duckdb/duckdb-skills (local names carry a duckdb- prefix except install-duckdb) ---
 duckdb-attach-db	vendor	https://github.com/duckdb/duckdb-skills	skills/attach-db	04fc07c92ffee3d1d4b9dc212c5246095dcd6748	track	frontmatter-only
