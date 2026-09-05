@@ -97,5 +97,7 @@
     }
   },
   "ultracode": false,
-  "switchModelsOnFlag": false
+  "switchModelsOnFlag": false,
+  "agentPushNotifEnabled": true,
+  "inputNeededNotifEnabled": true
 }
