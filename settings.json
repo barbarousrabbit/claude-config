@@ -43,6 +43,7 @@
     ],
     "additionalDirectories": []
   },
+  "model": "fable[1m]",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -96,6 +97,5 @@
     }
   },
   "ultracode": false,
-  "switchModelsOnFlag": false,
-  "model": "claude-fable-5[1m]"
+  "switchModelsOnFlag": false
 }
