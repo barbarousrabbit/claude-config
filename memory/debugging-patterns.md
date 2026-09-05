@@ -114,3 +114,8 @@ $broken = @(Get-ChildItem $dir -Directory |
 - **Audit blind spot that hides this for months**: link-validation passes usually glob `*.lnk`. Junctions are directories, so `-Filter *.lnk` never sees them and the audit prints all-green. Any audit that validates shortcuts must enumerate `-Directory` too.
 - **Removing one is dangerous**: `Remove-Item -Recurse` on a junction deletes the *target's* contents. Detach the reparse point only: `[IO.Directory]::Delete($path, $false)` or `cmd /c rmdir "$path"` (no `/s`). Verify the target's files still exist afterward.
 - **Rule**: any script that rewrites hardcoded root paths after a rename (e.g. `sed` over a `_tools/` directory) must also **rebuild every junction** — text substitution fixes scripts, not reparse points already on disk.
+
+## Chromium DevTools HTTP endpoint stalls with the UI thread
+- `/json/version`, `/json/list` and the other `/json/*` endpoints are answered on the browser process's UI thread. While the main thread is busy (app start-up, GPU/CPU contention) the TCP port keeps accepting connections but the HTTP reply never comes: probes time out and leave `TIME_WAIT` sockets on the port.
+- A timed-out HTTP probe therefore does NOT prove the port is closed. Check listen state and owner separately -- `Get-NetTCPConnection -LocalPort <port> -State Listen` (OwningProcess) or `netstat -ano` -- and read the owner's command line (`Get-CimInstance Win32_Process`) before acting on "the port is gone".
+- Seen 2026-09-05 in Codex-Skins: the skin supervisor mistook a stalled Codex 26.901 for "restarted without --remote-debugging-port" and killed it three times (docs/skin-troubleshooting.md #42).
