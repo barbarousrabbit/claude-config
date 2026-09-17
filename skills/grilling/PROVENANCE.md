@@ -10,6 +10,10 @@ turns that skill into `review` until a human resolves it.
 | Upstream | https://github.com/mattpocock/skills |
 | Source path | `skills/productivity/grilling` |
 | Pinned commit | `6654f6b60cd9d5be8b54c6fafe44346dabeb3b76` (2026-08-24) |
+<<<<<<< HEAD
 | Last updated | 2026-08-31 |
+=======
+| Last updated | 2026-08-27 |
+>>>>>>> 40ff75f (chore(skills): update grilling 9c9f36c..6654f6b from mattpocock/skills)
 
 Row in the manifest: `grilling` -- edit the policy there, not this file.
