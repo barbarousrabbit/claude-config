@@ -66,7 +66,7 @@ ponytail	vendor	https://github.com/DietrichGebert/ponytail	skills/ponytail/SKILL
 
 # --- emilkowalski/skills (motion / design-eng) ---
 emil-design-eng	vendor	https://github.com/emilkowalski/skills	skills/emil-design-eng	d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128	track	exact
-improve-animations	vendor	https://github.com/emilkowalski/skills	skills/improve-animations	78761e1b57f97dce65b983d640c70a68f39e8163	track	exact
+improve-animations	vendor	https://github.com/emilkowalski/skills	skills/improve-animations	d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128	track	exact
 
 # --- vercel-labs/agent-skills (local dirs carry a vercel- prefix; upstream dirs do not) ---
 vercel-react-best-practices	vendor	https://github.com/vercel-labs/agent-skills	skills/react-best-practices	b8caa260a420a73042e35521de4b5c8baf6446cc	track	frontmatter-only; upstream added metadata.json/_sections.md/_template.md later
